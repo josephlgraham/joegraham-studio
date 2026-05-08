@@ -298,15 +298,15 @@
   /* ============ TOP 8 GRID ============ */
   .top8-header-text { font-size: 11px; color: var(--text-body); margin-bottom: 8px; }
   .top8-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px;
     align-items: start;
   }
   .top8-item {
-    text-align: center; cursor: pointer; transition: transform 0.15s;
+    text-align: center; cursor: pointer; transition: transform 0.15s; min-width: 0;
   }
   .top8-item:hover { transform: scale(1.03); }
   .top8-img-wrap {
-    overflow: hidden; aspect-ratio: 1 / 1;
+    width: 100%; overflow: hidden; aspect-ratio: 1 / 1;
     border: 2px solid var(--border-module); background: #111;
   }
   .top8-thumb {
