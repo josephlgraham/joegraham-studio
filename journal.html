@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Journal | Joe Graham | Fine Art & Commercial Photographer | Birmingham, Alabama</title>
+<meta name="description" content="Photo journal by Joe Graham — field narratives, natural history, and stories behind the photographs. Nature, landscape, and documentary photography from Alabama, California, Hawaii, and beyond.">
+<meta name="author" content="Joe Graham">
+<link rel="canonical" href="https://joegraham.studio/journal.html">
+
+<meta property="og:title" content="Journal | Joe Graham Photography">
+<meta property="og:description" content="Field narratives and stories behind the photographs. Fine art photographer based in Birmingham, Alabama.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://joegraham.studio/journal.html">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Joe Graham Photography">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Journal | Joe Graham Photography">
+<meta name="twitter:description" content="Field narratives and stories behind the photographs. Birmingham, Alabama.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Joe Graham Photo Journal",
+  "description": "Field narratives, natural history, and stories behind the photographs by Joe Graham, fine art photographer based in Birmingham, Alabama.",
+  "url": "https://joegraham.studio/journal.html",
+  "author": { "@type": "Photographer", "@id": "https://joegraham.studio/#photographer" }
+}
+</script>
+
+<style>
+  :root {
+    --bg-page: #C4D1DF;
+    --bg-module: #ffffff;
+    --bg-module-header: #336699;
+    --bg-nav: #003471;
+    --bg-nav-hover: #0050a0;
+    --text-nav: #ffffff;
+    --text-body: #333333;
+    --text-link: #0033cc;
+    --text-light: #666666;
+    --border-module: #b3c5d7;
+    --border-light: #d5d5d5;
+    --accent-orange: #ff6600;
+    --shadow: 0 1px 2px rgba(0,0,0,0.15);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg-page); font-family:Verdana,Geneva,Tahoma,sans-serif; font-size:11px; color:var(--text-body); min-height:100vh; }
+  a { color:var(--text-link); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+
+  .top-bar { background:var(--bg-nav); padding:4px 0; border-bottom:1px solid #001a33; position:sticky; top:0; z-index:100; }
+  .top-bar-inner { max-width:960px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:0 8px; }
+  .top-bar-logo { font-family:'Trebuchet MS',Trebuchet,sans-serif; font-size:18px; font-weight:bold; color:#fff; letter-spacing:-0.5px; }
+  .top-bar-logo span { color:var(--accent-orange); }
+  .top-bar-nav { display:flex; gap:2px; }
+  .top-bar-nav a { color:var(--text-nav); font-size:10px; padding:4px 10px; border-radius:2px; transition:background 0.15s; }
+  .top-bar-nav a:hover { background:var(--bg-nav-hover); text-decoration:none; }
+  .top-bar-nav a.active { background:var(--bg-nav-hover); font-weight:bold; }
+
+  .container { max-width:960px; margin:0 auto; padding:12px 8px; }
+
+  .module { background:var(--bg-module); border:1px solid var(--border-module); border-radius:2px; margin-bottom:14px; box-shadow:var(--shadow); overflow:hidden; }
+  .module-header { background:var(--bg-module-header); color:white; font-size:11px; font-weight:bold; padding:4px 8px; display:flex; align-items:center; justify-content:space-between; }
+  .module-header a { color:#cde; font-size:10px; }
+  .module-body { padding:12px; }
+
+  /* ============ JOURNAL ENTRY LIST ============ */
+  .journal-entry {
+    display: flex;
+    gap: 12px;
+    padding: 12px;
+    border-bottom: 1px solid var(--border-light);
+    transition: background 0.15s;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+  }
+  .journal-entry:last-child { border-bottom: none; }
+  .journal-entry:hover {
+    background: #f0f4f8;
+    text-decoration: none;
+  }
+
+  .journal-entry-thumb {
+    width: 120px;
+    height: 90px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border: 1px solid var(--border-module);
+    border-radius: 2px;
+    background: #e0e8f0;
+  }
+  .journal-entry-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .journal-entry-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    color: var(--text-light);
+    background: linear-gradient(135deg, #c8d8e4, #8aa0b0);
+    text-align: center;
+    padding: 4px;
+  }
+
+  .journal-entry-copy { flex: 1; min-width: 0; }
+  .journal-entry-title {
+    font-family: 'Trebuchet MS', Trebuchet, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--text-link);
+    margin-bottom: 2px;
+    line-height: 1.3;
+  }
+  .journal-entry:hover .journal-entry-title { text-decoration: underline; }
+  .journal-entry-meta {
+    font-size: 9px;
+    color: var(--text-light);
+    margin-bottom: 4px;
+  }
+  .journal-entry-preview {
+    font-size: 10px;
+    line-height: 1.5;
+    color: var(--text-body);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .journal-count {
+    font-size: 11px;
+    color: var(--text-light);
+    padding: 0 12px 8px;
+  }
+
+  .footer {
+    text-align:center; padding:16px; font-size:9px;
+    color:#777; border-top:1px solid #aab8c8; margin-top:20px;
+  }
+  .footer a { color:#557; }
+
+  /* Sparkle */
+  .sparkle { position:fixed; pointer-events:none; z-index:9999; font-size:12px; animation:sparkle-fade 0.8s ease-out forwards; }
+  @keyframes sparkle-fade { 0%{opacity:1;transform:scale(1)translateY(0)rotate(0deg)} 100%{opacity:0;transform:scale(0.3)translateY(-30px)rotate(180deg)} }
+
+  @media (max-width:768px) {
+    .journal-entry-thumb { width:80px; height:60px; }
+    .top-bar-nav { flex-wrap:wrap; }
+    .top-bar-nav a { padding:3px 6px; font-size:9px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="top-bar-logo"><a href="index.html" style="color:inherit;text-decoration:none;">joe<span>graham</span></a></div>
+    <div class="top-bar-nav">
+      <a href="index.html">Profile</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="journal.html" class="active">Journal</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="module">
+    <div class="module-header">
+      📓 Journal
+    </div>
+    <div class="module-body" style="padding:0;">
+
+      <div class="journal-count" style="padding-top:10px;" id="entryCount"></div>
+
+      <div id="journalList"></div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    &copy; 2026 Joe Graham ·
+    <a href="index.html">Profile</a> · <a href="portfolio.html">Portfolio</a> · <a href="contact.html">Contact</a> · <a href="https://www.instagram.com/josephlgraham/" target="_blank">Instagram</a>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// JOURNAL ENTRIES — newest first
+// Update 'date' to the actual date you took each photo
+// ============================================================
+const entries = [
+  {
+    slug: 'eggshell',
+    title: 'The Avian Gift',
+    image: 'photos/eggshell.png',
+    location: 'Cardiff, Alabama',
+    date: '2026-05-06',
+    preview: 'In the quiet ecosystem of a Central Alabama garden, a fractured, speckled eggshell rests atop fresh mulch — likely carried far from the nest by a nesting robin after a successful hatch.'
+  },
+  {
+    slug: 'cahaba-river',
+    title: 'The Ancient Path',
+    image: 'photos/cahaba_river.png',
+    location: 'Cahaba River NWR, Alabama',
+    date: '2026-04-20',
+    preview: 'The Cahaba River, one of the most biodiverse waterways in North America, carves a serpentine path through the heart of the Wildlife Refuge.'
+  },
+  {
+    slug: 'eclipse-embarcadero',
+    title: 'Geometric Core',
+    image: 'photos/eclipse_embarcadero.png',
+    location: 'San Francisco, California',
+    date: '2025-11-07',
+    preview: 'Inside one of the world\'s largest atriums, the Eclipse sculpture by Charles Perry serves as a massive, spiraling heart of aluminum and steel.'
+  },
+  {
+    slug: 'milkweed',
+    title: 'Lifeline of the Cahaba',
+    image: 'photos/milkweed.png',
+    location: 'Cahaba River NWR, Alabama',
+    date: '2025-05-03',
+    preview: 'Amidst the dense undergrowth of the Cahaba River National Wildlife Refuge, a cluster of White Milkweed stands as a vital outpost for local pollinators.'
+  },
+  {
+    slug: 'blue-heron',
+    title: 'The Silent Watcher',
+    image: 'photos/blue_heron.png',
+    location: 'Lake Purdy, Alabama',
+    date: '2025-04-26',
+    preview: 'Perched upon the skeletal remains of a fallen pine, a Great Blue Heron stands in motionless vigil over the emerald waters of Lake Purdy.'
+  },
+  {
+    slug: 'drink-shot',
+    title: 'The Craft of the Cocktail',
+    image: 'photos/drink_shot.png',
+    location: 'Stage, Georgia',
+    date: '2025-04-25',
+    preview: 'In the dim, sophisticated atmosphere of Stage, the culinary arts extend beyond the plate and into the glass.'
+  },
+  {
+    slug: 'coachella-valley',
+    title: 'Desert Grid',
+    image: 'photos/coachella_valley.png',
+    location: 'Mt. San Jacinto, California',
+    date: '2025-03-22',
+    preview: 'From the sub-alpine heights of Mount San Jacinto, the Coachella Valley appears not as a desert, but as a sprawling circuit board of human ingenuity.'
+  },
+  {
+    slug: 'joshua-tree',
+    title: 'Mojave Anchor',
+    image: 'photos/joshua_tree.png',
+    location: 'Joshua Tree National Park, California',
+    date: '2025-03-21',
+    preview: 'A lone Joshua Tree stands in sharp relief against the Mojave sky, its twisted, bayonet-like leaves silhouetted by the harsh desert sun.'
+  },
+  {
+    slug: 'joshua-tree-rock',
+    title: 'Quartz Monzogranite Monolith',
+    image: 'photos/joshua_tree_rock.png',
+    location: 'Joshua Tree National Park, California',
+    date: '2025-03-21',
+    preview: 'Massive formations of quartz monzogranite dominate the landscape, appearing as though they were stacked by giants.'
+  },
+  {
+    slug: 'p51-mustang',
+    title: 'The Warbird\'s Shadow',
+    image: 'photos/p51_mustang.png',
+    location: 'Palm Springs, California',
+    date: '2025-03-20',
+    preview: 'Under the stark light of the Coachella Valley, the legendary P-51D Mustang "Man O\' War" rests within the open hangar of the Palm Springs Air Museum.'
+  },
+  {
+    slug: 'tunnel-view',
+    title: 'Cathedral of the High Sierra',
+    image: 'photos/tunnel_view.png',
+    location: 'Yosemite National Park, California',
+    date: '2024-11-04',
+    preview: 'Few vistas on Earth command as much reverence as Tunnel View. The glacial valley of Yosemite opens up in a staggering display of geological power.'
+  },
+  {
+    slug: 'yosemite',
+    title: 'Mirror of the Merced',
+    image: 'photos/yosemite.png',
+    location: 'Yosemite National Park, California',
+    date: '2024-11-04',
+    preview: 'Down on the valley floor, the Merced River slows to a crawl, creating a perfect liquid mirror for the surrounding peaks.'
+  },
+  {
+    slug: 'little-bambino',
+    title: 'Little Bambino',
+    image: 'photos/little_bambino.png',
+    location: 'Cardiff, Alabama',
+    date: '2024-08-21',
+    preview: 'Hidden within a tangled canopy of serrated leaves and sprawling vines, a Little Bambino watermelon nears its peak ripeness.'
+  },
+  {
+    slug: 'pole-beans',
+    title: 'The Heirloom Vine',
+    image: 'photos/pole_beans.png',
+    location: 'Cardiff, Alabama',
+    date: '2024-06-20',
+    preview: 'The Rattlesnake pole bean is a testament to the enduring legacy of heirloom agriculture, its young pods exhibiting characteristic purple streaking.'
+  },
+  {
+    slug: 'petrified-forest',
+    title: 'The Queen',
+    image: 'photos/petrified_forest.png',
+    location: 'Calistoga, California',
+    date: '2024-04-11',
+    preview: '"The Queen" is a silent witness to a cataclysm that occurred 3.4 million years ago — once a soaring Coastal Redwood, now turned to stone.'
+  },
+  {
+    slug: 'duncans-landing',
+    title: 'Edge of the Sonoma Coast',
+    image: 'photos/duncans_landing.png',
+    location: 'Sonoma Coast, California',
+    date: '2024-04-08',
+    preview: 'Along the treacherous reaches of the Sonoma Coast, Duncan\'s Landing stands as a rugged testament to the relentless power of the Pacific.'
+  },
+  {
+    slug: 'goat-rock-beach',
+    title: 'The Maw of the Pacific',
+    image: 'photos/goat_rock_beach.png',
+    location: 'Sonoma Coast, California',
+    date: '2024-04-07',
+    preview: 'Where the Russian River meets the sea, Goat Rock Beach offers a dramatic display of coastal erosion and tectonic history.'
+  },
+  {
+    slug: 'hilo-farmers-market',
+    title: 'The Bounty of Hilo',
+    image: 'photos/hilo_farmers_market.png',
+    location: 'Hilo, Hawaii',
+    date: '2024-02-09',
+    preview: 'The Hilo Farmers Market serves as the sensory heart of the Big Island, where volcanic soil and tropical rains produce an unrivaled agricultural abundance.'
+  },
+  {
+    slug: 'hawaii-resort',
+    title: 'Twilight on the Kohala Coast',
+    image: 'photos/hawaii_resort.png',
+    location: 'Kohala Coast, Hawaii',
+    date: '2024-02-08',
+    preview: 'As the sun dips below the horizon of the Big Island, the Fairmont Orchid transitions into a sanctuary of shadow and gold.'
+  },
+  {
+    slug: 'tracks-sunset',
+    title: 'The Iron Vein',
+    image: 'photos/tracks_sunset.png',
+    location: 'Cardiff, Alabama',
+    date: '2023-08-07',
+    preview: 'As the sun sets over the dense forests of Central Alabama, the steel ribbons of the railroad catch the last of the golden light.'
+  },
+  {
+    slug: 'droplets',
+    title: 'Surface Tension',
+    image: 'photos/droplets.png',
+    location: 'Cardiff, Alabama',
+    date: '2023-05-20',
+    preview: 'Following a morning shower, the aggressive spines of a common thistle become a host for temporary jewels of rainwater.'
+  },
+  {
+    slug: 'junkyard',
+    title: 'The Mosaic of Reclamation',
+    image: 'photos/junkyard.png',
+    location: 'Birmingham, Alabama',
+    date: '2023-04-30',
+    preview: 'In a sprawling heap of industrial and domestic scrap, the discarded metal of the modern world waits for a second life.'
+  },
+  {
+    slug: 'plumeria',
+    title: 'Rain-Kissed Plumeria',
+    image: 'photos/plumeria.png',
+    location: 'Kauai, Hawaii',
+    date: '2022-10-26',
+    preview: 'On the Garden Isle of Kauai, a sudden tropical downpour leaves behind a delicate crystalline residue on vibrant Plumeria blossoms.'
+  },
+  {
+    slug: 'santa-monica-pier',
+    title: 'Americana at the Edge',
+    image: 'photos/santa_monica_pier.png',
+    location: 'Santa Monica, California',
+    date: '2017-01-28',
+    preview: 'The Santa Monica Pier archway stands as a permanent gateway to the Pacific, marking the spiritual and literal end of Route 66.'
+  },
+];
+
+// ============================================================
+// RENDER
+// ============================================================
+function formatDate(dateStr) {
+  const d = new Date(dateStr + 'T12:00:00');
+  const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  return months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
+}
+
+function renderJournal() {
+  const list = document.getElementById('journalList');
+  list.innerHTML = '';
+
+  entries.forEach(entry => {
+    const a = document.createElement('a');
+    a.className = 'journal-entry';
+    a.href = 'photos/' + entry.slug + '.html';
+
+    a.innerHTML = `
+      <div class="journal-entry-thumb">
+        ${entry.image
+          ? `<img src="${entry.image}" alt="${entry.title}" loading="lazy">`
+          : `<div class="journal-entry-placeholder">📷</div>`
+        }
+      </div>
+      <div class="journal-entry-copy">
+        <div class="journal-entry-title">${entry.title}</div>
+        <div class="journal-entry-meta">📍 ${entry.location} · ${formatDate(entry.date)}</div>
+        <div class="journal-entry-preview">${entry.preview}</div>
+      </div>
+    `;
+
+    list.appendChild(a);
+  });
+
+  document.getElementById('entryCount').textContent = entries.length + ' entries';
+}
+
+renderJournal();
+
+// Sparkle trail
+const sparkleChars = ['✨','⭐','💫','✦','✧','⋆'];
+let sparkleThrottle = 0;
+document.addEventListener('mousemove', function(e) {
+  const now = Date.now();
+  if (now - sparkleThrottle < 80) return;
+  sparkleThrottle = now;
+  const s = document.createElement('div');
+  s.className = 'sparkle';
+  s.textContent = sparkleChars[Math.floor(Math.random()*sparkleChars.length)];
+  s.style.left = (e.clientX+(Math.random()-0.5)*16)+'px';
+  s.style.top = (e.clientY+(Math.random()-0.5)*16)+'px';
+  s.style.fontSize = (8+Math.random()*10)+'px';
+  document.body.appendChild(s);
+  setTimeout(() => s.remove(), 800);
+});
+</script>
+
+</body>
+</html>

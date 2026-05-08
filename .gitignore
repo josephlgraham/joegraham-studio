@@ -1,0 +1,10 @@
+# Claude Code local settings
+.claude/
+
+# Planning documents
+photos/photo_descriptions.docx
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
