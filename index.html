@@ -119,7 +119,7 @@
   }
   .top-bar-logo {
     font-family: 'Trebuchet MS', Trebuchet, sans-serif;
-    font-size: 18px;
+    font-size: 36px;
     font-weight: bold;
     color: #ffffff;
     letter-spacing: -0.5px;
@@ -804,7 +804,8 @@ function renderTop8() {
     item.className = 'top8-item';
     item.onclick = () => openLightboxAt(i);
     if (photo.src) {
-      item.innerHTML = `<div class="top8-img-wrap"><img class="top8-thumb" src="${photo.src}" alt="${photo.title}"></div><div class="top8-label">${photo.title}</div>`;
+      const thumbSrc = photo.src.replace('photos/', 'photos/thumbs/').replace('.png', '.jpg');
+      item.innerHTML = `<div class="top8-img-wrap"><img class="top8-thumb" src="${thumbSrc}" alt="${photo.title}"></div><div class="top8-label">${photo.title}</div>`;
     } else {
       item.innerHTML = `<div class="top8-img-wrap"><div class="top8-placeholder">${photo.title}<br><span style="font-size:8px;">your image here</span></div></div><div class="top8-label">${photo.title}</div>`;
     }

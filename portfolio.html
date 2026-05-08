@@ -59,7 +59,7 @@
   /* Nav */
   .top-bar { background:var(--bg-nav); padding:4px 0; border-bottom:1px solid #001a33; position:sticky; top:0; z-index:100; }
   .top-bar-inner { max-width:960px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:0 8px; }
-  .top-bar-logo { font-family:'Trebuchet MS',Trebuchet,sans-serif; font-size:18px; font-weight:bold; color:#fff; letter-spacing:-0.5px; }
+  .top-bar-logo { font-family:'Trebuchet MS',Trebuchet,sans-serif; font-size:36px; font-weight:bold; color:#fff; letter-spacing:-0.5px; }
   .top-bar-logo span { color:var(--accent-orange); }
   .top-bar-nav { display:flex; gap:2px; }
   .top-bar-nav a { color:var(--text-nav); font-size:10px; padding:4px 10px; border-radius:2px; transition:background 0.15s; }
@@ -239,24 +239,16 @@
         <div class="portfolio-count" id="photoCount"></div>
         <div class="toolbar-btns">
           <button class="toolbar-btn" onclick="shufflePortfolio()">🔀 Shuffle</button>
-          <button class="toolbar-btn" id="sortBtn" onclick="toggleSort()">A→Z</button>
+          <button class="toolbar-btn" id="sortBtn" onclick="toggleChronSort()">🕐</button>
         </div>
       </div>
       <div class="masonry" id="masonryGrid"></div>
     </div>
   </div>
 
-  <div class="module">
-    <div class="module-body" style="font-size:10px; line-height:1.6; text-align:center; color:var(--text-light);">
-      All images &copy; Joe Graham. Available as prints — <a href="contact.html">get in touch</a>.<br>
-      Shot on <a href="https://fujifilm-x.com" target="_blank">Fujifilm</a>. Based in <a href="https://en.wikipedia.org/wiki/Birmingham,_Alabama" target="_blank">Birmingham, Alabama</a>.
-      Available for work throughout central Alabama and beyond.
-    </div>
-  </div>
-
   <div class="footer">
-    &copy; 2026 Joe Graham · <a href="index.html">Profile</a> · <a href="contact.html">Contact</a> · <a href="https://www.instagram.com/josephlgraham" target="_blank">Instagram</a>
-    <br>Not actually affiliated with MySpace. Tom knows.
+    &copy; 2026 Joe Graham ·
+    <a href="#">Privacy</a> · <a href="#">Terms</a>
   </div>
 </div>
 
@@ -480,7 +472,7 @@ const portfolio = [
 // STATE
 // ============================================================
 let displayOrder = [];
-let sorted = false;
+let sortDir = null; // null = shuffled, 'asc' = oldest first, 'desc' = newest first
 
 // ============================================================
 // SHUFFLE / SORT
@@ -495,26 +487,24 @@ function shuffleArray(arr) {
 }
 
 function shufflePortfolio() {
-  sorted = false;
-  document.getElementById('sortBtn').classList.remove('active');
-  document.getElementById('sortBtn').textContent = 'A→Z';
+  sortDir = null;
+  const btn = document.getElementById('sortBtn');
+  btn.classList.remove('active');
+  btn.textContent = '🕐';
   displayOrder = shuffleArray([...Array(portfolio.length).keys()]);
   renderGrid();
 }
 
-function toggleSort() {
-  sorted = !sorted;
+function toggleChronSort() {
+  sortDir = (sortDir === 'asc') ? 'desc' : 'asc';
   const btn = document.getElementById('sortBtn');
-  if (sorted) {
-    btn.classList.add('active');
-    btn.textContent = 'A→Z ✓';
-    displayOrder = [...Array(portfolio.length).keys()].sort((a, b) =>
-      portfolio[a].title.localeCompare(portfolio[b].title)
-    );
+  btn.classList.add('active');
+  if (sortDir === 'asc') {
+    btn.textContent = '🕐 ↑';
+    displayOrder = [...Array(portfolio.length).keys()];
   } else {
-    btn.classList.remove('active');
-    btn.textContent = 'A→Z';
-    displayOrder = shuffleArray([...Array(portfolio.length).keys()]);
+    btn.textContent = '🕐 ↓';
+    displayOrder = [...Array(portfolio.length).keys()].reverse();
   }
   renderGrid();
 }
@@ -533,8 +523,9 @@ function renderGrid() {
     item.onclick = () => openLightbox(displayIdx);
 
     if (photo.src) {
+      const thumbSrc = photo.src.replace('photos/', 'photos/thumbs/').replace('.png', '.jpg');
       const img = document.createElement('img');
-      img.src = photo.src;
+      img.src = thumbSrc;
       img.alt = photo.alt;
       img.className = 'loading';
       img.onload = () => img.classList.replace('loading', 'loaded');
@@ -560,7 +551,8 @@ function renderGrid() {
     grid.appendChild(item);
   });
 
-  document.getElementById('photoCount').textContent = portfolio.length + ' photographs · shuffled fresh each visit';
+  const countLabel = sortDir === 'asc' ? 'oldest first' : sortDir === 'desc' ? 'newest first' : 'shuffled fresh each visit';
+  document.getElementById('photoCount').textContent = portfolio.length + ' photographs · ' + countLabel;
 }
 
 // ============================================================
