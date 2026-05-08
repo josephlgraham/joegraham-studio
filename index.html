@@ -299,25 +299,32 @@
   .top8-header-text { font-size: 11px; color: var(--text-body); margin-bottom: 8px; }
   .top8-grid {
     display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
+    align-items: start;
   }
   .top8-item {
     text-align: center; cursor: pointer; transition: transform 0.15s;
   }
   .top8-item:hover { transform: scale(1.03); }
+  .top8-img-wrap {
+    position: relative; overflow: hidden; padding-top: 100%;
+    border: 2px solid var(--border-module); background: #111;
+  }
   .top8-thumb {
-    width: 100%; aspect-ratio: 1; object-fit: cover;
-    border: 2px solid var(--border-module); display: block;
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%; object-fit: cover; display: block;
   }
   .top8-placeholder {
-    width: 100%; aspect-ratio: 1; border: 2px solid var(--border-module);
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
     display: flex; align-items: center; justify-content: center;
     font-size: 9px; color: var(--text-light);
     background: linear-gradient(135deg, #c8d8e4 0%, #a0b8c8 50%, #8aa0b0 100%);
     text-align: center; padding: 4px; line-height: 1.3;
   }
   .top8-label {
-    font-size: 9px; margin-top: 3px; color: var(--text-link);
+    font-size: 9px; margin-top: 4px; color: var(--text-link);
     font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    display: block;
   }
 
   /* ============ INTERESTS ============ */
@@ -718,7 +725,7 @@ const portfolio = [
   { src: 'photos/droplets.png', title: 'Surface Tension' },
   { src: 'photos/duncans_landing.png', title: "Edge of the Sonoma Coast" },
   { src: 'photos/eclipse_embarcadero.png', title: 'Geometric Core' },
-  { src: 'photos/eggshell.png', title: "The Gardener's Contribution" },
+  { src: 'photos/eggshell.png', title: "The Avian Gift" },
   { src: 'photos/goat_rock_beach.png', title: 'The Maw of the Pacific' },
   { src: 'photos/hawaii_resort.png', title: 'Twilight on the Kohala Coast' },
   { src: 'photos/hilo_farmers_market.png', title: 'The Bounty of Hilo' },
@@ -797,9 +804,9 @@ function renderTop8() {
     item.className = 'top8-item';
     item.onclick = () => openLightboxAt(i);
     if (photo.src) {
-      item.innerHTML = `<img class="top8-thumb" src="${photo.src}" alt="${photo.title}"><div class="top8-label">${photo.title}</div>`;
+      item.innerHTML = `<div class="top8-img-wrap"><img class="top8-thumb" src="${photo.src}" alt="${photo.title}"></div><div class="top8-label">${photo.title}</div>`;
     } else {
-      item.innerHTML = `<div class="top8-placeholder">${photo.title}<br><span style="font-size:8px;">your image here</span></div><div class="top8-label">${photo.title}</div>`;
+      item.innerHTML = `<div class="top8-img-wrap"><div class="top8-placeholder">${photo.title}<br><span style="font-size:8px;">your image here</span></div></div><div class="top8-label">${photo.title}</div>`;
     }
     grid.appendChild(item);
   });
