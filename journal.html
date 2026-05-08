@@ -345,20 +345,20 @@ const entries = [
     preview: 'Where the Russian River meets the sea, Goat Rock Beach offers a dramatic display of coastal erosion and tectonic history.'
   },
   {
-    slug: 'hilo-farmers-market',
-    title: 'The Bounty of Hilo',
-    image: 'photos/hilo_farmers_market.png',
-    location: 'Hilo, Hawaii',
-    date: '2024-02-09',
-    preview: 'The Hilo Farmers Market serves as the sensory heart of the Big Island, where volcanic soil and tropical rains produce an unrivaled agricultural abundance.'
-  },
-  {
     slug: 'hawaii-resort',
     title: 'Twilight on the Kohala Coast',
     image: 'photos/hawaii_resort.png',
     location: 'Kohala Coast, Hawaii',
     date: '2024-02-08',
     preview: 'As the sun dips below the horizon of the Big Island, the Fairmont Orchid transitions into a sanctuary of shadow and gold.'
+  },
+  {
+    slug: 'hilo-farmers-market',
+    title: 'The Bounty of Hilo',
+    image: 'photos/hilo_farmers_market.png',
+    location: 'Hilo, Hawaii',
+    date: '2024-02-07',
+    preview: 'The Hilo Farmers Market serves as the sensory heart of the Big Island, where volcanic soil and tropical rains produce an unrivaled agricultural abundance.'
   },
   {
     slug: 'tracks-sunset',
@@ -415,7 +415,9 @@ function renderJournal() {
   const list = document.getElementById('journalList');
   list.innerHTML = '';
 
-  entries.forEach(entry => {
+  const sorted = [...entries].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  sorted.forEach(entry => {
     const a = document.createElement('a');
     a.className = 'journal-entry';
     a.href = 'photos/' + entry.slug + '.html';
