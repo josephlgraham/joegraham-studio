@@ -278,15 +278,15 @@
         <div class="module-body">
           <div class="form-row">
             <label class="form-label">Your Name</label>
-            <input type="text" class="form-input" placeholder="What should I call you?">
+            <input type="text" id="contactName" class="form-input" placeholder="What should I call you?">
           </div>
           <div class="form-row">
             <label class="form-label">Email</label>
-            <input type="email" class="form-input" placeholder="Where can I reach you?">
+            <input type="email" id="contactEmail" class="form-input" placeholder="Where can I reach you?">
           </div>
           <div class="form-row">
             <label class="form-label">What's This About?</label>
-            <select class="form-select">
+            <select id="contactSubject" class="form-select">
               <option value="">Pick one...</option>
               <option value="commercial">Commercial / Brand Work</option>
               <option value="portrait">Portraits</option>
@@ -299,11 +299,11 @@
           </div>
           <div class="form-row">
             <label class="form-label">Tell Me More</label>
-            <textarea class="form-textarea" placeholder="What are you working on? What's the timeline? What's the vibe?"></textarea>
+            <textarea id="contactMessage" class="form-textarea" placeholder="What are you working on? What's the timeline? What's the vibe?"></textarea>
           </div>
           <div class="form-row">
             <label class="form-label">Budget Range (optional — but helpful)</label>
-            <select class="form-select">
+            <select id="contactBudget" class="form-select">
               <option value="">Prefer not to say</option>
               <option value="under1k">Under $1,000</option>
               <option value="1k-3k">$1,000 – $3,000</option>
@@ -664,12 +664,43 @@ function showCompat(signName, btn) {
 // FORM
 // ============================================================
 function submitForm(btn) {
+  const name = document.getElementById('contactName').value.trim();
+  const email = document.getElementById('contactEmail').value.trim();
+  const subjectEl = document.getElementById('contactSubject');
+  const subjectText = subjectEl.value ? subjectEl.options[subjectEl.selectedIndex].text : '';
+  const message = document.getElementById('contactMessage').value.trim();
+  const budgetEl = document.getElementById('contactBudget');
+  const budgetText = budgetEl.options[budgetEl.selectedIndex].text;
+
+  if (!name || !email) {
+    const orig = btn.textContent;
+    btn.textContent = 'Please fill in your name and email!';
+    btn.style.background = '#8b3a3a';
+    setTimeout(() => { btn.textContent = orig; btn.style.background = ''; }, 3000);
+    return;
+  }
+
+  const emailSubject = `Contact Form${subjectText ? ': ' + subjectText : ''} — ${name}`;
+  const emailBody = [
+    `Name: ${name}`,
+    `Email: ${email}`,
+    `Subject: ${subjectText || 'Not specified'}`,
+    `Budget: ${budgetText}`,
+    ``,
+    `Message:`,
+    message || '(no message provided)',
+  ].join('\n');
+
+  window.location.href = `mailto:josephlgraham@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+
   const orig = btn.textContent;
-  btn.textContent = '✓ Sent! (form backend coming soon)';
+  btn.textContent = '✓ Opening your email app...';
   btn.style.background = '#2d6a4f';
-  setTimeout(()=>{btn.textContent=orig;btn.style.background='';},3000);
+  setTimeout(() => { btn.textContent = orig; btn.style.background = ''; }, 3000);
   const rect = btn.getBoundingClientRect();
-  for(let i=0;i<15;i++){setTimeout(()=>{sparkleAt({clientX:rect.left+Math.random()*rect.width,clientY:rect.top+Math.random()*rect.height});},i*30);}
+  for (let i = 0; i < 15; i++) {
+    setTimeout(() => { sparkleAt({ clientX: rect.left + Math.random() * rect.width, clientY: rect.top + Math.random() * rect.height }); }, i * 30);
+  }
 }
 
 // ============================================================
