@@ -236,10 +236,8 @@
     </div>
     <div class="module-body">
       <div class="portfolio-toolbar">
-        <div class="portfolio-count" id="photoCount"></div>
         <div class="toolbar-btns">
           <button class="toolbar-btn" onclick="shufflePortfolio()">🔀 Shuffle</button>
-          <button class="toolbar-btn" id="sortBtn" onclick="toggleChronSort()">🕐</button>
         </div>
       </div>
       <div class="masonry" id="masonryGrid"></div>
@@ -496,10 +494,9 @@ const portfolio = [
 // STATE
 // ============================================================
 let displayOrder = [];
-let sortDir = null; // null = shuffled, 'asc' = oldest first, 'desc' = newest first
 
 // ============================================================
-// SHUFFLE / SORT
+// SHUFFLE
 // ============================================================
 function shuffleArray(arr) {
   const a = [...arr];
@@ -511,26 +508,7 @@ function shuffleArray(arr) {
 }
 
 function shufflePortfolio() {
-  sortDir = null;
-  const btn = document.getElementById('sortBtn');
-  btn.classList.remove('active');
-  btn.textContent = '🕐';
   displayOrder = shuffleArray([...Array(portfolio.length).keys()]);
-  renderGrid();
-}
-
-function toggleChronSort() {
-  sortDir = (sortDir === 'asc') ? 'desc' : 'asc';
-  const btn = document.getElementById('sortBtn');
-  btn.classList.add('active');
-  const indices = [...Array(portfolio.length).keys()];
-  if (sortDir === 'asc') {
-    btn.textContent = '🕐 ↑';
-    displayOrder = indices.sort((a, b) => new Date(portfolio[a].date) - new Date(portfolio[b].date));
-  } else {
-    btn.textContent = '🕐 ↓';
-    displayOrder = indices.sort((a, b) => new Date(portfolio[b].date) - new Date(portfolio[a].date));
-  }
   renderGrid();
 }
 
@@ -576,8 +554,6 @@ function renderGrid() {
     grid.appendChild(item);
   });
 
-  const countLabel = sortDir === 'asc' ? 'oldest first' : sortDir === 'desc' ? 'newest first' : 'shuffled fresh each visit';
-  document.getElementById('photoCount').textContent = portfolio.length + ' photographs · ' + countLabel;
 }
 
 // ============================================================
