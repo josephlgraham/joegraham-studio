@@ -275,6 +275,7 @@
   .social-links {
     display: flex; gap: 6px; padding: 6px 8px;
     background: #f0f4f8; border-top: 1px solid var(--border-light); flex-wrap: wrap;
+    justify-content: center;
   }
   .social-link {
     display: inline-flex; align-items: center; gap: 3px;
@@ -500,6 +501,33 @@
   @keyframes block-pulse { 0%{transform:scale(1)rotate(-2deg)} 100%{transform:scale(1.1)rotate(2deg)} }
   .block-subtext { font-family: 'Comic Sans MS', cursive; font-size: 14px; color: #aaa; margin-top: 16px; }
 
+  .word-sparkle {
+    animation: blessed-glow 2.5s ease-in-out infinite;
+    font-style: italic;
+  }
+  @keyframes blessed-glow {
+    0%, 100% { text-shadow: 0 0 4px #ffcc00, 0 0 8px #ff9900; color: #b8780a; }
+    50% { text-shadow: 0 0 8px #ffcc00, 0 0 16px #ff9900, 0 0 24px #ffaa00; color: #e09820; }
+  }
+  .clap-link {
+    font-weight: bold; color: var(--accent-orange);
+    display: inline-block;
+    animation: clap-bounce 1s ease-in-out infinite;
+  }
+  .clap-link:hover { text-decoration: none; }
+  @keyframes clap-bounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.06); }
+  }
+  .confetti-piece {
+    position: fixed; pointer-events: none; z-index: 9999;
+    animation: confetti-fall linear forwards;
+  }
+  @keyframes confetti-fall {
+    0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(720deg); opacity: 0.3; }
+  }
+
   /* ============ RESPONSIVE ============ */
   @media (max-width: 768px) {
     .profile-layout { flex-direction: column; }
@@ -635,10 +663,10 @@
             <div class="section-label">Who Am I?</div>
           <div class="about-text">
             <p>I grew up exploring the woods of Alabama. I learned to shoot before I could drive a truck. My wanderlust started at a young age when I was introduced to the big world we live in through my grandfather's National Geographic magazines.</p>
-            <p>I have been blessed to have a career that gets me around to interesting places.</p>
+            <p>I have been <span class="word-sparkle">blessed</span> to have a career that gets me around to interesting places.</p>
             <p>I'm a sucker for a national park.</p>
             <p>Solar punk enthusiast. Occasional woodworker. Full-time noticer of things.</p>
-            <p><walter_mitty.gif></p>
+            <img src="assets/walter_mitty.gif" alt="The Secret Life of Walter Mitty" style="max-width:100%;display:block;margin:8px 0;border:2px solid var(--border-module);">
           </div>
           <div style="margin-top:10px;">
             <div class="section-label">Who I'd Like to Work With</div>
@@ -653,6 +681,7 @@
             </div>
           </div>
         </div>
+      </div>
       </div>
 
       <!-- ============ TOP 8 ============ -->
@@ -680,7 +709,7 @@
           <div style="font-size:9px; color:var(--text-light); margin-bottom:6px;">Posted: May 6, 2026 · 69 Comments</div>
           <div class="about-text">
             <p>The internet used to be a lot more personal and a lot less polished. Messy pages and terrible backgrounds told you a lot more about someone than their perfectly curated Instagram account does now. That's what want my space (heh) to feel like. </p>
-            <p>PLEASE CLAP!!</p>
+            <p><a href="#" onclick="clapConfetti(); return false;" class="clap-link">PLEASE CLAP!!</a></p>
           </div>
           <a href="journal.html" style="font-size:10px;">[Read More]</a>
         </div>
@@ -840,13 +869,74 @@ const songBank = [
   { artist: 'David Bowie', track: 'Changes' },
   { artist: 'David Bowie', track: 'Lazarus' },
   { artist: 'David Bowie', track: 'Ashes to Ashes' },
-  { artist: 'David Bowie', track: 'Let\'s Dance' },
+  { artist: 'David Bowie', track: "Let's Dance" },
+  { artist: 'David Bowie', track: 'Helden' },
+  { artist: 'David Bowie', track: 'Suffragette City' },
+  { artist: 'David Bowie', track: 'TVC15' },
+  { artist: 'David Bowie', track: "Rock 'n' Roll Suicide" },
+  { artist: 'David Bowie', track: 'Loving The Alien' },
   { artist: 'Kesha', track: 'TiK ToK' },
   { artist: 'Kesha', track: 'Praying' },
   { artist: 'Kesha', track: 'Blow' },
   { artist: 'Kesha', track: 'Die Young' },
   { artist: 'Kesha', track: 'Woman' },
   { artist: 'Kesha', track: 'Raising Hell' },
+  { artist: 'Kesha', track: 'YIPPEE-KI-YAY.' },
+  { artist: 'Kesha', track: 'We R Who We R' },
+  { artist: 'Kesha, Slayyyter & Rose Gray', track: 'ATTENTION!' },
+  { artist: 'Madison Beer', track: 'yes baby' },
+  { artist: 'Madison Beer', track: 'make you mine' },
+  { artist: 'Kylie Minogue', track: 'Lights Camera Action' },
+  { artist: 'Kylie Minogue', track: 'Magic' },
+  { artist: 'Rebecca Black', track: 'Sugar Water Cyanide' },
+  { artist: 'Chase Icon', track: 'Like Me' },
+  { artist: 'The Blessed Madonna & Kylie Minogue', track: 'Edge of Saturday Night' },
+  { artist: 'Cobrah', track: 'Record Deal' },
+  { artist: 'KATO & Jon', track: 'Turn The Lights Off' },
+  { artist: 'Majestic & Boney M.', track: 'Rasputin' },
+  { artist: 'Scissor Sisters', track: "I Don't Feel Like Dancin'" },
+  { artist: 'Slayyyter', track: 'Purrr' },
+  { artist: 'Elton John', track: "Saturday Night's Alright (For Fighting)" },
+  { artist: 'Sabrina Carpenter', track: "Nobody's Son" },
+  { artist: 'The Clash', track: 'Lost in the Supermarket' },
+  { artist: 'Enur', track: 'Calabria 2008 (feat. Natasja)' },
+  { artist: 'Freemasons & Sophie Ellis-Bextor', track: 'Heartbreak (Make Me A Dancer)' },
+  { artist: 'Chappell Roan', track: 'The Giver' },
+  { artist: 'K.Flay', track: 'Blood In The Cut' },
+  { artist: 'Buffalo Wabs and the Price Hill Hustle', track: "Vagabond's Lament" },
+  { artist: 'Le Tigre', track: 'Deceptacon' },
+  { artist: 'Yeah Yeah Yeahs', track: 'Heads Will Roll (A-Trak Remix)' },
+  { artist: 'Dua Lipa', track: 'Training Season' },
+  { artist: 'Dua Lipa', track: 'Blow Your Mind (Mwah)' },
+  { artist: 'Pixies', track: 'Where Is My Mind?' },
+  { artist: 'Courtney Barnett', track: "Nobody Really Cares If You Don't Go to the Party" },
+  { artist: 'Courtney Barnett', track: 'Avant Gardener' },
+  { artist: 'Vampire Weekend', track: 'Unbelievers' },
+  { artist: '4 Non Blondes', track: "What's Up?" },
+  { artist: 'Sammy Kershaw', track: 'Queen Of My Double Wide Trailer' },
+  { artist: 'Roxy Music', track: 'Virginia Plain' },
+  { artist: 'Roxy Music', track: 'Mother Of Pearl' },
+  { artist: 'Roxy Music', track: 'More Than This' },
+  { artist: 'Roxy Music', track: 'Love Is The Drug' },
+  { artist: 'Talking Heads', track: 'The Good Thing' },
+  { artist: 'Talking Heads', track: 'Stay up Late' },
+  { artist: 'Passion Pit', track: 'Sleepyhead' },
+  { artist: 'ILoveJtest', track: "Yazoo - Don't Go" },
+  { artist: 'Spacehog', track: 'In the Meantime' },
+  { artist: 'Modest Mouse', track: 'Float On' },
+  { artist: 'Sugar Ray', track: "When It's Over" },
+  { artist: 'Two Door Cinema Club', track: 'What You Know' },
+  { artist: 'Daya', track: 'Sit Still, Look Pretty' },
+  { artist: 'WILLOW', track: 'Wait a Minute!' },
+  { artist: 'Echosmith', track: 'Bright' },
+  { artist: 'INXS', track: 'Devil Inside' },
+  { artist: 'Devo', track: "(I Can't Get No) Satisfaction" },
+  { artist: 'Paul Simon', track: 'You Can Call Me Al' },
+  { artist: 'The Vapors', track: 'Turning Japanese' },
+  { artist: 'The Escape Club', track: 'Wild, Wild West' },
+  { artist: 'The Traveling Wilburys', track: 'End Of The Line' },
+  { artist: 'Elvis Costello & The Attractions', track: 'Pump It Up' },
+  { artist: 'Phoenix', track: 'Fences' },
 ];
 
 (function() {
@@ -1044,6 +1134,30 @@ function glitterBurst(e) {
   const link = e.target; const orig = link.textContent;
   link.textContent = '⭐ Favorited! ⭐'; link.style.color = '#ffaa00';
   setTimeout(() => { link.textContent = orig; link.style.color = ''; }, 1500);
+}
+
+function clapConfetti() {
+  const audio = new Audio('assets/claps-with-cheers-audience.mp3');
+  audio.play().catch(() => {});
+
+  const colors = ['#ff3366','#ff6600','#ffcc00','#33cc33','#3399ff','#cc33ff','#ff69b4','#ffffff','#00cccc','#ffaa00','#ff0000','#0066ff'];
+  const wrap = document.createElement('div');
+  wrap.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:9999;overflow:hidden;';
+  document.body.appendChild(wrap);
+
+  for (let i = 0; i < 150; i++) {
+    const p = document.createElement('div');
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    const size = 6 + Math.random() * 10;
+    const left = Math.random() * 100;
+    const delay = Math.random() * 3;
+    const duration = 2.5 + Math.random() * 2;
+    p.className = 'confetti-piece';
+    p.style.cssText = `width:${size}px;height:${size}px;background:${color};left:${left}%;top:-20px;border-radius:${Math.random() > 0.5 ? '50%' : '2px'};animation-duration:${duration}s;animation-delay:${delay}s;`;
+    wrap.appendChild(p);
+  }
+
+  setTimeout(() => wrap.remove(), 6000);
 }
 
 function sparkleAt(e) {
