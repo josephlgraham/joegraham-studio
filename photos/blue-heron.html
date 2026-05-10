@@ -78,14 +78,16 @@
   .module-body { padding:0; }
 
   .journal-layout { display:flex; align-items:flex-start; }
-  .journal-image { width:50%; flex-shrink:0; background:#333; position:relative; overflow:hidden; }
+  .journal-left { width:50%; flex-shrink:0; display:flex; flex-direction:column; }
+  .journal-image { background:#333; position:relative; overflow:hidden; }
   .journal-image::before { content:''; display:block; padding-top:100%; }
   .journal-image img { position:absolute; top:18px; left:18px; width:calc(100% - 36px); height:calc(100% - 36px); object-fit:contain; display:block; cursor:pointer; transition:transform 0.3s; }
   .journal-image img:hover { transform:scale(1.02); }
+  .journal-caption { padding:14px 18px; background:#fff; border-top:1px solid var(--border-light); }
+  .journal-title { font-family:'Trebuchet MS',Trebuchet,sans-serif; font-size:20px; font-weight:bold; color:var(--text-body); margin-bottom:4px; line-height:1.3; }
+  .journal-subtitle { font-size:10px; color:var(--text-light); }
 
-  .journal-copy { width:50%; padding:20px 24px; overflow-y:auto; max-height:600px; }
-  .journal-title { font-family:'Trebuchet MS',Trebuchet,sans-serif; font-size:20px; font-weight:bold; color:var(--text-body); margin-bottom:2px; line-height:1.3; }
-  .journal-subtitle { font-size:10px; color:var(--text-light); margin-bottom:12px; padding-bottom:8px; border-bottom:1px solid var(--border-light); }
+  .journal-copy { width:50%; padding:20px 24px; overflow-y:auto; max-height:700px; border-left:1px solid var(--border-light); }
   .journal-narrative { font-size:11px; line-height:1.7; color:var(--text-body); margin-bottom:16px; }
   .journal-narrative p { margin-bottom:10px; }
 
@@ -117,8 +119,8 @@
 
   @media (max-width:768px) {
     .journal-layout { flex-direction:column; }
-    .journal-image { width:100%; min-height:250px; }
-    .journal-copy { width:100%; max-height:none; }
+    .journal-left { width:100%; }
+    .journal-copy { width:100%; max-height:none; border-left:none; border-top:1px solid var(--border-light); }
     .top-bar-nav { flex-wrap:wrap; }
     .top-bar-nav a { padding:3px 6px; font-size:9px; }
   }
@@ -153,18 +155,24 @@
 
       <div class="journal-layout">
 
-        <div class="journal-image">
-          <img
-            src="blue_heron.png"
-            alt="Great blue heron perched on fallen pine over emerald waters of Lake Purdy, Central Alabama"
-            onclick="openLightbox()"
-            title="Click to view full size"
-          >
+        <div class="journal-left">
+          <div class="journal-image">
+            <img
+              src="blue_heron.png"
+              alt="Great blue heron perched on fallen pine over emerald waters of Lake Purdy, Central Alabama"
+              onclick="openLightbox()"
+              title="Click to view full size"
+            >
+          </div>
+          <div class="journal-caption">
+            <div class="journal-title">The Silent Watcher</div>
+            <div class="journal-subtitle">📍 Lake Purdy, Alabama &nbsp;·&nbsp; 📷 Fujifilm X-T30 II &nbsp;·&nbsp; April 26, 2025</div>
+          </div>
         </div>
 
         <div class="journal-copy">
-          <div class="journal-title">The Silent Watcher</div>
-          <div class="journal-subtitle">📍 Lake Purdy, Alabama &nbsp;·&nbsp; 📷 Fujifilm X-T30 II &nbsp;·&nbsp; April 26, 2025</div>
+
+          <div class="journal-section-label">Field Notes</div>
 
           <div class="journal-narrative">
             <p>Perched upon the skeletal remains of a fallen pine, a <a href="https://www.allaboutbirds.org/guide/Great_Blue_Heron/" target="_blank">Great Blue Heron</a> stands in motionless vigil over the emerald waters of <a href="https://www.bhamwiki.com/w/Lake_Purdy" target="_blank">Lake Purdy</a>. In this quiet corner of Central Alabama, the bird is a master of patience, waiting for the slight ripple of a bluegill or shad to break the surface.</p>
@@ -196,12 +204,12 @@
             <div class="journal-section-label">Location</div>
             <iframe
               width="300" height="180"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=-86.97,33.58,-86.84,33.70&marker=33.6330,-86.9030"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-86.75,33.40,-86.62,33.48&marker=33.4394,-86.6872"
               class="journal-map-frame"
               loading="lazy"
-              title="Map showing Cardiff, Alabama">
+              title="Map showing Lake Purdy Reservoir, Alabama">
             </iframe>
-            <div class="journal-map-caption">Cardiff, Alabama &nbsp;·&nbsp; <a href="https://www.openstreetmap.org/?mlat=33.6330&mlon=-86.9030#map=12/33.6330/-86.9030" target="_blank">View larger map</a></div>
+            <div class="journal-map-caption">Lake Purdy Reservoir, Alabama &nbsp;·&nbsp; <a href="https://www.openstreetmap.org/?mlat=33.4394&mlon=-86.6872#map=13/33.4394/-86.6872" target="_blank">View larger map</a></div>
           </div>
 
           <div class="journal-learn-more">
