@@ -933,6 +933,19 @@ const songBank = [
 })();
 
 // ============================================================
+// STATUS — Random status from status_update.txt on each page load
+// ============================================================
+fetch('status_update.txt')
+  .then(r => r.text())
+  .then(text => {
+    const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
+    if (lines.length) {
+      document.getElementById('statusText').textContent = lines[Math.floor(Math.random() * lines.length)];
+    }
+  })
+  .catch(() => {}); // keep the hardcoded default on error
+
+// ============================================================
 // LIGHTBOX
 // ============================================================
 let currentGallery = [];
