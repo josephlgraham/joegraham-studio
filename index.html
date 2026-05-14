@@ -9,6 +9,7 @@
 <meta name="geo.region" content="US-AL">
 <meta name="geo.placename" content="Birmingham, Alabama">
 <link rel="canonical" href="https://joegraham.studio/">
+<meta name="robots" content="index,follow,max-image-preview:large">
 
 <!-- OpenGraph -->
 <meta property="og:title" content="Joe Graham | Fine Art & Commercial Photographer">
@@ -30,41 +31,82 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Photographer",
-  "@id": "https://joegraham.studio/#photographer",
-  "name": "Joe Graham",
-  "description": "Fine art and commercial photographer based in the Birmingham, Alabama metropolitan area. Available for portraits, brand work, events, album art, and creative projects throughout central Alabama.",
-  "url": "https://joegraham.studio",
-  "image": "",
-  "telephone": "",
-  "email": "joe@joegraham.studio",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Birmingham",
-    "addressRegion": "AL",
-    "addressCountry": "US"
-  },
-  "areaServed": [
-    { "@type": "City", "name": "Birmingham", "addressRegion": "AL" },
-    { "@type": "City", "name": "Tuscaloosa", "addressRegion": "AL" },
-    { "@type": "City", "name": "Huntsville", "addressRegion": "AL" },
-    { "@type": "City", "name": "Montgomery", "addressRegion": "AL" },
-    { "@type": "City", "name": "Gadsden", "addressRegion": "AL" },
-    { "@type": "City", "name": "Anniston", "addressRegion": "AL" },
-    { "@type": "City", "name": "Decatur", "addressRegion": "AL" },
-    { "@type": "City", "name": "Hoover", "addressRegion": "AL" },
-    { "@type": "City", "name": "Gardendale", "addressRegion": "AL" },
-    { "@type": "AdministrativeArea", "name": "Jefferson County", "addressRegion": "AL" },
-    { "@type": "AdministrativeArea", "name": "Shelby County", "addressRegion": "AL" }
-  ],
-  "priceRange": "$$",
-  "knowsAbout": ["Fine Art Photography", "Commercial Photography", "Portrait Photography", "Landscape Photography", "Nature Photography", "Event Photography", "Brand Photography"],
-  "sameAs": [
-    "https://www.instagram.com/josephlgraham/",
-    "https://www.facebook.com/josephlgraham",
-    "https://www.threads.com/@josephlgraham",
-    "https://www.tiktok.com/@dwerked"
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://joegraham.studio/#website",
+      "url": "https://joegraham.studio/",
+      "name": "Joe Graham Photography",
+      "description": "Fine art and commercial photography by Joe Graham, based in Birmingham, Alabama.",
+      "publisher": { "@id": "https://joegraham.studio/#photographer" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://joegraham.studio/#photographer",
+      "name": "Joe Graham",
+      "url": "https://joegraham.studio/",
+      "jobTitle": "Photographer",
+      "description": "Fine art and commercial photographer based in the Birmingham, Alabama metropolitan area. Available for portraits, brand work, events, album art, and creative projects throughout central Alabama.",
+      "email": "joe@joegraham.studio",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Birmingham",
+        "addressRegion": "AL",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Birmingham", "addressRegion": "AL" },
+        { "@type": "City", "name": "Tuscaloosa", "addressRegion": "AL" },
+        { "@type": "City", "name": "Huntsville", "addressRegion": "AL" },
+        { "@type": "City", "name": "Montgomery", "addressRegion": "AL" },
+        { "@type": "City", "name": "Gadsden", "addressRegion": "AL" },
+        { "@type": "City", "name": "Anniston", "addressRegion": "AL" },
+        { "@type": "City", "name": "Decatur", "addressRegion": "AL" },
+        { "@type": "City", "name": "Hoover", "addressRegion": "AL" },
+        { "@type": "City", "name": "Gardendale", "addressRegion": "AL" },
+        { "@type": "AdministrativeArea", "name": "Jefferson County", "addressRegion": "AL" },
+        { "@type": "AdministrativeArea", "name": "Shelby County", "addressRegion": "AL" }
+      ],
+      "priceRange": "$$",
+      "knowsAbout": ["Fine Art Photography", "Commercial Photography", "Portrait Photography", "Landscape Photography", "Nature Photography", "Event Photography", "Brand Photography"],
+      "sameAs": [
+        "https://www.instagram.com/josephlgraham/",
+        "https://www.facebook.com/josephlgraham",
+        "https://www.threads.com/@josephlgraham",
+        "https://www.tiktok.com/@dwerked"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://joegraham.studio/#webpage",
+      "url": "https://joegraham.studio/",
+      "name": "Joe Graham | Fine Art & Commercial Photographer | Birmingham, Alabama",
+      "description": "Fine art and commercial photographer based in the Birmingham, Alabama metro. Available for portraits, brand work, events, and creative projects throughout central Alabama.",
+      "isPartOf": { "@id": "https://joegraham.studio/#website" },
+      "about": { "@id": "https://joegraham.studio/#photographer" },
+      "breadcrumb": { "@id": "https://joegraham.studio/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://joegraham.studio/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://joegraham.studio/" }
+      ]
+    }
   ]
+}
+</script>
+
+<script type="application/json" id="ai-readable-summary">
+{
+  "preferred_summary": "Joe Graham is a fine art and commercial photographer based in the Birmingham, Alabama metropolitan area, available for portraits, brand work, events, and creative projects throughout central Alabama.",
+  "page_type": "photographer profile",
+  "creator": "Joe Graham",
+  "canonical_url": "https://joegraham.studio/",
+  "location": "Birmingham, Alabama",
+  "services": ["Fine Art Photography", "Commercial Photography", "Portrait Photography", "Landscape Photography", "Nature Photography", "Event Photography", "Brand Photography"],
+  "area_served": "Jefferson County and Shelby County, Alabama; available for travel",
+  "tags": ["Birmingham photographer", "Alabama photography", "fine art photography", "commercial photography", "portrait photography", "nature photography", "landscape photography"]
 }
 </script>
 <style>
@@ -90,11 +132,26 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    background-color: var(--bg-page);
+    background:
+      radial-gradient(circle at 12% 10%, rgba(255,255,255,0.35), transparent 25rem),
+      linear-gradient(180deg, #d4e0eb 0%, var(--bg-page) 42%, #b8c8d9 100%);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 11px;
     color: var(--text-body);
     min-height: 100vh;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.045;
+    background-image:
+      linear-gradient(rgba(0,52,113,0.22) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,52,113,0.22) 1px, transparent 1px);
+    background-size: 32px 32px;
+    z-index: -1;
   }
 
   a { color: var(--text-link); text-decoration: none; }
@@ -125,24 +182,22 @@
     letter-spacing: -0.5px;
   }
   .top-bar-logo span { color: var(--accent-orange); }
-  .top-bar-nav {
-    display: flex;
-    gap: 2px;
-  }
+  .top-bar-nav { display: flex; gap: 4px; flex-wrap: wrap; }
   .top-bar-nav a {
-    color: var(--text-nav);
+    color: #fff;
+    display: inline-block;
+    padding: 6px 9px;
     font-size: 10px;
-    padding: 4px 10px;
-    border-radius: 2px;
-    transition: background 0.15s;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border: 1px solid transparent;
   }
-  .top-bar-nav a:hover {
-    background: var(--bg-nav-hover);
-    text-decoration: none;
-  }
+  .top-bar-nav a:hover,
+  .top-bar-nav a:focus,
   .top-bar-nav a.active {
     background: var(--bg-nav-hover);
-    font-weight: bold;
+    text-decoration: none;
+    border-color: rgba(255,255,255,0.25);
   }
 
   /* ============ MAIN CONTAINER ============ */
@@ -542,17 +597,17 @@
 <body>
 
 <!-- ============ TOP NAV ============ -->
-<div class="top-bar">
+<header class="top-bar" role="banner">
   <div class="top-bar-inner">
     <div class="top-bar-logo">joe<span>graham</span></div>
-    <div class="top-bar-nav">
-      <a href="/" class="active" data-tab="profile">Profile</a>
+    <nav class="top-bar-nav" aria-label="Primary navigation">
+      <a href="/" class="active" aria-current="page" data-tab="profile">Profile</a>
       <a href="portfolio.html" data-tab="portfolio">Portfolio</a>
       <a href="journal.html" data-tab="journal">Journal</a>
       <a href="contact.html" data-tab="contact">Contact</a>
-    </div>
+    </nav>
   </div>
-</div>
+</header>
 
 <!-- ============ MAIN CONTENT ============ -->
 <div class="container">
@@ -592,7 +647,7 @@
 
       <!-- Contact -->
       <div class="module">
-        <div class="module-header">☎️ Get In Touch</div>
+        <div class="module-header">Get In Touch</div>
         <div class="module-body">
           <table class="contact-table">
             <tr><td><span class="contact-icon">✉️</span></td><td><a href="mailto:josephlgraham@gmail.com">Send Message</a></td></tr>
@@ -605,7 +660,7 @@
 
       <!-- Socials -->
       <div class="module">
-        <div class="module-header">🌐 Elsewhere</div>
+        <div class="module-header">Elsewhere</div>
         <div class="module-body" style="padding:0;">
           <div class="social-links">
             <a href="https://www.instagram.com/josephlgraham/" class="social-link" target="_blank">📷 Instagram</a>
@@ -624,10 +679,10 @@
 
       <!-- Interests -->
       <div class="module">
-        <div class="module-header">🪚 Interests</div>
+        <div class="module-header">Interests</div>
         <div class="module-body">
           <table class="interests-table">
-            <tr><td>General</td><td>Photography, Woodworking, Astronomy, <a href="https://cardiffalabama.info" target="_blank">Community Building</a>, Dogs, Cats</td></tr>
+            <tr><td>General</td><td>Photography, Woodworking, Astronomy, Community Building, Dogs, Cats</td></tr>
             <tr><td>Gear</td><td><a href="https://fujifilm-x.com" target="_blank">Fujifilm</a> · Prime lenses · <a href="https://www.lowepro.com" target="_blank">Lowepro</a> · <a href="https://www.kentfaith.com" target="_blank">K&F Concept</a> · <a href="https://en.wikipedia.org/wiki/Catadioptric_system#Catadioptric_telephoto_lenses" target="_blank">Mirror lenses</a> for that donut bokeh</td></tr>
           </table>
         </div>
@@ -635,7 +690,7 @@
 
       <!-- Currently -->
       <div class="module">
-        <div class="module-header">📻 Current Music</div>
+        <div class="module-header">Current Music</div>
         <div class="module-body" style="font-size:10px; line-height:1.8;">
           <strong>Listening to:</strong> <span id="currentTrack"></span>
         </div>
@@ -648,7 +703,7 @@
 
       <!-- About -->
       <div class="module">
-        <div class="module-header">🎙️ A Little Bit More About Me</div>
+        <div class="module-header">About Me</div>
         <div class="module-body">
             <div class="section-label">Who Am I</div>
           <div class="about-text">
@@ -676,7 +731,7 @@
       <!-- ============ TOP 8 ============ -->
       <div class="module">
         <div class="module-header">
-          🏆 Top 8
+          Top 8
           <span style="display:flex; gap:8px; align-items:center;">
             <a href="#" onclick="shuffleTop8(); return false;" title="Shuffle" style="font-size:12px; color:#cde; text-decoration:none;">🔀</a>
             <a href="portfolio.html">View Portfolio &raquo;</a>
@@ -690,7 +745,7 @@
       <!-- Journal -->
       <div class="module">
         <div class="module-header">
-          🗒️ About My Site
+          About My Site
           <a href="journal.html">Jump To Photo Journal &raquo;</a>
         </div>
         <div class="module-body">
