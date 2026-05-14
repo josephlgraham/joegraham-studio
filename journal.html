@@ -1,11 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Journal | Joe Graham | Fine Art & Commercial Photographer | Birmingham, Alabama</title>
+<title>Journal | Joe Graham | Fine Art &amp; Commercial Photographer | Birmingham, Alabama</title>
 <meta name="description" content="Photo journal by Joe Graham — field narratives, natural history, and stories behind the photographs. Nature, landscape, and documentary photography from Alabama, California, Hawaii, and beyond.">
 <meta name="author" content="Joe Graham">
+<meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://joegraham.studio/journal.html">
 
 <meta property="og:title" content="Journal | Joe Graham Photography">
@@ -55,12 +56,12 @@
   .top-bar-inner { max-width:960px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:0 8px; }
   .top-bar-logo { font-family:'Trebuchet MS',Trebuchet,sans-serif; font-size:36px; font-weight:bold; color:#fff; letter-spacing:-0.5px; }
   .top-bar-logo span { color:var(--accent-orange); }
-  .top-bar-logo a { color:inherit; text-decoration:none; }
+  .top-bar-logo a { color:inherit; }
   .top-bar-nav { display:flex; gap:4px; flex-wrap:wrap; }
   .top-bar-nav a { color:#fff; display:inline-block; padding:6px 9px; font-size:10px; text-transform:uppercase; letter-spacing:0.08em; border:1px solid transparent; }
   .top-bar-nav a:hover,
   .top-bar-nav a:focus,
-  .top-bar-nav a.active { background:var(--bg-nav-hover); text-decoration:underline; border-color:rgba(255,255,255,0.25); }
+  .top-bar-nav a.active { background:var(--bg-nav-hover); text-decoration:none; border-color:rgba(255,255,255,0.25); }
 
   .container { max-width:960px; margin:0 auto; padding:12px 8px; }
 
@@ -69,22 +70,17 @@
   .module-header a { color:#cde; font-size:10px; }
   .module-body { padding:12px; }
 
-  /* ============ JOURNAL ENTRY LIST ============ */
   .journal-entry {
     display: flex;
     gap: 12px;
     padding: 12px;
     border-bottom: 1px solid var(--border-light);
     transition: background 0.15s;
-    cursor: pointer;
     text-decoration: none;
     color: inherit;
   }
   .journal-entry:last-child { border-bottom: none; }
-  .journal-entry:hover {
-    background: #f0f4f8;
-    text-decoration: none;
-  }
+  .journal-entry:hover { background: #f0f4f8; text-decoration: none; }
 
   .journal-entry-thumb {
     width: 120px;
@@ -100,18 +96,6 @@
     height: 100%;
     object-fit: cover;
     display: block;
-  }
-  .journal-entry-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 9px;
-    color: var(--text-light);
-    background: linear-gradient(135deg, #c8d8e4, #8aa0b0);
-    text-align: center;
-    padding: 4px;
   }
 
   .journal-entry-copy { flex: 1; min-width: 0; }
@@ -182,267 +166,282 @@
 
 <div class="container">
   <div class="module">
-    <div class="module-header">
-      📓 Journal
-    </div>
+    <div class="module-header">Journal</div>
     <div class="module-body" style="padding:0;">
+      <div class="journal-count" style="padding-top:10px;">24 entries</div>
 
-      <div class="journal-count" style="padding-top:10px;" id="entryCount"></div>
+      <a class="journal-entry" href="photos/eggshell.html">
+        <div class="journal-entry-thumb">
+          <img src="photos/thumbs/eggshell.jpg" alt="Fractured speckled eggshell resting on fresh garden mulch, Central Alabama" loading="lazy">
+        </div>
+        <div class="journal-entry-copy">
+          <div class="journal-entry-title">The Avian Gift</div>
+          <div class="journal-entry-meta">My garden &middot; Alabama &middot; May 6, 2026</div>
+          <div class="journal-entry-preview">In the quiet ecosystem of a Central Alabama garden, a fractured, speckled eggshell rests atop fresh mulch — likely carried far from the nest by a nesting robin after a successful hatch.</div>
+        </div>
+      </a>
 
-      <div id="journalList"></div>
+      <a class="journal-entry" href="photos/cahaba-river.html">
+        <div class="journal-entry-thumb">
+          <img src="photos/thumbs/cahaba_river.jpg" alt="Cahaba River winding through dense forest canopy at Cahaba River National Wildlife Refuge, Alabama" loading="lazy">
+        </div>
+        <div class="journal-entry-copy">
+          <div class="journal-entry-title">The Ancient Path</div>
+          <div class="journal-entry-meta">Cahaba River NWR &middot; Alabama &middot; April 20, 2026</div>
+          <div class="journal-entry-preview">The Cahaba River, one of the most biodiverse waterways in North America, carves a serpentine path through the heart of the Wildlife Refuge.</div>
+        </div>
+      </a>
+
+      <a class="journal-entry" href="photos/eclipse-embarcadero.html">
+        <div class="journal-entry-thumb">
+          <img src="photos/thumbs/eclipse_embarcadero.jpg" alt="Eclipse sculpture by Charles Perry inside the Hyatt Regency Embarcadero atrium, San Francisco, California" loading="lazy">
+        </div>
+        <div class="journal-entry-copy">
+          <div class="journal-entry-title">Geometric Core</div>
+          <div class="journal-entry-meta">San Francisco, California &middot; November 7, 2025</div>
+          <div class="journal-entry-preview">Inside one of the world's largest atriums, the Eclipse sculpture by Charles Perry serves as a massive, spiraling heart of aluminum and steel.</div>
+        </div>
+      </a>
+
+      <a class="journal-entry" href="photos/milkweed.html">
+        <div class="journal-entry-thumb">
+          <img src="photos/thumbs/milkweed.jpg" alt="White milkweed star-shaped florets in bloom at Cahaba River National Wildlife Refuge, Alabama" loading="lazy">
+        </div>
+        <div class="journal-entry-copy">
+          <div class="journal-entry-title">Lifeline of the Cahaba</div>
+          <div class="journal-entry-meta">Cahaba River NWR &middot; Alabama &middot; May 3, 2025</div>
+          <div class="journal-entry-preview">Amidst the dense undergrowth of the Cahaba River National Wildlife Refuge, a cluster of White Milkweed stands as a vital outpost for local pollinators.</div>
+        </div>
+      </a>
+
+      <a class="journal-entry" href="photos/blue-heron.html">
+        <div class="journal-entry-thumb">
+          <img src="photos/thumbs/blue_heron.jpg" alt="Great blue heron perched on fallen pine over emerald waters of Lake Purdy, Central Alabama" loading="lazy">
+        </div>
+        <div class="journal-entry-copy">
+          <div class="journal-entry-title">The Silent Watcher</div>
+          <div class="journal-entry-meta">Lake Purdy &middot; Alabama &middot; April 26, 2025</div>
+          <div class="journal-entry-preview">Perched upon the skeletal remains of a fallen pine, a Great Blue Heron stands in motionless vigil over the emerald waters of Lake Purdy.</div>
+        </div>
+      </a>
+
+      <a class="journal-entry" href="photos/drink-shot.html">
+        <div class="journal-entry-thumb">
+          <img src="photos/thumbs/drink_shot.jpg" alt="Artisanal cocktail in classic coupe glass with hand-carved ice at Stage restaurant, Georgia" loading="lazy">
+        </div>
+        <div class="journal-entry-copy">
+          <div class="journal-entry-title">The Craft of the Cocktail</div>
+          <div class="journal-entry-meta">Stage &middot; Georgia &middot; April 25, 2025</div>
+          <div class="journal-entry-preview">In the dim, sophisticated atmosphere of Stage, the culinary arts extend beyond the plate and into the glass.</div>
+        </div>
+      </a>
+
+      <a class="journal-entry" href="photos/coachella-valley.html">
+        <div class="journal-entry-thumb">
+          <img src="photos/thumbs/coachella_valley.jpg" alt="Coachella Valley city lights at twilight viewed from Mount San Jacinto summit, California" loading="lazy">
+        </div>
+        <div class="journal-entry-copy">
+          <div class="journal-entry-title">Desert Grid</div>
+          <div class="journal-entry-meta">Mt. San Jacinto &middot; California &middot; March 22, 2025</div>
+          <div class="journal-entry-preview">From the sub-alpine heights of Mount San Jacinto, the Coachella Valley appears not as a desert, but as a sprawling circuit board of human ingenuity.</div>
+        </div>
+      </a>
+
+      <a class="journal-entry" href="photos/joshua-tree.html">
+        <div class="journal-entry-thumb">
+          <img src="photos/thumbs/joshua_tree.jpg" alt="Lone Joshua tree silhouetted against Mojave sky with desert raven perched on top, Joshua Tree National Park, California" loading="lazy">
+        </div>
+        <div class="journal-entry-copy">
+          <div class="journal-entry-title">Mojave Anchor</div>
+          <div class="journal-entry-meta">Joshua Tree National Park &middot; California &middot; March 21, 2025</div>
+          <div class="journal-entry-preview">A lone Joshua Tree stands in sharp relief against the Mojave sky, its twisted, bayonet-like leaves silhouetted by the harsh desert sun.</div>
+        </div>
+      </a>
+
+      <a class="journal-entry" href="photos/joshua-tree-rock.html">
+        <div class="journal-entry-thumb">
+          <img src="photos/thumbs/joshua_tree_rock.jpg" alt="Massive quartz monzogranite boulder formation with desert varnish at Joshua Tree National Park, California" loading="lazy">
+        </div>
+        <div class="journal-entry-copy">
+          <div class="journal-entry-title">Quartz Monzogranite Monolith</div>
+          <div class="journal-entry-meta">Joshua Tree National Park &middot; California &middot; March 21, 2025</div>
+          <div class="journal-entry-preview">Massive formations of quartz monzogranite dominate the landscape, appearing as though they were stacked by giants.</div>
+        </div>
+      </a>
+
+      <a class="journal-entry" href="photos/p51-mustang.html">
+        <div class="journal-entry-thumb">
+          <img src="photos/thumbs/p51_mustang.jpg" alt="P-51D Mustang Man O War on display at Palm Springs Air Museum with San Jacinto Mountains in background, California" loading="lazy">
+        </div>
+        <div class="journal-entry-copy">
+          <div class="journal-entry-title">The Warbird's Shadow</div>
+          <div class="journal-entry-meta">Palm Springs &middot; California &middot; March 20, 2025</div>
+          <div class="journal-entry-preview">Under the stark light of the Coachella Valley, the legendary P-51D Mustang "Man O' War" rests within the open hangar of the Palm Springs Air Museum.</div>
+        </div>
+      </a>
+
+      <a class="journal-entry" href="photos/tunnel-view.html">
+        <div class="journal-entry-thumb">
+          <img src="photos/thumbs/tunnel_view.jpg" alt="Tunnel View panorama of Yosemite Valley with El Capitan, Half Dome, and Bridalveil Fall, Yosemite National Park, California" loading="lazy">
+        </div>
+        <div class="journal-entry-copy">
+          <div class="journal-entry-title">Cathedral of the High Sierra</div>
+          <div class="journal-entry-meta">Yosemite National Park &middot; California &middot; November 4, 2024</div>
+          <div class="journal-entry-preview">Few vistas on Earth command as much reverence as Tunnel View. The glacial valley of Yosemite opens up in a staggering display of geological power.</div>
+        </div>
+      </a>
+
+      <a class="journal-entry" href="photos/yosemite.html">
+        <div class="journal-entry-thumb">
+          <img src="photos/thumbs/yosemite.jpg" alt="Perfect reflection of Yosemite Valley granite cliffs in still Merced River water with autumn foliage, California" loading="lazy">
+        </div>
+        <div class="journal-entry-copy">
+          <div class="journal-entry-title">Mirror of the Merced</div>
+          <div class="journal-entry-meta">Yosemite National Park &middot; California &middot; November 4, 2024</div>
+          <div class="journal-entry-preview">Down on the valley floor, the Merced River slows to a crawl, creating a perfect liquid mirror for the surrounding peaks.</div>
+        </div>
+      </a>
+
+      <a class="journal-entry" href="photos/little-bambino.html">
+        <div class="journal-entry-thumb">
+          <img src="photos/thumbs/little_bambino.jpg" alt="Little Bambino icebox watermelon ripening among tall grass and vines in a Southern garden, Alabama" loading="lazy">
+        </div>
+        <div class="journal-entry-copy">
+          <div class="journal-entry-title">Little Bambino</div>
+          <div class="journal-entry-meta">My garden &middot; Alabama &middot; August 21, 2024</div>
+          <div class="journal-entry-preview">Hidden within a tangled canopy of serrated leaves and sprawling vines, a Little Bambino watermelon nears its peak ripeness.</div>
+        </div>
+      </a>
+
+      <a class="journal-entry" href="photos/pole-beans.html">
+        <div class="journal-entry-thumb">
+          <img src="photos/thumbs/pole_beans.jpg" alt="Rattlesnake pole bean pods with purple streaking on bamboo stake in Southern garden, Alabama" loading="lazy">
+        </div>
+        <div class="journal-entry-copy">
+          <div class="journal-entry-title">The Heirloom Vine</div>
+          <div class="journal-entry-meta">My garden &middot; Alabama &middot; June 20, 2024</div>
+          <div class="journal-entry-preview">The Rattlesnake pole bean is a testament to the enduring legacy of heirloom agriculture, its young pods exhibiting characteristic purple streaking.</div>
+        </div>
+      </a>
+
+      <a class="journal-entry" href="photos/petrified-forest.html">
+        <div class="journal-entry-thumb">
+          <img src="photos/thumbs/petrified_forest.jpg" alt="Moss-covered petrified Coastal Redwood log 3.4 million years old at Petrified Forest, Calistoga, California" loading="lazy">
+        </div>
+        <div class="journal-entry-copy">
+          <div class="journal-entry-title">The Queen</div>
+          <div class="journal-entry-meta">Calistoga &middot; California &middot; April 11, 2024</div>
+          <div class="journal-entry-preview">"The Queen" is a silent witness to a cataclysm that occurred 3.4 million years ago — once a soaring Coastal Redwood, now turned to stone.</div>
+        </div>
+      </a>
+
+      <a class="journal-entry" href="photos/duncans-landing.html">
+        <div class="journal-entry-thumb">
+          <img src="photos/thumbs/duncans_landing.jpg" alt="Rugged coastal cliffs and turquoise Pacific swells at Duncans Landing, Sonoma Coast State Park, California" loading="lazy">
+        </div>
+        <div class="journal-entry-copy">
+          <div class="journal-entry-title">Edge of the Sonoma Coast</div>
+          <div class="journal-entry-meta">Sonoma Coast &middot; California &middot; April 8, 2024</div>
+          <div class="journal-entry-preview">Along the treacherous reaches of the Sonoma Coast, Duncan's Landing stands as a rugged testament to the relentless power of the Pacific.</div>
+        </div>
+      </a>
+
+      <a class="journal-entry" href="photos/goat-rock-beach.html">
+        <div class="journal-entry-thumb">
+          <img src="photos/thumbs/goat_rock_beach.jpg" alt="Sea stacks and crescent shoreline at Goat Rock Beach where the Russian River meets the Pacific, California" loading="lazy">
+        </div>
+        <div class="journal-entry-copy">
+          <div class="journal-entry-title">The Maw of the Pacific</div>
+          <div class="journal-entry-meta">Sonoma Coast &middot; California &middot; April 7, 2024</div>
+          <div class="journal-entry-preview">Where the Russian River meets the sea, Goat Rock Beach offers a dramatic display of coastal erosion and tectonic history.</div>
+        </div>
+      </a>
+
+      <a class="journal-entry" href="photos/hawaii-resort.html">
+        <div class="journal-entry-thumb">
+          <img src="photos/thumbs/hawaii_resort.jpg" alt="Blue hour tropical landscape with volcanic rock pools and palm trees at Fairmont Orchid, Big Island, Hawaii" loading="lazy">
+        </div>
+        <div class="journal-entry-copy">
+          <div class="journal-entry-title">Twilight on the Kohala Coast</div>
+          <div class="journal-entry-meta">Kohala Coast &middot; Hawaii &middot; February 8, 2024</div>
+          <div class="journal-entry-preview">As the sun dips below the horizon of the Big Island, the Fairmont Orchid transitions into a sanctuary of shadow and gold.</div>
+        </div>
+      </a>
+
+      <a class="journal-entry" href="photos/hilo-farmers-market.html">
+        <div class="journal-entry-thumb">
+          <img src="photos/thumbs/hilo_farmers_market.jpg" alt="Fresh sweet guava with salmon-pink flesh for sale at Hilo Farmers Market, Big Island, Hawaii" loading="lazy">
+        </div>
+        <div class="journal-entry-copy">
+          <div class="journal-entry-title">The Bounty of Hilo</div>
+          <div class="journal-entry-meta">Hilo &middot; Hawaii &middot; February 7, 2024</div>
+          <div class="journal-entry-preview">The Hilo Farmers Market serves as the sensory heart of the Big Island, where volcanic soil and tropical rains produce an unrivaled agricultural abundance.</div>
+        </div>
+      </a>
+
+      <a class="journal-entry" href="photos/tracks-sunset.html">
+        <div class="journal-entry-thumb">
+          <img src="photos/thumbs/tracks_sunset.jpg" alt="Freight train on railroad tracks at golden hour through dense Central Alabama forest" loading="lazy">
+        </div>
+        <div class="journal-entry-copy">
+          <div class="journal-entry-title">The Iron Vein</div>
+          <div class="journal-entry-meta">Central Alabama &middot; August 7, 2023</div>
+          <div class="journal-entry-preview">As the sun sets over the dense forests of Central Alabama, the steel ribbons of the railroad catch the last of the golden light.</div>
+        </div>
+      </a>
+
+      <a class="journal-entry" href="photos/droplets.html">
+        <div class="journal-entry-thumb">
+          <img src="photos/thumbs/droplets.jpg" alt="Macro photograph of spherical water droplets clinging to thistle spines after morning rain, in an Alabama garden" loading="lazy">
+        </div>
+        <div class="journal-entry-copy">
+          <div class="journal-entry-title">Surface Tension</div>
+          <div class="journal-entry-meta">My garden &middot; Alabama &middot; May 20, 2023</div>
+          <div class="journal-entry-preview">Following a morning shower, the aggressive spines of a common thistle become a host for temporary jewels of rainwater.</div>
+        </div>
+      </a>
+
+      <a class="journal-entry" href="photos/junkyard.html">
+        <div class="journal-entry-thumb">
+          <img src="photos/thumbs/junkyard.jpg" alt="Bicycle wheel, aluminum pan, and tangled scrap metal at a material recovery facility, Birmingham, Alabama" loading="lazy">
+        </div>
+        <div class="journal-entry-copy">
+          <div class="journal-entry-title">The Mosaic of Reclamation</div>
+          <div class="journal-entry-meta">Birmingham &middot; Alabama &middot; April 30, 2023</div>
+          <div class="journal-entry-preview">In a sprawling heap of industrial and domestic scrap, the discarded metal of the modern world waits for a second life.</div>
+        </div>
+      </a>
+
+      <a class="journal-entry" href="photos/plumeria.html">
+        <div class="journal-entry-thumb">
+          <img src="photos/thumbs/plumeria.jpg" alt="Pink and yellow plumeria frangipani blossoms with water droplets after tropical rain, Kauai, Hawaii" loading="lazy">
+        </div>
+        <div class="journal-entry-copy">
+          <div class="journal-entry-title">Rain-Kissed Plumeria</div>
+          <div class="journal-entry-meta">Kauai &middot; Hawaii &middot; October 26, 2022</div>
+          <div class="journal-entry-preview">On the Garden Isle of Kauai, a sudden tropical downpour leaves behind a delicate crystalline residue on vibrant Plumeria blossoms.</div>
+        </div>
+      </a>
+
+      <a class="journal-entry" href="photos/santa-monica-pier.html">
+        <div class="journal-entry-thumb">
+          <img src="photos/thumbs/santa_monica_pier.jpg" alt="Santa Monica Pier archway sign with vintage convertible at the western terminus of Route 66, California" loading="lazy">
+        </div>
+        <div class="journal-entry-copy">
+          <div class="journal-entry-title">Americana at the Edge</div>
+          <div class="journal-entry-meta">Santa Monica &middot; California &middot; January 28, 2017</div>
+          <div class="journal-entry-preview">The Santa Monica Pier archway stands as a permanent gateway to the Pacific, marking the spiritual and literal end of Route 66.</div>
+        </div>
+      </a>
 
     </div>
   </div>
 
   <div class="footer">
-    &copy; 2026 Joe Graham ·
-    <a href="#">Privacy</a> · <a href="#">Terms</a>
+    &copy; 2026 Joe Graham &middot;
+    <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
   </div>
 </div>
-
-<script>
-// ============================================================
-// JOURNAL ENTRIES — newest first
-// Update 'date' to the actual date you took each photo
-// ============================================================
-const entries = [
-  {
-    slug: 'eggshell',
-    title: 'The Avian Gift',
-    image: 'photos/eggshell.png',
-    location: 'My garden · Alabama',
-    date: '2026-05-06',
-    preview: 'In the quiet ecosystem of a Central Alabama garden, a fractured, speckled eggshell rests atop fresh mulch — likely carried far from the nest by a nesting robin after a successful hatch.'
-  },
-  {
-    slug: 'cahaba-river',
-    title: 'The Ancient Path',
-    image: 'photos/cahaba_river.png',
-    location: 'Cahaba River NWR, Alabama',
-    date: '2026-04-20',
-    preview: 'The Cahaba River, one of the most biodiverse waterways in North America, carves a serpentine path through the heart of the Wildlife Refuge.'
-  },
-  {
-    slug: 'eclipse-embarcadero',
-    title: 'Geometric Core',
-    image: 'photos/eclipse_embarcadero.png',
-    location: 'San Francisco, California',
-    date: '2025-11-07',
-    preview: 'Inside one of the world\'s largest atriums, the Eclipse sculpture by Charles Perry serves as a massive, spiraling heart of aluminum and steel.'
-  },
-  {
-    slug: 'milkweed',
-    title: 'Lifeline of the Cahaba',
-    image: 'photos/milkweed.png',
-    location: 'Cahaba River NWR, Alabama',
-    date: '2025-05-03',
-    preview: 'Amidst the dense undergrowth of the Cahaba River National Wildlife Refuge, a cluster of White Milkweed stands as a vital outpost for local pollinators.'
-  },
-  {
-    slug: 'blue-heron',
-    title: 'The Silent Watcher',
-    image: 'photos/blue_heron.png',
-    location: 'Lake Purdy, Alabama',
-    date: '2025-04-26',
-    preview: 'Perched upon the skeletal remains of a fallen pine, a Great Blue Heron stands in motionless vigil over the emerald waters of Lake Purdy.'
-  },
-  {
-    slug: 'drink-shot',
-    title: 'The Craft of the Cocktail',
-    image: 'photos/drink_shot.png',
-    location: 'Stage, Georgia',
-    date: '2025-04-25',
-    preview: 'In the dim, sophisticated atmosphere of Stage, the culinary arts extend beyond the plate and into the glass.'
-  },
-  {
-    slug: 'coachella-valley',
-    title: 'Desert Grid',
-    image: 'photos/coachella_valley.png',
-    location: 'Mt. San Jacinto, California',
-    date: '2025-03-22',
-    preview: 'From the sub-alpine heights of Mount San Jacinto, the Coachella Valley appears not as a desert, but as a sprawling circuit board of human ingenuity.'
-  },
-  {
-    slug: 'joshua-tree',
-    title: 'Mojave Anchor',
-    image: 'photos/joshua_tree.png',
-    location: 'Joshua Tree National Park, California',
-    date: '2025-03-21',
-    preview: 'A lone Joshua Tree stands in sharp relief against the Mojave sky, its twisted, bayonet-like leaves silhouetted by the harsh desert sun.'
-  },
-  {
-    slug: 'joshua-tree-rock',
-    title: 'Quartz Monzogranite Monolith',
-    image: 'photos/joshua_tree_rock.png',
-    location: 'Joshua Tree National Park, California',
-    date: '2025-03-21',
-    preview: 'Massive formations of quartz monzogranite dominate the landscape, appearing as though they were stacked by giants.'
-  },
-  {
-    slug: 'p51-mustang',
-    title: 'The Warbird\'s Shadow',
-    image: 'photos/p51_mustang.png',
-    location: 'Palm Springs, California',
-    date: '2025-03-20',
-    preview: 'Under the stark light of the Coachella Valley, the legendary P-51D Mustang "Man O\' War" rests within the open hangar of the Palm Springs Air Museum.'
-  },
-  {
-    slug: 'tunnel-view',
-    title: 'Cathedral of the High Sierra',
-    image: 'photos/tunnel_view.png',
-    location: 'Yosemite National Park, California',
-    date: '2024-11-04',
-    preview: 'Few vistas on Earth command as much reverence as Tunnel View. The glacial valley of Yosemite opens up in a staggering display of geological power.'
-  },
-  {
-    slug: 'yosemite',
-    title: 'Mirror of the Merced',
-    image: 'photos/yosemite.png',
-    location: 'Yosemite National Park, California',
-    date: '2024-11-04',
-    preview: 'Down on the valley floor, the Merced River slows to a crawl, creating a perfect liquid mirror for the surrounding peaks.'
-  },
-  {
-    slug: 'little-bambino',
-    title: 'Little Bambino',
-    image: 'photos/little_bambino.png',
-    location: 'My garden · Alabama',
-    date: '2024-08-21',
-    preview: 'Hidden within a tangled canopy of serrated leaves and sprawling vines, a Little Bambino watermelon nears its peak ripeness.'
-  },
-  {
-    slug: 'pole-beans',
-    title: 'The Heirloom Vine',
-    image: 'photos/pole_beans.png',
-    location: 'My garden · Alabama',
-    date: '2024-06-20',
-    preview: 'The Rattlesnake pole bean is a testament to the enduring legacy of heirloom agriculture, its young pods exhibiting characteristic purple streaking.'
-  },
-  {
-    slug: 'petrified-forest',
-    title: 'The Queen',
-    image: 'photos/petrified_forest.png',
-    location: 'Calistoga, California',
-    date: '2024-04-11',
-    preview: '"The Queen" is a silent witness to a cataclysm that occurred 3.4 million years ago — once a soaring Coastal Redwood, now turned to stone.'
-  },
-  {
-    slug: 'duncans-landing',
-    title: 'Edge of the Sonoma Coast',
-    image: 'photos/duncans_landing.png',
-    location: 'Sonoma Coast, California',
-    date: '2024-04-08',
-    preview: 'Along the treacherous reaches of the Sonoma Coast, Duncan\'s Landing stands as a rugged testament to the relentless power of the Pacific.'
-  },
-  {
-    slug: 'goat-rock-beach',
-    title: 'The Maw of the Pacific',
-    image: 'photos/goat_rock_beach.png',
-    location: 'Sonoma Coast, California',
-    date: '2024-04-07',
-    preview: 'Where the Russian River meets the sea, Goat Rock Beach offers a dramatic display of coastal erosion and tectonic history.'
-  },
-  {
-    slug: 'hawaii-resort',
-    title: 'Twilight on the Kohala Coast',
-    image: 'photos/hawaii_resort.png',
-    location: 'Kohala Coast, Hawaii',
-    date: '2024-02-08',
-    preview: 'As the sun dips below the horizon of the Big Island, the Fairmont Orchid transitions into a sanctuary of shadow and gold.'
-  },
-  {
-    slug: 'hilo-farmers-market',
-    title: 'The Bounty of Hilo',
-    image: 'photos/hilo_farmers_market.png',
-    location: 'Hilo, Hawaii',
-    date: '2024-02-07',
-    preview: 'The Hilo Farmers Market serves as the sensory heart of the Big Island, where volcanic soil and tropical rains produce an unrivaled agricultural abundance.'
-  },
-  {
-    slug: 'tracks-sunset',
-    title: 'The Iron Vein',
-    image: 'photos/tracks_sunset.png',
-    location: 'Central Alabama',
-    date: '2023-08-07',
-    preview: 'As the sun sets over the dense forests of Central Alabama, the steel ribbons of the railroad catch the last of the golden light.'
-  },
-  {
-    slug: 'droplets',
-    title: 'Surface Tension',
-    image: 'photos/droplets.png',
-    location: 'My garden · Alabama',
-    date: '2023-05-20',
-    preview: 'Following a morning shower, the aggressive spines of a common thistle become a host for temporary jewels of rainwater.'
-  },
-  {
-    slug: 'junkyard',
-    title: 'The Mosaic of Reclamation',
-    image: 'photos/junkyard.png',
-    location: 'Birmingham, Alabama',
-    date: '2023-04-30',
-    preview: 'In a sprawling heap of industrial and domestic scrap, the discarded metal of the modern world waits for a second life.'
-  },
-  {
-    slug: 'plumeria',
-    title: 'Rain-Kissed Plumeria',
-    image: 'photos/plumeria.png',
-    location: 'Kauai, Hawaii',
-    date: '2022-10-26',
-    preview: 'On the Garden Isle of Kauai, a sudden tropical downpour leaves behind a delicate crystalline residue on vibrant Plumeria blossoms.'
-  },
-  {
-    slug: 'santa-monica-pier',
-    title: 'Americana at the Edge',
-    image: 'photos/santa_monica_pier.png',
-    location: 'Santa Monica, California',
-    date: '2017-01-28',
-    preview: 'The Santa Monica Pier archway stands as a permanent gateway to the Pacific, marking the spiritual and literal end of Route 66.'
-  },
-];
-
-// ============================================================
-// RENDER
-// ============================================================
-function formatDate(dateStr) {
-  const d = new Date(dateStr + 'T12:00:00');
-  const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-  return months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
-}
-
-function renderJournal() {
-  const list = document.getElementById('journalList');
-  list.innerHTML = '';
-
-  const sorted = [...entries].sort((a, b) => new Date(b.date) - new Date(a.date));
-
-  sorted.forEach(entry => {
-    const a = document.createElement('a');
-    a.className = 'journal-entry';
-    a.href = 'photos/' + entry.slug + '.html';
-
-    a.innerHTML = `
-      <div class="journal-entry-thumb">
-        ${entry.image
-          ? `<img src="${entry.image.replace('photos/', 'photos/thumbs/').replace('.png', '.jpg')}" alt="${entry.title}" loading="lazy">`
-          : `<div class="journal-entry-placeholder">📷</div>`
-        }
-      </div>
-      <div class="journal-entry-copy">
-        <div class="journal-entry-title">${entry.title}</div>
-        <div class="journal-entry-meta">📍 ${entry.location} · ${formatDate(entry.date)}</div>
-        <div class="journal-entry-preview">${entry.preview}</div>
-      </div>
-    `;
-
-    list.appendChild(a);
-  });
-
-  document.getElementById('entryCount').textContent = entries.length + ' entries';
-}
-
-renderJournal();
-
-</script>
 
 </body>
 </html>
