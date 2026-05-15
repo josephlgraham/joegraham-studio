@@ -378,8 +378,9 @@
     text-align: center; padding: 4px; line-height: 1.3;
   }
   .top8-label {
-    font-size: 9px; margin-top: 4px; color: var(--text-link);
+    display: block; font-size: 9px; margin-top: 4px; color: var(--text-link);
     font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    text-decoration: none;
     display: block;
   }
 
@@ -647,16 +648,17 @@
         </div>
       </div>
 
-      <!-- Contact -->
+      <!-- Fake Ad -->
+      <div class="ad-banner">
+        <strong>📷 <a href="https://fujifilm-x.com" target="_blank" style="color:var(--accent-orange);">FUJIFILM</a> — Make Every Frame Count</strong><br>
+        (Joe wishes this was a real sponsorship)
+      </div>
+
+      <!-- Currently -->
       <div class="module">
-        <div class="module-header">Get In Touch</div>
-        <div class="module-body">
-          <table class="contact-table">
-            <tr><td><span class="contact-icon">✉️</span></td><td><a href="mailto:josephlgraham@gmail.com">Send Message</a></td></tr>
-            <tr><td><span class="contact-icon">📸</span></td><td><a href="contact.html">Inquire About a Project</a></td></tr>
-            <tr><td><span class="contact-icon">⭐</span></td><td><a href="#" onclick="glitterBurst(event); return false;">Add to Favorites</a></td></tr>
-            <tr><td><span class="contact-icon">🚫</span></td><td><a href="#" onclick="lolFlood(); return false;">Block User</a> (lol)</td></tr>
-          </table>
+        <div class="module-header">Current Music</div>
+        <div class="module-body" style="font-size:10px; line-height:1.8;">
+          <strong>Listening to:</strong> <span id="currentTrack"></span>
         </div>
       </div>
 
@@ -673,28 +675,16 @@
         </div>
       </div>
 
-      <!-- Fake Ad -->
-      <div class="ad-banner">
-        <strong>📷 <a href="https://fujifilm-x.com" target="_blank" style="color:var(--accent-orange);">FUJIFILM</a> — Make Every Frame Count</strong><br>
-        (Joe wishes this was a real sponsorship)
-      </div>
-
-      <!-- Interests -->
+      <!-- Contact -->
       <div class="module">
-        <div class="module-header">Interests</div>
+        <div class="module-header">Get In Touch</div>
         <div class="module-body">
-          <table class="interests-table">
-            <tr><td>General</td><td>Photography, Woodworking, Astronomy, Community Building, Dogs, Cats</td></tr>
-            <tr><td>Gear</td><td><a href="https://fujifilm-x.com" target="_blank">Fujifilm</a> · Prime lenses · <a href="https://www.lowepro.com" target="_blank">Lowepro</a> · <a href="https://www.kentfaith.com" target="_blank">K&F Concept</a> · <a href="https://en.wikipedia.org/wiki/Catadioptric_system#Catadioptric_telephoto_lenses" target="_blank">Mirror lenses</a> for that donut bokeh</td></tr>
+          <table class="contact-table">
+            <tr><td><span class="contact-icon">✉️</span></td><td><a href="mailto:josephlgraham@gmail.com">Send Message</a></td></tr>
+            <tr><td><span class="contact-icon">📸</span></td><td><a href="contact.html">Inquire About a Project</a></td></tr>
+            <tr><td><span class="contact-icon">⭐</span></td><td><a href="#" onclick="glitterBurst(event); return false;">Add to Favorites</a></td></tr>
+            <tr><td><span class="contact-icon">🚫</span></td><td><a href="#" onclick="lolFlood(); return false;">Block User</a> (lol)</td></tr>
           </table>
-        </div>
-      </div>
-
-      <!-- Currently -->
-      <div class="module">
-        <div class="module-header">Current Music</div>
-        <div class="module-body" style="font-size:10px; line-height:1.8;">
-          <strong>Listening to:</strong> <span id="currentTrack"></span>
         </div>
       </div>
 
@@ -703,34 +693,7 @@
     <!-- ============ RIGHT COLUMN ============ -->
     <div class="col-right">
 
-      <!-- About -->
-      <div class="module">
-        <div class="module-header">About Me</div>
-        <div class="module-body">
-            <div class="section-label">Who Am I</div>
-          <div class="about-text">
-            <p>I grew up exploring the woods of Alabama. I learned to shoot before I could drive a truck. My wanderlust started at a young age when I was introduced to the big world we live in through my grandfather's National Geographic magazines.</p>
-            <p>I have been <span class="word-sparkle">blessed</span> to have a career that gets me around to so many interesting places.</p>
-            <p>I'm a sucker for a national park.</p>
-            <p>Solar punk enthusiast. Occasional woodworker. Full-time noticer of things.</p>
-            <img src="assets/walter_mitty.gif" alt="The Secret Life of Walter Mitty" style="max-width:100%;display:block;margin:8px 0;border:2px solid var(--border-module);">
-          </div>
-          <div style="margin-top:10px;">
-            <div class="section-label">Who I'd Like to Work With</div>
-            <div class="about-text">
-              <p>Brands with taste. Graffiti artists that want to document their work. Anyone building something real. If the project is authentic, chances are I'm interested. I'm available throughout central Alabama, but up for some travel if the opportunity presents itself. If you've got something worth shooting, <a href="contact.html">let's talk</a>.</p>
-            </div>
-          </div>
-          <div style="margin-top:10px;">
-            <div class="section-label">Who I'd Like to Meet</div>
-            <div class="about-text">
-              <p>People shooting film. People who are still building things with their hands. People who care more about their communities than their follower count. And especially people like me that are here to be bridgemakers into this brave new world.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ============ TOP 8 ============ -->
+      <!-- Top 8 -->
       <div class="module">
         <div class="module-header">
           Top 8
@@ -744,18 +707,27 @@
         </div>
       </div>
 
-      <!-- Journal -->
+      <!-- About -->
       <div class="module">
-        <div class="module-header">
-          About My Site
-          <a href="journal.html">Jump To Photo Journal &raquo;</a>
-        </div>
+        <div class="module-header">About Me</div>
         <div class="module-body">
-          <div class="section-label" style="border:none; margin-bottom:2px;">Why, Yes Virginia, It Does Look Like MySpace</div>
-          <div style="font-size:9px; color:var(--text-light); margin-bottom:6px;">Posted: May 6, 2026 · 69 Comments</div>
+          <div class="section-label">Who I Am</div>
           <div class="about-text">
-            <p>The internet used to be a lot more personal and a lot less polished. Messy pages and terrible backgrounds told you a lot more about someone than their perfectly curated Instagram account does now. That's what I want my space (heh) to feel like. </p>
-            <p><a href="#" onclick="clapConfetti(); return false;" class="clap-link">PLEASE CLAP!!</a></p>
+            <p>Hi, I'm Joe. Welcome to my space.</p>
+            <p>I think I was a photographer even before I knew it. I grew up and still live in the woods of Alabama. Some trees enjoy growing in the shade. For me, that shade was a profound family legacy of history, service, and community. Growing up in those shadows gave me a deep reverence for the past and a quiet, observant way of looking at the world.</p>
+            <p>I've always had a curious eye. When I finally bought my first camera in college, it felt like we <span class="word-sparkle">belonged together</span>. I quickly changed my major from history to photography, with a brief detour into film, and never looked back.</p>
+            <p>I graduated from UAB with a degree in photography. Being classically trained means I know my way around mixing chemicals and using a changing bag in the dark. After school, I interned with a local commercial photographer, assisted a few high-end wedding photographers, and eventually cut my chops shooting portraits at a high-volume storefront studio.</p>
+            <p>Life eventually shifted, and I took some time away from the professional camera to focus on the ultimate job: raising my family. But over the last few years, I've reconnected with photography in a deeper way than ever before. Returning to my roots in the Alabama woods, I've found a renewed passion for capturing the quiet beauty of nature, wildlife, and the stories embedded in our local landscapes. I am having a blast constantly pushing my craft and growing my knowledge.</p>
+          </div>
+          <div style="margin-top:10px;">
+            <div class="section-label">Who I Want to Work With</div>
+            <div class="about-text">
+              <p>Now that I'm back behind the lens with a fresh perspective, I'm looking to collaborate with people who appreciate intentional, authentic imagery.</p>
+              <p><em>Nature &amp; Conservation Projects:</em> Organizations, publications, or local groups that need dedicated, patient visual storytelling to highlight regional wildlife and natural habitats.</p>
+              <p><em>Local Businesses &amp; Artisans:</em> Creators who need honest, high-quality imagery of their processes, products, or spaces, without the sterile feel of commercial stock photos.</p>
+              <p><em>Editorial &amp; Historical Collaborators:</em> Writers, publishers, or preservationists looking for a keen, curious eye to capture the mood, legacy, and authentic details of a specific place or story.</p>
+              <p>If you have a project that requires a thoughtful approach, a lot of patience, and a deep respect for the subject, <a href="contact.html">let's connect</a>.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -784,6 +756,7 @@
   <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
   <img class="lightbox-img" id="lightboxImg" src="" alt="">
   <div class="lightbox-caption" id="lightboxCaption"></div>
+  <a id="lightboxEntryLink" href="#" style="display:none; color:var(--accent-orange); font-size:11px; text-decoration:none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Read the entry &rarr;</a>
   <div class="gallery-counter" id="galleryCounter"></div>
   <div class="lightbox-nav" id="lightboxNav">
     <button onclick="prevPhoto()">◀ Prev</button>
@@ -880,12 +853,15 @@ function renderTop8() {
   currentTop8.forEach((photo, i) => {
     const item = document.createElement('div');
     item.className = 'top8-item';
-    item.onclick = () => openLightboxAt(i);
+    const slug = photo.src ? photo.src.replace('photos/', '').replace(/\.[^.]+$/, '') : null;
     if (photo.src) {
       const thumbSrc = photo.src.replace('photos/', 'photos/thumbs/').replace('.png', '.jpg');
-      item.innerHTML = `<div class="top8-img-wrap"><img class="top8-thumb" src="${thumbSrc}" alt="${photo.title}"></div><div class="top8-label">${photo.title}</div>`;
+      const labelHtml = slug
+        ? `<a class="top8-label" href="photos/${slug}.html">${photo.title}</a>`
+        : `<div class="top8-label">${photo.title}</div>`;
+      item.innerHTML = `<div class="top8-img-wrap" style="cursor:pointer;" onclick="openLightboxAt(${i})"><img class="top8-thumb" src="${thumbSrc}" alt="${photo.title}"></div>${labelHtml}`;
     } else {
-      item.innerHTML = `<div class="top8-img-wrap"><div class="top8-placeholder">${photo.title}<br><span style="font-size:8px;">your image here</span></div></div><div class="top8-label">${photo.title}</div>`;
+      item.innerHTML = `<div class="top8-img-wrap" style="cursor:pointer;" onclick="openLightboxAt(${i})"><div class="top8-placeholder">${photo.title}<br><span style="font-size:8px;">your image here</span></div></div><div class="top8-label">${photo.title}</div>`;
     }
     grid.appendChild(item);
   });
@@ -1036,6 +1012,14 @@ function showCurrentPhoto() {
   }
   img.style.display = 'block';
   document.getElementById('lightboxCaption').textContent = photo.title || photo.label || '';
+  const slug = photo.src ? photo.src.replace('photos/', '').replace(/\.[^.]+$/, '') : null;
+  const entryLink = document.getElementById('lightboxEntryLink');
+  if (slug) {
+    entryLink.href = 'photos/' + slug + '.html';
+    entryLink.style.display = 'inline';
+  } else {
+    entryLink.style.display = 'none';
+  }
   document.getElementById('galleryCounter').textContent = (currentIndex + 1) + ' of ' + currentGallery.length;
 }
 
