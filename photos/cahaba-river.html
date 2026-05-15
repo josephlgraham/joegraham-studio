@@ -295,7 +295,7 @@
     border: 1px solid transparent;
   }
   .top-bar-nav a:hover,
-  .top-bar-nav a:focus,
+  .top-bar-nav a:focus-visible,
   .top-bar-nav a.active {
     background: var(--bg-nav-hover);
     text-decoration: none;
@@ -815,6 +815,8 @@
 
   @media (max-width: 760px) {
     .top-bar-inner { align-items: flex-start; flex-direction: column; }
+    .top-bar-nav { flex-wrap: wrap; justify-content: center; }
+    .top-bar-nav a { padding: 3px 6px; font-size: 9px; }
     .side-rail, .related-grid, .entry-pagination, .resource-list { grid-template-columns: 1fr; }
     .mini-map iframe { height: 240px; }
     .polaroid { transform: none; }
