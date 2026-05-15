@@ -1,172 +1,303 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Main pages -->
   <url>
     <loc>https://joegraham.studio/</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://joegraham.studio/portfolio.html</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://joegraham.studio/journal.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://joegraham.studio/journal.html</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://joegraham.studio/portfolio.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://joegraham.studio/contact.html</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
-  <!-- Photo journal entries — newest first -->
+  <url>
+    <loc>https://joegraham.studio/legal.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Journal entries -->
   <url>
     <loc>https://joegraham.studio/photos/eggshell.html</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://joegraham.studio/photos/eggshell.png</image:loc>
+      <image:caption>Broken speckled eggshell resting on fresh garden mulch in an Alabama garden.</image:caption>
+      <image:title>After the Hatch</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://joegraham.studio/photos/cahaba-river.html</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://joegraham.studio/photos/eclipse-embarcadero.html</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://joegraham.studio/photos/milkweed.html</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://joegraham.studio/photos/cahaba_river.png</image:loc>
+      <image:caption>Cahaba River winding through dense green forest at Cahaba River National Wildlife Refuge in Alabama.</image:caption>
+      <image:title>The Ancient Path</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://joegraham.studio/photos/blue-heron.html</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2025-04-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://joegraham.studio/photos/blue_heron.png</image:loc>
+      <image:caption>Great Blue Heron standing on a fallen pine over emerald water at Lake Purdy, Alabama.</image:caption>
+      <image:title>The Wading Hour</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://joegraham.studio/photos/milkweed.html</loc>
+    <lastmod>2025-05-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://joegraham.studio/photos/milkweed.png</image:loc>
+      <image:caption>White milkweed flowers with star-shaped florets blooming in the green understory at Cahaba River National Wildlife Refuge, Alabama.</image:caption>
+      <image:title>The Monarch Contract</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://joegraham.studio/photos/drink-shot.html</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2025-04-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://joegraham.studio/photos/drink_shot.png</image:loc>
+      <image:caption>Cocktail in a coupe glass at Stäge Kitchen &amp; Bar in Peachtree Corners, Georgia, photographed with shallow focus and warm interior light.</image:caption>
+      <image:title>The Coupe</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://joegraham.studio/photos/coachella-valley.html</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://joegraham.studio/photos/joshua-tree.html</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://joegraham.studio/photos/joshua-tree-rock.html</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://joegraham.studio/photos/p51-mustang.html</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://joegraham.studio/photos/eclipse-embarcadero.html</loc>
+    <lastmod>2025-11-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://joegraham.studio/photos/eclipse_embarcadero.png</image:loc>
+      <image:caption>Looking down into the Hyatt Regency San Francisco atrium at Charles O. Perry&apos;s Eclipse sculpture, with geometric balconies and lobby levels surrounding it.</image:caption>
+      <image:title>Geometric Core</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://joegraham.studio/photos/tunnel-view.html</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2025-11-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://joegraham.studio/photos/tunnel_view.png</image:loc>
+      <image:caption>Tunnel View panorama of Yosemite Valley with El Capitan, Half Dome, Bridalveil Fall, deep blue sky, and aircraft contrails.</image:caption>
+      <image:title>Cathedral of the High Sierra</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://joegraham.studio/photos/yosemite.html</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2025-11-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://joegraham.studio/photos/yosemite.png</image:loc>
+      <image:caption>Perfect reflection of Yosemite Valley granite cliffs in still Merced River water with autumn foliage.</image:caption>
+      <image:title>Mirror of the Merced</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://joegraham.studio/photos/coachella-valley.html</loc>
+    <lastmod>2025-03-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://joegraham.studio/photos/coachella_valley.png</image:loc>
+      <image:caption>Twilight view of the Coachella Valley from Mount San Jacinto, with city lights forming a grid below the dark desert basin.</image:caption>
+      <image:title>The Valley Below</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://joegraham.studio/photos/joshua-tree-rock.html</loc>
+    <lastmod>2025-03-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://joegraham.studio/photos/joshua_tree_rock.png</image:loc>
+      <image:caption>A massive quartz monzogranite boulder formation in Joshua Tree National Park, with rounded blocks, vertical fissures, and desert scrub at its base.</image:caption>
+      <image:title>The Stacked Stone</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://joegraham.studio/photos/joshua-tree.html</loc>
+    <lastmod>2025-03-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://joegraham.studio/photos/joshua_tree.png</image:loc>
+      <image:caption>A lone Joshua tree in Joshua Tree National Park with a desert raven perched near the top, set against a clear Mojave sky.</image:caption>
+      <image:title>The Raven and the Joshua Tree</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://joegraham.studio/photos/p51-mustang.html</loc>
+    <lastmod>2025-03-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://joegraham.studio/photos/p51_mustang.png</image:loc>
+      <image:caption>North American P-51D Mustang Man O&apos; War resting in an open hangar at the Palm Springs Air Museum with desert mountains beyond.</image:caption>
+      <image:title>The Warbird&apos;s Shadow</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://joegraham.studio/photos/little-bambino.html</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2024-08-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://joegraham.studio/photos/little_bambino.png</image:loc>
+      <image:caption>Small Little Bambino watermelon growing among vines and serrated leaves in an Alabama garden.</image:caption>
+      <image:title>Little Bambino</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://joegraham.studio/photos/pole-beans.html</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2024-06-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://joegraham.studio/photos/pole_beans.png</image:loc>
+      <image:caption>Rattlesnake pole bean pods with purple streaking climbing a bamboo stake in an Alabama garden.</image:caption>
+      <image:title>The Rattlesnake Climb</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://joegraham.studio/photos/petrified-forest.html</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2024-04-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://joegraham.studio/photos/petrified_forest.png</image:loc>
+      <image:caption>Moss-covered petrified redwood trunk called The Queen at The Petrified Forest in Calistoga, California.</image:caption>
+      <image:title>The Queen</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://joegraham.studio/photos/duncans-landing.html</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2024-04-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://joegraham.studio/photos/duncans_landing.png</image:loc>
+      <image:caption>Coastal bluff, rocky shoreline, and Pacific surf at Duncan&apos;s Landing in Sonoma Coast State Park, California.</image:caption>
+      <image:title>Duncan&apos;s Landing</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://joegraham.studio/photos/goat-rock-beach.html</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://joegraham.studio/photos/hilo-farmers-market.html</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2024-04-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://joegraham.studio/photos/goat_rock_beach.png</image:loc>
+      <image:caption>Goat Rock Beach on the Sonoma Coast, with Pacific surf, a broad sandy shoreline, and rocky headlands near the mouth of the Russian River.</image:caption>
+      <image:title>Goat Rock Beach</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://joegraham.studio/photos/hawaii-resort.html</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2024-02-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://joegraham.studio/photos/hawaii_resort.png</image:loc>
+      <image:caption>Tropical resort landscape at the Fairmont Orchid on Hawaii Island during blue hour, with palms, volcanic rock, water, and warm sunset color.</image:caption>
+      <image:title>Blue Hour at the Orchid</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://joegraham.studio/photos/hilo-farmers-market.html</loc>
+    <lastmod>2024-02-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://joegraham.studio/photos/hilo_farmers_market.png</image:loc>
+      <image:caption>Fresh tropical fruit, including a sliced pink guava, displayed at Hilo Farmers Market on Hawaii Island.</image:caption>
+      <image:title>Hilo Farmers Market</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://joegraham.studio/photos/tracks-sunset.html</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2023-08-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://joegraham.studio/photos/tracks_sunset.png</image:loc>
+      <image:caption>Railroad tracks curving through green Alabama woods at sunset.</image:caption>
+      <image:title>The Last Light on the Line</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://joegraham.studio/photos/droplets.html</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2023-05-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://joegraham.studio/photos/droplets.png</image:loc>
+      <image:caption>Macro photograph of spherical rain droplets clinging to the spines and surface of a thistle leaf after morning rain in an Alabama garden.</image:caption>
+      <image:title>The Thistle and the Rain</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://joegraham.studio/photos/junkyard.html</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2023-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://joegraham.studio/photos/junkyard.png</image:loc>
+      <image:caption>A dense pile of mixed scrap metal, including a bicycle wheel, a frying pan, conduit, and wire, at a recycling yard in North Birmingham, Alabama.</image:caption>
+      <image:title>North Birmingham Iron</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://joegraham.studio/photos/plumeria.html</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2022-10-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://joegraham.studio/photos/plumeria.png</image:loc>
+      <image:caption>Plumeria blossoms with yellow centers and pink-edged petals covered in rain droplets at McBryde &amp; Allerton Garden on Kauai.</image:caption>
+      <image:title>Plumeria After Rain</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://joegraham.studio/photos/santa-monica-pier.html</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2017-01-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://joegraham.studio/photos/santa_monica_pier.png</image:loc>
+      <image:caption>Cadillac Series 62 Convertible passing beneath the blue Santa Monica Pier archway in Santa Monica, California, with clear coastal sky above the Route 66 landmark.</image:caption>
+      <image:title>End of the Road</image:title>
+    </image:image>
   </url>
+
 </urlset>
