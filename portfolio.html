@@ -153,9 +153,65 @@
   .lightbox-caption { color:white; font-size:12px; text-align:center; max-width:600px; }
   .lightbox-sub { color:rgba(255,255,255,0.6); font-size:10px; margin-top:2px; text-align:center; }
   .gallery-counter { color:rgba(255,255,255,0.5); font-size:10px; }
+  .lightbox-actions { display:flex; align-items:center; gap:14px; flex-wrap:wrap; justify-content:center; }
   .lightbox-entry-link { color:rgba(255,255,255,0.7); font-size:10px; text-decoration:underline; letter-spacing:0.05em; }
   .lightbox-entry-link:hover { color:#fff; text-decoration:underline; }
   .lightbox-nav { display:flex; gap:20px; margin-top:4px; }
+
+  /* Lightbox share */
+  .lightbox .share-card { position:relative; z-index:10; }
+  .lightbox .share-trigger,
+  .lightbox .share-option,
+  .lightbox button.share-option {
+    appearance:none; border:0; background:transparent; color:#263646;
+    cursor:pointer; font-family:Verdana,Geneva,Tahoma,sans-serif; text-decoration:none;
+  }
+  .lightbox .share-trigger {
+    display:inline-flex; align-items:center; justify-content:center; gap:6px;
+    min-height:28px; padding:5px 10px;
+    border:1px solid rgba(255,255,255,0.35); border-radius:999px;
+    background:rgba(255,255,255,0.12); color:rgba(255,255,255,0.85);
+    box-shadow:0 1px 4px rgba(0,0,0,0.3);
+    font-size:10px; font-weight:bold; line-height:1; letter-spacing:0.09em; text-transform:uppercase;
+  }
+  .lightbox .share-trigger svg { width:14px; height:14px; display:block; flex:0 0 auto; }
+  .lightbox .share-trigger:hover,
+  .lightbox .share-trigger:focus { background:rgba(255,255,255,0.22); border-color:rgba(255,255,255,0.6); text-decoration:none; }
+  .lightbox .share-menu {
+    position:absolute; right:0; bottom:calc(100% + 9px);
+    min-width:232px; padding:7px;
+    display:grid; grid-template-columns:1fr; gap:3px;
+    border:1px solid #b9cadd; border-radius:10px;
+    background:rgba(255,255,255,0.98);
+    box-shadow:0 8px 32px rgba(0,0,0,0.5);
+  }
+  .lightbox .share-menu[hidden] { display:none; }
+  .lightbox .share-menu::after {
+    content:""; position:absolute; right:14px; bottom:-7px;
+    width:12px; height:12px; transform:rotate(45deg);
+    background:#fff; border-right:1px solid #b9cadd; border-bottom:1px solid #b9cadd;
+  }
+  .lightbox .share-option {
+    position:relative; z-index:1; display:flex; align-items:center; gap:9px;
+    width:100%; min-height:31px; padding:6px 8px; border-radius:7px;
+    color:#27313b; font-size:10px; line-height:1.1; text-align:left;
+  }
+  .lightbox .share-option .share-mark {
+    display:grid; place-items:center; flex:0 0 20px; width:20px; height:20px;
+    border-radius:6px; background:#20384f; color:#fff;
+    font:bold 9px/1 Verdana,sans-serif; letter-spacing:0;
+  }
+  .lightbox .share-option:hover,
+  .lightbox .share-option:focus { background:#eef4fa; text-decoration:none; }
+  .lightbox .share-option[data-network="facebook"] .share-mark { background:#2d477a; }
+  .lightbox .share-option[data-network="threads"] .share-mark { background:#1e1e1e; }
+  .lightbox .share-option[data-network="bluesky"] .share-mark { background:#1e6fd9; }
+  .lightbox .share-option[data-network="x"] .share-mark { background:#111; }
+  .lightbox .share-option[data-network="pinterest"] .share-mark { background:#9c2424; }
+  .lightbox .share-option[data-network="reddit"] .share-mark { background:#ca5b24; }
+  .lightbox .share-option[data-network="email"] .share-mark { background:#4a6b85; }
+  .lightbox .share-option[data-network="copy"] .share-mark { background:#7a5b30; }
+  .lightbox .share-option[data-network="native"] .share-mark { background:#2f6f48; }
   .lightbox-nav button {
     background:rgba(255,255,255,0.15); color:white;
     border:1px solid rgba(255,255,255,0.3); padding:6px 16px;
@@ -567,7 +623,16 @@
   <img class="lightbox-img" id="lightboxImg" src="" alt="">
   <div class="lightbox-caption" id="lightboxCaption"></div>
   <div class="lightbox-sub" id="lightboxSub"></div>
-  <a class="lightbox-entry-link" id="lightboxEntryLink" href="">View journal entry &rarr;</a>
+  <div class="lightbox-actions">
+    <a class="lightbox-entry-link" id="lightboxEntryLink" href="">View journal entry &rarr;</a>
+    <div class="share-card" id="lightboxShareCard" data-url="" data-title="" data-text="" data-media="">
+      <button class="share-trigger" type="button" aria-expanded="false" aria-controls="lightbox-share-menu">
+        <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+        <span>Share</span>
+      </button>
+      <div class="share-menu" id="lightbox-share-menu" hidden></div>
+    </div>
+  </div>
   <div class="gallery-counter" id="galleryCounter"></div>
   <div class="lightbox-nav">
     <button onclick="prevPhoto()">&#9664; Prev</button>
@@ -608,6 +673,18 @@ function showPhoto() {
   document.getElementById('lightboxSub').textContent = loc;
   document.getElementById('lightboxEntryLink').href = link.getAttribute('href');
   document.getElementById('galleryCounter').textContent = (currentIndex + 1) + ' of ' + links.length;
+  const sc = document.getElementById('lightboxShareCard');
+  if (sc) {
+    const entryUrl = 'https://joegraham.studio/' + link.getAttribute('href');
+    sc.setAttribute('data-url', entryUrl);
+    sc.setAttribute('data-title', link.dataset.title + ' - Joe Graham Photography');
+    sc.setAttribute('data-text', link.dataset.caption || link.dataset.title);
+    sc.setAttribute('data-media', 'https://joegraham.studio/' + link.dataset.src);
+    const sm = sc.querySelector('.share-menu');
+    if (sm) { sm.hidden = true; sm.innerHTML = ''; }
+    const st = sc.querySelector('.share-trigger');
+    if (st) st.setAttribute('aria-expanded', 'false');
+  }
 }
 
 function openLightbox(link) {
@@ -643,6 +720,95 @@ document.querySelectorAll('.masonry-link').forEach(function(link) {
 });
 
 shufflePortfolio();
+
+(function() {
+  var sc = document.getElementById('lightboxShareCard');
+  if (!sc) return;
+  var trigger = sc.querySelector('.share-trigger');
+  var menu = sc.querySelector('.share-menu');
+
+  function setMenu(open) {
+    menu.hidden = !open;
+    trigger.setAttribute('aria-expanded', String(open));
+  }
+
+  function buildMenu() {
+    var url = sc.getAttribute('data-url');
+    var title = sc.getAttribute('data-title');
+    var text = sc.getAttribute('data-text') || title;
+    var media = sc.getAttribute('data-media') || '';
+    var enc = encodeURIComponent;
+    menu.innerHTML = '';
+    var items = [
+      { tag: 'button', network: 'copy', mark: '⧉', label: 'Copy link' },
+      { tag: 'a', network: 'facebook', mark: 'f', label: 'Facebook', href: 'https://www.facebook.com/sharer/sharer.php?u=' + enc(url) },
+      { tag: 'a', network: 'threads', mark: '@', label: 'Threads', href: 'https://www.threads.net/intent/post?text=' + enc(title + ' ' + url) },
+      { tag: 'a', network: 'bluesky', mark: 'b', label: 'Bluesky', href: 'https://bsky.app/intent/compose?text=' + enc(title + '\n' + url) },
+      { tag: 'a', network: 'x', mark: 'x', label: 'X', href: 'https://twitter.com/intent/tweet?url=' + enc(url) + '&text=' + enc(title) },
+      { tag: 'a', network: 'pinterest', mark: 'p', label: 'Pinterest', href: 'https://www.pinterest.com/pin/create/button/?url=' + enc(url) + '&media=' + enc(media) + '&description=' + enc(title) },
+      { tag: 'a', network: 'reddit', mark: 'r', label: 'Reddit', href: 'https://www.reddit.com/submit?url=' + enc(url) + '&title=' + enc(title) },
+      { tag: 'a', network: 'email', mark: '✉', label: 'Email', href: 'mailto:?subject=' + enc(title) + '&body=' + enc(url) }
+    ];
+    if (navigator.share) items.unshift({ tag: 'button', network: 'native', mark: '↥', label: 'Device share' });
+    items.forEach(function(item) {
+      var el;
+      if (item.tag === 'a') {
+        el = document.createElement('a');
+        el.href = item.href;
+        el.target = '_blank';
+        el.rel = 'noopener noreferrer';
+      } else {
+        el = document.createElement('button');
+        el.type = 'button';
+      }
+      el.className = 'share-option';
+      el.setAttribute('data-network', item.network);
+      el.innerHTML = '<span class="share-mark" aria-hidden="true">' + item.mark + '</span><span class="share-option-text">' + item.label + '</span>';
+      if (item.network === 'copy') {
+        el.addEventListener('click', function() {
+          var u = sc.getAttribute('data-url');
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(u).then(function() {
+              var lbl = el.querySelector('.share-option-text');
+              var orig = lbl.textContent;
+              lbl.textContent = 'Copied';
+              setTimeout(function() { lbl.textContent = orig; }, 1400);
+            }).catch(function() {});
+          }
+        });
+      }
+      if (item.network === 'native') {
+        el.addEventListener('click', function() {
+          var u = sc.getAttribute('data-url');
+          var t = sc.getAttribute('data-title');
+          var tx = sc.getAttribute('data-text') || t;
+          navigator.share({ title: t, text: tx, url: u }).catch(function() {});
+          setMenu(false);
+        });
+      }
+      menu.appendChild(el);
+    });
+  }
+
+  trigger.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var url = sc.getAttribute('data-url');
+    var title = sc.getAttribute('data-title');
+    var text = sc.getAttribute('data-text') || title;
+    if (navigator.share && window.matchMedia('(max-width: 760px)').matches) {
+      navigator.share({ title: title, text: text, url: url }).catch(function() {});
+      return;
+    }
+    if (menu.hidden) { buildMenu(); setMenu(true); } else { setMenu(false); }
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!sc.contains(e.target)) setMenu(false);
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') setMenu(false);
+  });
+})();
 </script>
 
 </body>
