@@ -853,7 +853,7 @@ function renderTop8() {
   currentTop8.forEach((photo, i) => {
     const item = document.createElement('div');
     item.className = 'top8-item';
-    const slug = photo.src ? photo.src.replace('photos/', '').replace(/\.[^.]+$/, '') : null;
+    const slug = photo.src ? photo.src.replace('photos/', '').replace(/\.[^.]+$/, '').replace(/_/g, '-') : null;
     if (photo.src) {
       const thumbSrc = photo.src.replace('photos/', 'photos/thumbs/').replace('.png', '.jpg');
       const labelHtml = slug
@@ -1012,7 +1012,7 @@ function showCurrentPhoto() {
   }
   img.style.display = 'block';
   document.getElementById('lightboxCaption').textContent = photo.title || photo.label || '';
-  const slug = photo.src ? photo.src.replace('photos/', '').replace(/\.[^.]+$/, '') : null;
+  const slug = photo.src ? photo.src.replace('photos/', '').replace(/\.[^.]+$/, '').replace(/_/g, '-') : null;
   const entryLink = document.getElementById('lightboxEntryLink');
   if (slug) {
     entryLink.href = 'photos/' + slug + '.html';
