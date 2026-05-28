@@ -20,6 +20,10 @@
     css.href = LEAFLET_CSS;
     document.head.appendChild(css);
 
+    var style = document.createElement('style');
+    style.textContent = '.mini-map-leaflet{position:relative;z-index:0;isolation:isolate;}';
+    document.head.appendChild(style);
+
     var js = document.createElement('script');
     js.src = LEAFLET_JS;
     js.onload = function () {
