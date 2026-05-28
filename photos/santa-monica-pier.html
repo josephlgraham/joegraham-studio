@@ -694,7 +694,7 @@
     font: bold 15px var(--font-display);
   }
   .info-card .card-body { padding: 10px; }
-  .mini-map iframe {
+  .mini-map .map-frame {
     width: 100%;
     height: 300px;
     border: 1px solid #b2c3d5;
@@ -819,7 +819,7 @@
     .top-bar-nav { flex-wrap: wrap; justify-content: center; }
     .top-bar-nav a { padding: 3px 6px; font-size: 9px; }
     .side-rail, .related-grid, .entry-pagination, .resource-list { grid-template-columns: 1fr; }
-    .mini-map iframe { height: 240px; }
+    .mini-map .map-frame { height: 240px; }
     .polaroid { transform: none; }
     .pager-card.next { text-align: left; grid-template-columns: 64px 1fr; }
     .pager-card.next img { grid-column: 1; }
@@ -848,7 +848,8 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-94JMP16XXY');
-</script></head>
+</script>  <script defer src="/assets/mini-map.js"></script>
+</head>
 <body>
 <a class="skip-link" href="#field-notes">Entry content</a>
 <header class="top-bar" role="banner">
@@ -914,7 +915,7 @@
 <section class="info-card mini-map">
 <h3>Santa Monica Pier</h3>
 <div class="card-body">
-<iframe loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-118.5070,34.0020,-118.4890,34.0150&amp;layer=mapnik&amp;marker=34.0094,-118.4973" title="Map showing Santa Monica Pier in Santa Monica, California"></iframe>
+<div class="map-frame mini-map-leaflet" role="img" aria-label="Map showing Santa Monica Pier in Santa Monica, California" data-bbox="-118.5070,34.0020,-118.4890,34.0150" data-marker="34.0094,-118.4973"></div>
 <p class="map-caption">Santa Monica Pier, Santa Monica, California.</p>
 </div>
 </section>

@@ -649,7 +649,7 @@
     font: bold 15px var(--font-display);
   }
   .info-card .card-body { padding: 10px; }
-  .mini-map iframe {
+  .mini-map .map-frame {
     width: 100%;
     height: 300px;
     border: 1px solid #b2c3d5;
@@ -774,7 +774,7 @@
     .top-bar-nav { flex-wrap: wrap; justify-content: center; }
     .top-bar-nav a { padding: 3px 6px; font-size: 9px; }
     .side-rail, .related-grid, .entry-pagination, .resource-list { grid-template-columns: 1fr; }
-    .mini-map iframe { height: 240px; }
+    .mini-map .map-frame { height: 240px; }
     .polaroid { transform: none; }
     .pager-card.next { text-align: left; grid-template-columns: 64px 1fr; }
     .pager-card.next img { grid-column: 1; }
@@ -803,7 +803,8 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-94JMP16XXY');
-</script></head>
+</script>  <script defer src="/assets/mini-map.js"></script>
+</head>
 <body>
 <a class="skip-link" href="#field-notes">Entry content</a>
 <header class="top-bar" role="banner">
@@ -871,7 +872,7 @@
 <section class="info-card mini-map">
 <h3>Duncan's Landing</h3>
 <div class="card-body">
-<iframe loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-123.12,38.36,-123.02,38.44" title="Map showing Duncan's Landing and Sonoma Coast State Park"></iframe>
+<div class="map-frame mini-map-leaflet" role="img" aria-label="Map showing Duncan's Landing and Sonoma Coast State Park" data-bbox="-123.12,38.36,-123.02,38.44"></div>
 <p class="map-caption">Sonoma Coast State Park, California.</p>
 </div>
 </section>

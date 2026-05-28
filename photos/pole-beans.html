@@ -618,7 +618,7 @@
     font: bold 15px var(--font-display);
   }
   .info-card .card-body { padding: 10px; }
-  .mini-map iframe {
+  .mini-map .map-frame {
     width: 100%;
     height: 300px;
     border: 1px solid #b2c3d5;
@@ -743,7 +743,7 @@
     .top-bar-nav { flex-wrap: wrap; justify-content: center; }
     .top-bar-nav a { padding: 3px 6px; font-size: 9px; }
     .side-rail, .related-grid, .entry-pagination, .resource-list { grid-template-columns: 1fr; }
-    .mini-map iframe { height: 240px; }
+    .mini-map .map-frame { height: 240px; }
     .polaroid { transform: none; }
     .pager-card.next { text-align: left; grid-template-columns: 64px 1fr; }
     .pager-card.next img { grid-column: 1; }
@@ -772,7 +772,8 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-94JMP16XXY');
-</script></head>
+</script>  <script defer src="/assets/mini-map.js"></script>
+</head>
 <body>
 <a class="skip-link" href="#field-notes">Entry content</a>
 <header class="top-bar" role="banner">
@@ -835,7 +836,7 @@
 <p>Pole beans also change the geometry of a garden. Instead of spreading low and wide, they pull upward by touch, wrapping around a trellis, cane, fence, or stake. That makes the plant useful in tight space and visually legible in a photograph. You can see the strategy.</p>
 <p>Like other legumes, common beans have relationships with <span class="term-wrap"><a aria-describedby="tip-nitrogen-fixers" class="term" href="https://extension.umn.edu/planting-and-growing-guides/using-legumes-improve-soil" rel="noopener" target="_blank">nitrogen-fixing bacteria</a><span class="term-card" id="tip-nitrogen-fixers" role="tooltip"><strong>Nitrogen fixation</strong>Legumes can partner with bacteria in root nodules that convert atmospheric nitrogen into forms plants can use.</span></span>. That does not make a single vine a miracle worker, but it does place the plant inside the old logic of garden rotation: grow, eat, save, compost, plant again.</p>
 </article>
-<aside aria-label="Map and references" class="side-rail"><section class="info-card mini-map"><h3>Central Alabama</h3><div class="card-body"><iframe loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-87.80,32.90,-85.90,34.30&amp;layer=mapnik" title="Map showing Central Alabama general region"></iframe><p class="map-caption">Central Alabama. General region only.</p></div></section>
+<aside aria-label="Map and references" class="side-rail"><section class="info-card mini-map"><h3>Central Alabama</h3><div class="card-body"><div class="map-frame mini-map-leaflet" role="img" aria-label="Map showing Central Alabama general region" data-bbox="-87.80,32.90,-85.90,34.30"></div><p class="map-caption">Central Alabama. General region only.</p></div></section>
 <section class="info-card">
 <h3>Learn more</h3>
 <div class="card-body">

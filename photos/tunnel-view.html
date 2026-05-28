@@ -564,7 +564,7 @@
     font: bold 15px var(--font-display);
   }
   .info-card .card-body { padding: 10px; }
-  .mini-map iframe {
+  .mini-map .map-frame {
     width: 100%;
     height: 300px;
     border: 1px solid #b2c3d5;
@@ -689,7 +689,7 @@
     .top-bar-nav { flex-wrap: wrap; justify-content: center; }
     .top-bar-nav a { padding: 3px 6px; font-size: 9px; }
     .side-rail, .related-grid, .entry-pagination, .resource-list { grid-template-columns: 1fr; }
-    .mini-map iframe { height: 240px; }
+    .mini-map .map-frame { height: 240px; }
     .polaroid { transform: none; }
     .pager-card.next { text-align: left; grid-template-columns: 64px 1fr; }
     .pager-card.next img { grid-column: 1; }
@@ -718,7 +718,8 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-94JMP16XXY');
-</script></head>
+</script>  <script defer src="/assets/mini-map.js"></script>
+</head>
 <body>
 <a class="skip-link" href="#field-notes">Entry content</a>
 
@@ -777,7 +778,7 @@
         <p>That is why the view can feel over-familiar and still work. It has been photographed endlessly, but the structure holds. The valley pulls the eye inward, the waterfall marks the right edge, and Half Dome waits at the back like a punctuation mark.</p>
       </article>
       <aside class="side-rail" aria-label="Map and references">
-        <section class="info-card mini-map"><h3>Tunnel View</h3><div class="card-body"><iframe loading="lazy" title="Tunnel View map" src="https://www.openstreetmap.org/export/embed.html?bbox=-119.69,37.70,-119.62,37.75&amp;layer=mapnik"></iframe><p class="map-caption">Tunnel View area, Yosemite National Park.</p></div></section>
+        <section class="info-card mini-map"><h3>Tunnel View</h3><div class="card-body"><div class="map-frame mini-map-leaflet" role="img" aria-label="Tunnel View map" data-bbox="-119.69,37.70,-119.62,37.75"></div><p class="map-caption">Tunnel View area, Yosemite National Park.</p></div></section>
         <section class="info-card"><h3>Learn more</h3><div class="card-body"><ul class="resource-list"><li><a href="https://www.nps.gov/yose/index.htm" target="_blank" rel="noopener"><strong>Yosemite National Park</strong><span>National Park Service portal for park context, planning, and natural history.</span></a></li><li><a href="https://www.nps.gov/yose/learn/nature/geology.htm" target="_blank" rel="noopener"><strong>Yosemite Geology</strong><span>NPS overview of granite, glaciation, waterfalls, and the forces that shaped Yosemite Valley.</span></a></li><li><a href="https://www.nps.gov/places/000/tunnel-view.htm" target="_blank" rel="noopener"><strong>Tunnel View</strong><span>NPS place page for the famous overlook near the Wawona Tunnel.</span></a></li><li><a href="https://www.nps.gov/yose/learn/historyculture/index.htm" target="_blank" rel="noopener"><strong>Yosemite History and Culture</strong><span>Park background on the human stories attached to this heavily visited landscape.</span></a></li></ul></div></section>
       </aside>
     </div>

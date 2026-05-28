@@ -665,7 +665,7 @@
     font: bold 15px var(--font-display);
   }
   .info-card .card-body { padding: 10px; }
-  .mini-map iframe {
+  .mini-map .map-frame {
     width: 100%;
     height: 300px;
     border: 1px solid #b2c3d5;
@@ -790,7 +790,7 @@
     .top-bar-nav { flex-wrap: wrap; justify-content: center; }
     .top-bar-nav a { padding: 3px 6px; font-size: 9px; }
     .side-rail, .related-grid, .entry-pagination, .resource-list { grid-template-columns: 1fr; }
-    .mini-map iframe { height: 240px; }
+    .mini-map .map-frame { height: 240px; }
     .polaroid { transform: none; }
     .pager-card.next { text-align: left; grid-template-columns: 64px 1fr; }
     .pager-card.next img { grid-column: 1; }
@@ -819,7 +819,8 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-94JMP16XXY');
-</script></head>
+</script>  <script defer src="/assets/mini-map.js"></script>
+</head>
 <body>
 <a class="skip-link" href="#field-notes">Entry content</a>
 <header class="top-bar" role="banner">
@@ -885,7 +886,7 @@
 <section class="info-card mini-map">
 <h3>South Shore, Kauai</h3>
 <div class="card-body">
-<iframe loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-159.56,21.84,-159.42,21.90&amp;layer=mapnik&amp;marker=21.8840,-159.4935" title="Map showing McBryde and Allerton Garden on Kauai"></iframe>
+<div class="map-frame mini-map-leaflet" role="img" aria-label="Map showing McBryde and Allerton Garden on Kauai" data-bbox="-159.56,21.84,-159.42,21.90" data-marker="21.8840,-159.4935"></div>
 <p class="map-caption">McBryde &amp; Allerton Garden, National Tropical Botanical Garden, Kauai.</p>
 </div>
 </section>
