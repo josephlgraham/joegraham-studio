@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Journal | Joe Graham Photography</title>
+<meta name="description" content="Trip journals from Joe Graham: photos, maps, and background on the places behind the pictures.">
+<style>
+:root{
+  --bg-page:#C4D1DF;--bg-module:#fff;--bg-module-header:#336699;--bg-nav:#003471;--bg-nav-hover:#0050a0;
+  --text-body:#333;--text-link:#0033cc;--text-light:#666;--border-module:#b3c5d7;--border-light:#d5d5d5;
+  --accent-orange:#ff6600;--accent-online:#0c0;--bg-soft:#f0f4f8;
+  --verdana:Verdana,Geneva,Tahoma,sans-serif;--trebuchet:"Trebuchet MS",Trebuchet,"Segoe UI",sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg-page:#1a2230;--bg-module:#232c3b;--bg-module-header:#2c5a88;--text-body:#dfe4ea;--text-link:#8fb8ff;--text-light:#a3adbb;--border-module:#3a4a60;--border-light:#3a4557;--bg-soft:#1d2533;}}
+:root[data-theme="dark"]{--bg-page:#1a2230;--bg-module:#232c3b;--bg-module-header:#2c5a88;--text-body:#dfe4ea;--text-link:#8fb8ff;--text-light:#a3adbb;--border-module:#3a4a60;--border-light:#3a4557;--bg-soft:#1d2533;}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg-page);background-image:radial-gradient(circle at 12% 10%,rgba(255,255,255,.3),transparent 25rem),linear-gradient(180deg,rgba(255,255,255,.12),transparent 42%,rgba(0,0,0,.05));font-family:var(--verdana);font-size:13px;line-height:1.6;color:var(--text-body)}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--text-link);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible{outline:2px solid var(--accent-orange);outline-offset:2px}
+.top-bar{background:var(--bg-nav);padding:4px 0;border-bottom:1px solid #001a33;position:sticky;top:0;z-index:100;padding-top:calc(4px + env(safe-area-inset-top,0px))}
+.top-bar-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 10px}
+.top-bar-logo{font-family:var(--trebuchet);font-size:32px;font-weight:bold;color:#fff;letter-spacing:-.5px}
+.top-bar-logo:hover{text-decoration:none}
+.top-bar-logo span{color:var(--accent-orange)}
+.top-bar-nav{display:flex;gap:6px}
+.top-bar-nav a{color:#fff;padding:6px 9px;font-size:10px;text-transform:uppercase;letter-spacing:.08em;border:1px solid transparent}
+.top-bar-nav a:hover,.top-bar-nav a.active{background:var(--bg-nav-hover);text-decoration:none;border-color:rgba(255,255,255,.25)}
+.container{max-width:960px;margin:0 auto;padding:12px 8px 40px}
+.module{background:var(--bg-module);border:1px solid var(--border-module);border-radius:2px;margin-bottom:10px;box-shadow:0 1px 2px rgba(0,0,0,.15);overflow:hidden}
+.module-header{background:var(--bg-module-header);color:#fff;font-size:11px;font-weight:bold;padding:4px 8px;display:flex;justify-content:space-between;gap:8px}
+.module-body{padding:12px}
+h1{font-family:var(--trebuchet);font-size:28px;margin:0 0 6px}
+p{margin:0 0 .9em;max-width:38rem}
+p:last-child{margin:0}
+.trips{display:grid;grid-template-columns:repeat(auto-fill,minmax(var(--tile,300px),1fr));gap:10px;padding:10px}
+.sizer{display:flex;align-items:center;gap:4px;font-weight:normal}
+.sizer span{font-size:10px;color:#cde;margin-right:2px}
+.sizer button{font:bold 10px var(--verdana);color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);border-radius:2px;padding:2px 7px;cursor:pointer;line-height:1.5}
+.sizer button:hover{background:rgba(255,255,255,.25)}
+.sizer button[aria-pressed="true"]{background:#fff;color:var(--bg-module-header);border-color:#fff}
+.trip{display:flex;flex-direction:column;border:1px solid var(--border-module);background:var(--bg-soft);color:var(--text-body)}
+.trip:hover{text-decoration:none;border-color:var(--bg-module-header)}
+.trip:hover .t-name{text-decoration:underline}
+.t-shot{aspect-ratio:3/2;object-fit:cover;width:100%}
+.t-soon{aspect-ratio:3/2;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(45deg,rgba(51,102,153,.10),rgba(51,102,153,.10) 10px,transparent 10px,transparent 20px);color:var(--text-light);font-family:var(--trebuchet);font-size:15px;font-weight:bold}
+.t-body{padding:9px 10px}
+.t-name{font-family:var(--trebuchet);font-size:clamp(15px,1.4vw + 8px,19px);font-weight:bold;color:var(--text-link);line-height:1.2}
+.t-where{font-size:11px;color:var(--text-light);margin-bottom:5px}
+.t-blurb{font-size:12px}
+.t-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+.tag{font-size:10px;padding:2px 6px;border:1px solid var(--border-light);background:var(--bg-module);color:var(--text-light)}
+.tag.live{border-color:var(--accent-online);color:#0a0;font-weight:bold}
+.tag.zoom{border-color:var(--accent-orange);color:#c44f00;font-weight:bold}
+footer{text-align:center;font-size:10px;color:var(--text-light);padding:14px 0;border-top:1px solid var(--border-module)}
+/* small tiles: trim the text so they stay tidy */
+.trips.sz-220 .t-blurb{display:none}
+.trips.sz-220 .t-body{padding:7px 8px}
+.trips.sz-220 .t-where{margin-bottom:0}
+.trips.sz-220 .t-tags{margin-top:6px}
+@media (max-width:560px){
+  .trips{grid-template-columns:1fr !important}
+  .trips.sz-220{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+}
+@media (max-width:820px){
+  .top-bar-logo{font-size:24px}.top-bar-nav{flex-wrap:nowrap;gap:0}.top-bar-nav a{padding:5px 5px;font-size:9px}
+  body{font-size:14px}}
+</style>
+</head>
+<body>
+<header class="top-bar">
+  <div class="top-bar-inner">
+    <a href="/" class="top-bar-logo">joe<span>graham</span></a>
+    <nav class="top-bar-nav" aria-label="Primary navigation">
+      <a href="/">Profile</a>
+      <a href="/portfolio.html">Portfolio</a>
+      <a href="/journal/" class="active" aria-current="page">Journal</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <section class="module">
+    <div class="module-header">Joe's Journal</div>
+    <div class="module-body">
+      <h1>Trips</h1>
+      <p>Photos from the road, with a map of every stop and the history and background behind each place. Pick a trip and come along.</p>
+    </div>
+  </section>
+
+  <section class="module" aria-labelledby="h-trips">
+    <div class="module-header"><span id="h-trips">Pick a Trip</span>
+      <div class="sizer" role="group" aria-label="Tile size"><span>Size</span>
+        <button type="button" data-size="220" aria-pressed="false">Small</button>
+        <button type="button" data-size="300" aria-pressed="true">Medium</button>
+        <button type="button" data-size="440" aria-pressed="false">Large</button>
+      </div></div>
+    <div class="trips">
+
+      <a class="trip" href="yosemite/">
+        <img class="t-shot" src="img/yosemite.jpg" width="900" height="600" alt="Tunnel View in Yosemite: El Capitan, Half Dome, and the valley floor in fall color.">
+        <div class="t-body">
+          <div class="t-name">Yosemite</div>
+          <div class="t-where">Yosemite National Park, California</div>
+          <div class="t-blurb">Arch Rock to the valley campgrounds, with climbers on El Capitan, giant sugar pine cones, and Ansel Adams.</div>
+          <div class="t-tags"><span class="tag live">Live</span><span class="tag">7 stops</span><span class="tag zoom">🔍 Find the climbers</span></div>
+        </div>
+      </a>
+
+      <a class="trip" href="kauai/">
+        <img class="t-shot" src="img/kauai.jpg" width="900" height="600" loading="lazy" alt="Hanalei Valley on Kauaʻi: flooded green taro fields along a winding river, with forested mountains behind.">
+        <div class="t-body">
+          <div class="t-name">Kauaʻi</div>
+          <div class="t-where">Kauaʻi, Hawaii</div>
+          <div class="t-blurb">Hanalei taro, Waimea Canyon, the sea-glass sand at Glass Beach, and a crawl into a cave holding 10,000 years of fossils.</div>
+          <div class="t-tags"><span class="tag live">Live</span><span class="tag">11 stops</span><span class="tag zoom">↔️ Wet side, dry side</span></div>
+        </div>
+      </a>
+
+      <a class="trip" href="big-island/">
+        <img class="t-shot" src="img/big-island.jpg" width="900" height="600" loading="lazy" alt="Waipiʻo Valley on Hawaiʻi Island: steep green sea cliffs, a curving black-sand beach, and deep blue water.">
+        <div class="t-body">
+          <div class="t-name">The Big Island</div>
+          <div class="t-where">Hawaiʻi Island, Hawaii</div>
+          <div class="t-blurb">Three visits: the Kīlauea lava lake four months before it vanished, Waipiʻo Valley, waterfalls, the Hilo market, whales, and a first earthquake.</div>
+          <div class="t-tags"><span class="tag live">Live</span><span class="tag">9 stops</span><span class="tag zoom">🔍 Kīlauea then and now</span></div>
+        </div>
+      </a>
+
+      <a class="trip" href="north-coast/">
+        <img class="t-shot" src="img/north-coast.jpg" width="900" height="600" loading="lazy" alt="Goat Rock Beach on the Sonoma Coast: a long curve of sand, green hills, and big white clouds.">
+        <div class="t-body">
+          <div class="t-name">The North Coast</div>
+          <div class="t-where">Marin to Mendocino, California</div>
+          <div class="t-blurb">Muir Woods, the Petrified Forest, Goat Rock, and Glass Beach at Fort Bragg, and who each place was saved from.</div>
+          <div class="t-tags"><span class="tag live">Live</span><span class="tag">7 stops</span><span class="tag zoom">↔️ Two glass beaches</span></div>
+        </div>
+      </a>
+
+      <div class="trip" aria-label="Palm Springs, coming soon">
+        <div class="t-soon">Coming soon</div>
+        <div class="t-body">
+          <div class="t-name">Palm Springs</div>
+          <div class="t-where">Coachella Valley, California</div>
+          <div class="t-blurb">In progress.</div>
+          <div class="t-tags"><span class="tag">In progress</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+<script>
+(function(){
+  var grid=document.querySelector('.trips'), btns=[].slice.call(document.querySelectorAll('.sizer button'));
+  function set(size,save){
+    grid.style.setProperty('--tile',size+'px');
+    grid.className='trips sz-'+size;
+    btns.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.size===size))});
+    if(save){try{localStorage.setItem('journal-tile',size)}catch(e){}}
+  }
+  var saved=null; try{saved=localStorage.getItem('journal-tile')}catch(e){}
+  set(btns.some(function(b){return b.dataset.size===saved})?saved:'300',false);
+  btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.size,true)})});
+})();
+</script>
+<footer>&copy; 2026 Joe Graham &middot; <a href="/legal.html">Legal &amp; Privacy</a></footer>
+</body>
+</html>

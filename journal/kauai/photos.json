@@ -1,0 +1,507 @@
+[
+ {
+  "file": "lihue-morning.jpg",
+  "slug": "lihue-morning",
+  "make": "samsung",
+  "model": "SM-S906U1",
+  "taken": "2022:10:21 06:27:50",
+  "focal_mm": 5.4,
+  "aperture": 1.8,
+  "shutter": 0.008333333333333333,
+  "iso": "800",
+  "focal_35mm": "23",
+  "orig_size": [
+   2252,
+   4000
+  ],
+  "web": "img/lihue-morning.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "peacock.jpg",
+  "slug": "peacock",
+  "make": "samsung",
+  "model": "SM-S906U1",
+  "taken": "2022:10:21 07:42:35",
+  "focal_mm": 7.0,
+  "aperture": 2.4,
+  "shutter": 0.0028089887640449437,
+  "iso": "25",
+  "focal_35mm": "69",
+  "has_gps": true,
+  "orig_size": [
+   2252,
+   4000
+  ],
+  "web": "img/peacock.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "snail.jpg",
+  "slug": "snail",
+  "make": "samsung",
+  "model": "SM-S906U1",
+  "taken": "2022:10:21 07:44:58",
+  "focal_mm": 5.4,
+  "aperture": 1.8,
+  "shutter": 0.005555555555555556,
+  "iso": "40",
+  "focal_35mm": "23",
+  "has_gps": true,
+  "orig_size": [
+   4000,
+   2252
+  ],
+  "web": "img/snail.jpg",
+  "size": [
+   1500,
+   845
+  ],
+  "portrait": false
+ },
+ {
+  "file": "starfruit.jpg",
+  "slug": "starfruit",
+  "make": "samsung",
+  "model": "SM-S906U1",
+  "taken": "2022:10:21 09:43:36",
+  "focal_mm": 5.4,
+  "aperture": 1.8,
+  "shutter": 0.005555555555555556,
+  "iso": "20",
+  "focal_35mm": "23",
+  "has_gps": true,
+  "orig_size": [
+   2252,
+   4000
+  ],
+  "web": "img/starfruit.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "north-shore.jpg",
+  "slug": "north-shore",
+  "make": "samsung",
+  "model": "SM-S906U1",
+  "taken": "2022:10:21 11:03:25",
+  "focal_mm": 2.2,
+  "aperture": 2.2,
+  "shutter": 0.0003898635477582846,
+  "iso": "50",
+  "focal_35mm": "13",
+  "has_gps": true,
+  "orig_size": [
+   4000,
+   2252
+  ],
+  "web": "img/north-shore.jpg",
+  "size": [
+   1500,
+   845
+  ],
+  "portrait": false
+ },
+ {
+  "file": "hanalei-valley.jpg",
+  "slug": "hanalei-valley",
+  "make": "samsung",
+  "model": "SM-S906U1",
+  "taken": "2022:10:21 11:25:53",
+  "focal_mm": 2.2,
+  "aperture": 2.2,
+  "shutter": 0.00021372088053002778,
+  "iso": "50",
+  "focal_35mm": "13",
+  "has_gps": true,
+  "orig_size": [
+   4000,
+   2252
+  ],
+  "web": "img/hanalei-valley.jpg",
+  "size": [
+   1500,
+   845
+  ],
+  "portrait": false
+ },
+ {
+  "file": "kekaha-sunset.jpg",
+  "slug": "kekaha-sunset",
+  "make": "samsung",
+  "model": "SM-S906U1",
+  "taken": "2022:10:21 17:52:17",
+  "focal_mm": 7.0,
+  "aperture": 2.4,
+  "shutter": 0.0005694760820045558,
+  "iso": "25",
+  "focal_35mm": "69",
+  "has_gps": true,
+  "orig_size": [
+   2252,
+   4000
+  ],
+  "web": "img/kekaha-sunset.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "spouting-horn-mushroom.jpg",
+  "slug": "spouting-horn-mushroom",
+  "make": "samsung",
+  "model": "SM-S906U1",
+  "taken": "2022:10:22 10:39:47",
+  "focal_mm": 5.4,
+  "aperture": 1.8,
+  "shutter": 0.004672897196261682,
+  "iso": "20",
+  "focal_35mm": "23",
+  "has_gps": true,
+  "orig_size": [
+   4000,
+   2252
+  ],
+  "web": "img/spouting-horn-mushroom.jpg",
+  "size": [
+   1500,
+   845
+  ],
+  "portrait": false
+ },
+ {
+  "file": "spam-socks.jpg",
+  "slug": "spam-socks",
+  "make": "samsung",
+  "model": "SM-S906U1",
+  "taken": "2022:10:22 15:32:25",
+  "focal_mm": 5.4,
+  "aperture": 1.8,
+  "shutter": 0.008333333333333333,
+  "iso": "500",
+  "focal_35mm": "23",
+  "has_gps": true,
+  "orig_size": [
+   2252,
+   4000
+  ],
+  "web": "img/spam-socks.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "glass-sand.jpg",
+  "slug": "glass-sand",
+  "make": "samsung",
+  "model": "SM-S906U1",
+  "taken": "2022:10:24 18:00:44",
+  "focal_mm": 5.4,
+  "aperture": 1.8,
+  "shutter": 0.005555555555555556,
+  "iso": "100",
+  "focal_35mm": "23",
+  "has_gps": true,
+  "orig_size": [
+   4000,
+   2252
+  ],
+  "web": "img/glass-sand.jpg",
+  "size": [
+   1500,
+   845
+  ],
+  "portrait": false
+ },
+ {
+  "file": "glass-beach-sunset.jpg",
+  "slug": "glass-beach-sunset",
+  "make": "samsung",
+  "model": "SM-S906U1",
+  "taken": "2022:10:24 18:02:22",
+  "focal_mm": 5.4,
+  "aperture": 1.8,
+  "shutter": 0.000984251968503937,
+  "iso": "20",
+  "focal_35mm": "23",
+  "has_gps": true,
+  "orig_size": [
+   4000,
+   2252
+  ],
+  "web": "img/glass-beach-sunset.jpg",
+  "size": [
+   1500,
+   845
+  ],
+  "portrait": false
+ },
+ {
+  "file": "cave-trail.jpg",
+  "slug": "cave-trail",
+  "make": "samsung",
+  "model": "SM-S906U1",
+  "taken": "2022:10:25 14:45:31",
+  "focal_mm": 5.4,
+  "aperture": 1.8,
+  "shutter": 0.0006557377049180328,
+  "iso": "20",
+  "focal_35mm": "23",
+  "has_gps": true,
+  "orig_size": [
+   4000,
+   2252
+  ],
+  "web": "img/cave-trail.jpg",
+  "size": [
+   1500,
+   845
+  ],
+  "portrait": false
+ },
+ {
+  "file": "haole-koa.jpg",
+  "slug": "haole-koa",
+  "make": "samsung",
+  "model": "SM-S906U1",
+  "taken": "2022:10:25 14:50:10",
+  "focal_mm": 5.4,
+  "aperture": 1.8,
+  "shutter": 0.000794912559618442,
+  "iso": "20",
+  "focal_35mm": "23",
+  "has_gps": true,
+  "orig_size": [
+   2252,
+   4000
+  ],
+  "web": "img/haole-koa.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "boardwalk.jpg",
+  "slug": "boardwalk",
+  "make": "samsung",
+  "model": "SM-S906U1",
+  "taken": "2022:10:25 15:05:05",
+  "focal_mm": 5.4,
+  "aperture": 1.8,
+  "shutter": 0.0026666666666666666,
+  "iso": "20",
+  "focal_35mm": "23",
+  "has_gps": true,
+  "orig_size": [
+   2252,
+   4000
+  ],
+  "web": "img/boardwalk.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "cave-entrance.jpg",
+  "slug": "cave-entrance",
+  "make": "samsung",
+  "model": "SM-S906U1",
+  "taken": "2022:10:25 15:11:14",
+  "focal_mm": 5.4,
+  "aperture": 1.8,
+  "shutter": 0.005555555555555556,
+  "iso": "64",
+  "focal_35mm": "23",
+  "has_gps": true,
+  "orig_size": [
+   2252,
+   4000
+  ],
+  "web": "img/cave-entrance.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "cave-chamber.jpg",
+  "slug": "cave-chamber",
+  "make": "samsung",
+  "model": "SM-S906U1",
+  "taken": "2022:10:25 15:13:19",
+  "focal_mm": 2.2,
+  "aperture": 2.2,
+  "shutter": 0.0024752475247524753,
+  "iso": "50",
+  "focal_35mm": "13",
+  "has_gps": true,
+  "orig_size": [
+   4000,
+   2252
+  ],
+  "web": "img/cave-chamber.jpg",
+  "size": [
+   1500,
+   845
+  ],
+  "portrait": false
+ },
+ {
+  "file": "sinkhole-wall.jpg",
+  "slug": "sinkhole-wall",
+  "make": "samsung",
+  "model": "SM-S906U1",
+  "taken": "2022:10:25 15:16:23",
+  "focal_mm": 2.2,
+  "aperture": 2.2,
+  "shutter": 0.0025,
+  "iso": "50",
+  "focal_35mm": "13",
+  "has_gps": true,
+  "orig_size": [
+   4000,
+   2252
+  ],
+  "web": "img/sinkhole-wall.jpg",
+  "size": [
+   1500,
+   845
+  ],
+  "portrait": false
+ },
+ {
+  "file": "plumeria.jpg",
+  "slug": "plumeria",
+  "make": "samsung",
+  "model": "SM-S906U1",
+  "taken": "2022:10:26 07:00:03",
+  "focal_mm": 5.4,
+  "aperture": 1.8,
+  "shutter": 0.005555555555555556,
+  "iso": "100",
+  "focal_35mm": "23",
+  "has_gps": true,
+  "orig_size": [
+   2252,
+   4000
+  ],
+  "web": "img/plumeria.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "waimea-canyon.jpg",
+  "slug": "waimea-canyon",
+  "make": "samsung",
+  "model": "SM-S906U1",
+  "taken": "2022:10:26 09:59:01",
+  "focal_mm": 2.2,
+  "aperture": 2.2,
+  "shutter": 0.00021258503401360543,
+  "iso": "50",
+  "focal_35mm": "13",
+  "has_gps": true,
+  "orig_size": [
+   4000,
+   2252
+  ],
+  "web": "img/waimea-canyon.jpg",
+  "size": [
+   1500,
+   845
+  ],
+  "portrait": false
+ },
+ {
+  "file": "shell-ginger.jpg",
+  "slug": "shell-ginger",
+  "make": "samsung",
+  "model": "SM-S906U1",
+  "taken": "2022:10:26 11:51:18",
+  "focal_mm": 5.4,
+  "aperture": 1.8,
+  "shutter": 0.0004488330341113106,
+  "iso": "20",
+  "focal_35mm": "23",
+  "has_gps": true,
+  "orig_size": [
+   2252,
+   4000
+  ],
+  "web": "img/shell-ginger.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "nene.jpg",
+  "slug": "nene",
+  "make": "samsung",
+  "model": "SM-S906U1",
+  "taken": "2022:10:29 08:23:46",
+  "focal_mm": 7.0,
+  "aperture": 2.4,
+  "shutter": 0.0008904719501335708,
+  "iso": "25",
+  "focal_35mm": "69",
+  "has_gps": true,
+  "orig_size": [
+   2252,
+   4000
+  ],
+  "web": "img/nene.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "noni.jpg",
+  "slug": "noni",
+  "make": "samsung",
+  "model": "SM-S906U1",
+  "taken": "2022:10:29 14:56:43",
+  "focal_mm": 5.4,
+  "aperture": 1.8,
+  "shutter": 0.005555555555555556,
+  "iso": "40",
+  "focal_35mm": "23",
+  "has_gps": true,
+  "orig_size": [
+   2252,
+   4000
+  ],
+  "web": "img/noni.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ }
+]

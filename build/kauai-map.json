@@ -1,0 +1,298 @@
+{
+ "out": "kauai-map.svg",
+ "out_mini": "kauai-mini.svg",
+ "width": 830,
+ "bbox": [
+  -159.81,
+  -159.27,
+  21.855,
+  22.245
+ ],
+ "scale_miles": 5,
+ "alt": "Map of Kauai with eleven numbered stops: Lihue on the east side, a coffee stand at Moloaa, the North Shore at Lumahai and Haena, the Hanalei Valley Lookout, Kekaha on the west side, Waimea Canyon, and Glass Beach, Spouting Horn, Poipu, and Makauwahi Cave along the south shore.",
+ "terrain": {
+  "npz": "kauai-dem.npz",
+  "step": 500,
+  "index": 1000,
+  "lo": 0,
+  "hi": 5500
+ },
+ "roads": [
+  [
+   [
+    21.972,
+    -159.352
+   ],
+   [
+    22.045,
+    -159.336
+   ],
+   [
+    22.08,
+    -159.315
+   ],
+   [
+    22.14,
+    -159.312
+   ],
+   [
+    22.178,
+    -159.333
+   ],
+   [
+    22.205,
+    -159.405
+   ],
+   [
+    22.216,
+    -159.47
+   ],
+   [
+    22.205,
+    -159.5
+   ],
+   [
+    22.218,
+    -159.535
+   ],
+   [
+    22.214,
+    -159.556
+   ],
+   [
+    22.222,
+    -159.575
+   ],
+   [
+    22.221,
+    -159.583
+   ]
+  ],
+  [
+   [
+    21.972,
+    -159.352
+   ],
+   [
+    21.968,
+    -159.395
+   ],
+   [
+    21.932,
+    -159.432
+   ],
+   [
+    21.915,
+    -159.505
+   ],
+   [
+    21.925,
+    -159.53
+   ],
+   [
+    21.905,
+    -159.585
+   ],
+   [
+    21.912,
+    -159.598
+   ],
+   [
+    21.956,
+    -159.668
+   ],
+   [
+    21.97,
+    -159.72
+   ],
+   [
+    22.0,
+    -159.765
+   ]
+  ],
+  [
+   [
+    21.932,
+    -159.432
+   ],
+   [
+    21.905,
+    -159.468
+   ],
+   [
+    21.879,
+    -159.458
+   ],
+   [
+    21.877,
+    -159.436
+   ],
+   [
+    21.887,
+    -159.42
+   ]
+  ],
+  [
+   [
+    21.905,
+    -159.468
+   ],
+   [
+    21.893,
+    -159.487
+   ],
+   [
+    21.886,
+    -159.492
+   ]
+  ],
+  [
+   [
+    21.956,
+    -159.668
+   ],
+   [
+    22.0,
+    -159.682
+   ],
+   [
+    22.05,
+    -159.672
+   ],
+   [
+    22.072,
+    -159.662
+   ],
+   [
+    22.12,
+    -159.662
+   ]
+  ]
+ ],
+ "notes": [
+  {
+   "lat": 22.03,
+   "lon": -159.325,
+   "text": "Kūhiō Hwy",
+   "rotate": -75
+  },
+  {
+   "lat": 21.938,
+   "lon": -159.565,
+   "text": "Kaumualiʻi Hwy",
+   "rotate": -18
+  },
+  {
+   "lat": 22.2,
+   "lon": -159.71,
+   "text": "Nā Pali Coast",
+   "kind": "water",
+   "rotate": -30
+  },
+  {
+   "lat": 21.9,
+   "lon": -159.78,
+   "text": "← Niʻihau, 17 mi",
+   "kind": "water"
+  },
+  {
+   "lat": 21.87,
+   "lon": -159.66,
+   "text": "Pacific Ocean",
+   "kind": "water"
+  }
+ ],
+ "landmarks": [
+  {
+   "name": "Waiʻaleʻale 5,148 ft",
+   "lat": 22.074,
+   "lon": -159.498,
+   "side": "r"
+  },
+  {
+   "name": "Hāʻupu 2,297 ft",
+   "lat": 21.936,
+   "lon": -159.414,
+   "side": "r"
+  }
+ ],
+ "pins": [
+  {
+   "n": 1,
+   "name": "Līhuʻe",
+   "lat": 21.9507,
+   "lon": -159.3632,
+   "side": "r"
+  },
+  {
+   "n": 2,
+   "name": "Moloaʻa",
+   "lat": 22.1796,
+   "lon": -159.3313,
+   "side": "l"
+  },
+  {
+   "n": 3,
+   "name": "Lumahaʻi",
+   "lat": 22.2181,
+   "lon": -159.5431,
+   "side": "b"
+  },
+  {
+   "n": 4,
+   "name": "Hanalei Valley",
+   "lat": 22.2127,
+   "lon": -159.4758,
+   "side": "r"
+  },
+  {
+   "n": 5,
+   "name": "Kekaha",
+   "lat": 21.972,
+   "lon": -159.73,
+   "side": "b"
+  },
+  {
+   "n": 6,
+   "name": "Spouting Horn",
+   "lat": 21.8863,
+   "lon": -159.4913,
+   "side": "t"
+  },
+  {
+   "n": 7,
+   "name": "Poʻipū",
+   "lat": 21.8768,
+   "lon": -159.439,
+   "side": "b"
+  },
+  {
+   "n": 8,
+   "name": "Glass Beach",
+   "lat": 21.8983,
+   "lon": -159.5844,
+   "side": "b"
+  },
+  {
+   "n": 9,
+   "name": "Makauwahi Cave",
+   "lat": 21.8887,
+   "lon": -159.4186,
+   "side": "r"
+  },
+  {
+   "n": 10,
+   "name": "Waimea Canyon",
+   "lat": 22.0719,
+   "lon": -159.6616,
+   "side": "l"
+  },
+  {
+   "n": 11,
+   "name": "Hāʻena",
+   "lat": 22.2204,
+   "lon": -159.5664,
+   "side": "l"
+  }
+ ]
+}

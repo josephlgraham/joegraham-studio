@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The North Coast | Journal | Joe Graham Photography</title>
+<meta name="description" content="California's North Coast in photos: Muir Woods, the Petrified Forest near Calistoga, Goat Rock on the Sonoma Coast, and Glass Beach at Fort Bragg. Postcard views, with the history of who took the land, the trees, and the name underneath. Photographs by Joe Graham.">
+<meta property="og:title" content="The North Coast | Joe Graham Photography">
+<meta property="og:description" content="Redwoods, petrified redwoods, the Sonoma Coast, and two glass beaches: maps, history, and the story under every stop.">
+<meta property="og:image" content="https://joegraham.studio/journal/img/north-coast.jpg">
+<meta property="og:url" content="https://joegraham.studio/journal/north-coast/">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+{{BASE_CSS}}
+/* coastline map: sea around a DEM coastline */
+.m-sea{fill:#d9e7f1}
+.m-coast{fill:#eef1ea;stroke:#8fb0c9;stroke-width:1.2}
+.map-wrap.isle{background:#d9e7f1}
+.m-water{paint-order:stroke;stroke:#d9e7f1;stroke-width:3px}
+
+/* the lyric: a quiet line of history under each happy caption */
+.lyric{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:13.5px;line-height:1.55;color:var(--text-light);border-left:2px solid var(--border-module);padding:1px 0 1px 10px;margin:0 0 .9em;max-width:38rem}
+
+/* side-scroll gallery post */
+.gal{background:var(--plate)}
+.strip{display:flex;gap:6px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:8px;scrollbar-width:thin;scrollbar-color:#5a6678 transparent;overscroll-behavior-x:contain}
+.strip:focus-visible{outline:2px solid var(--accent-orange);outline-offset:-2px}
+.strip figure{flex:0 0 auto;scroll-snap-align:center;margin:0;display:flex;flex-direction:column;max-width:88%}
+.strip img{height:min(58vh,440px);width:auto;max-width:100%;object-fit:contain}
+.strip figcaption{color:#e6e6e6;font-size:11px;line-height:1.4;padding:6px 2px 0;width:0;min-width:100%}
+.gal-bar{display:flex;align-items:center;justify-content:center;gap:14px;padding:4px 8px 8px;color:#cfd6df;font-size:11px}
+.gal-bar button{font:bold 18px var(--verdana);line-height:1;color:#fff;background:var(--bg-module-header);border:1px solid #214d7a;border-radius:2px;width:34px;height:30px;cursor:pointer}
+.gal-bar button:hover{background:var(--bg-nav-hover)}
+.gal-bar button[disabled]{opacity:.35;cursor:default}
+
+/* two glass beaches slider */
+.cmp{position:relative;background:var(--plate);overflow:hidden;touch-action:pan-y}
+.cmp img{display:block;width:100%;height:auto}
+.cmp .top{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--x,50%)) 0 0)}
+.cmp .top img{width:100%;height:100%;object-fit:cover}
+.cmp .rule{position:absolute;top:0;bottom:0;left:var(--x,50%);width:3px;margin-left:-1.5px;background:#fff;box-shadow:0 0 6px rgba(0,0,0,.6);pointer-events:none}
+.cmp .knob{position:absolute;top:50%;left:var(--x,50%);transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:var(--accent-orange);border:3px solid #fff;color:#fff;font:bold 16px var(--verdana);display:flex;align-items:center;justify-content:center;pointer-events:none;box-shadow:0 2px 8px rgba(0,0,0,.5)}
+.cmp .side-l,.cmp .side-r{position:absolute;top:10px;font:bold 11px var(--verdana);color:#fff;padding:3px 8px;pointer-events:none;background:rgba(0,0,0,.6)}
+.cmp .side-l{left:10px}.cmp .side-r{right:10px}
+.cmp input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.cmp .tap-pill{bottom:10%}
+@media (max-width:820px){
+  .isle .m-lab{font-size:27px !important}
+  .isle .m-water,.isle .m-note{font-size:22px}
+  .isle .m-pin circle{r:19px}
+  .isle .m-pin .m-num{font-size:19px !important;transform:translateY(2px)}
+  .isle.mini .m-pin circle{r:22px}
+}
+@media (max-width:560px){.strip img{height:min(52vh,380px)}}
+@media (prefers-reduced-motion: reduce){.strip{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="top-bar" role="banner">
+  <div class="top-bar-inner">
+    <a href="/" class="top-bar-logo">joe<span>graham</span></a>
+    <nav class="top-bar-nav" aria-label="Primary navigation">
+      <a href="/">Profile</a>
+      <a href="/portfolio.html">Portfolio</a>
+      <a href="/journal/" class="active" aria-current="page">Journal</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+<aside class="side">
+  <div class="module mini-mod">
+    <div class="module-header">You Are Here</div>
+    <div class="map-wrap isle mini">{{MINI}}</div>
+  </div>
+  <div class="module">
+    <div class="module-header">Jump To</div>
+    <div class="module-body">
+      <nav aria-label="Jump to a post">
+        <ul class="jump" id="jump">
+          <li><a href="#history"><span>History</span><span class="e" aria-hidden="true">📜</span></a></li>
+          <li><a href="#muir-woods"><span>Muir Woods</span><span class="e" aria-hidden="true">🌲</span></a></li>
+          <li><a href="#plushies"><span>Near Napa</span><span class="e" aria-hidden="true">🧸</span></a></li>
+          <li><a href="#st-helena"><span>St. Helena</span><span class="e" aria-hidden="true">🍇</span></a></li>
+          <li><a href="#petrified"><span>Petrified Forest</span><span class="e" aria-hidden="true">🪵</span></a></li>
+          <li><a href="#goat-rock"><span>Goat Rock</span><span class="e" aria-hidden="true">🐐</span></a></li>
+          <li><a href="#arched-rock"><span>Arched Rock</span><span class="e" aria-hidden="true">🌊</span></a></li>
+          <li><a href="#mendocino"><span>Mendocino coast</span><span class="e" aria-hidden="true">🌫️</span></a></li>
+          <li><a href="#glass-beach"><span>Glass Beach</span><span class="e" aria-hidden="true">🍾</span></a></li>
+          <li><a href="#two-glass-beaches"><span>Two glass beaches</span><span class="e" aria-hidden="true">↔️</span></a></li>
+          <li><a href="#links"><span>Helpful links</span><span class="e" aria-hidden="true">🔗</span></a></li>
+          <li><a href="#sources"><span>Sources</span><span class="e" aria-hidden="true">📚</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</aside>
+
+<main class="feed">
+
+  <section class="module feed-head" aria-labelledby="h-top">
+    <div class="module-header">Joe's Journal <a href="/journal/">All trips &raquo;</a></div>
+    <div class="module-body">
+      <div>
+        <h1 id="h-top">The North Coast</h1>
+        <p class="sub">Marin, Napa, Sonoma, and Mendocino &middot; 2019, 2023, and 2024</p>
+        <p>North of the Golden Gate, California turns into redwoods, cold surf, and wine country. For thousands of years this was the land of the Coast Miwok, the Pomo peoples, and the Wappo. Then came, in quick order, Russian fur traders, the Gold Rush, the Army, and the lumber mills.</p>
+        <p>Most of what visitors love here was saved by someone: a grove, a beach, a stretch of coast. It is worth asking what each place was saved from, and who it was saved for. The photos here are the postcard. The small print under each one is the rest of the story.</p>
+        <p>Tap a numbered pin on the map to jump to that stop.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="module" id="map" aria-labelledby="h-map">
+    <div class="module-header"><span id="h-map">The Route</span><span class="tod" style="font-weight:normal;color:#cde;font-size:10px">South to north</span></div>
+    <div class="map-wrap isle">{{MAP}}</div>
+    <div class="map-cap">California&rsquo;s North Coast drawn from real elevation data (AWS Terrain Tiles, built from USGS and other public sources). Contour lines every 1,000 feet. Roads are simplified and pins are approximate. Tap a pin to jump to that stop.</div>
+  </section>
+
+  <section class="module post" id="history" aria-labelledby="h-hist">
+    <div class="module-header"><span class="where">Some background</span><span class="tod">Before the stops</span></div>
+    <div class="post-body">
+      <h2 id="h-hist">Who the coast was saved for</h2>
+      <p>The short version: who lived here, who arrived, and who got to decide what was worth keeping.</p>
+      <table class="facts"><caption>A short history of the North Coast</caption>
+        <tr><th>Thousands of years</th><td>Coast Miwok, Kashaya and other Pomo peoples, and the Wappo live along this coast and in these valleys.</td></tr>
+        <tr><th>1812 to 1841</th><td>The Russian-American Company builds Fort Ross on Kashaya Pomo land and brings Alaska Native hunters to take sea otters. By the late 1830s the otters are nearly gone, and the Russians sell out.</td></tr>
+        <tr><th>1848 and 1849</th><td>Gold is found in the Sierra. Sam Brannan stocks stores with mining supplies, then walks through San Francisco waving a bottle of gold. His store at Sutter&rsquo;s Fort takes in $150,000 a month.</td></tr>
+        <tr><th>1856 and 1857</th><td>The government sets up the Mendocino Indian Reservation on the coast, and the Army builds a post to control it: Fort Bragg.</td></tr>
+        <tr><th>1859</th><td>Brannan buys land at the top of Napa Valley and founds Calistoga as a hot springs resort.</td></tr>
+        <tr><th>1865 to 1869</th><td>The reservation is closed. Many of its people are marched inland to Round Valley, and the coastal land is sold for $1.25 an acre.</td></tr>
+        <tr><th>1870s</th><td>A homesteader finds stone logs near Calistoga and starts charging admission.</td></tr>
+        <tr><th>1885</th><td>In St. Helena, an &ldquo;Anti-Coolie League&rdquo; tries to buy out the Chinatown whose workers dug the valley&rsquo;s wine caves. The merchants take it to federal court and stay.</td></tr>
+        <tr><th>1906 to 1967</th><td>After the earthquake, Fort Bragg pushes its trash over the cliffs into the sea.</td></tr>
+        <tr><th>1908</th><td>William Kent gives Muir Woods to the nation to stop a water company from flooding it.</td></tr>
+        <tr><th>1913</th><td>In Congress, Kent helps pass the law that lets San Francisco flood Hetch Hetchy in Yosemite.</td></tr>
+        <tr><th>1920s and 1930s</th><td>More than 100,000 tons of Goat Rock are blasted away for a jetty at the mouth of the Russian River. The jetty fails.</td></tr>
+        <tr><th>1972 and 1976</th><td>California voters create the Coastal Commission, and the Coastal Act follows, with public access to the coast as one of its goals.</td></tr>
+        <tr><th>2020 to 2022</th><td>Fort Bragg considers a new name. It keeps the old one.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#history">Link to this post</a></div>
+  </section>
+
+  <article class="module post" id="muir-woods" data-pin="1" aria-labelledby="h-muir">
+    <div class="module-header"><span class="where"><span class="pin-badge">1</span>Muir Woods</span><span class="tod">2023, afternoon</span></div>
+    <figure class="post-photo"><img src="img/muir-woods-canopy.jpg" width="844" height="1500" alt="Looking up at tall coast redwoods rising out of a green understory of ferns and shrubs, with soft light coming through the canopy."></figure>
+    <div class="post-body">
+      <h2 id="h-muir">Looking up</h2>
+      <p>Just north of the Golden Gate, and the only thing to do is tip your head back.</p>
+      <p class="lyric">William Kent gave this grove to the nation in 1908 to keep a water company from flooding it, and named it for his friend John Muir. Five years later, in Congress, Kent helped pass the law that flooded Hetch Hetchy in Yosemite. It cost him Muir&rsquo;s friendship.</p>
+      <table class="facts"><caption>Muir Woods quick facts</caption>
+        <tr><th>The trees</th><td>Coast redwoods, the tallest trees on Earth.</td></tr>
+        <tr><th>Protected</th><td>Declared a national monument by President Theodore Roosevelt on January 9, 1908, using the Antiquities Act.</td></tr>
+        <tr><th>Visiting</th><td>Since 2018, parking and shuttle seats have to be reserved ahead of time.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#muir-woods">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="muir-woods-trail" data-pin="1" aria-labelledby="h-muir2">
+    <div class="module-header"><span class="where"><span class="pin-badge">1</span>Muir Woods</span><span class="tod">A few minutes later</span></div>
+    <figure class="post-photo"><img src="img/muir-woods-trail.jpg" width="844" height="1500" loading="lazy" alt="A dirt trail curving through a grove of straight redwood trunks, with bright green ground cover and one tree leaning across the frame."></figure>
+    <div class="post-body">
+      <h2 id="h-muir2">The trail through</h2>
+      <p>Quiet enough to hear your own footsteps.</p>
+      <p class="lyric">Kent spent his three terms in Congress arguing to keep Asian immigrants from owning land or becoming citizens. The Park Service now tells that part of his story, too.</p>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#muir-woods-trail">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="plushies" data-pin="2" aria-labelledby="h-plush">
+    <div class="module-header"><span class="where"><span class="pin-badge">2</span>Near Napa</span><span class="tod">2024, afternoon</span></div>
+    <figure class="post-photo"><img src="img/plushies.jpg" width="844" height="1500" loading="lazy" alt="A tall wall of stuffed toys, including Hello Kitty, Kuromi, My Melody, and a pink Patrick Star, piled against a blue sky."></figure>
+    <div class="post-body"><h2 id="h-plush">Every character at once</h2><p>A roadside vendor on the way into wine country, selling a little of everything, including a whole wall of plush toys. Patrick Star is winning.</p></div>
+    <div class="post-foot"><span></span><a class="permalink" href="#plushies">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="st-helena" data-pin="3" aria-labelledby="h-sth">
+    <div class="module-header"><span class="where"><span class="pin-badge">3</span>St. Helena</span><span class="tod">2024, midday</span></div>
+    <figure class="post-photo"><img src="img/st-helena-vineyard.jpg" width="1500" height="1000" loading="lazy" alt="Rows of young grapevines on wooden stakes running toward green hills and a mountain ridge, under a blue sky with one long band of white cloud."></figure>
+    <div class="post-body">
+      <h2 id="h-sth">Home base in wine country</h2>
+      <p>Where I stayed for the Napa Valley part of the trip, with vineyards right outside and a sky that looked painted on.</p>
+      <p class="lyric">Chinese workers dug the wine caves at Beringer, right here in St. Helena, by hand. By the 1880s they were up to 80 percent of the valley&rsquo;s vineyard labor. In 1885, 300 locals formed an &ldquo;Anti-Coolie League&rdquo; and tried to buy Chinatown out from under them. The merchants hired a lawyer and refused to move.</p>
+      <table class="facts"><caption>St. Helena quick facts</caption>
+        <tr><th>Where</th><td>Near the middle of Napa Valley, on Highway 29, between Napa and Calistoga.</td></tr>
+        <tr><th>The caves</th><td>The Beringer caves run more than 1,200 feet, dug with picks and shovels.</td></tr>
+        <tr><th>Remembered</th><td>A plaque now marks St. Helena&rsquo;s old Chinatown.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span>📷 Fujifilm X-T30 II, XF18-55mm at 18mm, f/4.5</span><a class="permalink" href="#st-helena">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="mountain-dew" data-pin="3" aria-labelledby="h-dew">
+    <div class="module-header"><span class="where"><span class="pin-badge">3</span>St. Helena</span><span class="tod">2024, afternoon</span></div>
+    <figure class="post-photo"><img src="img/mountain-dew.jpg" width="1000" height="1500" loading="lazy" alt="A can of Mountain Dew Zero Sugar chilling in a clear ice bucket, with a glass of bright green soda on the table behind it."></figure>
+    <div class="post-body"><h2 id="h-dew">Wine country, my way</h2><p>Some of the most famous wine in the world is made within a few miles of here. The ice bucket held a Mountain Dew.</p></div>
+    <div class="post-foot"><span>📷 Fujifilm X-T30 II, XF18-55mm at 28mm, f/3.2</span><a class="permalink" href="#mountain-dew">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="petrified" data-pin="4" aria-labelledby="h-pf">
+    <div class="module-header"><span class="where"><span class="pin-badge">4</span>The Petrified Forest, Calistoga</span><span class="tod">2024, late afternoon</span></div>
+    <div class="gal" role="region" aria-label="Photo gallery: the walk through the Petrified Forest, 5 photos">
+      <div class="strip" tabindex="0">
+        <figure><img src="img/pf-petrification.jpg" width="1500" height="1000" loading="lazy" alt="A trail sign titled A Story of Petrification beside a short, stony stump of petrified wood."><figcaption>First, the science lesson.</figcaption></figure>
+        <figure><img src="img/pf-log-water.jpg" width="1000" height="1500" loading="lazy" alt="A long petrified log lying in a narrow channel of still water, surrounded by grass."><figcaption>A stone log lying in its own little moat.</figcaption></figure>
+        <figure><img src="img/pf-log.jpg" width="1500" height="1000" loading="lazy" alt="A huge gray petrified log with deep bark-like texture, lying on bare dirt."><figcaption>You can still read the bark.</figcaption></figure>
+        <figure><img src="img/pf-hollow.jpg" width="1000" height="1500" loading="lazy" alt="The end of a hollow petrified log, its stone walls twisted and holed like a cave."><figcaption>Hollow all the way through.</figcaption></figure>
+        <figure><img src="img/pf-color.jpg" width="1500" height="1000" loading="lazy" alt="A section of petrified wood streaked with cream, orange, and gold, sitting in grass beside a path."><figcaption>Minerals doing the painting.</figcaption></figure>
+      </div>
+      <div class="gal-bar"><button type="button" class="gal-prev" aria-label="Previous photo">&lsaquo;</button><span class="gal-n" aria-live="polite">1 of 5</span><button type="button" class="gal-next" aria-label="Next photo">&rsaquo;</button></div>
+    </div>
+    <div class="post-body">
+      <h2 id="h-pf">Redwoods, turned to stone</h2>
+      <p>A short loop through the woods, past trees that fell a few million years ago and never rotted.</p>
+      <p class="lyric">The Wappo lived in this valley for thousands of years. By the time a homesteader started charging admission to see these logs in the 1870s, war and disease had nearly driven them out.</p>
+      <table class="facts"><caption>Petrified Forest quick facts</caption>
+        <tr><th>How it happened</th><td>A volcanic eruption about 3.4 million years ago knocked down a redwood forest and buried it in ash. Over time, silica soaked into the wood and turned it to stone.</td></tr>
+        <tr><th>The volcano</th><td>Seven miles northeast, in what is now Mount St. Helena.</td></tr>
+        <tr><th>Found by</th><td>Charles Evans, known as &ldquo;Petrified Charley,&rdquo; around 1870.</td></tr>
+        <tr><th>Owned by</th><td>One family since 1914. It is a private park, not a state one.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span>📷 Fujifilm X-T30 II, XF18-55mm at 18mm</span><a class="permalink" href="#petrified">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="the-queen" data-pin="4" aria-labelledby="h-queen">
+    <div class="module-header"><span class="where"><span class="pin-badge">4</span>The Petrified Forest, Calistoga</span><span class="tod">A few minutes later</span></div>
+    <figure class="post-photo"><img src="img/pf-queen.jpg" width="1000" height="1500" loading="lazy" alt="A living tree growing straight out of a massive moss-covered petrified log, with signs reading The Queen and Sequoia langsdorfii nailed to the trunk."></figure>
+    <div class="post-body">
+      <h2 id="h-queen">The Queen</h2>
+      <p>A living tree growing right out of a stone redwood. The old and the older.</p>
+      <p class="lyric">Calistoga was founded in 1859 by Sam Brannan, the man who stocked up on mining supplies before he ran through San Francisco shouting about gold. Robert Louis Stevenson visited these logs in 1880 and wrote that he was &ldquo;mightily unmoved.&rdquo;</p>
+      <table class="facts"><caption>From this visit</caption>
+        <tr><th>The species</th><td>The sign names it <i>Sequoia langsdorfii</i>, an ancient relative of today&rsquo;s redwoods.</td></tr>
+        <tr><th>In the portfolio</th><td>My favorite frame of her, <a href="/photos/petrified-forest.html"><i>The Queen</i></a>.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span>📷 Fujifilm X-T30 II, XF18-55mm at 55mm, f/6.4</span><a class="permalink" href="#the-queen">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="goat-rock" data-pin="5" aria-labelledby="h-goat">
+    <div class="module-header"><span class="where"><span class="pin-badge">5</span>Goat Rock, Sonoma Coast</span><span class="tod">2024, midday</span></div>
+    <figure class="post-photo"><img src="img/goat-rock-sign.jpg" width="1500" height="1000" loading="lazy" alt="A wooden sign reading Goat Rock, Blind Beach, Arch View, Sonoma Coast State Park, surrounded by rocks and yellow wildflowers, with cypress trees and hills behind."></figure>
+    <div class="post-body">
+      <h2 id="h-goat">Turn here</h2>
+      <p>Yellow wildflowers, blue sky, and a sign pointing three good directions at once.</p>
+      <p class="lyric">Goat Rock used to be joined to the shore. In the 1920s and &rsquo;30s, more than 100,000 tons of it were blasted off for a jetty to keep the Russian River&rsquo;s mouth open for ships. The jetty failed.</p>
+      <table class="facts"><caption>Goat Rock quick facts</caption>
+        <tr><th>Where</th><td>Sonoma Coast State Park, just south of where the Russian River meets the ocean at Jenner.</td></tr>
+        <tr><th>Look, don&rsquo;t swim</th><td>Cold water, strong currents, and sneaker waves. Keep an eye on the ocean.</td></tr>
+        <tr><th>In the portfolio</th><td><a href="/photos/goat-rock-beach.html"><i>Where the River Meets the Sea</i></a>, and just down the coast, <a href="/photos/duncans-landing.html"><i>Edge of the Sonoma Coast</i></a> at Duncan&rsquo;s Landing.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span>📷 Fujifilm X-T30 II, XF18-55mm at 18mm, f/5.6</span><a class="permalink" href="#goat-rock">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="arched-rock" data-pin="5" aria-labelledby="h-arch">
+    <div class="module-header"><span class="where"><span class="pin-badge">5</span>Arched Rock</span><span class="tod">2024, afternoon</span></div>
+    <figure class="post-photo"><img src="img/arched-rock.jpg" width="1000" height="1500" loading="lazy" alt="Looking down a bluff covered in pink ice plant to a small sandy beach and a big sea stack in turquoise water, with more rocks and hazy headlands beyond."></figure>
+    <div class="post-body">
+      <h2 id="h-arch">Turquoise, somehow</h2>
+      <p>Northern California water doing its best Caribbean impression.</p>
+      <p class="lyric">A few miles up the coast, the Russian-American Company built Fort Ross in 1812 on Kashaya Pomo land and brought Alaska Native hunters to take sea otters. By the late 1830s the otters were nearly gone, and in 1841 the Russians sold out.</p>
+    </div>
+    <div class="post-foot"><span>📷 Fujifilm X-T30 II, XF18-55mm at 18mm, f/3.2</span><a class="permalink" href="#arched-rock">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="goat-rock-beach" data-pin="5" aria-labelledby="h-gbeach">
+    <div class="module-header"><span class="where"><span class="pin-badge">5</span>Goat Rock Beach</span><span class="tod">A few minutes later</span></div>
+    <figure class="post-photo"><img src="img/goat-rock-beach.jpg" width="1500" height="1000" loading="lazy" alt="A long, wide sand beach curving toward green hills and a few houses, with surf on the left and rough rock in the foreground under big white clouds."></figure>
+    <div class="post-body">
+      <h2 id="h-gbeach">Room for everybody</h2>
+      <p>A whole beach and hardly anyone on it.</p>
+      <p class="lyric">Anyone can walk this beach partly because of a vote. In 1972, Californians created the Coastal Commission, and public access to the shore became state law four years later.</p>
+    </div>
+    <div class="post-foot"><span>📷 Fujifilm X-T30 II, XF18-55mm at 18mm, f/3.2</span><a class="permalink" href="#goat-rock-beach">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="sea-stacks" data-pin="5" aria-labelledby="h-stacks">
+    <div class="module-header"><span class="where"><span class="pin-badge">5</span>Sonoma Coast</span><span class="tod">2024, afternoon</span></div>
+    <figure class="post-photo"><img src="img/sea-stacks.jpg" width="1500" height="1000" loading="lazy" alt="A steep green hillside dropping toward a teal ocean scattered with dark sea stacks and white foam, under a clear blue sky."></figure>
+    <div class="post-body"><h2 id="h-stacks">Rocks, ocean, repeat</h2><p>Every pullout on Highway 1 looks like this. You stop at all of them anyway.</p></div>
+    <div class="post-foot"><span>📷 Fujifilm X-T30 II, XF18-55mm at 18mm, f/5.6</span><a class="permalink" href="#sea-stacks">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="mendocino" data-pin="6" aria-labelledby="h-mendo">
+    <div class="module-header"><span class="where"><span class="pin-badge">6</span>South of Mendocino</span><span class="tod">2019, evening</span></div>
+    <figure class="post-photo"><img src="img/mendocino-coast.jpg" width="1500" height="844" loading="lazy" alt="A calm gray cove under an overcast sky, ringed by eroded bluffs and a dark line of trees, with one large rock in the water near the beach."></figure>
+    <div class="post-body">
+      <h2 id="h-mendo">Fog-colored</h2>
+      <p>A gray evening on the Mendocino coast, and the water as still as a lake.</p>
+      <p class="lyric">In 1856 the government set aside a reservation along this coast for the Pomo and neighboring peoples. Within ten years it was closed, many of its people were marched inland to Round Valley, and the land was sold for $1.25 an acre.</p>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#mendocino">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="glass-beach" data-pin="7" aria-labelledby="h-glass">
+    <div class="module-header"><span class="where"><span class="pin-badge">7</span>Glass Beach, Fort Bragg</span><span class="tod">2019, late afternoon</span></div>
+    <figure class="post-photo"><img src="img/glass-beach.jpg" width="1500" height="844" loading="lazy" alt="Close-up of wet sea glass in white, blue, green, amber, and brown mixed with dark pebbles and strands of red seaweed."></figure>
+    <div class="post-body">
+      <h2 id="h-glass">Treasure, technically</h2>
+      <p>Look down and the whole beach sparkles.</p>
+      <p class="lyric">Fort Bragg began in 1857 as an Army post to control that reservation. It was named for Braxton Bragg, who later became a Confederate general. After 2020 the town talked about a new name. It kept the old one.</p>
+      <table class="facts"><caption>Glass Beach quick facts</caption>
+        <tr><th>Where the glass came from</th><td>After the 1906 earthquake, the town began dumping its trash over the cliffs here. It kept going until 1967, across three dump sites.</td></tr>
+        <tr><th>What the ocean did</th><td>Waves broke the glass and pottery down and tumbled the pieces smooth.</td></tr>
+        <tr><th>Protected</th><td>California State Parks took over the newest site in 2002, and it is now part of MacKerricher State Park.</td></tr>
+        <tr><th>Please leave it</th><td>Taking glass is illegal and can bring a fine of up to $500.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#glass-beach">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="mussel" data-pin="7" aria-labelledby="h-mussel">
+    <div class="module-header"><span class="where"><span class="pin-badge">7</span>Glass Beach, Fort Bragg</span><span class="tod">A few minutes earlier</span></div>
+    <figure class="post-photo"><img src="img/mussel.jpg" width="1500" height="844" loading="lazy" alt="An empty, open mussel shell full of sand, resting on a gray rock among tangled strands of kelp and red seaweed."></figure>
+    <div class="post-body"><h2 id="h-mussel">Somebody&rsquo;s old house</h2><p>Not everything on this beach came out of a bottle.</p></div>
+    <div class="post-foot"><span></span><a class="permalink" href="#mussel">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="two-glass-beaches" data-pin="7" aria-labelledby="h-two">
+    <div class="module-header"><span class="where"><span class="pin-badge">7</span>Two glass beaches</span><span class="tod">Fort Bragg and Kauaʻi</span></div>
+    <div class="callout"><span class="try-ico" aria-hidden="true">↔️</span><span><b>Interactive photo.</b> Drag the handle (or use the arrow keys) to compare Fort Bragg&rsquo;s Glass Beach with the one on Kauaʻi.</span></div>
+    <div class="cmp" id="cmp">
+      <img src="../kauai/img/glass-sand.jpg" width="1500" height="845" loading="lazy" alt="Glass Beach in ʻEleʻele, Kauaʻi: white coral bits, shells, dark basalt, and a few pieces of brown and clear sea glass.">
+      <div class="top"><img src="img/glass-beach.jpg" width="1500" height="844" loading="lazy" alt="Glass Beach in Fort Bragg, California: sea glass in white, blue, green, amber, and brown with dark pebbles and red seaweed."></div>
+      <div class="rule" aria-hidden="true"></div>
+      <div class="knob" aria-hidden="true">↔</div>
+      <span class="side-l" aria-hidden="true">Fort Bragg, 2019</span><span class="side-r" aria-hidden="true">Kauaʻi, 2022</span>
+      <input type="range" min="0" max="100" value="50" id="cmpIn" aria-label="Slide between Glass Beach in Fort Bragg, California and Glass Beach on Kauaʻi">
+      <button type="button" class="tap-pill" aria-hidden="true" tabindex="-1">↔ Drag to compare</button>
+    </div>
+    <div class="post-body">
+      <h2 id="h-two">Same story, two oceans</h2>
+      <p>Twenty-four hundred miles apart, and both beaches are made of the same thing: what people threw away. Fort Bragg&rsquo;s is mostly glass. Kauaʻi&rsquo;s is mostly coral and shell, with the glass mixed in.</p>
+      <p class="lyric">Both were town dumps. People stood on the cliffs and threw the trash into the sea, and a century of waves turned it into something people now drive hours to see.</p>
+      <a class="linkcard" href="/journal/kauai/#glass-beach"><span class="lc-ico" aria-hidden="true">🌺</span><span><b>See the other one.</b> Glass Beach in ʻEleʻele, on the Kauaʻi trip.</span></a>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#two-glass-beaches">Link to this post</a></div>
+  </article>
+
+  <section class="module post" id="links" aria-labelledby="h-links">
+    <div class="module-header"><span class="where">Helpful links</span><span class="tod">Go deeper</span></div>
+    <div class="post-body">
+      <h2 id="h-links">Keep exploring</h2>
+      <ul class="hl">
+        <li><a href="https://www.nps.gov/muwo/index.htm"><b>Muir Woods National Monument (NPS)</b></a><span>Reservations, trails, and park news.</span></li>
+        <li><a href="https://home.nps.gov/people/williamkent.htm"><b>William Kent (NPS)</b></a><span>The Park Service&rsquo;s own profile of the man who gave the grove away.</span></li>
+        <li><a href="https://www.petrifiedforest.org/history"><b>The Petrified Forest</b></a><span>History, hours, and the family that runs it.</span></li>
+        <li><a href="https://www.fortross.org/history/alaska-natives"><b>Fort Ross Conservancy: Alaska Natives at Fort Ross</b></a><span>The hunters the Russians brought south.</span></li>
+        <li><a href="https://www.parks.ca.gov/?page_id=451"><b>Sonoma Coast State Park</b></a><span>Goat Rock, Blind Beach, and the coast north and south.</span></li>
+        <li><a href="https://www.parks.ca.gov/?page_id=436"><b>MacKerricher State Park</b></a><span>Glass Beach and the Fort Bragg coast.</span></li>
+        <li><a href="https://www.coastal.ca.gov/"><b>California Coastal Commission</b></a><span>The agency that keeps the coast open to the public.</span></li>
+        <li><a href="https://www.pbssocal.org/shows/california-coastal-trail/when-native-americans-were-forcibly-removed-from-a-mendocino-indian-reservation"><b>The Mendocino Indian Reservation (PBS SoCal)</b></a><span>What happened to the people on this coast.</span></li>
+      </ul>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#links">Link to this post</a></div>
+  </section>
+
+  <section class="module post" id="sources" aria-labelledby="h-src">
+    <div class="module-header"><span class="where">Sources</span></div>
+    <div class="post-body">
+      <h2 id="h-src">Where the facts came from</h2>
+      <ol class="sources">
+        <li><a href="https://en.wikipedia.org/wiki/Muir_Woods_National_Monument">Wikipedia: Muir Woods National Monument</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/William_Kent_(American_politician)">Wikipedia: William Kent</a></li>
+        <li><a href="https://home.nps.gov/people/williamkent.htm">NPS: William Kent, conservationist and anti-immigrant politician</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Raker_Act">Wikipedia: Raker Act</a></li>
+        <li><a href="https://nps.gov/goga/learn/news/muir-woods-reservations.htm">NPS: Muir Woods reservations</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Petrified_Forest_(California)">Wikipedia: Petrified Forest (California)</a></li>
+        <li><a href="https://www.petrifiedforest.org/history">The Petrified Forest: History</a></li>
+        <li><a href="https://www.hmdb.org/m.asp?m=248026">Historical Marker Database: Robert Louis Stevenson Tree</a></li>
+        <li><a href="https://localwiki.org/yuba-sutter/Sam_Brannan">LocalWiki: Sam Brannan</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Sam_Brannan_Cottage">Wikipedia: Sam Brannan Cottage</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Goat_Rock_Beach">Wikipedia: Goat Rock Beach</a></li>
+        <li><a href="https://www.fondriest.com/news/russian-river-jetty.htm">Environmental Monitor: The Russian River jetty</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Fort_Ross,_California">Wikipedia: Fort Ross</a></li>
+        <li><a href="https://www.fortross.org/history/alaska-natives">Fort Ross Conservancy: Alaska Natives at Fort Ross</a></li>
+        <li><a href="https://www.britannica.com/place/Fort-Ross">Britannica: Fort Ross</a></li>
+        <li><a href="https://ballotpedia.org/California_Proposition_20,_Creation_of_the_California_Coastal_Commission_(1972)">Ballotpedia: California Proposition 20 (1972)</a></li>
+        <li><a href="https://beachapedia.org/Coastal_Act_and_the_California_Coastal_Commission">Beachapedia: The Coastal Act and the Coastal Commission</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Mendocino_Indian_Reservation">Wikipedia: Mendocino Indian Reservation</a></li>
+        <li><a href="https://www.pbssocal.org/shows/california-coastal-trail/when-native-americans-were-forcibly-removed-from-a-mendocino-indian-reservation">PBS SoCal: When Native Americans were forcibly removed from a Mendocino Indian reservation</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Fort_Bragg,_California">Wikipedia: Fort Bragg, California</a></li>
+        <li><a href="https://www.cbsnews.com/news/fort-bragg-california-exploring-name-change/">CBS News: Fort Bragg, California exploring a name change</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Glass_Beach_(Fort_Bragg,_California)">Wikipedia: Glass Beach (Fort Bragg)</a></li>
+        <li><a href="https://www.rockngem.com/glass-beach-at-fort-bragg/">Rock &amp; Gem Magazine: Glass Beach, Fort Bragg</a></li>
+        <li><a href="https://www.kqed.org/arts/13981793/chinese-immigrant-wine-workers-napa-sonoma-forgotten-history">KQED: The Chinese roots of Northern California&rsquo;s wine industry</a></li>
+        <li><a href="https://www.napahistory.org/chinese">Napa County Historical Society: The Chinese in Napa Valley</a></li>
+        <li><a href="https://shstory.org/st-helenaa-chinese-heritage/">St. Helena Historical Society: St. Helena&rsquo;s Chinese heritage</a></li>
+        <li><a href="https://napavalleyregister.com/star/news/st-helena-chinatown-plaque-history/article_50e403ed-c627-436c-88a7-08e4df643afb.html">Napa Valley Register: Plaque commemorates St. Helena&rsquo;s former Chinatown</a></li>
+      </ol>
+      <p class="checked">Details checked September 2026. Reservations, closures, and access rules change, so check with each park before you go. Map elevation: AWS Terrain Tiles (Mapzen / USGS).</p>
+      <p style="margin-top:10px"><a href="/journal/"><b>More trips &raquo;</b></a><br><a href="/portfolio.html"><b>See the portfolio &raquo;</b></a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer>&copy; 2026 Joe Graham &middot; <a href="/legal.html">Legal &amp; Privacy</a></footer>
+</div>
+
+<script>
+(function(){
+  var bar=document.querySelector('.top-bar');
+  function setBar(){document.documentElement.style.setProperty('--bar',bar.offsetHeight+'px')}
+  setBar(); window.addEventListener('resize',setBar);
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+  /* jump list + map pins: follow the post you're looking at */
+  var links=[].slice.call(document.querySelectorAll('#jump a'));
+  var map={}; links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});
+  var pins=[].slice.call(document.querySelectorAll('.m-pin'));
+  var posts=[].slice.call(document.querySelectorAll('.post'));
+  var lastPin=null;
+  function mark(el){
+    var a=map[el.id];
+    if(a){
+      links.forEach(function(x){x.classList.remove('on')}); a.classList.add('on');
+      if(window.matchMedia('(max-width: 820px)').matches){
+        var strip=a.closest('.jump'); strip.scrollTo({left:a.offsetLeft-strip.clientWidth/2+a.clientWidth/2,behavior:'auto'});
+      }
+    }
+    var p=el.getAttribute('data-pin');
+    if(p&&p!==lastPin){lastPin=p;pins.forEach(function(g){g.classList.toggle('on',g.getAttribute('data-pin')===p)})}
+  }
+  var firstFor={}; posts.forEach(function(p){var n=p.getAttribute('data-pin'); if(n&&!firstFor[n])firstFor[n]=p});
+  pins.forEach(function(g){
+    function go(){var p=firstFor[g.getAttribute('data-pin')]; if(p)p.scrollIntoView({behavior:reduce.matches?'auto':'smooth',block:'start'})}
+    g.addEventListener('click',go);
+    g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}});
+  });
+  var cur=null, tick=false;
+  function scan(){
+    tick=false; var line=window.innerHeight*0.45, hit=null;
+    for(var i=0;i<posts.length;i++){var r=posts[i].getBoundingClientRect(); if(r.top<=line&&r.bottom>line){hit=posts[i];break}}
+    if(hit&&hit!==cur){cur=hit;mark(hit)}
+  }
+  window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(scan)}},{passive:true});
+  scan();
+
+  /* side-scroll galleries */
+  [].slice.call(document.querySelectorAll('.gal')).forEach(function(g){
+    var strip=g.querySelector('.strip'), figs=[].slice.call(strip.children);
+    var prev=g.querySelector('.gal-prev'), next=g.querySelector('.gal-next'), n=g.querySelector('.gal-n');
+    function current(){
+      var mid=strip.scrollLeft+strip.clientWidth/2, best=0, d=1e9;
+      figs.forEach(function(f,i){var c=f.offsetLeft-strip.offsetLeft+f.offsetWidth/2, x=Math.abs(c-mid); if(x<d){d=x;best=i}});
+      return best;
+    }
+    function show(i){var f=figs[i]; strip.scrollTo({left:f.offsetLeft-strip.offsetLeft-(strip.clientWidth-f.offsetWidth)/2})}
+    function upd(){var i=current(); n.textContent=(i+1)+' of '+figs.length; prev.disabled=i===0; next.disabled=i===figs.length-1}
+    prev.addEventListener('click',function(){show(Math.max(0,current()-1))});
+    next.addEventListener('click',function(){show(Math.min(figs.length-1,current()+1))});
+    var t=null; strip.addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(upd,80)},{passive:true});
+    window.addEventListener('resize',upd); upd();
+  });
+
+  /* two glass beaches slider */
+  (function(){
+    var box=document.getElementById('cmp'), inp=document.getElementById('cmpIn'), pill=box.querySelector('.tap-pill');
+    function set(v){box.style.setProperty('--x',v+'%')}
+    inp.addEventListener('input',function(){set(inp.value);pill.classList.add('gone')});
+    pill.addEventListener('click',function(){pill.classList.add('gone');inp.focus()});
+    set(inp.value);
+  })();
+})();
+</script>
+</body>
+</html>

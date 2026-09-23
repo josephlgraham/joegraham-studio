@@ -1,0 +1,386 @@
+[
+ {
+  "file": "waipio.jpg",
+  "slug": "waipio",
+  "make": "Google",
+  "model": "Pixel 2",
+  "taken": "2018:01:10 13:30:43",
+  "focal_mm": 4.442,
+  "aperture": 1.8,
+  "shutter": 0.000214,
+  "iso": "64",
+  "focal_35mm": "27",
+  "has_gps": true,
+  "orig_size": [
+   4032,
+   3024
+  ],
+  "web": "img/waipio.jpg",
+  "size": [
+   1500,
+   1125
+  ],
+  "portrait": false
+ },
+ {
+  "file": "hilo-fruit.jpg",
+  "slug": "hilo-fruit",
+  "make": "Google",
+  "model": "Pixel 2 XL",
+  "taken": "2018:01:10 14:52:48",
+  "focal_mm": 4.459,
+  "aperture": 1.8,
+  "shutter": 0.008335,
+  "iso": "52",
+  "focal_35mm": "27",
+  "has_gps": true,
+  "orig_size": [
+   3840,
+   2160
+  ],
+  "web": "img/hilo-fruit.jpg",
+  "size": [
+   1500,
+   844
+  ],
+  "portrait": false
+ },
+ {
+  "file": "halemaumau.jpg",
+  "slug": "halemaumau",
+  "make": "Google",
+  "model": "Pixel 2 XL",
+  "taken": "2018:01:10 17:26:13",
+  "focal_mm": 4.459,
+  "aperture": 1.8,
+  "shutter": 0.002436,
+  "iso": "70",
+  "focal_35mm": "27",
+  "has_gps": true,
+  "orig_size": [
+   3840,
+   2160
+  ],
+  "web": "img/halemaumau.jpg",
+  "size": [
+   1500,
+   844
+  ],
+  "portrait": false
+ },
+ {
+  "file": "jaggar-sign.jpg",
+  "slug": "jaggar-sign",
+  "make": "Google",
+  "model": "Pixel 2",
+  "taken": "2018:01:10 17:44:11",
+  "focal_mm": 4.442,
+  "aperture": 1.8,
+  "shutter": 0.005044,
+  "iso": "68",
+  "focal_35mm": "27",
+  "has_gps": true,
+  "orig_size": [
+   4032,
+   3024
+  ],
+  "web": "img/jaggar-sign.jpg",
+  "size": [
+   1500,
+   1125
+  ],
+  "portrait": false
+ },
+ {
+  "file": "crater-coffee.jpg",
+  "slug": "crater-coffee",
+  "make": "Google",
+  "model": "Pixel 2 XL",
+  "taken": "2018:01:10 17:49:31",
+  "focal_mm": 4.45,
+  "aperture": 1.8,
+  "shutter": 0.0069,
+  "iso": "50",
+  "orig_size": [
+   1080,
+   1920
+  ],
+  "web": "img/crater-coffee.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "lava-lake.jpg",
+  "slug": "lava-lake-wide",
+  "make": "Google",
+  "model": "Pixel 2",
+  "taken": "2018:01:10 17:57:28",
+  "focal_mm": 4.442,
+  "aperture": 1.8,
+  "shutter": 0.008335,
+  "iso": "175",
+  "focal_35mm": "27",
+  "has_gps": true,
+  "orig_size": [
+   3024,
+   4032
+  ],
+  "web": "img/lava-lake-wide.jpg",
+  "size": [
+   1125,
+   750
+  ],
+  "portrait": false
+ },
+ {
+  "file": "anchialine-pool.jpg",
+  "slug": "anchialine-pool",
+  "make": "Google",
+  "model": "Pixel 2 XL",
+  "taken": "2018:01:11 14:27:02",
+  "focal_mm": 4.459,
+  "aperture": 1.8,
+  "shutter": 0.000385,
+  "iso": "52",
+  "focal_35mm": "27",
+  "has_gps": true,
+  "orig_size": [
+   2160,
+   3840
+  ],
+  "web": "img/anchialine-pool.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "sunglasses.jpg",
+  "slug": "sunglasses",
+  "make": "Google",
+  "model": "Pixel 2 XL",
+  "taken": "2018:01:11 14:33:26",
+  "focal_mm": 4.459,
+  "aperture": 1.8,
+  "shutter": 0.000385,
+  "iso": "50",
+  "focal_35mm": "27",
+  "has_gps": true,
+  "orig_size": [
+   3840,
+   2160
+  ],
+  "web": "img/sunglasses.jpg",
+  "size": [
+   1500,
+   844
+  ],
+  "portrait": false
+ },
+ {
+  "file": "lava-tube.jpg",
+  "slug": "lava-tube",
+  "make": "Google",
+  "model": "Pixel 2",
+  "taken": "2018:01:11 16:51:33",
+  "focal_mm": 4.442,
+  "aperture": 1.8,
+  "shutter": 0.000299,
+  "iso": "56",
+  "focal_35mm": "27",
+  "has_gps": true,
+  "orig_size": [
+   4032,
+   3024
+  ],
+  "web": "img/lava-tube.jpg",
+  "size": [
+   1500,
+   1125
+  ],
+  "portrait": false
+ },
+ {
+  "file": "goat.jpg",
+  "slug": "goat",
+  "make": "samsung",
+  "model": "SM-G991U1",
+  "taken": "2022:01:15 16:13:32",
+  "focal_mm": 5.9,
+  "aperture": 2.0,
+  "shutter": 0.000307396,
+  "iso": "25",
+  "focal_35mm": "28",
+  "has_gps": true,
+  "orig_size": [
+   4032,
+   2268
+  ],
+  "web": "img/goat.jpg",
+  "size": [
+   1500,
+   844
+  ],
+  "portrait": false
+ },
+ {
+  "file": "lapakahi-sunset.jpg",
+  "slug": "lapakahi-sunset",
+  "make": "samsung",
+  "model": "SM-G991U1",
+  "focal_mm": 5.400000095367432,
+  "taken": "2022:01:18 18:02:33",
+  "has_gps": true,
+  "orig_size": [
+   4032,
+   2268
+  ],
+  "web": "img/lapakahi-sunset.jpg",
+  "size": [
+   1500,
+   844
+  ],
+  "portrait": false
+ },
+ {
+  "file": "rainbow-falls.jpg",
+  "slug": "rainbow-falls",
+  "make": "samsung",
+  "model": "SM-G991U1",
+  "taken": "2022:01:19 11:40:24",
+  "focal_mm": 5.4,
+  "aperture": 1.8,
+  "shutter": 0.0007905138339920949,
+  "iso": "40",
+  "focal_35mm": "26",
+  "has_gps": true,
+  "orig_size": [
+   2268,
+   4032
+  ],
+  "web": "img/rainbow-falls.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "fairmont-sunrise.jpg",
+  "slug": "fairmont-sunrise",
+  "make": "samsung",
+  "model": "SM-S906U1",
+  "taken": "2024:02:03 07:38:44",
+  "focal_mm": 7.0,
+  "aperture": 2.4,
+  "shutter": 0.008130081300813009,
+  "iso": "25",
+  "focal_35mm": "69",
+  "has_gps": true,
+  "orig_size": [
+   2252,
+   4000
+  ],
+  "web": "img/fairmont-sunrise.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "mauna-kea-coffee.jpg",
+  "slug": "mauna-kea-coffee",
+  "make": "samsung",
+  "model": "SM-S906U1",
+  "taken": "2024:02:03 08:39:43",
+  "focal_mm": 5.4,
+  "aperture": 1.8,
+  "shutter": 0.0030120481927710845,
+  "iso": "20",
+  "focal_35mm": "23",
+  "has_gps": true,
+  "orig_size": [
+   2252,
+   4000
+  ],
+  "web": "img/mauna-kea-coffee.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "akaka-falls.jpg",
+  "slug": "akaka-falls",
+  "make": "samsung",
+  "model": "SM-S906U1",
+  "taken": "2024:02:07 11:51:28",
+  "focal_mm": 2.2,
+  "aperture": 2.2,
+  "shutter": 0.00047505938242280285,
+  "iso": "50",
+  "focal_35mm": "13",
+  "has_gps": true,
+  "orig_size": [
+   4000,
+   2252
+  ],
+  "web": "img/akaka-falls.jpg",
+  "size": [
+   1500,
+   845
+  ],
+  "portrait": false
+ },
+ {
+  "file": "hilo-market.jpg",
+  "slug": "hilo-market",
+  "make": "samsung",
+  "model": "SM-S906U1",
+  "taken": "2024:02:07 14:11:52",
+  "focal_mm": 5.4,
+  "aperture": 1.8,
+  "shutter": 0.003816793893129771,
+  "iso": "20",
+  "focal_35mm": "23",
+  "orig_size": [
+   2252,
+   4000
+  ],
+  "web": "img/hilo-market.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "selfie.jpg",
+  "slug": "selfie",
+  "make": "samsung",
+  "model": "SM-S906U1",
+  "taken": "2024:02:10 09:51:13",
+  "focal_mm": 3.3,
+  "aperture": 2.2,
+  "shutter": 0.02,
+  "iso": "250",
+  "focal_35mm": "25",
+  "has_gps": true,
+  "orig_size": [
+   2736,
+   3648
+  ],
+  "web": "img/selfie.jpg",
+  "size": [
+   1125,
+   1500
+  ],
+  "portrait": true
+ }
+]

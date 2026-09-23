@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Big Island | Journal | Joe Graham Photography</title>
+<meta name="description" content="Hawaiʻi Island in photos: Waipiʻo Valley, ʻAkaka and Rainbow Falls, the Hilo market, Kohala Coast whales, and the Kīlauea lava lake before it vanished. Postcard views, with the history of how a kingdom became a state underneath. Photographs by Joe Graham.">
+<meta property="og:title" content="The Big Island | Joe Graham Photography">
+<meta property="og:description" content="Three visits to Hawaiʻi Island: maps, history, and the Kīlauea lava lake four months before it disappeared.">
+<meta property="og:image" content="https://joegraham.studio/journal/img/big-island.jpg">
+<meta property="og:url" content="https://joegraham.studio/journal/big-island/">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+{{BASE_CSS}}
+/* island map: sea around a DEM coastline */
+.m-sea{fill:#d9e7f1}
+.m-coast{fill:#eef1ea;stroke:#8fb0c9;stroke-width:1.2}
+.map-wrap.isle{background:#d9e7f1}
+.m-water{paint-order:stroke;stroke:#d9e7f1;stroke-width:3px}
+
+/* side-scroll gallery post */
+.gal{background:var(--plate)}
+.strip{display:flex;gap:6px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:8px;scrollbar-width:thin;scrollbar-color:#5a6678 transparent;overscroll-behavior-x:contain}
+.strip:focus-visible{outline:2px solid var(--accent-orange);outline-offset:-2px}
+.strip figure{flex:0 0 auto;scroll-snap-align:center;margin:0;display:flex;flex-direction:column;max-width:88%}
+.strip img{height:min(58vh,440px);width:auto;max-width:100%;object-fit:contain}
+.strip figcaption{color:#e6e6e6;font-size:11px;line-height:1.4;padding:6px 2px 0;width:0;min-width:100%}
+.gal-bar{display:flex;align-items:center;justify-content:center;gap:14px;padding:4px 8px 8px;color:#cfd6df;font-size:11px}
+.gal-bar button{font:bold 18px var(--verdana);line-height:1;color:#fff;background:var(--bg-module-header);border:1px solid #214d7a;border-radius:2px;width:34px;height:30px;cursor:pointer}
+.gal-bar button:hover{background:var(--bg-nav-hover)}
+.gal-bar button[disabled]{opacity:.35;cursor:default}
+
+/* the lyric: a quiet line of history under each happy caption */
+.lyric{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:13.5px;line-height:1.55;color:var(--text-light);border-left:2px solid var(--border-module);padding:1px 0 1px 10px;margin:0 0 .9em;max-width:38rem}
+.status .lyric{font-size:14px}
+
+/* then and now */
+.tn-stage{position:relative;aspect-ratio:3/2;background:var(--plate);overflow:hidden}
+.tn-stage figure{position:absolute;inset:0;margin:0;opacity:0;transition:opacity .45s}
+.tn-stage figure.on{opacity:1}
+.tn-stage img{width:100%;height:100%;object-fit:cover}
+.tn-stage .credit{position:absolute;right:6px;bottom:5px;font-size:9px;color:#fff;background:rgba(0,0,0,.55);padding:1px 5px}
+.tn-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:8px;background:var(--bg-soft);border-bottom:1px solid var(--border-light)}
+.tn-tabs button{font:bold 11px var(--verdana);line-height:1.3;color:var(--text-body);background:var(--bg-module);border:1px solid var(--border-module);border-radius:2px;padding:6px 4px;cursor:pointer}
+.tn-tabs button span{display:block;font-weight:normal;font-size:10px;color:var(--text-light)}
+.tn-tabs button:hover{border-color:var(--bg-module-header)}
+.tn-tabs button[aria-selected="true"]{background:var(--bg-module-header);border-color:var(--bg-module-header);color:#fff}
+.tn-tabs button[aria-selected="true"] span{color:#cde}
+.tn-say{min-height:5.2em}
+@media (max-width:820px){
+  .isle .m-lab{font-size:27px !important}
+  .isle .m-water,.isle .m-note{font-size:22px}
+  .isle .m-pin circle{r:19px}
+  .isle .m-pin .m-num{font-size:19px !important;transform:translateY(2px)}
+  .isle.mini .m-pin circle{r:22px}
+}
+@media (max-width:560px){
+  .strip img{height:min(52vh,380px)}
+  .tn-tabs{grid-template-columns:repeat(2,1fr)}
+}
+@media (prefers-reduced-motion: reduce){.strip{scroll-behavior:auto}.tn-stage figure{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="top-bar" role="banner">
+  <div class="top-bar-inner">
+    <a href="/" class="top-bar-logo">joe<span>graham</span></a>
+    <nav class="top-bar-nav" aria-label="Primary navigation">
+      <a href="/">Profile</a>
+      <a href="/portfolio.html">Portfolio</a>
+      <a href="/journal/" class="active" aria-current="page">Journal</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+<aside class="side">
+  <div class="module mini-mod">
+    <div class="module-header">You Are Here</div>
+    <div class="map-wrap isle mini">{{MINI}}</div>
+  </div>
+  <div class="module">
+    <div class="module-header">Jump To</div>
+    <div class="module-body">
+      <nav aria-label="Jump to a post">
+        <ul class="jump" id="jump">
+          <li><a href="#history"><span>History</span><span class="e" aria-hidden="true">📜</span></a></li>
+          <li><a href="#lava-tube"><span>Lava tube</span><span class="e" aria-hidden="true">🕳️</span></a></li>
+          <li><a href="#goat"><span>Goats and donkeys</span><span class="e" aria-hidden="true">🐐</span></a></li>
+          <li><a href="#anchialine"><span>ʻAnaehoʻomalu Bay</span><span class="e" aria-hidden="true">🦐</span></a></li>
+          <li><a href="#whales"><span>Whales</span><span class="e" aria-hidden="true">🐋</span></a></li>
+          <li><a href="#mauna-kea-coffee"><span>Coffee with a view</span><span class="e" aria-hidden="true">☕</span></a></li>
+          <li><a href="#lapakahi"><span>Lapakahi</span><span class="e" aria-hidden="true">🌅</span></a></li>
+          <li><a href="#waipio"><span>Waipiʻo Valley</span><span class="e" aria-hidden="true">🏞️</span></a></li>
+          <li><a href="#akaka"><span>ʻAkaka Falls</span><span class="e" aria-hidden="true">💧</span></a></li>
+          <li><a href="#rainbow-falls"><span>Rainbow Falls</span><span class="e" aria-hidden="true">🌈</span></a></li>
+          <li><a href="#hilo-market"><span>Hilo market</span><span class="e" aria-hidden="true">🥭</span></a></li>
+          <li><a href="#kilauea"><span>Kīlauea, 2018</span><span class="e" aria-hidden="true">🌋</span></a></li>
+          <li><a href="#then-now"><span>Then and now</span><span class="e" aria-hidden="true">🔍</span></a></li>
+          <li><a href="#earthquake"><span>My first earthquake</span><span class="e" aria-hidden="true">📳</span></a></li>
+          <li><a href="#proof"><span>Proof</span><span class="e" aria-hidden="true">😎</span></a></li>
+          <li><a href="#links"><span>Helpful links</span><span class="e" aria-hidden="true">🔗</span></a></li>
+          <li><a href="#sources"><span>Sources</span><span class="e" aria-hidden="true">📚</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</aside>
+
+<main class="feed">
+
+  <section class="module feed-head" aria-labelledby="h-top">
+    <div class="module-header">Joe's Journal <a href="/journal/">All trips &raquo;</a></div>
+    <div class="module-body">
+      <div>
+        <h1 id="h-top">The Big Island</h1>
+        <p class="sub">Hawaiʻi Island &middot; January 2018, January 2022, and February 2024</p>
+        <p>Hawaiʻi Island is the youngest island in the chain and by far the biggest: about 4,028 square miles, nearly twice the size of all the other Hawaiian Islands put together. Five volcanoes built it, and two of them, Kīlauea and Mauna Loa, are still adding land.</p>
+        <p>It is also where modern Hawaiʻi begins. Kamehameha, the chief who united the islands, was born in North Kohala. Captain Cook died at Kealakekua Bay. And a little over a century after Kamehameha built a kingdom, that kingdom was gone. The photos here are the postcard. The small print under each one is the rest of the story.</p>
+        <p>Tap a numbered pin on the map to jump to that stop.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="module" id="map" aria-labelledby="h-map">
+    <div class="module-header"><span id="h-map">The Route</span><span class="tod" style="font-weight:normal;color:#cde;font-size:10px">A loop, starting in Kona</span></div>
+    <div class="map-wrap isle">{{MAP}}</div>
+    <div class="map-cap">Hawaiʻi Island drawn from real elevation data (AWS Terrain Tiles, built from USGS and other public sources). Contour lines every 1,000 feet, bold every 5,000 feet. Roads are simplified and pins are approximate. Tap a pin to jump to that stop.</div>
+  </section>
+
+  <section class="module post" id="history" aria-labelledby="h-hist">
+    <div class="module-header"><span class="where">Some background</span><span class="tod">Before the stops</span></div>
+    <div class="post-body">
+      <h2 id="h-hist">How a kingdom became a vacation</h2>
+      <p>The short version, from a king born in Kohala to a state where more Native Hawaiians now live away than at home.</p>
+      <table class="facts"><caption>A short history of the island</caption>
+        <tr><th>Around 1758</th><td>Kamehameha is born in North Kohala, near ʻUpolu Point.</td></tr>
+        <tr><th>February 14, 1779</th><td>Captain James Cook is killed at Kealakekua Bay, a year after his first landing at Waimea on Kauaʻi. (The Waimea up in this island&rsquo;s ranch country is a different town.)</td></tr>
+        <tr><th>1810</th><td>Kamehameha finishes uniting the islands into one kingdom.</td></tr>
+        <tr><th>1848 and 1850</th><td>The Māhele turns land into private property, and a new law lets foreigners buy it. By the end of the century, foreigners and large estates own most of the land that isn&rsquo;t government land.</td></tr>
+        <tr><th>1893</th><td>American and European businessmen, backed by U.S. Marines, overthrow Queen Liliʻuokalani.</td></tr>
+        <tr><th>1896</th><td>The new republic makes English the language of instruction in every school.</td></tr>
+        <tr><th>1897 and 1898</th><td>More than 21,000 Hawaiians sign petitions against annexation, and the treaty fails in the Senate. Congress annexes Hawaiʻi anyway, by a simple joint resolution.</td></tr>
+        <tr><th>1959</th><td>Statehood. Tourism soon replaces sugar as the islands&rsquo; business.</td></tr>
+        <tr><th>1964</th><td>The Army leases about 23,000 acres of state land on this island for 65 years, for $1.</td></tr>
+        <tr><th>1983 and 1987</th><td>Hawaiian-language teachers start the Pūnana Leo preschools. Four years later, Hawaiian is allowed back as a language of instruction in public schools.</td></tr>
+        <tr><th>1993</th><td>Congress formally apologizes for the overthrow.</td></tr>
+        <tr><th>2019</th><td>Thousands gather to block the road up Mauna Kea and stop another telescope on the summit.</td></tr>
+        <tr><th>2020</th><td>For the first time, the census counts more Native Hawaiians living outside Hawaiʻi than in it.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#history">Link to this post</a></div>
+  </section>
+
+  <article class="module post" id="lava-tube" data-pin="1" aria-labelledby="h-tube">
+    <div class="module-header"><span class="where"><span class="pin-badge">1</span>North of Kona</span><span class="tod">2018, late afternoon</span></div>
+    <figure class="post-photo"><img src="img/lava-tube.jpg" width="1500" height="1125" alt="Family members climbing over jagged black lava boulders toward the dark mouth of a lava tube, with a broad green-and-brown volcano rising behind under a blue sky."></figure>
+    <div class="post-body">
+      <h2 id="h-tube">A cave on the side of the road</h2>
+      <p>A lava tube right beside the highway north of the Kona airport. Everybody went scrambling. It has been closed off since.</p>
+      <p class="lyric">Hawaiians used tubes like this for shelter, water, and burial. Some things are closed off for good reasons.</p>
+      <table class="facts"><caption>Lava tubes and Hualālai</caption>
+        <tr><th>How tubes form</th><td>The top of a lava flow cools and crusts over while hot lava keeps moving underneath. When the flow drains out, it leaves a tunnel behind.</td></tr>
+        <tr><th>The mountain</th><td>Hualālai, 8,271 feet, the volcano behind Kona. It last erupted in 1800 and 1801.</td></tr>
+        <tr><th>Built on lava</th><td>Kona&rsquo;s airport sits on top of one of those 1801 flows, which ran all the way to the sea and formed Keāhole Point.</td></tr>
+        <tr><th>Stay out</th><td>Tubes collapse, and some hold burial sites. If one is closed off, it is closed for a reason.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#lava-tube">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="goat" data-pin="2" aria-labelledby="h-goat">
+    <div class="module-header"><span class="where"><span class="pin-badge">2</span>Waikoloa</span><span class="tod">2022, afternoon</span></div>
+    <figure class="post-photo"><img src="img/goat.jpg" width="1500" height="844" loading="lazy" alt="A goat silhouetted on top of a black lava boulder against a pale sky, with tufts of pink-tipped grass in the foreground and a long mountain slope behind."></figure>
+    <div class="post-body">
+      <h2 id="h-goat">King of the rock</h2>
+      <p>Lots of goats around Waikoloa, and a few donkeys too. This one found the best seat in the house.</p>
+      <p class="lyric">The first goats came as gifts from European ships in the 1700s. Gifts from ships have a way of staying.</p>
+      <table class="facts"><caption>Goats and donkeys</caption>
+        <tr><th>Goats</th><td>Not native. They arrived on European ships in the late 1700s and went wild across the islands, where they eat native plants down to the ground.</td></tr>
+        <tr><th>Donkeys</th><td>The Waikoloa donkeys descend from the &ldquo;Kona Nightingales,&rdquo; donkeys brought in during the early 1900s to haul coffee on Kona&rsquo;s steep farms. The nickname came from their braying at night.</td></tr>
+        <tr><th>Out of work</th><td>After World War II, jeeps and tractors took over the hauling, and many donkeys were turned loose.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#goat">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="anchialine" data-pin="2" aria-labelledby="h-pool">
+    <div class="module-header"><span class="where"><span class="pin-badge">2</span>ʻAnaehoʻomalu Bay</span><span class="tod">2018, afternoon</span></div>
+    <figure class="post-photo"><img src="img/anchialine-pool.jpg" width="844" height="1500" loading="lazy" alt="A small, clear pool of water in dark lava rock, ringed by green grass and shrubs, with a weathered log and a wooden rail behind."></figure>
+    <div class="post-body">
+      <h2 id="h-pool">A pool that is half ocean</h2>
+      <p>It looks like a puddle. It is actually one of the rarest habitats in Hawaiʻi.</p>
+      <p class="lyric">Chiefs once raised fish in the royal ponds just behind this beach. Today the ponds sit inside a resort.</p>
+      <table class="facts"><caption>Anchialine pools</caption>
+        <tr><th>What they are</th><td>Pools in the lava near the shore, fed from underneath by fresh groundwater and by seawater seeping in through the rock. The water is brackish and rises and falls with the tide.</td></tr>
+        <tr><th>Who lives here</th><td>Tiny red shrimp called ʻōpaeʻula, along with small fish and snails. Hawaiians used the shrimp as bait and fish food.</td></tr>
+        <tr><th>Protected</th><td>The Waikoloa Anchialine Pond Preservation Area was set aside in 1985.</td></tr>
+        <tr><th>Next door</th><td>Kuʻualiʻi and Kahapapa, two old Hawaiian fishponds right behind the beach.</td></tr>
+        <tr><th>Look only</th><td>Don&rsquo;t swim, wade, or put hands in. Sunscreen and soap harm the shrimp.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#anchialine">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="sunglasses" data-pin="2" aria-labelledby="h-shades">
+    <div class="module-header"><span class="where"><span class="pin-badge">2</span>ʻAnaehoʻomalu Bay</span><span class="tod">A few minutes later</span></div>
+    <figure class="post-photo"><img src="img/sunglasses.jpg" width="1500" height="844" loading="lazy" alt="A pair of tortoiseshell sunglasses resting on a thick tree branch, their lenses reflecting a sandy bay with palm trees and a pale sky."></figure>
+    <div class="post-body">
+      <h2 id="h-shades">A-Bay, reflected</h2><p>Set my sunglasses on a branch and the bay showed up in the lenses.</p>
+      <p class="lyric">Everything looks a little rosier through the right lenses.</p></div>
+    <div class="post-foot"><span></span><a class="permalink" href="#sunglasses">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="fairmont" data-pin="3" aria-labelledby="h-fair">
+    <div class="module-header"><span class="where"><span class="pin-badge">3</span>Mauna Lani</span><span class="tod">2024, sunrise</span></div>
+    <figure class="post-photo"><img src="img/fairmont-sunrise.jpg" width="844" height="1500" loading="lazy" alt="Early sun glowing through trees and palm fronds beside a row of hotel balconies."></figure>
+    <div class="post-body">
+      <h2 id="h-fair">Good morning from the Fairmont Orchid</h2>
+      <p>Sunrise from the balcony. The beach out front is where I sat and watched the whales.</p>
+      <p class="lyric">Housing in Hawaiʻi costs about three times the national average. In 2020, for the first time, more Native Hawaiians lived on the mainland than in the islands.</p>
+      <table class="facts"><caption>At the hotel</caption>
+        <tr><th>In the portfolio</th><td>The same grounds a few evenings later, <a href="/photos/hawaii-resort.html"><i>Twilight on the Kohala Coast</i></a>.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#fairmont">Link to this post</a></div>
+  </article>
+
+  <article class="module post status" id="whales" data-pin="3" aria-labelledby="h-whales">
+    <div class="module-header"><span class="where">Status update</span><span class="tod">February 2024</span></div>
+    <div class="post-body">
+      <p class="big" id="h-whales">Whales seen: lots 🐋<br>Favorite moment ever: this one</p>
+      <p>No photos, just the memory. Humpbacks from the beach at the hotel, again in Hilo, and again at sunset up at Lapakahi. Hard to top.</p>
+      <p class="lyric">From 1840 to 1860, more than 400 whaling ships a year put in at Hawaiian ports. The whales came back. That part of the story has a happy ending.</p>
+      <table class="facts"><caption>Humpback season in Hawaiʻi</caption>
+        <tr><th>When</th><td>The first whales show up in late November. The peak is January through March, and most are gone by April.</td></tr>
+        <tr><th>Why here</th><td>They spend summer feeding in Alaska and come to warm, shallow Hawaiian water to mate, give birth, and raise their calves.</td></tr>
+        <tr><th>The count</th><td>The Sanctuary Ocean Count happens every year on the last Saturday of January, February, and March. Anyone can volunteer to count from shore. On February 28, 2026, volunteers counted 1,935 whales statewide, 244 of them off Hawaiʻi Island.</td></tr>
+        <tr><th>Give them room</th><td>Federal rules require staying at least 100 yards from humpbacks in Hawaiʻi, on the water and in the air.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#whales">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="mauna-kea-coffee" data-pin="4" aria-labelledby="h-mkb">
+    <div class="module-header"><span class="where"><span class="pin-badge">4</span>Mauna Kea Beach Hotel</span><span class="tod">2024, breakfast</span></div>
+    <figure class="post-photo"><img src="img/mauna-kea-coffee.jpg" width="844" height="1500" loading="lazy" alt="A white cup of black coffee on a saucer beside a silver coffee pot, on a terrace railing looking out over a pool, palms, and the ocean."></figure>
+    <div class="post-body">
+      <h2 id="h-mkb">Coffee with a view</h2>
+      <p>Breakfast at the Mauna Kea Beach Hotel. Coffee, the ocean, and nowhere to be.</p>
+      <p class="lyric">The hotel is named for the mountain behind it. In 2019, thousands of people, many of them elders, blocked the road up that mountain for weeks to stop one more telescope from going on its sacred summit. They called themselves kiaʻi: protectors.</p>
+      <table class="facts"><caption>The Mauna Kea Beach Hotel</caption>
+        <tr><th>Opened</th><td>July 1965, the first resort on the island.</td></tr>
+        <tr><th>The origin story</th><td>Laurance Rockefeller decided to build here while swimming in Kaunaʻoa Bay.</td></tr>
+        <tr><th>The price tag</th><td>About $15 million for 154 rooms, which made it the most expensive hotel ever built at the time. <i>Esquire</i> called it one of the three greatest hotels in the world.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#mauna-kea-coffee">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="lapakahi" data-pin="5" aria-labelledby="h-lapa">
+    <div class="module-header"><span class="where"><span class="pin-badge">5</span>Lapakahi, North Kohala</span><span class="tod">2022, sunset</span></div>
+    <figure class="post-photo"><img src="img/lapakahi-sunset.jpg" width="1500" height="844" loading="lazy" alt="The sun setting into a calm ocean under an orange and yellow sky, over a dry grassy field with low trees along the shore."></figure>
+    <div class="post-body">
+      <h2 id="h-lapa">Sunset over an old fishing village</h2>
+      <p>The sun going down over the Kohala Coast, where I watched whales at sunset.</p>
+      <p class="lyric">For 600 years this land was shared, each village with its own slice from the mountains to the sea. In 1848 it became property that could be bought and sold. By 1900, foreigners and big estates owned most of the private land.</p>
+      <table class="facts"><caption>Lapakahi State Historical Park</caption>
+        <tr><th>What it is</th><td>A partly restored Hawaiian fishing village more than 600 years old, with stone walls, house sites, canoe sheds, and fishing shrines along a one-mile loop trail.</td></tr>
+        <tr><th>How it worked</th><td>The village was part of an ahupuaʻa, a slice of land running from the mountains down to the sea, so one community had farmland, forest, and fishing grounds.</td></tr>
+        <tr><th>Why it emptied</th><td>The freshwater table dropped in the 1800s, and the village was abandoned.</td></tr>
+        <tr><th>Offshore</th><td>A Marine Life Conservation District, and a good place to look for whales in winter.</td></tr>
+        <tr><th>Up the road</th><td>Kamehameha&rsquo;s birthplace, near ʻUpolu Point at the island&rsquo;s northern tip.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#lapakahi">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="waipio" data-pin="6" aria-labelledby="h-waipio">
+    <div class="module-header"><span class="where"><span class="pin-badge">6</span>Waipiʻo Valley Lookout</span><span class="tod">2018, midday</span></div>
+    <figure class="post-photo"><img src="img/waipio.jpg" width="1500" height="1125" loading="lazy" alt="Waipiʻo Valley from the lookout: steep green cliffs dropping to the sea, a curving black-sand beach with white surf, a flat green valley floor, and deep blue water."></figure>
+    <div class="post-body">
+      <h2 id="h-waipio">The Valley of the Kings</h2>
+      <p>Cliffs, a black-sand beach, and a valley floor that used to hold thousands of people.</p>
+      <p class="lyric">Kamehameha grew up down there. A century after he united the islands, there was no Hawaiian king anywhere.</p>
+      <table class="facts"><caption>Waipiʻo Valley quick facts</caption>
+        <tr><th>History</th><td>Once the political and religious center of the island and the boyhood home of Kamehameha. Thousands of people lived here. Today fewer than 100 do.</td></tr>
+        <tr><th>1946</th><td>The April 1 tsunami sent waves about 55 feet high into the valley. Many farmers never came back.</td></tr>
+        <tr><th>Visiting now</th><td>The lookout is open. The steep road down has been closed to visitors since 2022 because of rockfall; only residents, permitted tours, and Native Hawaiian practitioners can use it. I went in 2018, before the closure, and only looked from the top.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#waipio">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="akaka" data-pin="7" aria-labelledby="h-akaka">
+    <div class="module-header"><span class="where"><span class="pin-badge">7</span>ʻAkaka Falls</span><span class="tod">2024, late morning</span></div>
+    <figure class="post-photo"><img src="img/akaka-falls.jpg" width="1500" height="845" loading="lazy" alt="A tall, thin waterfall dropping into a deep green gorge surrounded by dense rainforest, under a gray, misty sky."></figure>
+    <div class="post-body">
+      <h2 id="h-akaka">442 feet, one drop</h2>
+      <p>A misty morning, and the falls dropping straight into the rain forest.</p>
+      <p class="lyric">For a hundred years, sugar cane covered this coast. The last cane truck rolled through Honokaʻa in 1994, and the Hāmākua plantation land was sold.</p>
+      <table class="facts"><caption>ʻAkaka Falls quick facts</caption>
+        <tr><th>Height</th><td>442 feet in a single, uninterrupted plunge.</td></tr>
+        <tr><th>The water</th><td>Kolekole Stream, collecting rain off the slopes above the town of Honomū.</td></tr>
+        <tr><th>The walk</th><td>A paved 0.4-mile loop through bamboo, wild ginger, and giant rainforest plants. Allow about half an hour.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#akaka">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="rainbow-falls" data-pin="8" aria-labelledby="h-rainbow">
+    <div class="module-header"><span class="where"><span class="pin-badge">8</span>Hilo</span><span class="tod">2022, late morning</span></div>
+    <figure class="post-photo"><img src="img/rainbow-falls.jpg" width="844" height="1500" loading="lazy" alt="Rainbow Falls in Hilo: a waterfall pouring over a dark lava ledge into a round green pool, framed by tropical trees and flowering shrubs, with boulders in front."></figure>
+    <div class="post-body">
+      <h2 id="h-rainbow">Rainbow Falls</h2>
+      <p>Right at the edge of town. No hike required.</p>
+      <p class="lyric">Waiānuenue means &ldquo;rainbow water.&rdquo; From 1896 to 1987, Hawaiian was not a language of instruction in the public schools, and by 1985 only 32 children under 18 spoke it. Then a few teachers refused to let it go. In 1983 they started the Pūnana Leo, preschools run entirely in Hawaiian, and today kids learn in Hawaiian again.</p>
+      <table class="facts"><caption>Waiānuenue quick facts</caption>
+        <tr><th>The name</th><td>Waiānuenue means &ldquo;rainbow water.&rdquo; On sunny mornings around 10 a.m., rainbows form in the mist.</td></tr>
+        <tr><th>Size</th><td>About 80 feet tall, on the Wailuku River.</td></tr>
+        <tr><th>The legend</th><td>The lava cave behind the falls is said to be the home of Hina, mother of the demigod Maui.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#rainbow-falls">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="hilo-market" data-pin="8" aria-labelledby="h-market">
+    <div class="module-header"><span class="where"><span class="pin-badge">8</span>Hilo Farmers Market</span><span class="tod">2018, afternoon</span></div>
+    <figure class="post-photo"><img src="img/hilo-fruit.jpg" width="1500" height="844" loading="lazy" alt="Market trays of hairy red rambutan labeled RAMBUTAN, bright tangerines with leaves, round green breadfruit, brown taro roots, small brown longan, and zucchini."></figure>
+    <div class="post-body">
+      <h2 id="h-market">What&rsquo;s on the table</h2>
+      <p>One table, and a lesson in what grows here.</p>
+      <p class="lyric">All this fruit, and Hawaiʻi still imports about 85 to 90 percent of its food.</p>
+      <table class="facts"><caption>On the table</caption>
+        <tr><th>Rambutan</th><td>The red, hairy ones. The name comes from the Malay word for hair. Peel it and the inside is sweet and white, a lot like a lychee.</td></tr>
+        <tr><th>ʻUlu (breadfruit)</th><td>The big green globes. A canoe plant, carried to Hawaiʻi by Polynesian voyagers and eaten steamed, baked, or boiled, a lot like a potato.</td></tr>
+        <tr><th>Kalo (taro)</th><td>The brown roots. Pounded into poi, and Hawaiʻi&rsquo;s official state plant since 2025.</td></tr>
+        <tr><th>Also here</th><td>Tangerines, longan, and zucchini.</td></tr>
+        <tr><th>The market</th><td>Started in 1988 by Richard &ldquo;Mike&rdquo; Rankin and four other farmers selling out of their trucks. It now has more than 200 vendors. Wednesdays and Saturdays are the big days.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#hilo-market">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="hilo-market-2024" data-pin="8" aria-labelledby="h-market2">
+    <div class="module-header"><span class="where"><span class="pin-badge">8</span>Hilo Farmers Market</span><span class="tod">2024, afternoon</span></div>
+    <figure class="post-photo"><img src="img/hilo-market.jpg" width="844" height="1500" loading="lazy" alt="A busy covered market aisle piled with bananas, greens, avocados, papayas, and other produce, with shoppers under blue umbrellas and a metal roof."></figure>
+    <div class="post-body">
+      <h2 id="h-market2">Six years later, same market</h2>
+      <p>Six years later, just as busy.</p>
+      <p class="lyric">The market started in 1988 with five farmers selling out of their trucks. Some things grow the right way.</p>
+      <table class="facts"><caption>From this visit</caption>
+        <tr><th>In the portfolio</th><td>My favorite frame from the market, <a href="/photos/hilo-farmers-market.html"><i>The Bounty of Hilo</i></a>.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#hilo-market-2024">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="kilauea" data-pin="9" aria-labelledby="h-kil">
+    <div class="module-header"><span class="where"><span class="pin-badge">9</span>Kīlauea summit</span><span class="tod">January 10, 2018, evening</span></div>
+    <div class="gal" role="region" aria-label="Photo gallery: evening at the Kīlauea summit, 3 photos">
+      <div class="strip" tabindex="0">
+        <figure><img src="img/jaggar-sign.jpg" width="1500" height="1125" loading="lazy" alt="A long wooden sign reading Thomas A. Jaggar Museum, National Park Service, on a stone wall beside a wet parking area."><figcaption>The Jaggar Museum, on the caldera rim. Four months later it closed for good.</figcaption></figure>
+        <figure><img src="img/halemaumau.jpg" width="1500" height="844" loading="lazy" alt="A wide, flat volcanic landscape under heavy gray clouds, with white steam rising from a crater in the distance."><figcaption>Halemaʻumaʻu crater from the overlook, steaming under a heavy sky.</figcaption></figure>
+        <figure><img src="img/crater-coffee.jpg" width="844" height="1500" loading="lazy" alt="A paper coffee cup sitting on a wooden railing post, overlooking a dark volcanic plain and a distant steaming crater."><figcaption>Coffee on the rail, waiting for it to get dark.</figcaption></figure>
+      </div>
+      <div class="gal-bar"><button type="button" class="gal-prev" aria-label="Previous photo">&lsaquo;</button><span class="gal-n" aria-live="polite">1 of 3</span><button type="button" class="gal-next" aria-label="Next photo">&rsaquo;</button></div>
+    </div>
+    <div class="post-body">
+      <h2 id="h-kil">Waiting for dark at the volcano</h2>
+      <p>Waiting at the Jaggar Museum overlook for the crater to start glowing.</p>
+      <p class="lyric">The park was created in 1916, when Hawaiʻi was a territory with no vote in the Congress that created it.</p>
+      <table class="facts"><caption>Kīlauea quick facts</caption>
+        <tr><th>What it is</th><td>One of the most active volcanoes on Earth, inside Hawaiʻi Volcanoes National Park.</td></tr>
+        <tr><th>Halemaʻumaʻu</th><td>The crater inside the summit caldera. In Hawaiian tradition it is the home of Pele, goddess of volcanoes.</td></tr>
+        <tr><th>The museum</th><td>The Jaggar Museum&rsquo;s last day open was May 11, 2018. The 2018 collapse damaged it beyond repair, and it was taken down in 2024.</td></tr>
+        <tr><th>Visiting now</th><td>The restored Uēkahuna overlook, where the museum used to stand, reopened in 2025.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#kilauea">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="then-now" data-pin="9" aria-labelledby="h-tn">
+    <div class="module-header"><span class="where"><span class="pin-badge">9</span>Halemaʻumaʻu</span><span class="tod">Then and now</span></div>
+    <div class="callout"><span class="try-ico" aria-hidden="true">🔍</span><span><b>Then and now.</b> My photo from January 2018, then what happened to the same crater afterward. Tap the dates.</span></div>
+    <div class="tn-stage" id="tnStage">
+      <figure class="on"><img src="img/lava-lake-wide.jpg" width="1125" height="750" loading="lazy" alt="Dusk at Halemaʻumaʻu in January 2018: a red-orange glow from the lava lake deep in the crater wall, with blue volcanic fume rising over the dark crater floor."></figure>
+      <figure><img src="img/usgs-collapse.jpg" width="649" height="446" loading="lazy" alt="Aerial view of Halemaʻumaʻu after the 2018 collapse: a huge, deep, steaming pit with stepped cliff walls where the crater floor used to be."><span class="credit">USGS photo</span></figure>
+      <figure><img src="img/usgs-water-lake.jpg" width="690" height="477" loading="lazy" alt="Halemaʻumaʻu in July 2019: a deep cone-shaped pit of gray rubble with a small orange-brown lake of water at the very bottom."><span class="credit">USGS photo</span></figure>
+      <figure><img src="img/usgs-lava-returns.jpg" width="691" height="477" loading="lazy" alt="Halemaʻumaʻu after new eruptions: a wide, dark, solidified lava lake filling the bottom of the deep crater, with a small glowing vent at the edge."><span class="credit">USGS photo</span></figure>
+    </div>
+    <div class="tn-tabs" role="tablist" aria-label="Halemaʻumaʻu over time">
+      <button type="button" role="tab" aria-selected="true">Jan 2018<span>My photo</span></button>
+      <button type="button" role="tab" aria-selected="false" tabindex="-1">Summer 2018<span>Collapse</span></button>
+      <button type="button" role="tab" aria-selected="false" tabindex="-1">July 2019<span>Water lake</span></button>
+      <button type="button" role="tab" aria-selected="false" tabindex="-1">Dec 2020 on<span>Lava returns</span></button>
+    </div>
+    <div class="post-body">
+      <h2 id="h-tn">The lava lake, four months before it vanished</h2>
+      <p class="tn-say" id="tnSay" aria-live="polite">Just before dark on January 10, 2018. That orange glow is the lava lake inside Halemaʻumaʻu, active since 2008 and one of the biggest sights in the park. Nobody standing here knew it had four months left.</p>
+      <p class="lyric">In Hawaiian tradition this crater is the home of Pele, and the land is hers before it is anyone&rsquo;s. In 2018 she added 875 acres and took back more than 700 homes.</p>
+      <table class="facts"><caption>The 2018 eruption in numbers</caption>
+        <tr><th>When</th><td>May through August 2018, on the lower East Rift Zone in Puna and at the summit.</td></tr>
+        <tr><th>The lake</th><td>Began draining in early May and was gone from view by May 10.</td></tr>
+        <tr><th>The crater</th><td>Dropped from about 280 feet deep to about 1,600 feet, and more than doubled in width.</td></tr>
+        <tr><th>Homes</th><td>More than 700 destroyed, and more than 2,000 people displaced.</td></tr>
+        <tr><th>New land</th><td>875 acres added to the island.</td></tr>
+        <tr><th>Earthquakes</th><td>More than 60,000 between May and August.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span>Later photos: USGS Hawaiian Volcano Observatory (public domain)</span><a class="permalink" href="#then-now">Link to this post</a></div>
+  </article>
+
+  <article class="module post status" id="earthquake" aria-labelledby="h-quake">
+    <div class="module-header"><span class="where">Status update</span><span class="tod">February 9, 2024, 10:06 a.m.</span></div>
+    <div class="post-body">
+      <p class="big" id="h-quake">Earthquakes felt: 1 📳<br>How long it lasted: lonnnng</p>
+      <p>I was working, recording the last speaker at a conference, when it hit. My first earthquake, and it went on much longer than I expected.</p>
+      <p class="lyric">The islands are slowly sinking under their own weight. Geologically speaking, that is what I felt.</p>
+      <table class="facts"><caption>What it was</caption>
+        <tr><th>Size</th><td>The first alert said magnitude 6.3. The USGS Hawaiian Volcano Observatory later put it at 5.7.</td></tr>
+        <tr><th>Where</th><td>About a mile southwest of Pāhala, in Kaʻū on the south side of the island, 23 miles underground.</td></tr>
+        <tr><th>Felt</th><td>Across Hawaiʻi Island and Maui and on parts of Oʻahu. Instruments recorded very strong shaking near the center, but no damage was expected.</td></tr>
+        <tr><th>Why it happened</th><td>Not the volcanoes. The sheer weight of the islands bends the ocean plate underneath them, and deep quakes like this one release that strain.</td></tr>
+        <tr><th>Tsunami</th><td>None. Hawaiʻi&rsquo;s emergency agency said so right away.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#earthquake">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="proof" data-pin="1" aria-labelledby="h-proof">
+    <div class="module-header"><span class="where"><span class="pin-badge">1</span>Kona</span><span class="tod">2024, heading home</span></div>
+    <figure class="post-photo"><img src="img/selfie.jpg" width="1125" height="1500" loading="lazy" alt="Joe Graham in a camouflage cap and red mirrored sunglasses, smiling, with a bus window behind him."></figure>
+    <div class="post-body">
+      <h2 id="h-proof">Proof I was there</h2><p>Obligatory. Already planning the next one.</p>
+      <p class="lyric">I get to keep coming back. Not everyone born here gets to stay.</p></div>
+    <div class="post-foot"><span></span><a class="permalink" href="#proof">Link to this post</a></div>
+  </article>
+
+  <section class="module post" id="links" aria-labelledby="h-links">
+    <div class="module-header"><span class="where">Helpful links</span><span class="tod">Go deeper</span></div>
+    <div class="post-body">
+      <h2 id="h-links">Keep exploring</h2>
+      <ul class="hl">
+        <li><a href="https://www.nps.gov/havo/index.htm"><b>Hawaiʻi Volcanoes National Park (NPS)</b></a><span>Current conditions, closures, and where to see Kīlauea today.</span></li>
+        <li><a href="https://www.usgs.gov/volcanoes/kilauea"><b>Kīlauea updates (USGS)</b></a><span>The Hawaiian Volcano Observatory&rsquo;s live updates, webcams, and eruption news.</span></li>
+        <li><a href="https://www.usgs.gov/media/videos/kilauea-collapse-and-refilling-changes-2018"><b>Kīlauea collapse and refilling (USGS video)</b></a><span>The summit changes since 2018, in one short video.</span></li>
+        <li><a href="https://hawaiihumpbackwhale.noaa.gov/involved/ocean-count.html"><b>Sanctuary Ocean Count (NOAA)</b></a><span>Sign up to count whales from shore on the last Saturday of January, February, or March.</span></li>
+        <li><a href="https://dlnr.hawaii.gov/dsp/hiking/hawaii/akaka-falls-loop-trail/"><b>ʻAkaka Falls Loop Trail (Hawaiʻi State Parks)</b></a><span>Trail details for the walk to the falls.</span></li>
+        <li><a href="https://dlnr.hawaii.gov/dsp/parks/hawaii/wailuku-river-state-park/"><b>Wailuku River State Park (Hawaiʻi State Parks)</b></a><span>Rainbow Falls and the river through Hilo.</span></li>
+        <li><a href="https://www.hilofarmersmarket.com/hours"><b>Hilo Farmers Market</b></a><span>Market days and hours.</span></li>
+        <li><a href="https://konahistorical.org/kona-nightingale-program"><b>Kona Nightingale Program (Kona Historical Society)</b></a><span>The coffee donkeys and the people keeping their story alive.</span></li>
+        <li><a href="https://earthquake.usgs.gov/earthquakes/eventpage/us7000ly2r"><b>The February 2024 earthquake (USGS)</b></a><span>Shaking maps and &ldquo;Did You Feel It?&rdquo; reports.</span></li>
+      </ul>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#links">Link to this post</a></div>
+  </section>
+
+  <section class="module post" id="sources" aria-labelledby="h-src">
+    <div class="module-header"><span class="where">Sources</span></div>
+    <div class="post-body">
+      <h2 id="h-src">Where the facts came from</h2>
+      <ol class="sources">
+        <li><a href="https://en.wikipedia.org/wiki/Hawaiian_Islands">Wikipedia: Hawaiian Islands</a></li>
+        <li><a href="https://www.hawaiimagazine.com/content/journey-king-kamehamehas-birthplace-big-island">HAWAIʻI Magazine: A journey to King Kamehameha&rsquo;s birthplace</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Death_of_James_Cook">Wikipedia: Death of James Cook</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Waimea,_Kaua%CA%BBi_County,_Hawaii">Wikipedia: Waimea, Kauaʻi</a></li>
+        <li><a href="https://www.usgs.gov/volcanoes/hual%C4%81lai">USGS: Hualālai</a></li>
+        <li><a href="https://volcano.si.edu/volcano.cfm?vn=332040">Smithsonian Global Volcanism Program: Hualālai</a></li>
+        <li><a href="https://www.nps.gov/havo/learn/nature/lava-tubes.htm">NPS: Lava tubes</a></li>
+        <li><a href="https://keolamagazine.com/land/saving-the-kona-nightingale/">Ke Ola Magazine: Saving the Kona Nightingale</a></li>
+        <li><a href="https://hanahou.com/14.4/home-off-the-range">Hana Hou!: Home off the range</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Waikoloa_Beach">Wikipedia: Waikoloa Beach (ʻAnaehoʻomalu Bay)</a></li>
+        <li><a href="https://home.nps.gov/articles/000/anchialine-pools.htm">NPS: Anchialine pools</a></li>
+        <li><a href="https://hawaiihumpbackwhale.noaa.gov/involved/ocean-count.html">NOAA Hawaiian Islands Humpback Whale National Marine Sanctuary: Sanctuary Ocean Count</a></li>
+        <li><a href="https://bigislandnow.com/2026/03/01/volunteers-observe-more-than-1900-humpbacks-during-second-count-of-2026/">Big Island Now: More than 1,900 humpbacks in the second count of 2026</a></li>
+        <li><a href="https://www.lovebigisland.com/big-island-whale-watching/">Love Big Island: Big Island whale watching</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Mauna_Kea_Beach_Hotel">Wikipedia: Mauna Kea Beach Hotel</a></li>
+        <li><a href="https://www.maunakearesort.com/mauna-kea-beach-hotel/our-story/aloha/history">Mauna Kea Resort: History</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Lapakahi_State_Historical_Park">Wikipedia: Lapakahi State Historical Park</a></li>
+        <li><a href="https://www.lonelyplanet.com/points-of-interest/lapakahi-state-historical-park/454307">Lonely Planet: Lapakahi State Historical Park</a></li>
+        <li><a href="https://hawaii.com/blog/waipio-valley-hawaiis-sacred-valley-of-the-kings">Hawaii.com: Waipiʻo Valley, the Valley of the Kings</a></li>
+        <li><a href="https://www.hawaiimagazine.com/waipio-valley-road-closed-indefinitely/">HAWAIʻI Magazine: Waipiʻo Valley Road closed indefinitely</a></li>
+        <li><a href="https://www.lovebigisland.com/waipio-valley/">Love Big Island: Waipiʻo Valley access</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/%CA%BBAkaka_Falls_State_Park">Wikipedia: ʻAkaka Falls State Park</a></li>
+        <li><a href="https://www.lovebigisland.com/hilo/akaka-falls/">Love Big Island: ʻAkaka Falls</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Rainbow_Falls_(Hawaii)">Wikipedia: Rainbow Falls (Hawaii)</a></li>
+        <li><a href="https://www.gohawaii.com/islands/hawaii-big-island/regions/hilo/wailuku-river-state-park">Hawaiʻi Tourism Authority: Wailuku River State Park</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Rambutan">Wikipedia: Rambutan</a></li>
+        <li><a href="https://www.canoeplants.com/ulu.html">Canoe Plants of Ancient Hawaiʻi: ʻUlu</a></li>
+        <li><a href="https://www.hawaiinewsnow.com/2024/12/31/several-new-state-laws-take-effect-2025-taro-medical-care-more/">Hawaii News Now: Kalo becomes the state plant</a></li>
+        <li><a href="https://bigislandguide.com/hilo-farmers-markets">Big Island Guide: Hilo farmers markets</a></li>
+        <li><a href="https://www.hilofarmersmarket.com/hours">Hilo Farmers Market: Hours</a></li>
+        <li><a href="https://nps.gov/havo/learn/nature/2018-eruption.htm">NPS: 2018 eruption and summit collapse</a></li>
+        <li><a href="https://www.usgs.gov/media/images/views-halemaumau-over-past-4-years">USGS: Views of Halemaʻumaʻu over the past 4 years (photos used on this page)</a></li>
+        <li><a href="https://hilo.hawaii.edu/natural-hazards/offmain/2018KilaueaEruption.php">University of Hawaiʻi at Hilo: Summer 2018 Kīlauea eruption</a></li>
+        <li><a href="https://kauainownews.com/2024/07/26/big-islands-hawaiian-volcano-observatory-jaggar-museum-demolished/">Kauaʻi Now: Jaggar Museum demolished</a></li>
+        <li><a href="https://www.nps.gov/havo/learn/news/20250528-nr-uekahuna-reopens.htm">NPS: Kīlauea summit viewing area reopens</a></li>
+        <li><a href="https://www.usgs.gov/observatories/hvo/news/hvo-earthquake-information-statement-m57-earthquake-southwest-pahala-island">USGS HVO: M5.7 earthquake southwest of Pāhala</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Great_M%C4%81hele">Wikipedia: Great Māhele</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Apology_Resolution">Wikipedia: Apology Resolution</a></li>
+        <li><a href="https://www.nlm.nih.gov/nativevoices/timeline/749.html">National Library of Medicine, Native Voices: 1896, Hawaiian language restricted</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Hawaiian_language">Wikipedia: Hawaiian language</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/K%C5%AB%CA%BB%C4%93_Petitions">Wikipedia: Kūʻē Petitions</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Newlands_Resolution">Wikipedia: Newlands Resolution</a></li>
+        <li><a href="https://eh.net/encyclopedia/economic-history-of-hawaii/">EH.net: Economic history of Hawaiʻi</a></li>
+        <li><a href="https://www.civilbeat.org/2020/09/army-state-needs-to-renew-lease-for-big-island-training-area/">Honolulu Civil Beat: The Army&rsquo;s Pōhakuloa lease</a></li>
+        <li><a href="https://www.cnn.com/2019/07/21/us/hawaii-mauna-kea-protests">CNN: Why Native Hawaiians oppose the Thirty Meter Telescope</a></li>
+        <li><a href="https://www.hawaiinewsnow.com/2023/09/22/us-census-shows-majority-native-hawaiians-now-live-outside-hawaii/">Hawaii News Now: Most Native Hawaiians now live outside Hawaiʻi</a></li>
+        <li><a href="https://www.hawaiinewsnow.com/2023/01/23/high-cost-living-continues-drive-more-native-hawaiians-out-state/">Hawaii News Now: Cost of living drives Native Hawaiians out</a></li>
+        <li><a href="https://hawaiihumpbackwhale.noaa.gov/heritage/maritime-history.html">NOAA Humpback Whale Sanctuary: Maritime history</a></li>
+        <li><a href="https://keolamagazine.com/then-now/whaling-ships-hawaii-island/">Ke Ola Magazine: Whaling ships on Hawaiʻi Island</a></li>
+        <li><a href="https://hamakua.org/hamakua-sugar-company/">Hāmākua.org: Hāmākua Sugar Company</a></li>
+        <li><a href="https://www.nbcnews.com/news/asian-america/hawaii-farmers-trump-cuts-rcna198550">NBC News: In Hawaiʻi, where 90% of food is imported</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Hawai%CA%BBi_Volcanoes_National_Park">Wikipedia: Hawaiʻi Volcanoes National Park</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Waikoloa_Beach">Wikipedia: Waikoloa Beach</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/P%C5%ABnana_Leo">Wikipedia: Pūnana Leo</a></li>
+        <li><a href="https://www.ahapunanaleo.org/history-hl-1">ʻAha Pūnana Leo: History</a></li>
+      </ol>
+      <p class="checked">Details checked September 2026. Volcano conditions and road access change quickly, so check with the park and the county before you go. Map elevation: AWS Terrain Tiles (Mapzen / USGS).</p>
+      <p style="margin-top:10px"><a href="/journal/"><b>More trips &raquo;</b></a><br><a href="/portfolio.html"><b>See the portfolio &raquo;</b></a><br><a href="/journal/"><b>Back to all trips &raquo;</b></a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer>&copy; 2026 Joe Graham &middot; <a href="/legal.html">Legal &amp; Privacy</a></footer>
+</div>
+
+<script>
+(function(){
+  var bar=document.querySelector('.top-bar');
+  function setBar(){document.documentElement.style.setProperty('--bar',bar.offsetHeight+'px')}
+  setBar(); window.addEventListener('resize',setBar);
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+  /* jump list + map pins: follow the post you're looking at */
+  var links=[].slice.call(document.querySelectorAll('#jump a'));
+  var map={}; links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});
+  var pins=[].slice.call(document.querySelectorAll('.m-pin'));
+  var posts=[].slice.call(document.querySelectorAll('.post'));
+  var lastPin=null;
+  function mark(el){
+    var a=map[el.id];
+    if(a){
+      links.forEach(function(x){x.classList.remove('on')}); a.classList.add('on');
+      if(window.matchMedia('(max-width: 820px)').matches){
+        var strip=a.closest('.jump'); strip.scrollTo({left:a.offsetLeft-strip.clientWidth/2+a.clientWidth/2,behavior:'auto'});
+      }
+    }
+    var p=el.getAttribute('data-pin');
+    if(p&&p!==lastPin){lastPin=p;pins.forEach(function(g){g.classList.toggle('on',g.getAttribute('data-pin')===p)})}
+  }
+  var firstFor={}; posts.forEach(function(p){var n=p.getAttribute('data-pin'); if(n&&!firstFor[n])firstFor[n]=p});
+  pins.forEach(function(g){
+    function go(){var p=firstFor[g.getAttribute('data-pin')]; if(p)p.scrollIntoView({behavior:reduce.matches?'auto':'smooth',block:'start'})}
+    g.addEventListener('click',go);
+    g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}});
+  });
+  var cur=null, tick=false;
+  function scan(){
+    tick=false; var line=window.innerHeight*0.45, hit=null;
+    for(var i=0;i<posts.length;i++){var r=posts[i].getBoundingClientRect(); if(r.top<=line&&r.bottom>line){hit=posts[i];break}}
+    if(hit&&hit!==cur){cur=hit;mark(hit)}
+  }
+  window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(scan)}},{passive:true});
+  scan();
+
+  /* side-scroll galleries */
+  [].slice.call(document.querySelectorAll('.gal')).forEach(function(g){
+    var strip=g.querySelector('.strip'), figs=[].slice.call(strip.children);
+    var prev=g.querySelector('.gal-prev'), next=g.querySelector('.gal-next'), n=g.querySelector('.gal-n');
+    function current(){
+      var mid=strip.scrollLeft+strip.clientWidth/2, best=0, d=1e9;
+      figs.forEach(function(f,i){var c=f.offsetLeft-strip.offsetLeft+f.offsetWidth/2, x=Math.abs(c-mid); if(x<d){d=x;best=i}});
+      return best;
+    }
+    function show(i){var f=figs[i]; strip.scrollTo({left:f.offsetLeft-strip.offsetLeft-(strip.clientWidth-f.offsetWidth)/2})}
+    function upd(){var i=current(); n.textContent=(i+1)+' of '+figs.length; prev.disabled=i===0; next.disabled=i===figs.length-1}
+    prev.addEventListener('click',function(){show(Math.max(0,current()-1))});
+    next.addEventListener('click',function(){show(Math.min(figs.length-1,current()+1))});
+    var t=null; strip.addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(upd,80)},{passive:true});
+    window.addEventListener('resize',upd); upd();
+  });
+
+  /* then and now tabs */
+  (function(){
+    var figs=[].slice.call(document.querySelectorAll('#tnStage figure'));
+    var tabs=[].slice.call(document.querySelectorAll('.tn-tabs [role="tab"]'));
+    var say=document.getElementById('tnSay');
+    var words=[
+      'Just before dark on January 10, 2018. That orange glow is the lava lake inside Halemaʻumaʻu, active since 2008 and one of the biggest sights in the park. Nobody standing here knew it had four months left.',
+      'In early May 2018 the lava lake drained as magma moved down the rift toward Puna. With nothing left holding it up, the summit caved in, sometimes every day or so, all summer long. By August the crater floor had dropped about 1,600 feet, and the crater was more than twice as wide.',
+      'In July 2019 groundwater started seeping into the new pit, and a lake of water formed at the bottom: the orange-brown patch. It kept growing for a year and a half.',
+      'In December 2020 a new eruption boiled the water lake away in a single night. Lava has returned to Halemaʻumaʻu again and again since then, slowly refilling the deep pit.'
+    ];
+    function pick(i,focus){
+      tabs.forEach(function(t,k){var on=k===i; t.setAttribute('aria-selected',String(on)); t.tabIndex=on?0:-1});
+      figs.forEach(function(f,k){f.classList.toggle('on',k===i)});
+      say.textContent=words[i];
+      if(focus)tabs[i].focus();
+    }
+    tabs.forEach(function(t,i){
+      t.addEventListener('click',function(){pick(i)});
+      t.addEventListener('keydown',function(e){
+        if(e.key==='ArrowRight'){e.preventDefault();pick((i+1)%tabs.length,true)}
+        if(e.key==='ArrowLeft'){e.preventDefault();pick((i+tabs.length-1)%tabs.length,true)}
+      });
+    });
+  })();
+})();
+</script>
+</body>
+</html>

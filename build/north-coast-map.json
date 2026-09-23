@@ -1,0 +1,218 @@
+{
+ "out": "north-coast-map.svg",
+ "out_mini": "north-coast-mini.svg",
+ "width": 830,
+ "bbox": [
+  -124.05,
+  -122.05,
+  37.72,
+  39.52
+ ],
+ "scale_miles": 20,
+ "alt": "Map of California's North Coast with seven numbered stops: Muir Woods north of San Francisco, a roadside stop near Napa, St. Helena, the Petrified Forest near Calistoga, Goat Rock on the Sonoma Coast, the coast south of Mendocino, and Glass Beach at Fort Bragg.",
+ "terrain": {
+  "npz": "north-coast-dem.npz",
+  "step": 1000,
+  "index": 3000,
+  "lo": 0,
+  "hi": 7000
+ },
+ "roads": [
+  [
+   [
+    37.88,
+    -122.55
+   ],
+   [
+    38.07,
+    -122.84
+   ],
+   [
+    38.24,
+    -122.96
+   ],
+   [
+    38.44,
+    -123.1
+   ],
+   [
+    38.51,
+    -123.24
+   ],
+   [
+    38.71,
+    -123.45
+   ],
+   [
+    38.91,
+    -123.69
+   ],
+   [
+    39.13,
+    -123.72
+   ],
+   [
+    39.3,
+    -123.79
+   ],
+   [
+    39.45,
+    -123.8
+   ]
+  ],
+  [
+   [
+    37.92,
+    -122.52
+   ],
+   [
+    38.1,
+    -122.57
+   ],
+   [
+    38.44,
+    -122.71
+   ],
+   [
+    38.61,
+    -122.87
+   ],
+   [
+    38.8,
+    -123.01
+   ],
+   [
+    39.15,
+    -123.2
+   ]
+  ],
+  [
+   [
+    38.1,
+    -122.25
+   ],
+   [
+    38.3,
+    -122.29
+   ],
+   [
+    38.5,
+    -122.47
+   ],
+   [
+    38.58,
+    -122.58
+   ]
+  ],
+  [
+   [
+    38.58,
+    -122.58
+   ],
+   [
+    38.5556,
+    -122.6406
+   ],
+   [
+    38.46,
+    -122.72
+   ]
+  ]
+ ],
+ "notes": [
+  {
+   "lat": 37.78,
+   "lon": -122.43,
+   "text": "San Francisco"
+  },
+  {
+   "lat": 38.73,
+   "lon": -123.62,
+   "text": "Hwy 1",
+   "rotate": 50
+  },
+  {
+   "lat": 38.95,
+   "lon": -123.12,
+   "text": "Hwy 101",
+   "rotate": 60
+  },
+  {
+   "lat": 38.3,
+   "lon": -123.6,
+   "text": "Pacific Ocean",
+   "kind": "water"
+  }
+ ],
+ "landmarks": [
+  {
+   "name": "Mount St. Helena 4,342 ft",
+   "lat": 38.6693,
+   "lon": -122.633,
+   "side": "l"
+  },
+  {
+   "name": "Mount Tamalpais",
+   "lat": 37.9235,
+   "lon": -122.5965,
+   "side": "l"
+  },
+  {
+   "name": "Fort Ross (1812)",
+   "lat": 38.5145,
+   "lon": -123.2437,
+   "side": "l"
+  }
+ ],
+ "pins": [
+  {
+   "n": 1,
+   "name": "Muir Woods",
+   "lat": 37.8946,
+   "lon": -122.5753,
+   "side": "b"
+  },
+  {
+   "n": 2,
+   "name": "Near Napa",
+   "lat": 38.1833,
+   "lon": -122.2536,
+   "side": "l"
+  },
+  {
+   "n": 3,
+   "name": "St. Helena",
+   "lat": 38.5052,
+   "lon": -122.4703,
+   "side": "r"
+  },
+  {
+   "n": 4,
+   "name": "Petrified Forest",
+   "lat": 38.5556,
+   "lon": -122.6406,
+   "side": "r"
+  },
+  {
+   "n": 5,
+   "name": "Goat Rock",
+   "lat": 38.4354,
+   "lon": -123.1204,
+   "side": "l"
+  },
+  {
+   "n": 6,
+   "name": "South of Mendocino",
+   "lat": 39.2932,
+   "lon": -123.7942,
+   "side": "r"
+  },
+  {
+   "n": 7,
+   "name": "Glass Beach, Fort Bragg",
+   "lat": 39.4524,
+   "lon": -123.8138,
+   "side": "r"
+  }
+ ]
+}

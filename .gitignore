@@ -8,3 +8,7 @@ photos/photo_descriptions.docx
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Regenerable elevation data for journal maps (build/terrarium.py)
+build/*-dem.npz
+build/__pycache__/

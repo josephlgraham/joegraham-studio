@@ -1,0 +1,254 @@
+[
+ {
+  "file": "arched-rock.jpg",
+  "slug": "arched-rock",
+  "orig_size": [
+   4160,
+   6240
+  ],
+  "web": "img/arched-rock.jpg",
+  "size": [
+   1000,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "glass-beach.jpg",
+  "slug": "glass-beach",
+  "orig_size": [
+   3840,
+   2160
+  ],
+  "web": "img/glass-beach.jpg",
+  "size": [
+   1500,
+   844
+  ],
+  "portrait": false
+ },
+ {
+  "file": "goat-rock-beach.jpg",
+  "slug": "goat-rock-beach",
+  "orig_size": [
+   6240,
+   4160
+  ],
+  "web": "img/goat-rock-beach.jpg",
+  "size": [
+   1500,
+   1000
+  ],
+  "portrait": false
+ },
+ {
+  "file": "goat-rock-sign.jpg",
+  "slug": "goat-rock-sign",
+  "orig_size": [
+   6240,
+   4160
+  ],
+  "web": "img/goat-rock-sign.jpg",
+  "size": [
+   1500,
+   1000
+  ],
+  "portrait": false
+ },
+ {
+  "file": "mendocino-coast.jpg",
+  "slug": "mendocino-coast",
+  "orig_size": [
+   3840,
+   2160
+  ],
+  "web": "img/mendocino-coast.jpg",
+  "size": [
+   1500,
+   844
+  ],
+  "portrait": false
+ },
+ {
+  "file": "mountain-dew.jpg",
+  "slug": "mountain-dew",
+  "orig_size": [
+   4160,
+   6240
+  ],
+  "web": "img/mountain-dew.jpg",
+  "size": [
+   1000,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "muir-woods-canopy.jpg",
+  "slug": "muir-woods-canopy",
+  "orig_size": [
+   2252,
+   4000
+  ],
+  "web": "img/muir-woods-canopy.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "muir-woods-trail.jpg",
+  "slug": "muir-woods-trail",
+  "orig_size": [
+   2252,
+   4000
+  ],
+  "web": "img/muir-woods-trail.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "mussel.jpg",
+  "slug": "mussel",
+  "orig_size": [
+   3840,
+   2160
+  ],
+  "web": "img/mussel.jpg",
+  "size": [
+   1500,
+   844
+  ],
+  "portrait": false
+ },
+ {
+  "file": "pf-color.jpg",
+  "slug": "pf-color",
+  "orig_size": [
+   6240,
+   4160
+  ],
+  "web": "img/pf-color.jpg",
+  "size": [
+   1500,
+   1000
+  ],
+  "portrait": false
+ },
+ {
+  "file": "pf-hollow.jpg",
+  "slug": "pf-hollow",
+  "orig_size": [
+   4160,
+   6240
+  ],
+  "web": "img/pf-hollow.jpg",
+  "size": [
+   1000,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "pf-log-water.jpg",
+  "slug": "pf-log-water",
+  "orig_size": [
+   4160,
+   6240
+  ],
+  "web": "img/pf-log-water.jpg",
+  "size": [
+   1000,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "pf-log.jpg",
+  "slug": "pf-log",
+  "orig_size": [
+   6240,
+   4160
+  ],
+  "web": "img/pf-log.jpg",
+  "size": [
+   1500,
+   1000
+  ],
+  "portrait": false
+ },
+ {
+  "file": "pf-petrification.jpg",
+  "slug": "pf-petrification",
+  "orig_size": [
+   6240,
+   4160
+  ],
+  "web": "img/pf-petrification.jpg",
+  "size": [
+   1500,
+   1000
+  ],
+  "portrait": false
+ },
+ {
+  "file": "pf-queen.jpg",
+  "slug": "pf-queen",
+  "orig_size": [
+   4160,
+   6240
+  ],
+  "web": "img/pf-queen.jpg",
+  "size": [
+   1000,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "plushies.jpg",
+  "slug": "plushies",
+  "orig_size": [
+   2252,
+   4000
+  ],
+  "web": "img/plushies.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "sea-stacks.jpg",
+  "slug": "sea-stacks",
+  "orig_size": [
+   6240,
+   4160
+  ],
+  "web": "img/sea-stacks.jpg",
+  "size": [
+   1500,
+   1000
+  ],
+  "portrait": false
+ },
+ {
+  "file": "st-helena-vineyard.jpg",
+  "slug": "st-helena-vineyard",
+  "orig_size": [
+   6240,
+   4160
+  ],
+  "web": "img/st-helena-vineyard.jpg",
+  "size": [
+   1500,
+   1000
+  ],
+  "portrait": false
+ }
+]

@@ -1,0 +1,277 @@
+{
+ "out": "big-island-map.svg",
+ "out_mini": "big-island-mini.svg",
+ "width": 830,
+ "bbox": [
+  -156.42,
+  -154.78,
+  18.88,
+  20.3
+ ],
+ "scale_miles": 20,
+ "alt": "Map of Hawaiʻi Island with nine numbered stops: a lava tube near Kona, Waikoloa, Mauna Lani, the Mauna Kea Beach Hotel, and Lapakahi along the west and north Kohala coast, the Waipiʻo Valley Lookout in the north, ʻAkaka Falls and Hilo on the east side, and Kīlauea's summit in the southeast.",
+ "terrain": {
+  "npz": "big-island-dem.npz",
+  "step": 1000,
+  "index": 5000,
+  "lo": 0,
+  "hi": 14000
+ },
+ "roads": [
+  [
+   [
+    19.64,
+    -155.99
+   ],
+   [
+    19.74,
+    -156.03
+   ],
+   [
+    19.83,
+    -155.98
+   ],
+   [
+    19.92,
+    -155.87
+   ],
+   [
+    19.95,
+    -155.85
+   ],
+   [
+    20.0,
+    -155.82
+   ],
+   [
+    20.035,
+    -155.82
+   ],
+   [
+    20.02,
+    -155.67
+   ],
+   [
+    20.08,
+    -155.47
+   ],
+   [
+    20.03,
+    -155.34
+   ],
+   [
+    19.98,
+    -155.24
+   ],
+   [
+    19.87,
+    -155.12
+   ],
+   [
+    19.72,
+    -155.08
+   ]
+  ],
+  [
+   [
+    20.035,
+    -155.82
+   ],
+   [
+    20.12,
+    -155.87
+   ],
+   [
+    20.175,
+    -155.893
+   ],
+   [
+    20.24,
+    -155.83
+   ]
+  ],
+  [
+   [
+    20.08,
+    -155.47
+   ],
+   [
+    20.117,
+    -155.583
+   ]
+  ],
+  [
+   [
+    19.87,
+    -155.12
+   ],
+   [
+    19.855,
+    -155.153
+   ]
+  ],
+  [
+   [
+    19.72,
+    -155.08
+   ],
+   [
+    19.62,
+    -155.04
+   ],
+   [
+    19.43,
+    -155.24
+   ],
+   [
+    19.42,
+    -155.29
+   ],
+   [
+    19.2,
+    -155.48
+   ],
+   [
+    19.06,
+    -155.58
+   ],
+   [
+    19.1,
+    -155.75
+   ],
+   [
+    19.3,
+    -155.88
+   ],
+   [
+    19.49,
+    -155.91
+   ],
+   [
+    19.64,
+    -155.99
+   ]
+  ]
+ ],
+ "notes": [
+  {
+   "lat": 19.33,
+   "lon": -155.36,
+   "text": "Hwy 11",
+   "rotate": 40
+  },
+  {
+   "lat": 20.05,
+   "lon": -155.56,
+   "text": "Hwy 19"
+  },
+  {
+   "lat": 19.15,
+   "lon": -155.36,
+   "text": "Feb 2024 quake: Pāhala"
+  },
+  {
+   "lat": 20.25,
+   "lon": -155.35,
+   "text": "Pacific Ocean",
+   "kind": "water"
+  },
+  {
+   "lat": 19.55,
+   "lon": -156.25,
+   "text": "Kona Coast",
+   "kind": "water"
+  }
+ ],
+ "landmarks": [
+  {
+   "name": "Mauna Kea 13,803 ft",
+   "lat": 19.8207,
+   "lon": -155.4681,
+   "side": "r"
+  },
+  {
+   "name": "Mauna Loa 13,679 ft",
+   "lat": 19.4756,
+   "lon": -155.6054,
+   "side": "r"
+  },
+  {
+   "name": "Hualālai 8,271 ft",
+   "lat": 19.6925,
+   "lon": -155.8653,
+   "side": "r"
+  },
+  {
+   "name": "Kealakekua Bay (Cook, 1779)",
+   "lat": 19.4747,
+   "lon": -155.9197,
+   "side": "l"
+  }
+ ],
+ "pins": [
+  {
+   "n": 1,
+   "name": "Kona",
+   "lat": 19.7637,
+   "lon": -156.024,
+   "side": "l"
+  },
+  {
+   "n": 2,
+   "name": "Waikoloa",
+   "lat": 19.917,
+   "lon": -155.888,
+   "side": "l"
+  },
+  {
+   "n": 3,
+   "name": "Mauna Lani",
+   "lat": 19.9502,
+   "lon": -155.8604,
+   "side": "l"
+  },
+  {
+   "n": 4,
+   "name": "Mauna Kea Beach",
+   "lat": 19.9951,
+   "lon": -155.8242,
+   "side": "l"
+  },
+  {
+   "n": 5,
+   "name": "Lapakahi",
+   "lat": 20.1747,
+   "lon": -155.8958,
+   "side": "l"
+  },
+  {
+   "n": 6,
+   "name": "Waipiʻo",
+   "lat": 20.118,
+   "lon": -155.584,
+   "side": "t"
+  },
+  {
+   "n": 7,
+   "name": "ʻAkaka Falls",
+   "lat": 19.8553,
+   "lon": -155.1526,
+   "side": "r"
+  },
+  {
+   "n": 8,
+   "name": "Hilo",
+   "lat": 19.72,
+   "lon": -155.09,
+   "side": "r"
+  },
+  {
+   "n": 9,
+   "name": "Kīlauea",
+   "lat": 19.42,
+   "lon": -155.288,
+   "side": "r"
+  }
+ ]
+}

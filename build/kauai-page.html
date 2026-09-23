@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kauai | Journal | Joe Graham Photography</title>
+<meta name="description" content="Kauaʻi in photos: Hanalei Valley taro, Waimea Canyon, the sea-glass sand at Glass Beach, a crawl into Makauwahi Cave, and nēnē on the lawn. Postcard views, with the history of who holds the land underneath. Photographs by Joe Graham.">
+<meta property="og:title" content="Kauai | Joe Graham Photography">
+<meta property="og:description" content="A trip around Kauaʻi: maps, history, and the story behind every stop.">
+<meta property="og:image" content="https://joegraham.studio/journal/img/kauai.jpg">
+<meta property="og:url" content="https://joegraham.studio/journal/kauai/">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+{{BASE_CSS}}
+/* island map: sea around a DEM coastline */
+.m-sea{fill:#d9e7f1}
+.m-coast{fill:#eef1ea;stroke:#8fb0c9;stroke-width:1.2}
+.map-wrap.isle{background:#d9e7f1}
+.m-water{paint-order:stroke;stroke:#d9e7f1;stroke-width:3px}
+
+/* the lyric: a quiet line of history under each happy caption */
+.lyric{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:13.5px;line-height:1.55;color:var(--text-light);border-left:2px solid var(--border-module);padding:1px 0 1px 10px;margin:0 0 .9em;max-width:38rem}
+
+/* wet side / dry side */
+.cmp{position:relative;background:var(--plate);overflow:hidden;touch-action:pan-y}
+.cmp img{display:block;width:100%;height:auto}
+.cmp .top{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--x,50%)) 0 0)}
+.cmp .top img{width:100%;height:100%;object-fit:cover}
+.cmp .rule{position:absolute;top:0;bottom:0;left:var(--x,50%);width:3px;margin-left:-1.5px;background:#fff;box-shadow:0 0 6px rgba(0,0,0,.6);pointer-events:none}
+.cmp .knob{position:absolute;top:50%;left:var(--x,50%);transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:var(--accent-orange);border:3px solid #fff;color:#fff;font:bold 16px var(--verdana);display:flex;align-items:center;justify-content:center;pointer-events:none;box-shadow:0 2px 8px rgba(0,0,0,.5)}
+.cmp .side-l,.cmp .side-r{position:absolute;top:10px;font:bold 11px var(--verdana);color:#fff;padding:3px 8px;pointer-events:none}
+.cmp .side-l{left:10px;background:#1f6e3a}.cmp .side-r{right:10px;background:#a4471c}
+.cmp input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.cmp .tap-pill{bottom:10%}
+.rain{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:10px 0 2px}
+.rain div{border:1px solid var(--border-module);padding:8px 10px;background:var(--bg-soft);font-size:12px}
+.rain b{display:block;font-family:var(--trebuchet);font-size:22px;line-height:1.1}
+.rain .wet b{color:#1f7a42}.rain .dry b{color:#b0511f}
+:root[data-theme="dark"] .rain .wet b{color:#6fd39a}:root[data-theme="dark"] .rain .dry b{color:#f09a6a}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .rain .wet b{color:#6fd39a}:root:not([data-theme="light"]) .rain .dry b{color:#f09a6a}}
+
+@media (max-width:820px){
+  .isle .m-lab{font-size:26px !important}
+  .isle .m-water,.isle .m-note{font-size:20px}
+  .isle .m-pin circle{r:17px}
+  .isle .m-pin .m-num{font-size:17px !important;transform:translateY(2px)}
+  .isle.mini .m-pin circle{r:20px}
+}
+@media (max-width:560px){
+  .rain b{font-size:18px}
+}
+</style>
+</head>
+<body>
+
+<header class="top-bar" role="banner">
+  <div class="top-bar-inner">
+    <a href="/" class="top-bar-logo">joe<span>graham</span></a>
+    <nav class="top-bar-nav" aria-label="Primary navigation">
+      <a href="/">Profile</a>
+      <a href="/portfolio.html">Portfolio</a>
+      <a href="/journal/" class="active" aria-current="page">Journal</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+<aside class="side">
+  <div class="module mini-mod">
+    <div class="module-header">You Are Here</div>
+    <div class="map-wrap isle mini">{{MINI}}</div>
+  </div>
+  <div class="module">
+    <div class="module-header">Jump To</div>
+    <div class="module-body">
+      <nav aria-label="Jump to a post">
+        <ul class="jump" id="jump">
+          <li><a href="#history"><span>History</span><span class="e" aria-hidden="true">📜</span></a></li>
+          <li><a href="#lihue"><span>Līhuʻe mornings</span><span class="e" aria-hidden="true">🌅</span></a></li>
+          <li><a href="#starfruit"><span>Fruit stand</span><span class="e" aria-hidden="true">☕</span></a></li>
+          <li><a href="#north-shore"><span>North Shore</span><span class="e" aria-hidden="true">🏖️</span></a></li>
+          <li><a href="#hanalei"><span>Hanalei Valley</span><span class="e" aria-hidden="true">🌾</span></a></li>
+          <li><a href="#kekaha"><span>Kekaha sunset</span><span class="e" aria-hidden="true">🌇</span></a></li>
+          <li><a href="#spouting-horn"><span>Spouting Horn</span><span class="e" aria-hidden="true">🍄</span></a></li>
+          <li><a href="#spam"><span>SPAM</span><span class="e" aria-hidden="true">🥫</span></a></li>
+          <li><a href="#glass-beach"><span>Glass Beach</span><span class="e" aria-hidden="true">🍾</span></a></li>
+          <li><a href="#cave-trail"><span>Makauwahi Cave</span><span class="e" aria-hidden="true">🕳️</span></a></li>
+          <li><a href="#sinkhole"><span>The sinkhole</span><span class="e" aria-hidden="true">🪨</span></a></li>
+          <li><a href="#waimea"><span>Wet side, dry side</span><span class="e" aria-hidden="true">🔍</span></a></li>
+          <li><a href="#nene"><span>Nēnē</span><span class="e" aria-hidden="true">🪿</span></a></li>
+          <li><a href="#noni"><span>Noni</span><span class="e" aria-hidden="true">🌿</span></a></li>
+          <li><a href="#links"><span>Helpful links</span><span class="e" aria-hidden="true">🔗</span></a></li>
+          <li><a href="#sources"><span>Sources</span><span class="e" aria-hidden="true">📚</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</aside>
+
+<main class="feed">
+
+  <section class="module feed-head" aria-labelledby="h-top">
+    <div class="module-header">Joe's Journal <a href="/journal/">All trips &raquo;</a></div>
+    <div class="module-body">
+      <div>
+        <h1 id="h-top">Kauaʻi</h1>
+        <p class="sub">October 21 to 29, 2022</p>
+        <p>Kauaʻi is about five million years old, the oldest of Hawaiʻi&rsquo;s main inhabited islands, and it has spent most of that time being worn down by some of the heaviest rain on Earth. It was also the kingdom Kamehameha never conquered. In 1810 its king, Kaumualiʻi, joined the unified Hawaiian Kingdom by agreement instead of by war.</p>
+        <p>Captain James Cook made his first landing in the islands here, at Waimea on the west side, in January 1778. Sugar came next. In 1835 a company leased 980 acres at Kōloa from the king and paid its Hawaiian workers in paper scrip, good only at the company store. Old plantation land still shapes the island, right down to who owns the cave in this story.</p>
+        <p>The photos here are the postcard. The small print under each one is the rest of the story. Tap a numbered pin on the map to jump to that stop.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="module" id="map" aria-labelledby="h-map">
+    <div class="module-header"><span id="h-map">The Route</span><span class="tod" style="font-weight:normal;color:#cde;font-size:10px">In trip order</span></div>
+    <div class="map-wrap isle">{{MAP}}</div>
+    <div class="map-cap">Kauaʻi drawn from real elevation data (AWS Terrain Tiles, built from USGS and other public sources). Contour lines every 500 feet, bold every 1,000 feet. Roads are simplified and pins are approximate. Tap a pin to jump to that stop.</div>
+  </section>
+
+  <section class="module post" id="history" aria-labelledby="h-hist">
+    <div class="module-header"><span class="where">Some background</span><span class="tod">Before the stops</span></div>
+    <div class="post-body">
+      <h2 id="h-hist">How Kauaʻi became Kauaʻi</h2>
+      <p>The short version: who held the land, how it changed hands, and who kept going.</p>
+      <table class="facts"><caption>A short history of the island</caption>
+        <tr><th>About 5 million years ago</th><td>Magma from the hot spot under the Pacific Plate builds the island.</td></tr>
+        <tr><th>AD 200 to 1200</th><td>Polynesian voyagers arrive by double-hulled canoe. The Kauaʻi Historical Society places the first settlers between 200 and 600; charcoal and rat teeth in Makauwahi Cave (stop 9) point to about 1200 on that coast.</td></tr>
+        <tr><th>January 20, 1778</th><td>Captain James Cook&rsquo;s ships reach the mouth of the Waimea River. They bring disease. By 1890 a Hawaiian population once estimated at 300,000 or more had fallen below 40,000. (This is Waimea on Kauaʻi, not the Big Island town or Waimea Bay on Oʻahu.)</td></tr>
+        <tr><th>1810</th><td>King Kaumualiʻi joins Kamehameha&rsquo;s kingdom by agreement. Kauaʻi is the only island Kamehameha never took by force.</td></tr>
+        <tr><th>1835</th><td>Ladd &amp; Company leases 980 acres at Kōloa for sugar and pays workers in scrip good only at its own store.</td></tr>
+        <tr><th>1848 and 1850</th><td>The Māhele turns land into private property, and a new law lets foreigners buy it.</td></tr>
+        <tr><th>1864</th><td>George Norton Wilcox takes over Grove Farm plantation near Līhuʻe, and Kamehameha V sells Niʻihau to the Sinclair family, ancestors of the Robinsons, for $10,000 in gold.</td></tr>
+        <tr><th>1865</th><td>The kingdom sends William Hillebrand to Asia to find plantation labor. He returns with more than 500 Chinese contract workers.</td></tr>
+        <tr><th>1893</th><td>American and European businessmen, backed by U.S. Marines, overthrow Queen Liliʻuokalani. In 1993 Congress formally apologizes.</td></tr>
+        <tr><th>1984</th><td>The first Pūnana Leo, a preschool run entirely in Hawaiian, opens in Kekaha (stop 5), when fewer than 50 children in the islands could speak the language.</td></tr>
+        <tr><th>September 11, 1992</th><td>Hurricane ʻIniki hits as a Category 4 storm and destroys more than 1,400 homes on the island.</td></tr>
+        <tr><th>2000</th><td>After 136 years with the Wilcox family, Grove Farm is sold to AOL founder Steve Case.</td></tr>
+        <tr><th>2009</th><td>Gay &amp; Robinson hauls Kauaʻi&rsquo;s last load of sugar cane.</td></tr>
+        <tr><th>2016 and 2017</th><td>Mark Zuckerberg files suits to force the sale of small family land claims inside his North Shore estate, then drops them after a public outcry.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#history">Link to this post</a></div>
+  </section>
+
+  <article class="module post" id="lihue" data-pin="1" aria-labelledby="h-lihue">
+    <div class="module-header"><span class="where"><span class="pin-badge">1</span>Līhuʻe</span><span class="tod">Day 1, first light</span></div>
+    <figure class="post-photo"><img src="img/lihue-morning.jpg" width="844" height="1500" alt="Early morning from a hotel lanai in Līhuʻe: a wide green lawn with palm trees and lounge chairs, low buildings, and a jagged green ridge under heavy gray clouds."></figure>
+    <div class="post-body">
+      <h2 id="h-lihue">First morning on the east side</h2>
+      <p>First light from the room. That jagged ridge behind the palms is Hāʻupu.</p>
+      <p class="lyric">Līhuʻe grew up around sugar. Grove Farm, the plantation next door, stayed in one family for 136 years, until AOL founder Steve Case bought it in 2000.</p>
+      <table class="facts"><caption>Līhuʻe quick facts</caption>
+        <tr><th>What it is</th><td>The county seat of Kauaʻi and home to the island&rsquo;s main airport, so almost every trip starts here.</td></tr>
+        <tr><th>The ridge</th><td>Hāʻupu, 2,297 feet, the highest named peak in the small range on the island&rsquo;s southeast side. You can see it from Līhuʻe on one side and Poʻipū on the other.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#lihue">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="peacock" data-pin="1" aria-labelledby="h-peacock">
+    <div class="module-header"><span class="where"><span class="pin-badge">1</span>Līhuʻe</span><span class="tod">Day 1, early morning</span></div>
+    <figure class="post-photo"><img src="img/peacock.jpg" width="844" height="1500" loading="lazy" alt="A peacock with its long green-and-bronze train folded, standing on sunny grass at the edge of a concrete path."></figure>
+    <div class="post-body">
+      <h2 id="h-peacock">Breakfast company</h2>
+      <p>A peacock was out on the lawn before the grounds crew. He did not care about me at all.</p>
+      <p class="lyric">The first flock on record was a king&rsquo;s gift to a rancher. Lovely, loud, and not going anywhere.</p>
+      <table class="facts"><caption>Peafowl in Hawaiʻi</caption>
+        <tr><th>Native to</th><td>India, Nepal, Pakistan, and Sri Lanka. Not Hawaiʻi.</td></tr>
+        <tr><th>Here since</th><td>At least 1860, when King Kamehameha V gave a flock to a rancher on Oʻahu.</td></tr>
+        <tr><th>The Hawaiian word</th><td><i>Pīkake</i>. It is also the Hawaiian name for white jasmine: Princess Kaʻiulani named the flower after her pet peacocks, because she loved them both.</td></tr>
+        <tr><th>Not everyone&rsquo;s favorite</th><td>They eat seeds, buds, fruit, and small animals, and their calls can go off six to eight times in a row. Neighbors notice.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#peacock">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="snail" data-pin="1" aria-labelledby="h-snail">
+    <div class="module-header"><span class="where"><span class="pin-badge">1</span>Līhuʻe</span><span class="tod">Two minutes later</span></div>
+    <figure class="post-photo"><img src="img/snail.jpg" width="1500" height="845" loading="lazy" alt="A large brown land snail with a striped, cone-shaped shell crawling from a gravel path onto a bright green lawn, photographed at ground level."></figure>
+    <div class="post-body">
+      <h2 id="h-snail">The biggest snail I have ever seen</h2>
+      <p>Right behind the peacock, crossing the sidewalk at snail speed. I got down on the ground for this one.</p>
+      <table class="facts"><caption>What it most likely is</caption>
+        <tr><th>Giant African snail</th><td>It looks like one: the largest land snail in Hawaiʻi. Someone brought them to Oʻahu in 1936 as garden pets, and they were first reported on Kauaʻi in 1958.</td></tr>
+        <tr><th>Why it matters</th><td>An invasive pest that eats garden plants and crops.</td></tr>
+        <tr><th>Look, don&rsquo;t touch</th><td>Snails and slugs in Hawaiʻi can carry rat lungworm, a parasite that can make people seriously ill. Don&rsquo;t pick them up, and wash produce well.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#snail">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="starfruit" data-pin="2" aria-labelledby="h-star">
+    <div class="module-header"><span class="where"><span class="pin-badge">2</span>Moloaʻa</span><span class="tod">Day 1, morning</span></div>
+    <figure class="post-photo"><img src="img/starfruit.jpg" width="844" height="1500" loading="lazy" alt="Pale green and yellow ribbed starfruit hanging among glossy leaves on a tree branch against a blue sky."></figure>
+    <div class="post-body">
+      <h2 id="h-star">A Taste of Kauaʻi</h2>
+      <p>The Moloaʻa Sunrise Fruit Stand, on Kūhiō Highway on the way up to the North Shore, with a starfruit tree loaded with fruit right next to it. I got the Taste of Kauaʻi: very nice and very tropical. Some of the best coffee of all my travels came from this stand, too.</p>
+      <p class="lyric">Just up the coast at Pilaʻa, Mark Zuckerberg bought a 700-acre estate in 2014. In 2016 he sued hundreds of descendants of the Hawaiian families who held small kuleana plots inside it, to force a sale. After the outcry, he dropped the suits and wrote, &ldquo;it&rsquo;s clear we made a mistake.&rdquo;</p>
+      <table class="facts"><caption>Starfruit and coffee</caption>
+        <tr><th>Starfruit</th><td>Carambola. Chinese sandalwood traders brought it to Hawaiʻi from southern China. Slice it crosswise and every piece is a star.</td></tr>
+        <tr><th>Season</th><td>In Hawaiʻi the trees fruit from about September through April, so late October is prime time.</td></tr>
+        <tr><th>The stand</th><td>On the ocean side of Kūhiō Highway at Koʻolau Road, between mile markers 16 and 17.</td></tr>
+        <tr><th>Coffee up here</th><td>North Shore coffee is a real thing. Moloaʻa Bay Coffee has grown coffee and cacao above Moloaʻa Bay since 1998, on about 4,000 hand-picked trees.</td></tr>
+        <tr><th>Coffee down south</th><td>Kauai Coffee Company in Kalāheo is the largest coffee grower in the United States: about 4 million trees on 3,100 acres of what used to be McBryde sugar land.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#starfruit">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="north-shore" data-pin="3" aria-labelledby="h-north">
+    <div class="module-header"><span class="where"><span class="pin-badge">3</span>Near Lumahaʻi</span><span class="tod">Day 1, late morning</span></div>
+    <figure class="post-photo"><img src="img/north-shore.jpg" width="1500" height="845" loading="lazy" alt="Looking out from under dark ironwood branches at a North Shore beach: turquoise and deep blue water, white waves, golden sand, and puffy clouds."></figure>
+    <div class="post-body">
+      <h2 id="h-north">North Shore blue</h2>
+      <p>Framed by ironwoods, with the water doing three shades of blue at once. The ultrawide lens was made for this.</p>
+      <table class="facts"><caption>Lumahaʻi Beach quick facts</caption>
+        <tr><th>Where</th><td>Along Kūhiō Highway, west of Hanalei and before Hāʻena.</td></tr>
+        <tr><th>On film</th><td>The 1958 movie <i>South Pacific</i> shot here. It&rsquo;s the beach where Mitzi Gaynor sings &ldquo;I&rsquo;m Gonna Wash That Man Right Outa My Hair.&rdquo;</td></tr>
+        <tr><th>Look, don&rsquo;t swim</th><td>There&rsquo;s no reef to break the waves, so they hit steep sand with heavy shorebreak and strong rip currents. People have drowned here. It&rsquo;s a beach for looking at.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#north-shore">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="hanalei" data-pin="4" aria-labelledby="h-hanalei">
+    <div class="module-header"><span class="where"><span class="pin-badge">4</span>Hanalei Valley Lookout</span><span class="tod">Day 1, late morning</span></div>
+    <figure class="post-photo"><img src="img/hanalei-valley.jpg" width="1500" height="845" loading="lazy" alt="Hanalei Valley from above: a patchwork of bright green and flooded taro fields along a winding blue river, green mountains beyond, big white clouds in a deep blue sky."></figure>
+    <div class="post-body">
+      <h2 id="h-hanalei">Hanalei Valley and the taro patches</h2>
+      <p>That patchwork on the valley floor is taro, grown in flooded fields fed by hand-dug ditches off the Hanalei River, the way it has been done here for centuries.</p>
+      <table class="facts"><caption>Hanalei National Wildlife Refuge</caption>
+        <tr><th>Established</th><td>1972, the oldest of Kauaʻi&rsquo;s three wildlife refuges.</td></tr>
+        <tr><th>Taro</th><td>The refuge alone grows more than 40 percent of all the taro in Hawaiʻi. Taro is poi, and since 2025 it&rsquo;s the official state plant.</td></tr>
+        <tr><th>Endangered birds</th><td>Koloa maoli (Hawaiian duck), ʻalae keʻokeʻo (Hawaiian coot), ʻalae ʻula (Hawaiian gallinule), aeʻo (Hawaiian stilt), and nēnē.</td></tr>
+        <tr><th>Visiting</th><td>The valley floor is closed to protect the birds. The viewpoint on Kūhiō Highway in Princeville is where you look from.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#hanalei">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="kekaha" data-pin="5" aria-labelledby="h-kekaha">
+    <div class="module-header"><span class="where"><span class="pin-badge">5</span>Kekaha</span><span class="tod">Day 1, sunset</span></div>
+    <figure class="post-photo"><img src="img/kekaha-sunset.jpg" width="844" height="1500" loading="lazy" alt="Sunset on the west side: sunbeams breaking through dark clouds over the ocean, a white pickup truck parked on the sand, and a long low island on the horizon."></figure>
+    <div class="post-body">
+      <h2 id="h-kekaha">West side sunset</h2>
+      <p>The far west side at sunset. Somebody had driven right out onto the sand to watch it.</p>
+      <p class="lyric">Up the beach is the Navy&rsquo;s Pacific Missile Range Facility, the largest instrumented missile range in the world. The family that owns Niʻihau has done at least $25 million in business with the Navy.</p>
+      <table class="facts"><caption>Kekaha and the view west</caption>
+        <tr><th>On the horizon</th><td>Most likely Niʻihau, 17 miles offshore and visible from Kekaha on clear evenings.</td></tr>
+        <tr><th>The Forbidden Island</th><td>In 1864 Kamehameha V sold Niʻihau to the Sinclair family for $10,000 in gold. Their descendants, the Robinsons, still own it, and it stays closed to visitors.</td></tr>
+        <tr><th>Dry side</th><td>The west side gets about 20 inches of rain a year. The mountain in the middle of the island can get hundreds. More on that at <a href="#waimea">stop 10</a>.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#kekaha">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="spouting-horn" data-pin="6" aria-labelledby="h-horn">
+    <div class="module-header"><span class="where"><span class="pin-badge">6</span>Spouting Horn</span><span class="tod">Day 2, morning</span></div>
+    <figure class="post-photo"><img src="img/spouting-horn-mushroom.jpg" width="1500" height="845" loading="lazy" alt="A single white mushroom with a speckled cap standing in short green grass in front of a wall of dark stacked lava rock."></figure>
+    <div class="post-body">
+      <h2 id="h-horn">Came for the blowhole, kept the mushroom</h2>
+      <p>Spouting Horn is famous for its blowhole. The picture I kept from here is this little mushroom, standing in the grass by the lava-rock wall like it had its own spotlight.</p>
+      <p class="lyric">Across the road, the valley of Lāwaʻi-kai passed from Queen Emma to a sugar family to a Chicago heir. Today it is a garden you visit with a ticket.</p>
+      <table class="facts"><caption>Spouting Horn quick facts</caption>
+        <tr><th>How it works</th><td>Waves push into a lava tube under the shelf and force water up through a narrow hole. The spray can reach 50 feet.</td></tr>
+        <tr><th>The sound</th><td>The hiss and roar is air being squeezed through cracks in the rock.</td></tr>
+        <tr><th>The legend</th><td>A giant moʻo (lizard) named Kaikapu guarded this coast and ate anyone who fished or swam here. A boy named Liko jammed a stick in her mouth, swam under the lava shelf, and escaped through a small hole. Kaikapu followed and got stuck. The roar is her.</td></tr>
+        <tr><th>Across the road</th><td>The National Tropical Botanical Garden&rsquo;s visitor center, where tours of Allerton and McBryde Gardens start.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#spouting-horn">Link to this post</a></div>
+  </article>
+
+  <article class="module post status" id="spam" data-pin="7" aria-labelledby="h-spam">
+    <div class="module-header"><span class="where"><span class="pin-badge">7</span>Poʻipū</span><span class="tod">Day 2, afternoon</span></div>
+    <figure class="post-photo"><img src="img/spam-socks.jpg" width="844" height="1500" loading="lazy" alt="A pair of blue and yellow socks on a store display hook, printed all over with I heart SPAM and the SPAM logo."></figure>
+    <div class="post-body">
+      <p class="big" id="h-spam">I ❤️ SPAM, in sock form 🥫</p>
+      <p>Souvenir shopping in Poʻipū. Hawaiʻi takes its SPAM seriously, and there&rsquo;s a real history behind it.</p>
+      <p class="lyric">It came with the military in World War II. SPAM stuck around, and so did the military.</p>
+      <table class="facts"><caption>Why Hawaiʻi loves SPAM</caption>
+        <tr><th>Born</th><td>1937, in Minnesota, from Hormel Foods, as cheap protein that didn&rsquo;t need a refrigerator.</td></tr>
+        <tr><th>The war</th><td>During World War II the U.S. military bought more than 100 million pounds and shipped it across the Pacific. With fresh meat hard to come by in the islands, it stuck.</td></tr>
+        <tr><th>Today</th><td>Hawaiʻi eats more SPAM per person than any other state, about 7 million cans a year.</td></tr>
+        <tr><th>Try</th><td>SPAM musubi: a slice of grilled SPAM on a block of rice, wrapped in nori. Every convenience store has them.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#spam">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="glass-beach" data-pin="8" aria-labelledby="h-glass">
+    <div class="module-header"><span class="where"><span class="pin-badge">8</span>Glass Beach, ʻEleʻele</span><span class="tod">Day 4, sunset</span></div>
+    <figure class="post-photo"><img src="img/glass-sand.jpg" width="1500" height="845" loading="lazy" alt="Extreme close-up of Glass Beach: white knobby coral bits, pale pebbles, pink-edged shell pieces, dark stones, and frosted brown, clear, and green sea glass."></figure>
+    <div class="post-body">
+      <h2 id="h-glass">What&rsquo;s in the sand?</h2>
+      <p>Get down close at Glass Beach and the &ldquo;sand&rdquo; turns out to be mostly other things.</p>
+      <p class="lyric">Up on the bluff, the old McBryde Sugar plantation cemetery looks down on what used to be the dump.</p>
+      <table class="facts"><caption>What&rsquo;s in the sand</caption>
+        <tr><th>Brown glass</th><td>Most likely from old bottles, rounded and frosted by decades in the surf.</td></tr>
+        <tr><th>Clear glass</th><td>Frosted until it looks like little pieces of ice.</td></tr>
+        <tr><th>Green glass</th><td>Keep looking and you can find aqua and blue, too.</td></tr>
+        <tr><th>Dark rock</th><td>Most likely basalt, the volcanic rock the whole island is built from.</td></tr>
+        <tr><th>White, knobby bits</th><td>Most likely broken coral, a big part of any Hawaiian white-sand beach.</td></tr>
+        <tr><th>Pink-edged pieces</th><td>Seashell.</td></tr>
+      </table>
+      <table class="facts"><caption>Glass Beach quick facts</caption>
+        <tr><th>Where</th><td>In ʻEleʻele, next to Port Allen Harbor on Hanapēpē Bay, in the middle of an industrial area. That&rsquo;s part of the charm.</td></tr>
+        <tr><th>Where the glass came from</th><td>For much of the 20th century people dumped trash here, including bottles and car glass. The ocean did the rest, tumbling it into smooth, frosted pebbles.</td></tr>
+        <tr><th>Please leave it</th><td>There&rsquo;s less glass every year, and what&rsquo;s left is getting smaller, because decades of visitors have taken it home as souvenirs.</td></tr>
+        <tr><th>On the bluff above</th><td>The old McBryde Sugar plantation cemetery.</td></tr>
+        <tr><th>A cousin in California</th><td>Fort Bragg, on California&rsquo;s North Coast, has a Glass Beach with the same kind of backstory.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#glass-beach">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="glass-sunset" data-pin="8" aria-labelledby="h-gsun">
+    <div class="module-header"><span class="where"><span class="pin-badge">8</span>Glass Beach, ʻEleʻele</span><span class="tod">Two minutes later</span></div>
+    <figure class="post-photo"><img src="img/glass-beach-sunset.jpg" width="1500" height="845" loading="lazy" alt="The sun setting on the horizon over the ocean, with pink and orange clouds, dark rocks in the foaming surf, and a dark headland on the right."></figure>
+    <div class="post-body"><h2 id="h-gsun">Then I looked up</h2><p>Two minutes after the sand close-up, the sun dropped onto the horizon.</p></div>
+    <div class="post-foot"><span></span><a class="permalink" href="#glass-sunset">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="cave-trail" data-pin="9" aria-labelledby="h-trail">
+    <div class="module-header"><span class="where"><span class="pin-badge">9</span>Makauwahi Cave Reserve</span><span class="tod">Day 5, afternoon</span></div>
+    <div class="gal" role="region" aria-label="Photo gallery: the walk into Makauwahi Cave, 5 photos">
+      <div class="strip" tabindex="0">
+        <figure><img src="img/cave-trail.jpg" width="1500" height="845" loading="lazy" alt="A red dirt road through dry brush and ironwood trees, with a small wooden sign reading Makauwahi Cave Trail and a yellow arrow pointing left."><figcaption>Red dirt roads and little yellow arrows.</figcaption></figure>
+        <figure><img src="img/haole-koa.jpg" width="844" height="1500" loading="lazy" alt="A round, fluffy white flower head on a shrub with small feathery leaves and green seed clusters."><figcaption>Haole koa, &ldquo;foreign koa.&rdquo; Pretty, and on the list of the world&rsquo;s 100 worst invasive species.</figcaption></figure>
+        <figure><img src="img/boardwalk.jpg" width="844" height="1500" loading="lazy" alt="A wooden boardwalk with metal railings running through a green tunnel of trees over dark water, toward bright light at the end."><figcaption>A boardwalk over the wet ground near the cave.</figcaption></figure>
+        <figure><img src="img/cave-entrance.jpg" width="844" height="1500" loading="lazy" alt="The low, dark cave entrance at the foot of a pale limestone cliff, next to a green Grove Farm sign and a wooden donation box."><figcaption>The front door, lower left, about three feet tall. A little more crawl than I would have liked after the hike.</figcaption></figure>
+        <figure><img src="img/cave-chamber.jpg" width="1500" height="845" loading="lazy" alt="Inside the cave: a huge sculpted orange-brown limestone arch frames a bright opening full of green trees and shrubs, with a dirt floor in shadow."><figcaption>Then it opens up, and daylight pours in from the sinkhole.</figcaption></figure>
+      </div>
+      <div class="gal-bar"><button type="button" class="gal-prev" aria-label="Previous photo">&lsaquo;</button><span class="gal-n" aria-live="polite">1 of 5</span><button type="button" class="gal-next" aria-label="Next photo">&rsaquo;</button></div>
+    </div>
+    <div class="post-body">
+      <h2 id="h-trail">Over the hill and into the cave</h2>
+      <p>This one took some work: a hike over the hill, red dirt roads, and then a crawl. Worth every step. Swipe through the walk in.</p>
+      <p class="lyric">A private company decides who may enter a cave holding 10,000 years of Hawaiian history. In 2024 it closed the doors. People pushed back, and the company promised to open them again.</p>
+      <table class="facts"><caption>Makauwahi Cave quick facts</caption>
+        <tr><th>What it is</th><td>The largest limestone cave in Hawaiʻi, and maybe the richest fossil site in all the Hawaiian Islands.</td></tr>
+        <tr><th>The name</th><td>Makauwahi means &ldquo;smoke eye.&rdquo; The old name was rediscovered in 2000.</td></tr>
+        <tr><th>The rock</th><td>Not lava. The cliffs along this coast are ancient sand dunes, blown in during the Ice Age and cemented into limestone.</td></tr>
+        <tr><th>Who found it</th><td>In 1992 David Burney and Lida Pigott Burney, with bird researchers Helen James and Storrs Olson, found the sinkhole while searching the south coast for fossil sites.</td></tr>
+        <tr><th>The reserve</th><td>About 17 acres, on land owned by Grove Farm, a company built from three former sugar plantations. Grove Farm&rsquo;s sign at the entrance calls the cave &ldquo;a glimpse into life on Kauaʻi that spans over 10,000 years.&rdquo;</td></tr>
+        <tr><th>Visiting now</th><td>In 2022 there were free docent tours with a suggested $10 donation. The reserve closed on October 31, 2024 when its lease wasn&rsquo;t renewed. After a public outcry, Grove Farm handed stewardship back to the nonprofit reserve and promised to reopen it, with the cavern itself open by appointment for school, science, and cultural groups. Check <a href="https://www.cavereserve.org/">cavereserve.org</a> before you go.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#cave-trail">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="sinkhole" data-pin="9" aria-labelledby="h-sink">
+    <div class="module-header"><span class="where"><span class="pin-badge">9</span>The sinkhole</span><span class="tod">Out the far side</span></div>
+    <figure class="post-photo"><img src="img/sinkhole-wall.jpg" width="1500" height="845" loading="lazy" alt="The inside of the sinkhole: a tall, pitted orange-and-gray limestone wall with a deep overhang on the left, tall slender palms, a green lawn and shrubs on the floor, and blue sky with white clouds above."></figure>
+    <div class="post-body">
+      <h2 id="h-sink">Inside the sinkhole</h2>
+      <p>Out the far side of the cave, you step into an open-air room with walls on every side. The overhang on the left is what&rsquo;s left of the old cave roof.</p>
+      <table class="facts"><caption>What&rsquo;s under the floor</caption>
+        <tr><th>About 7,000 years ago</th><td>As the sea rose, a large part of the cave ceiling collapsed and opened this room to the sky. It became a small lake that caught whatever fell in.</td></tr>
+        <tr><th>The fossil bed</th><td>Researchers dug about 33 feet down through nearly 10,000 years of layered mud. They found bones of more than 40 bird species, about half now extinct, including giant flightless ducks and a long-legged owl.</td></tr>
+        <tr><th>About AD 1200</th><td>Chicken bones, rat teeth, and charcoal appear: the first signs of people on this stretch of coast.</td></tr>
+        <tr><th>400 to 500 years ago</th><td>A huge tsunami threw boulders of up to 200 pounds into the sinkhole and sealed the older layers underneath.</td></tr>
+        <tr><th>Today</th><td>The reserve keeps African sulcata tortoises as stand-ins for the extinct flightless ducks, grazing the way those birds once did, and is replanting native palms and flowering plants.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#sinkhole">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="plumeria" data-pin="7" aria-labelledby="h-plum">
+    <div class="module-header"><span class="where"><span class="pin-badge">7</span>Poʻipū</span><span class="tod">Day 6, early morning</span></div>
+    <figure class="post-photo"><img src="img/plumeria.jpg" width="844" height="1500" loading="lazy" alt="A pink and yellow plumeria flower covered in raindrops, with a pink bud beside it and green leaves behind."></figure>
+    <div class="post-body">
+      <h2 id="h-plum">Rain-kissed</h2>
+      <p>An early shower had just passed, and the plumeria outside the hotel was covered in drops.</p>
+      <p class="lyric">The man who brought the first plumeria, William Hillebrand, also brought workers: in 1865 he returned from China with more than 500 contract laborers for the plantations.</p>
+      <table class="facts"><caption>Plumeria quick facts</caption>
+        <tr><th>Not native</th><td>Plumeria comes from Mexico, Central America, and Venezuela.</td></tr>
+        <tr><th>Here since</th><td>1860, when the German physician William Hillebrand brought in the first one, the Common Yellow.</td></tr>
+        <tr><th>Still</th><td>It became one of the best-loved lei flowers in the islands.</td></tr>
+        <tr><th>In the portfolio</th><td>My favorite frame from this morning, <a href="/photos/plumeria.html"><i>Rain-Kissed Plumeria</i></a>.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#plumeria">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="waimea" data-pin="10" aria-labelledby="h-waimea">
+    <div class="module-header"><span class="where"><span class="pin-badge">10</span>Waimea Canyon</span><span class="tod">Day 6, morning</span></div>
+    <figure class="post-photo"><img src="img/waimea-canyon.jpg" width="1500" height="845" loading="lazy" alt="Waimea Canyon from a lookout: red and orange eroded ridges and cliffs dropping into a deep green canyon, under heavy white clouds."></figure>
+    <div class="post-body">
+      <h2 id="h-waimea">The Grand Canyon of the Pacific</h2>
+      <p>Red rock, green slopes, and clouds sitting right on the rim. It&rsquo;s the same island as Hanalei, and it looks like a different planet. Compare them yourself below.</p>
+      <p class="lyric">Cook&rsquo;s ships anchored at the mouth of this canyon&rsquo;s river in 1778, and they brought disease. By 1890, a Hawaiian population once estimated at 300,000 or more had fallen below 40,000.</p>
+      <table class="facts"><caption>Waimea Canyon quick facts</caption>
+        <tr><th>Size</th><td>About 10 miles long and up to 3,000 feet deep. Some sources say more than 3,600.</td></tr>
+        <tr><th>How it formed</th><td>About 4 million years ago part of Kauaʻi&rsquo;s shield volcano collapsed. The Waimea River, fed by rain off Waiʻaleʻale, has been carving along that break ever since.</td></tr>
+        <tr><th>Why it&rsquo;s red</th><td>The lava started out black. Weathering turned the exposed basalt rust red. <i>Waimea</i> means &ldquo;reddish water.&rdquo;</td></tr>
+        <tr><th>Getting there</th><td>Highway 550 climbs 18 miles from Waimea town, where Cook landed in 1778, past the lookouts to Kōkeʻe State Park. The state park covers 1,866 acres.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#waimea">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="wet-dry" data-pin="10" aria-labelledby="h-wetdry">
+    <div class="module-header"><span class="where"><span class="pin-badge">10</span>Wet side, dry side</span><span class="tod">Day 1 against Day 6</span></div>
+    <div class="callout"><span class="try-ico" aria-hidden="true">↔️</span><span><b>Interactive photo.</b> Drag the handle (or use the arrow keys) to swap between the wet North Shore and the dry west side.</span></div>
+    <div class="cmp" id="cmp">
+      <img src="img/waimea-canyon.jpg" width="1500" height="845" loading="lazy" alt="Waimea Canyon, the dry west side: red rock and sparse green.">
+      <div class="top"><img src="img/hanalei-valley.jpg" width="1500" height="845" loading="lazy" alt="Hanalei Valley, the wet North Shore: flooded green taro fields and forested mountains."></div>
+      <div class="rule" aria-hidden="true"></div>
+      <div class="knob" aria-hidden="true">↔</div>
+      <span class="side-l" aria-hidden="true">WET: Hanalei</span><span class="side-r" aria-hidden="true">DRY: Waimea</span>
+      <input type="range" min="0" max="100" value="50" id="cmpIn" aria-label="Slide between Hanalei Valley on the wet North Shore and Waimea Canyon on the dry west side">
+      <button type="button" class="tap-pill" aria-hidden="true" tabindex="-1">↔ Drag to compare</button>
+    </div>
+    <div class="post-body">
+      <h2 id="h-wetdry">Wet side, dry side</h2>
+      <p>These two photos were taken about 15 miles apart. The difference is one mountain. Trade winds carry moist air in from the northeast and push it up over Waiʻaleʻale, where it cools and rains. By the time the air comes down the far side, it has been wrung out.</p>
+      <div class="rain">
+        <div class="wet"><b>~374 in</b>average rain per year on Mount Waiʻaleʻale, one of the wettest spots on Earth. The record is 683 inches, in 1982.</div>
+        <div class="dry"><b>~20 in</b>average rain per year on the west side, around Waimea and Kekaha.</div>
+      </div>
+      <a class="linkcard" href="https://waterdata.usgs.gov/monitoring-location/220427159300201/"><span class="lc-ico" aria-hidden="true">🌧️</span><span><b>Watch it rain right now.</b> The USGS keeps a live rain gauge near the summit of Waiʻaleʻale.</span></a>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#wet-dry">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="shell-ginger" data-pin="7" aria-labelledby="h-ginger">
+    <div class="module-header"><span class="where"><span class="pin-badge">7</span>Poʻipū</span><span class="tod">Day 6, midday</span></div>
+    <figure class="post-photo"><img src="img/shell-ginger.jpg" width="844" height="1500" loading="lazy" alt="A drooping cluster of shell ginger flowers, white and pink buds opening to yellow and red throats, between long green leaves against a blue sky."></figure>
+    <div class="post-body">
+      <h2 id="h-ginger">Shell ginger</h2>
+      <p>Back at the hotel after the canyon. The buds really do look like little seashells.</p>
+      <table class="facts"><caption>Shell ginger quick facts</caption>
+        <tr><th>Name</th><td><i>Alpinia zerumbet</i>. &ldquo;Shell&rdquo; comes from the pink-tipped buds.</td></tr>
+        <tr><th>From</th><td>East Asia: northeast India and Myanmar through China to Japan.</td></tr>
+        <tr><th>In Hawaiʻi</th><td>It has gone wild on Kauaʻi, Oʻahu, Molokaʻi, and Maui and is rated high-risk for invasiveness. Beautiful in a hotel garden, not so great in a native forest.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#shell-ginger">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="nene" data-pin="7" aria-labelledby="h-nene">
+    <div class="module-header"><span class="where"><span class="pin-badge">7</span>Poʻipū</span><span class="tod">Day 9, morning</span></div>
+    <figure class="post-photo"><img src="img/nene.jpg" width="844" height="1500" loading="lazy" alt="Two nēnē, Hawaiian geese with black heads and buff-striped necks, walking across a sunny lawn in front of a flowering hedge."></figure>
+    <div class="post-body">
+      <h2 id="h-nene">The state bird, out for a walk</h2>
+      <p>Two nēnē strolling the lawn like they owned the place. On Kauaʻi, they kind of do.</p>
+      <p class="lyric">Down to about 30 wild birds in 1949, and thousands today. Some stories do turn around.</p>
+      <table class="facts"><caption>Nēnē quick facts</caption>
+        <tr><th>What it is</th><td>The Hawaiian goose, Hawaiʻi&rsquo;s state bird, found nowhere else on Earth.</td></tr>
+        <tr><th>Close call</th><td>By 1949 there were about 30 wild nēnē left, all on Hawaiʻi Island.</td></tr>
+        <tr><th>Comeback</th><td>More than 3,500 today. In 2019 the species moved from endangered to threatened.</td></tr>
+        <tr><th>Why Kauaʻi</th><td>No mongoose. Without that predator nēnē thrived here, and by 2012 Kauaʻi had about 60 percent of all nēnē in the state.</td></tr>
+        <tr><th>Be kind</th><td>Don&rsquo;t feed them, give them room, and drive slowly where signs say nēnē cross. Cars are one of their biggest threats.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#nene">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="noni" data-pin="11" aria-labelledby="h-noni">
+    <div class="module-header"><span class="where"><span class="pin-badge">11</span>Hāʻena</span><span class="tod">Day 9, afternoon</span></div>
+    <figure class="post-photo"><img src="img/noni.jpg" width="844" height="1500" loading="lazy" alt="A lumpy, pale green noni fruit hanging among large glossy dark green leaves."></figure>
+    <div class="post-body">
+      <h2 id="h-noni">One last stop: noni</h2>
+      <p>One last look at the North Shore, and a lumpy fruit hanging right at eye level.</p>
+      <p class="lyric">After the 2018 floods, the Hāʻena community helped remake the state park here: reservations, a cap of 900 visitors a day, and local stewards running the gate.</p>
+      <table class="facts"><caption>Noni quick facts</caption>
+        <tr><th>A canoe plant</th><td>One of the plants Polynesian voyagers carried to Hawaiʻi on purpose. It&rsquo;s the only canoe plant grown mainly for medicine.</td></tr>
+        <tr><th>Uses</th><td>Leaves and fruit for wounds, bruises, and sores. Roots and bark for yellow and red dye. Famine food when there was nothing else.</td></tr>
+        <tr><th>Fair warning</th><td>When the fruit ripens and turns white, it smells strongly, often compared to blue cheese.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#noni">Link to this post</a></div>
+  </article>
+
+  <section class="module post" id="links" aria-labelledby="h-links">
+    <div class="module-header"><span class="where">Helpful links</span><span class="tod">Go deeper</span></div>
+    <div class="post-body">
+      <h2 id="h-links">Keep exploring</h2>
+      <ul class="hl">
+        <li><a href="https://www.fws.gov/refuge/hanalei"><b>Hanalei National Wildlife Refuge (USFWS)</b></a><span>The taro, the waterbirds, and viewpoint hours.</span></li>
+        <li><a href="https://www.cavereserve.org/"><b>Makauwahi Cave Reserve</b></a><span>Current access, tours, and volunteer days at the cave.</span></li>
+        <li><a href="https://archaeology.org/issues/may-june-2015/letters-from/letter-from-hawaii-kauai-caves/"><b>&ldquo;Inside Kauaʻi&rsquo;s Past&rdquo; (Archaeology magazine)</b></a><span>The full story of the dig at Makauwahi.</span></li>
+        <li><a href="https://www.hawaiistateparks.org/parks/waimea-canyon-state-park"><b>Waimea Canyon State Park</b></a><span>Lookouts, trails, and the road up to Kōkeʻe.</span></li>
+        <li><a href="https://waterdata.usgs.gov/monitoring-location/220427159300201/"><b>Waiʻaleʻale rain gauge (USGS)</b></a><span>Live rainfall from one of the wettest places on Earth.</span></li>
+        <li><a href="https://ntbg.org/gardens/visitorinfo/"><b>National Tropical Botanical Garden</b></a><span>Allerton and McBryde Gardens, across the road from Spouting Horn.</span></li>
+        <li><a href="https://kauaihistoricalsociety.org/historyofkauai/"><b>Kauaʻi Historical Society timeline</b></a><span>The island&rsquo;s history, from the people who keep its archives.</span></li>
+        <li><a href="https://dlnr.hawaii.gov/wildlife/birds/nene/"><b>Nēnē (Hawaiʻi DLNR)</b></a><span>The state bird&rsquo;s recovery, and how to drive and behave around them.</span></li>
+        <li><a href="https://plantpono.org/"><b>Plant Pono</b></a><span>Which plants belong in Hawaiʻi and which ones are causing trouble.</span></li>
+      </ul>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#links">Link to this post</a></div>
+  </section>
+
+  <section class="module post" id="sources" aria-labelledby="h-src">
+    <div class="module-header"><span class="where">Sources</span></div>
+    <div class="post-body">
+      <h2 id="h-src">Where the facts came from</h2>
+      <ol class="sources">
+        <li><a href="https://kauaihistoricalsociety.org/historyofkauai/">Kauaʻi Historical Society: History timeline</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Kaua%CA%BBi">Wikipedia: Kauaʻi</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Waimea,_Kaua%CA%BBi_County,_Hawaii">Wikipedia: Waimea, Kauaʻi</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Apology_Resolution">Wikipedia: Apology Resolution</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Hurricane_Iniki">Wikipedia: Hurricane Iniki</a></li>
+        <li><a href="https://www.hawaiinewsnow.com/2024/12/31/several-new-state-laws-take-effect-2025-taro-medical-care-more/">Hawaii News Now: New state laws take effect in 2025</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/H%C4%81%CA%BBupu">Wikipedia: Hāʻupu</a></li>
+        <li><a href="https://hiaudubon.org/peacocks-peahens-peafowl-pikake/">Hawaiʻi Audubon Society: Peacocks, peahens, peafowl, pīkake</a></li>
+        <li><a href="https://plantpono.org/pests/giant-african-snail/">Plant Pono: Giant African snail</a></li>
+        <li><a href="https://pharmacy.uhh.hawaii.edu/documents/rat-lungworm/8.Native_Hawaiian_snails.pdf">UH Hilo: Snails and rat lungworm</a></li>
+        <li><a href="https://www.westhawaiitoday.com/2025/12/06/features/plant-of-the-month-for-december-2025-starfruit/">West Hawaii Today: Plant of the month, starfruit</a></li>
+        <li><a href="https://www.tripadvisor.com/Restaurant_Review-g60609-d548151-Reviews-Moloaa_Sunrise_Fruit_Stand-Anahola_Kauai_Hawaii.html">Tripadvisor: Moloaʻa Sunrise Fruit Stand</a></li>
+        <li><a href="https://www.kauaigrown.org/moloaa-bay-coffee">Kauaʻi Grown: Moloaʻa Bay Coffee</a></li>
+        <li><a href="https://kauaicoffee.com/pages/about-kauai-coffee-company">Kauai Coffee Company: About</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Lumaha%CA%BBi_Beach">Wikipedia: Lumahaʻi Beach</a></li>
+        <li><a href="https://www.fws.gov/refuge/hanalei">USFWS: Hanalei National Wildlife Refuge</a></li>
+        <li><a href="https://www.fws.gov/story/kalo-taro-farming-hanalei-national-wildlife-refuge">USFWS: Kalo farming at Hanalei NWR</a></li>
+        <li><a href="https://www.civilbeat.org/2015/07/a-glimpse-inside-hawaiis-forbidden-island/">Honolulu Civil Beat: A glimpse inside Hawaiʻi&rsquo;s Forbidden Island</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Spouting_Horn">Wikipedia: Spouting Horn</a></li>
+        <li><a href="https://www.gohawaii.com/islands/kauai/regions/south-shore/spouting-horn">Hawaiʻi Tourism Authority: Spouting Horn</a></li>
+        <li><a href="https://ntbg.org/gardens/visitorinfo/">National Tropical Botanical Garden: Visitor information</a></li>
+        <li><a href="https://www.nationalgeographic.com/culture/article/how-spam-helped-shape-hawaii">National Geographic: How SPAM helped shape Hawaiʻi</a></li>
+        <li><a href="https://www.khon2.com/local-news/why-hawaii-loves-spam-and-spam-loves-hawaii/">KHON2: Why Hawaiʻi loves SPAM</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Glass_Beach_(%CA%BBEle%CA%BBele,_Hawaii)">Wikipedia: Glass Beach (ʻEleʻele)</a></li>
+        <li><a href="https://www.to-hawaii.com/kauai/beaches/glassbeach.php">To-Hawaii.com: Glass Beach, Kauaʻi</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Makauwahi_Cave">Wikipedia: Makauwahi Cave</a></li>
+        <li><a href="https://archaeology.org/issues/may-june-2015/letters-from/letter-from-hawaii-kauai-caves/">Archaeology magazine: Inside Kauaʻi&rsquo;s past (2015)</a></li>
+        <li><a href="http://malama-mahaulepu.org/why-we-do-what-we-do/natural-features/">Mālama Māhāʻulepū: Natural features</a></li>
+        <li><a href="https://kauainownews.com/2024/10/13/makauwahi-cave-reserve-on-kaua%CA%BBi-slated-to-close-oct-31-after-20-years-of-public-access/">Kauaʻi Now: Makauwahi Cave Reserve to close</a></li>
+        <li><a href="https://beatofhawaii.com/public-outcry-wins-kauais-makauwahi-cave-reopening-despite-big-money-interests/">Beat of Hawaii: Makauwahi Cave reopening</a></li>
+        <li><a href="https://plantpono.org/hpwra/leucaena-leucocephala/">Plant Pono: Leucaena leucocephala (haole koa)</a></li>
+        <li><a href="https://www.hawaiimagazine.com/everything-you-need-to-know-about-plumeria-in-hawaii/">HAWAIʻI Magazine: Plumeria in Hawaiʻi</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Waimea_Canyon_State_Park">Wikipedia: Waimea Canyon State Park</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Mount_Wai%CA%BBale%CA%BBale">Wikipedia: Mount Waiʻaleʻale</a></li>
+        <li><a href="https://www.hawaii-guide.com/kauai/kauai-weather">Hawaii Guide: Kauaʻi weather</a></li>
+        <li><a href="https://plantpono.org/hpwra/alpinia-zerumbet/">Plant Pono: Alpinia zerumbet (shell ginger)</a></li>
+        <li><a href="https://dlnr.hawaii.gov/wildlife/birds/nene/">Hawaiʻi DLNR: Nēnē</a></li>
+        <li><a href="https://www.fws.gov/story/2022-12/plight-nene">USFWS: The plight of the nēnē</a></li>
+        <li><a href="https://www.canoeplants.com/noni.html">Canoe Plants of Ancient Hawaiʻi: Noni</a></li>
+        <li><a href="https://guides.library.manoa.hawaii.edu/paccrops/noni">University of Hawaiʻi at Mānoa Library: Noni</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Ladd_%26_Co.">Wikipedia: Ladd &amp; Co.</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/William_Northey_Hooper">Wikipedia: William Northey Hooper</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Great_M%C4%81hele">Wikipedia: Great Māhele</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Grove_Farm_(Lihue,_Hawaii)">Wikipedia: Grove Farm</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/William_Hillebrand">Wikipedia: William Hillebrand</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Demographic_history_of_Hawaii">Wikipedia: Demographic history of Hawaiʻi</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Colonial_epidemic_disease_in_Hawaii">Wikipedia: Colonial epidemic disease in Hawaiʻi</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/P%C5%ABnana_Leo">Wikipedia: Pūnana Leo</a></li>
+        <li><a href="https://www.hawaiinewsnow.com/story/11420075/final-harvest-marks-end-of-sugar-production-on-kauai/">Hawaii News Now: Final harvest marks end of sugar production on Kauaʻi</a></li>
+        <li><a href="https://www.cbsnews.com/news/mark-zuckerberg-drops-his-hawaiian-land-lawsuits/">CBS News: Mark Zuckerberg drops his Hawaiian land lawsuits</a></li>
+        <li><a href="https://beatofhawaii.com/mark-zuckerberg-buys-on-kauai-at-pilaa-beach/">Beat of Hawaii: Zuckerberg&rsquo;s estate at Pilaʻa</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Pacific_Missile_Range_Facility">Wikipedia: Pacific Missile Range Facility</a></li>
+        <li><a href="https://www.hawaiipublicradio.org/the-conversation/2025-09-03/reporter-digs-into-the-history-of-the-robinson-familys-100-000-acres">Hawaiʻi Public Radio: The Robinson family&rsquo;s 100,000 acres</a></li>
+        <li><a href="https://ntbg.org/gardens/allerton-garden-history/">National Tropical Botanical Garden: Allerton Garden history</a></li>
+        <li><a href="https://dlnr.hawaii.gov/blog/2021/10/14/nr21-177/">Hawaiʻi DLNR: A new way to manage tourism at Hāʻena</a></li>
+      </ol>
+      <p class="checked">Details checked September 2026. Access to Makauwahi Cave and the Hanalei viewpoint changes, so check before you go. Map elevation: AWS Terrain Tiles (Mapzen / USGS).</p>
+      <p style="margin-top:10px"><a href="/journal/"><b>More trips &raquo;</b></a><br><a href="/portfolio.html"><b>See the portfolio &raquo;</b></a><br><a href="/journal/"><b>Back to all trips &raquo;</b></a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer>&copy; 2026 Joe Graham &middot; <a href="/legal.html">Legal &amp; Privacy</a></footer>
+</div>
+
+<script>
+(function(){
+  var bar=document.querySelector('.top-bar');
+  function setBar(){document.documentElement.style.setProperty('--bar',bar.offsetHeight+'px')}
+  setBar(); window.addEventListener('resize',setBar);
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+  /* jump list + map pins: follow the post you're looking at */
+  var links=[].slice.call(document.querySelectorAll('#jump a'));
+  var map={}; links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});
+  var pins=[].slice.call(document.querySelectorAll('.m-pin'));
+  var posts=[].slice.call(document.querySelectorAll('.post'));
+  var lastPin=null;
+  function mark(el){
+    var a=map[el.id];
+    if(a){
+      links.forEach(function(x){x.classList.remove('on')}); a.classList.add('on');
+      if(window.matchMedia('(max-width: 820px)').matches){
+        var strip=a.closest('.jump'); strip.scrollTo({left:a.offsetLeft-strip.clientWidth/2+a.clientWidth/2,behavior:'auto'});
+      }
+    }
+    var p=el.getAttribute('data-pin');
+    if(p&&p!==lastPin){lastPin=p;pins.forEach(function(g){g.classList.toggle('on',g.getAttribute('data-pin')===p)})}
+  }
+  var firstFor={}; posts.forEach(function(p){var n=p.getAttribute('data-pin'); if(n&&!firstFor[n])firstFor[n]=p});
+  pins.forEach(function(g){
+    function go(){var p=firstFor[g.getAttribute('data-pin')]; if(p)p.scrollIntoView({behavior:reduce.matches?'auto':'smooth',block:'start'})}
+    g.addEventListener('click',go);
+    g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}});
+  });
+  var cur=null, tick=false;
+  function scan(){
+    tick=false; var line=window.innerHeight*0.45, hit=null;
+    for(var i=0;i<posts.length;i++){var r=posts[i].getBoundingClientRect(); if(r.top<=line&&r.bottom>line){hit=posts[i];break}}
+    if(hit&&hit!==cur){cur=hit;mark(hit)}
+  }
+  window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(scan)}},{passive:true});
+  scan();
+
+  /* side-scroll galleries */
+  [].slice.call(document.querySelectorAll('.gal')).forEach(function(g){
+    var strip=g.querySelector('.strip'), figs=[].slice.call(strip.children);
+    var prev=g.querySelector('.gal-prev'), next=g.querySelector('.gal-next'), n=g.querySelector('.gal-n');
+    function current(){
+      var mid=strip.scrollLeft+strip.clientWidth/2, best=0, d=1e9;
+      figs.forEach(function(f,i){var c=f.offsetLeft-strip.offsetLeft+f.offsetWidth/2, x=Math.abs(c-mid); if(x<d){d=x;best=i}});
+      return best;
+    }
+    function show(i){var f=figs[i]; strip.scrollTo({left:f.offsetLeft-strip.offsetLeft-(strip.clientWidth-f.offsetWidth)/2})}
+    function upd(){var i=current(); n.textContent=(i+1)+' of '+figs.length; prev.disabled=i===0; next.disabled=i===figs.length-1}
+    prev.addEventListener('click',function(){show(Math.max(0,current()-1))});
+    next.addEventListener('click',function(){show(Math.min(figs.length-1,current()+1))});
+    var t=null; strip.addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(upd,80)},{passive:true});
+    window.addEventListener('resize',upd); upd();
+  });
+
+  /* wet side / dry side slider */
+  (function(){
+    var box=document.getElementById('cmp'), inp=document.getElementById('cmpIn'), pill=box.querySelector('.tap-pill');
+    function set(v){box.style.setProperty('--x',v+'%')}
+    inp.addEventListener('input',function(){set(inp.value);pill.classList.add('gone')});
+    pill.addEventListener('click',function(){pill.classList.add('gone');inp.focus()});
+    set(inp.value);
+  })();
+})();
+</script>
+</body>
+</html>
