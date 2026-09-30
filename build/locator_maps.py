@@ -22,7 +22,6 @@ TRIPS = {
     "san-francisco": {"focus": ["California"], "pin": (37.775, -122.419)},
     "los-angeles": {"focus": ["California"], "pin": (34.052, -118.244)},
     "alabama": {"focus": ["Alabama"], "pin": (33.519, -86.810)},
-    "georgia": {"focus": ["Georgia"], "pin": (33.970, -84.221)},
     "yellowstone": {"focus": ["Wyoming", "Montana", "Idaho"], "pin": (44.460, -110.828),
                     "area": (-111.155, 44.133, -109.828, 45.108),
                     "view": (-114.2, 42.2, -106.8, 46.9)},

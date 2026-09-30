@@ -37,15 +37,11 @@ p:last-child{margin:0}
 .sizer button{font:bold 10px var(--verdana);color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);border-radius:2px;padding:2px 7px;cursor:pointer;line-height:1.5}
 .sizer button:hover{background:rgba(255,255,255,.25)}
 .sizer button[aria-pressed="true"]{background:#fff;color:var(--bg-module-header);border-color:#fff}
-/* trip tiles are instant-film prints: thin white border, deep bottom strip, a bit of tilt */
+/* trip tiles are instant-film prints: thin white border, deep bottom strip, set square on a grid */
 .trips{gap:26px 22px;padding:22px 20px 28px;background:var(--bg-soft)}
-.trip{--tilt:0deg;display:flex;flex-direction:column;background:#fbfaf6;color:#2c2c2c;padding:11px 11px 0;
-  box-shadow:0 1px 2px rgba(0,0,0,.18),0 6px 14px -6px rgba(0,0,0,.28);transform:rotate(var(--tilt));
-  transition:transform .25s ease,box-shadow .25s ease}
-.trip:nth-child(6n+1){--tilt:-1.3deg}.trip:nth-child(6n+2){--tilt:.9deg}.trip:nth-child(6n+3){--tilt:-.5deg}
-.trip:nth-child(6n+4){--tilt:1.4deg}.trip:nth-child(6n+5){--tilt:-.9deg}.trip:nth-child(6n+6){--tilt:.5deg}
-a.trip:hover,a.trip:focus-visible{text-decoration:none;transform:rotate(0) translateY(-4px);
-  box-shadow:0 2px 4px rgba(0,0,0,.18),0 16px 28px -10px rgba(0,0,0,.4)}
+.trip{display:flex;flex-direction:column;background:#fbfaf6;color:#2c2c2c;padding:11px 11px 0;
+  box-shadow:0 1px 2px rgba(0,0,0,.18),0 6px 14px -6px rgba(0,0,0,.28)}
+a.trip:hover,a.trip:focus-visible{text-decoration:none}
 .t-photo{position:relative;background:#1d1d1d}
 .t-photo::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12),inset 0 0 18px rgba(0,0,0,.18);pointer-events:none}
 .t-shot{aspect-ratio:3/2;object-fit:cover;width:100%}
@@ -61,7 +57,6 @@ a.trip:hover .t-name{text-decoration:underline;text-decoration-thickness:1px;tex
 .tag{font-size:10px;padding:2px 6px;border:1px solid #ddd8cc;background:#fff;color:#666}
 .tag.live{border-color:var(--accent-online);color:#080;font-weight:bold}
 .tag.zoom{border-color:var(--accent-orange);color:#c44f00;font-weight:bold}
-@media (prefers-reduced-motion:reduce){.trip{transition:none}}
 footer{text-align:center;font-size:10px;color:var(--text-light);padding:14px 0;border-top:1px solid var(--border-module)}
 /* small tiles: trim the text so they stay tidy */
 .trips.sz-220 .t-blurb{display:none}
@@ -96,7 +91,8 @@ footer{text-align:center;font-size:10px;color:var(--text-light);padding:14px 0;b
     <div class="module-header">Joe's Journal</div>
     <div class="module-body">
       <h1>Trips</h1>
-      <p>Photos from the road, with a map of every stop and the history and background behind each place. Pick a trip and come along.</p>
+      <p>Hey everybody, and welcome back. Today you&rsquo;re coming with me as I travel around the country and find interesting things. Usually I&rsquo;m there for work, or for fun, or whatever. This trip is not sponsored. None of them are.</p>
+      <p>Don&rsquo;t forget to like and subscribe. There&rsquo;s nowhere to do either. Just pick a trip: each one has a map of the stops, and under the photos is the history of the place.</p>
     </div>
   </section>
 
@@ -195,14 +191,6 @@ footer{text-align:center;font-size:10px;color:var(--text-light);padding:14px 0;b
         </div>
       </div>
 
-      <div class="trip soon" aria-label="Georgia, coming soon">
-        <div class="t-photo"><img class="t-map" src="/journal/img/soon-georgia.svg" width="600" height="400" loading="lazy" alt="Map: Georgia with a pin on the north Atlanta suburbs."></div>
-        <div class="t-body">
-          <div class="t-name">Georgia</div>
-          <div class="t-where">Georgia</div>
-          <div class="t-note">coming soon</div>
-        </div>
-      </div>
 
       <div class="trip soon" aria-label="Yellowstone, coming soon">
         <div class="t-photo"><img class="t-map" src="/journal/img/soon-yellowstone.svg" width="600" height="400" loading="lazy" alt="Map: Wyoming, Montana, and Idaho with Yellowstone shaded and a pin on Old Faithful."></div>

@@ -25,10 +25,10 @@ footer{text-align:center;font-size:10px;color:var(--text-light);padding:14px 0;b
 
 /* item cards on the index: prints on a table, like the journal */
 .items{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:26px 22px;padding:22px 20px 28px;background:var(--bg-soft)}
-.item{--tilt:0deg;display:flex;flex-direction:column;background:#fbfaf6;color:#2c2c2c;padding:11px 11px 0;transform:rotate(var(--tilt));
-  box-shadow:0 1px 2px rgba(0,0,0,.18),0 6px 14px -6px rgba(0,0,0,.28);transition:transform .25s ease,box-shadow .25s ease}
-.item:nth-child(5n+1){--tilt:-1.1deg}.item:nth-child(5n+2){--tilt:.8deg}.item:nth-child(5n+3){--tilt:-.4deg}.item:nth-child(5n+4){--tilt:1.2deg}.item:nth-child(5n+5){--tilt:-.8deg}
-.item:hover,.item:focus-visible{text-decoration:none;transform:rotate(0) translateY(-4px);box-shadow:0 2px 4px rgba(0,0,0,.18),0 16px 28px -10px rgba(0,0,0,.4)}
+.item{display:flex;flex-direction:column;background:#fbfaf6;color:#2c2c2c;padding:11px 11px 0;
+  box-shadow:0 1px 2px rgba(0,0,0,.18),0 6px 14px -6px rgba(0,0,0,.28)}
+.item:hover,.item:focus-visible{text-decoration:none}
+.item:hover .i-name{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
 .i-body{padding:8px 3px 14px}
 .i-name{font-family:"Caveat",var(--trebuchet);font-size:29px;font-weight:600;color:#1f2f45;line-height:1}
 .i-model{font-size:11px;color:#444;margin-top:4px}
@@ -66,4 +66,3 @@ figure{margin:0}
   .strip{grid-template-columns:1fr 1fr}
   .items{padding:18px 14px 22px}
 }
-@media (prefers-reduced-motion:reduce){.item{transition:none}}

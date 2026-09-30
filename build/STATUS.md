@@ -21,7 +21,7 @@ swap its journal tile, add it to the sitemap, merge, push.
 | San Francisco | not started | |
 | Los Angeles | not started | |
 | Alabama (whole state, one page) | not started | Use Encyclopedia of Alabama; "lift all boats" |
-| Georgia | not started | Stage Kitchen cocktail shot goes here |
+| ~~Georgia~~ | dropped Sept 30 | Joe doubts it becomes a full entry; the cocktail shot stays in the portfolio only |
 | Boston | `build/boston-page.html` → `journal/boston/` | Done, new voice. 1795 shoreline map toggle. (Gardner empty-frame reveal removed Sept 30 at Joe's request; the Rembrandt is now a plain credited photo.) |
 | Yellowstone | not started | First national park, made "empty" by removal |
 

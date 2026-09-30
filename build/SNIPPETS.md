@@ -29,7 +29,7 @@ Current pairs:
 Waiting on unbuilt trips:
 Palm Springs (coachella-valley, joshua-tree, joshua-tree-rock, p51-mustang),
 San Francisco (eclipse-embarcadero), Los Angeles (santa-monica-pier),
-Georgia (drink-shot), Alabama (blue-heron, cahaba-river, droplets, eggshell,
+Alabama (blue-heron, cahaba-river, droplets, eggshell,
 junkyard, little-bambino, milkweed, pole-beans, tracks-sunset).
 
 ## 2. Trip page -> portfolio entry
