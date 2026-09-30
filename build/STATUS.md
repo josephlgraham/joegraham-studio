@@ -37,7 +37,14 @@ Add a tile for each finished trip; placeholders exist for unfinished ones.
    is soft: a phone at full zoom through fume at dusk. It is the only photo of
    the glowing lava lake. Options: keep it as a record shot, swap in the sharp
    `halemaumau.jpg` from the same evening, or drop the then-and-now.
-2. **Light-edit pass on other trips?** `check_photos.py` flags darker frames on
+2. ~~Light-edit pass~~ Done September 30. Joe's real complaint was highlights
+   that never reach white (straight Fuji JPEGs topping out near 70%), not dark
+   shadows. Fix is a white-point move only, blacks untouched, no clipping:
+   Tunnel View (all copies site-wide, same curve), the El Capitan zoom set (one
+   identical move on all three so the zoom stays seamless), Kauaʻi Glass Beach
+   sunset. Left alone on purpose: cave, dusk, deep shade, backlit oaks, cold
+   morning haze, and the North Coast fog (straight from camera; Joe likes fog).
+   Original note: **Light-edit pass on other trips?** `check_photos.py` flags darker frames on
    Kauaʻi, the Big Island, and Yosemite. Some are dark on purpose (cave, dusk);
    Yosemite's Tunnel View and Valley View may be Joe's finished edits. Ask
    before touching.
