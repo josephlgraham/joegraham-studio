@@ -57,19 +57,11 @@
 .gal-bar button:hover{background:var(--bg-nav-hover)}
 .gal-bar button[disabled]{opacity:.35;cursor:default}
 
-/* the empty frame */
-.wall{background:#2c3b33;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.025) 0 6px,transparent 6px 12px);padding:34px 16px 18px;display:flex;flex-direction:column;align-items:center;gap:14px}
-.frame{position:relative;width:min(78%,360px);padding:22px;background:linear-gradient(135deg,#8a6a2c,#e9cf86 22%,#9c7730 45%,#f3dc98 62%,#7d5d22 85%,#caa655);box-shadow:0 10px 24px rgba(0,0,0,.55),inset 0 0 0 3px rgba(60,40,10,.55),inset 0 0 0 7px rgba(255,236,170,.35)}
-.canvas{position:relative;aspect-ratio:965/1200;background:#2c3b33;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.025) 0 6px,transparent 6px 12px);box-shadow:inset 0 0 18px rgba(0,0,0,.7);overflow:hidden}
-.canvas img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease}
-.canvas .empty-note{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;font:italic 13px Georgia,serif;color:#c9d3cc;padding:0 12px;transition:opacity .5s}
-.canvas .pd{position:absolute;left:0;right:0;bottom:0;background:rgba(0,0,0,.6);color:#eee;font:10px var(--verdana);padding:4px 6px;opacity:0;transition:opacity .9s}
-.wall.show .canvas img,.wall.show .canvas .pd{opacity:1}
-.wall.show .empty-note{opacity:0}
-.wall .tap-pill{position:static;transform:none;animation:none}
-.wall .tap-pill.pulse{animation:blink 1.4s ease-in-out infinite}
-@media (prefers-reduced-motion: reduce){.strip{scroll-behavior:auto}.canvas img,.canvas .pd{transition:none}.shore-bar button.pulse,.wall .tap-pill.pulse{animation:none}}
-@media (max-width:560px){.strip img{height:min(52vh,380px)}.frame{padding:16px}}
+/* public domain image credit */
+.post-photo.credited{position:relative}
+.post-photo .credit{position:absolute;right:6px;bottom:5px;font-size:9px;color:#fff;background:rgba(0,0,0,.55);padding:1px 5px}
+@media (prefers-reduced-motion: reduce){.strip{scroll-behavior:auto}.shore-bar button.pulse{animation:none}}
+@media (max-width:560px){.strip img{height:min(52vh,380px)}}
 </style>
 <link rel="stylesheet" href="/assets/site.css">
 </head>
@@ -453,20 +445,10 @@
 
   <article class="module post" id="empty-frame" data-pin="9" aria-labelledby="h-frame">
     <div class="module-header"><span class="where"><span class="pin-badge">9</span>The Dutch Room</span><span class="tod">Empty since 1990</span></div>
-    <div class="callout"><span class="try-ico" aria-hidden="true">🖼️</span><span><b>Interactive.</b> Tap the button to see what used to hang in this frame. Tap again to put the frame back the way it hangs today.</span></div>
-    <div class="wall" id="frameWall">
-      <div class="frame">
-        <div class="canvas">
-          <span class="empty-note">Empty since March 18, 1990</span>
-          <img src="img/rembrandt-storm.jpg" width="965" height="1200" loading="lazy" alt="Rembrandt's Christ in the Storm on the Sea of Galilee: a small fishing boat heeling over on a huge dark wave, its sail torn, disciples struggling with ropes while Christ sits calmly in the stern, with light breaking through storm clouds above.">
-          <span class="pd">Rembrandt, 1633. Public domain image via Wikimedia Commons.</span>
-        </div>
-      </div>
-      <button type="button" class="tap-pill pulse" id="frameBtn" aria-pressed="false">🖼️ Show what hung here</button>
-    </div>
+    <figure class="post-photo credited"><img src="img/rembrandt-storm.jpg" width="965" height="1200" loading="lazy" alt="Rembrandt's Christ in the Storm on the Sea of Galilee: a small fishing boat heeling over on a huge dark wave, its sail torn, disciples struggling with ropes while Christ sits calmly in the stern, with light breaking through storm clouds above."><span class="credit">Rembrandt, 1633. Public domain, via Wikimedia Commons.</span></figure>
     <div class="post-body">
       <h2 id="h-frame">Christ in the Storm on the Sea of Galilee</h2>
-      <p>This is one of my favorite paintings in all of art history. A tiny boat, a wall of water, and light breaking through right where it needs to. It would be lovely to see it in person one day. For now, you can see the frame.</p>
+      <p>This is one of my favorite paintings in all of art history. A tiny boat, a wall of water, and light breaking through right where it needs to. It would be lovely to see it in person one day. Right now there&rsquo;s only the frame.</p>
       <p class="lyric">It is Rembrandt&rsquo;s only known seascape. He painted himself into the boat: the one man looking straight out at you. The thieves cut the canvas out of its frame.</p>
       <table class="facts"><caption>The painting</caption>
         <tr><th>Painted</th><td>1633, oil on canvas, about 5 feet tall.</td></tr>
@@ -630,16 +612,6 @@
     then.addEventListener('click',function(){set(true)});
   })();
 
-  /* the empty frame */
-  (function(){
-    var wall=document.getElementById('frameWall'), btn=document.getElementById('frameBtn');
-    btn.addEventListener('click',function(){
-      var on=!wall.classList.contains('show');
-      wall.classList.toggle('show',on); btn.classList.remove('pulse');
-      btn.setAttribute('aria-pressed',String(on));
-      btn.textContent=on?'🖼️ Put the frame back':'🖼️ Show what hung here';
-    });
-  })();
 })();
 </script>
 </body>
