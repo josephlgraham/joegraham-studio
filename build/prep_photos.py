@@ -3,16 +3,17 @@
     python prep_photos.py ~/Pictures/Kauai out/kauai
 
 Writes out/kauai/img/<slug>.jpg (long edge 1500, progressive JPEG) and
-out/kauai/photos.json with size, capture time, camera, lens and focal length
-for each one. Sort the JSON by DateTimeOriginal to get the order of the day.
+out/kauai/photos.json with size, capture time and exposure for each one. Camera
+and lens names are left out on purpose: no camera model appears on the site.
+The saved JPEGs carry no EXIF at all. Sort the JSON by DateTimeOriginal to get the order of the day.
 """
 import json, os, sys
 from PIL import Image, ImageOps
 
 LONG_EDGE = 1500
 QUALITY = int(os.environ.get("JPEG_QUALITY", 82))  # phone shots are busy; 72 keeps a page under budget
-EXIF_TAGS = {271: "make", 272: "model", 306: "taken"}
-SUB_TAGS = {37386: "focal_mm", 42036: "lens", 33437: "aperture", 33434: "shutter",
+EXIF_TAGS = {306: "taken"}
+SUB_TAGS = {37386: "focal_mm", 33437: "aperture", 33434: "shutter",
             34855: "iso", 36867: "taken", 41989: "focal_35mm"}
 
 

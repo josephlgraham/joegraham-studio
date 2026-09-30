@@ -1,0 +1,34 @@
+{
+ "out": "boston-map.svg",
+ "out_mini": "boston-mini.svg",
+ "width": 830,
+ "bbox": [-71.0997, -71.0320, 42.3340, 42.3660],
+ "scale_miles": 0.5,
+ "alt": "Map of central Boston with nine numbered stops: the Seaport, the Fort Point Channel by the Tea Party ships, the Central Burying Ground on Boston Common, the Liberty Tree site, the Union Oyster House, Copley Square, Fenway Park, the Museum of Fine Arts, and the Isabella Stewart Gardner Museum. A second layer shows the 1795 shoreline.",
+ "shores": [
+  {"geojson": "boston-data/shore-1995.geojson", "class": "m-now"},
+  {"geojson": "boston-data/shore-1795.geojson", "class": "m-then"}
+ ],
+ "notes": [
+  {"lat": 42.3585, "lon": -71.0880, "text": "Charles River", "kind": "water", "rotate": -8},
+  {"lat": 42.3590, "lon": -71.0395, "text": "Boston Harbor", "kind": "water"},
+  {"lat": 42.3432, "lon": -71.0560, "text": "Fort Point Channel", "kind": "water", "rotate": -62},
+  {"lat": 42.3518, "lon": -71.0890, "text": "Back Bay", "kind": "note"},
+  {"lat": 42.3440, "lon": -71.0450, "text": "Seaport", "kind": "note"}
+ ],
+ "landmarks": [
+  {"name": "Old South Meeting House", "lat": 42.3571, "lon": -71.0584, "side": "r"},
+  {"name": "Griffin's Wharf site", "lat": 42.3537, "lon": -71.0543, "side": "t"}
+ ],
+ "pins": [
+  {"n": 1, "name": "Seaport", "lat": 42.3481, "lon": -71.0400, "side": "b"},
+  {"n": 2, "name": "Fort Point Channel", "lat": 42.3531, "lon": -71.0495, "side": "r"},
+  {"n": 3, "name": "Central Burying Ground", "lat": 42.3526, "lon": -71.0657, "side": "l"},
+  {"n": 4, "name": "Liberty Tree site", "lat": 42.3514, "lon": -71.0627, "side": "b"},
+  {"n": 5, "name": "Union Oyster House", "lat": 42.3612, "lon": -71.0569, "side": "l"},
+  {"n": 6, "name": "Copley Square", "lat": 42.3496, "lon": -71.0777, "side": "b"},
+  {"n": 7, "name": "Fenway Park", "lat": 42.3467, "lon": -71.0972, "side": "r"},
+  {"n": 8, "name": "MFA", "lat": 42.3394, "lon": -71.0940, "side": "t"},
+  {"n": 9, "name": "Gardner Museum", "lat": 42.3382, "lon": -71.0980, "side": "r"}
+ ]
+}

@@ -1,0 +1,39 @@
+/* Shared by every page on the site. Change the page background
+   or the masthead here, not in a page's own <style>. */
+
+/* One palette for everyone, whatever their device is set to: a light
+   theme toned down a notch (deeper page, off-white boxes) so it isn't
+   glaring for people who like dark mode. These win over the values
+   in each page's own :root. */
+:root{color-scheme:light;--bg-page:#B7C6D6;--bg-module:#F6F8FA;--bg-soft:#E9EEF3}
+
+/* page background: soft light top-left, gentle fade down */
+body{min-height:100vh;background-color:var(--bg-page,#C4D1DF);background-image:radial-gradient(circle at 12% 10%,rgba(255,255,255,.3),transparent 25rem),linear-gradient(180deg,rgba(255,255,255,.12) 0%,transparent 42%,rgba(0,0,0,.05) 100%)}
+
+/* The masthead: one copy for every page with a top bar.
+   The wordmark sits exactly where it sits in the homepage sidebar
+   (20px down, 30px in, 38px), so moving between pages it stays put.
+   The nav rides the bottom of the bar. Below 1000px the homepage
+   sidebar turns into this same bar. */
+.top-bar{background:#003471;border-bottom:1px solid #001a33;box-shadow:0 2px 8px rgba(0,26,51,.2);position:sticky;top:0;z-index:100;padding:20px 0 12px;padding-top:calc(20px + env(safe-area-inset-top,0px))}
+.top-bar-inner{padding:0 28px 0 30px;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:4px 12px}
+.top-bar-logo,.top-bar-logo:hover{font-family:"Trebuchet MS",Trebuchet,"Segoe UI",sans-serif;font-size:38px;font-weight:bold;line-height:1;letter-spacing:-.5px;color:#fff;text-decoration:none}
+.top-bar-logo span{color:#ff6600}
+.top-bar-nav{display:flex;flex-wrap:wrap;gap:2px 22px}
+.top-bar-nav a{display:inline-block;padding:5px 0 4px;line-height:normal;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#fff;text-decoration:none;
+  /* the orange underline that sweeps in under a link on hover */
+  background:linear-gradient(#ff6600,#ff6600) no-repeat 0 100% / 0 2px;transition:background-size .25s ease}
+.top-bar-nav a:hover,.top-bar-nav a:focus-visible,.top-bar-nav a.active{background-size:100% 2px;text-decoration:none}
+.top-bar-nav a:focus-visible{outline:2px solid #ff6600;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.top-bar-nav a{transition:none}}
+@media (max-width:999px){
+  .top-bar{padding:8px 0;padding-top:calc(8px + env(safe-area-inset-top,0px))}
+  .top-bar-inner{padding:0 14px}
+  .top-bar-logo,.top-bar-logo:hover{font-size:30px}
+  .top-bar-nav{gap:2px 14px}
+}
+@media (max-width:699px){
+  .top-bar-logo,.top-bar-logo:hover{font-size:24px}
+  .top-bar-nav{gap:2px 10px}
+  .top-bar-nav a{font-size:9px;letter-spacing:.08em}
+}

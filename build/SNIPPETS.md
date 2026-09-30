@@ -1,34 +1,36 @@
 # Drop-in snippets
 
-## 1. Portfolio photo page -> trip journal page
+## 1. Portfolio photo -> trip journal stop
 
-Paste into the `side-rail` of a `photos/*.html` page, above the existing
-"Learn more" card. It reuses the classes already on those pages, so no CSS
-changes are needed.
+The old per-photo pages (`photos/*.html`) are gone (September 30). A portfolio
+photo now links to its trip stop from three places. Update all three when a
+trip is finished:
 
-```html
-<section class="info-card">
-  <h3>From the trip</h3>
-  <div class="card-body">
-    <ul class="resource-list">
-      <li><a href="/journal/yosemite/#tunnel-view">
-        <strong>Yosemite trip journal</strong>
-        <span>Where this frame sits on the trip: the map, the other stops, and the story of the place.</span>
-      </a></li>
-    </ul>
-  </div>
-</section>
-```
+- `index.html`: the homepage tile's `href` (otherwise `/portfolio.html#<slug>`).
+- `portfolio.html`: `data-trip="/journal/<trip>/#<stop>" data-trip-name="<Trip>"`
+  on the photo's `.masonry-link`. The viewer then shows "From the <Trip> trip".
+- `about.html`: the `tripLinks` object (feeds the Top 8 and its viewer).
 
-Change the anchor to the matching stop on the trip page. Current pairs:
+`<slug>` is the image name with dashes (`tunnel_view.png` -> `tunnel-view`).
+`portfolio.html#<slug>` opens that photo in the portfolio viewer.
 
-| Portfolio page | Trip page anchor |
+Current pairs:
+
+| Portfolio photo | Trip page anchor |
 | --- | --- |
-| `photos/tunnel-view.html` (Cathedral of the High Sierra) | `/journal/yosemite/#tunnel-view` |
-| `photos/yosemite.html` (Mirror of the Merced) | `/journal/yosemite/#valley-view` |
+| tunnel-view (Cathedral of the High Sierra) | `/journal/yosemite/#tunnel-view` |
+| yosemite (Mirror of the Merced) | `/journal/yosemite/#valley-view` |
+| plumeria | `/journal/kauai/#plumeria` |
+| hawaii-resort | `/journal/big-island/#fairmont` |
+| hilo-farmers-market | `/journal/big-island/#hilo-market-2024` |
+| duncans-landing, goat-rock-beach | `/journal/north-coast/#goat-rock` |
+| petrified-forest | `/journal/north-coast/#the-queen` |
 
-Every post on a trip page has an `id`, so any portfolio entry can point at the
-exact stop rather than the top of the page.
+Waiting on unbuilt trips:
+Palm Springs (coachella-valley, joshua-tree, joshua-tree-rock, p51-mustang),
+San Francisco (eclipse-embarcadero), Los Angeles (santa-monica-pier),
+Georgia (drink-shot), Alabama (blue-heron, cahaba-river, droplets, eggshell,
+junkyard, little-bambino, milkweed, pole-beans, tracks-sunset).
 
 ## 2. Trip page -> portfolio entry
 
@@ -37,14 +39,8 @@ information instead of reading like a plug:
 
 ```html
 <tr><th>In the portfolio</th><td>My favorite frame from this overlook,
-<a href="https://joegraham.studio/photos/tunnel-view.html"><i>Cathedral of the High Sierra</i></a>.</td></tr>
+<a href="/portfolio.html#tunnel-view"><i>Cathedral of the High Sierra</i></a>.</td></tr>
 ```
-
-## 3. Journal index page -> trip pages
-
-`journal.html` lists the individual photo entries. Each entry that came from a
-trip should link to its stop on the trip page, and the page should link to
-`/journal/` so people find the trip picker.
 
 ## 4. Link previews for sharing
 

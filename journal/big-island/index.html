@@ -21,14 +21,10 @@
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
 }
-@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
-  --bg-page:#1a2230; --bg-module:#232c3b; --bg-module-header:#2c5a88; --text-body:#dfe4ea; --text-link:#8fb8ff; --text-light:#a3adbb; --border-module:#3a4a60; --border-light:#3a4557; --bg-soft:#1d2533;
-}}
-:root[data-theme="dark"]{ --bg-page:#1a2230; --bg-module:#232c3b; --bg-module-header:#2c5a88; --text-body:#dfe4ea; --text-link:#8fb8ff; --text-light:#a3adbb; --border-module:#3a4a60; --border-light:#3a4557; --bg-soft:#1d2533; }
 html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 96px);scroll-behavior:smooth}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
 *,*::before,*::after{box-sizing:inherit}
-body{margin:0;min-height:100%;background:var(--bg-page);background-image:radial-gradient(circle at 12% 10%,rgba(255,255,255,.3),transparent 25rem),linear-gradient(180deg,rgba(255,255,255,.12) 0%,transparent 42%,rgba(0,0,0,.05) 100%);font-family:var(--verdana);font-size:13px;line-height:1.6;color:var(--text-body)}
+body{margin:0;min-height:100%;font-family:var(--verdana);font-size:13px;line-height:1.6;color:var(--text-body)}
 img{display:block;max-width:100%;height:auto}
 a{color:var(--text-link);text-decoration:none}
 a:hover{text-decoration:underline}
@@ -36,17 +32,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent-orange);outl
 p{margin:0 0 .9em}
 p:last-child{margin-bottom:0}
 figure{margin:0}
-
-/* top bar, same as the rest of the site */
-.top-bar{background:var(--bg-nav);padding:4px 0;border-bottom:1px solid #001a33;position:sticky;top:0;z-index:100;padding-top:calc(4px + env(safe-area-inset-top,0px))}
-.top-bar-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 10px}
-.top-bar-logo{font-family:var(--trebuchet);font-size:32px;font-weight:bold;color:#fff;letter-spacing:-.5px;line-height:1.1}
-.top-bar-logo:hover{text-decoration:none}
-.top-bar-logo span{color:var(--accent-orange)}
-.top-bar-nav{display:flex;gap:6px;flex-wrap:wrap}
-.top-bar-nav a{color:#fff;display:inline-block;padding:6px 9px;font-size:10px;text-transform:uppercase;letter-spacing:.08em;border:1px solid transparent}
-.top-bar-nav a:hover,.top-bar-nav a.active{background:var(--bg-nav-hover);text-decoration:none;border-color:rgba(255,255,255,.25)}
-
 .container{max-width:960px;margin:0 auto;padding:12px 8px 40px;display:grid;grid-template-columns:280px minmax(0,1fr);gap:10px;align-items:start}
 
 /* modules */
@@ -148,9 +133,6 @@ footer{grid-column:1 / -1;text-align:center;font-size:10px;color:var(--text-ligh
 
 /* phones and narrow screens: the feed is the page, the jump list becomes a strip */
 @media (max-width: 820px){
-  .top-bar-logo{font-size:24px}
-  .top-bar-nav{flex-wrap:nowrap;gap:0}
-  .top-bar-nav a{padding:5px 5px;font-size:9px;letter-spacing:.04em}
   .container{grid-template-columns:minmax(0,1fr);padding:0 0 30px;gap:0}
   .side{position:sticky;top:var(--bar,44px);z-index:50;margin:0}
   .side .trip,.side .mini-mod,.side .module-header{display:none}
@@ -220,6 +202,7 @@ footer{grid-column:1 / -1;text-align:center;font-size:10px;color:var(--text-ligh
 }
 @media (prefers-reduced-motion: reduce){.strip{scroll-behavior:auto}.tn-stage figure{transition:none}}
 </style>
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 
@@ -227,9 +210,10 @@ footer{grid-column:1 / -1;text-align:center;font-size:10px;color:var(--text-ligh
   <div class="top-bar-inner">
     <a href="/" class="top-bar-logo">joe<span>graham</span></a>
     <nav class="top-bar-nav" aria-label="Primary navigation">
-      <a href="/">Profile</a>
       <a href="/portfolio.html">Portfolio</a>
-      <a href="/journal/" class="active" aria-current="page">Journal</a>
+      <a href="/journal.html" class="active" aria-current="page">Journal</a>
+      <a href="/gear/">Gear</a>
+      <a href="/about.html">About</a>
       <a href="/contact.html">Contact</a>
     </nav>
   </div>
@@ -273,7 +257,7 @@ footer{grid-column:1 / -1;text-align:center;font-size:10px;color:var(--text-ligh
 <main class="feed">
 
   <section class="module feed-head" aria-labelledby="h-top">
-    <div class="module-header">Joe's Journal <a href="/journal/">All trips &raquo;</a></div>
+    <div class="module-header">Joe's Journal <a href="/journal.html">All trips &raquo;</a></div>
     <div class="module-body">
       <div>
         <h1 id="h-top">The Big Island</h1>
@@ -383,7 +367,7 @@ footer{grid-column:1 / -1;text-align:center;font-size:10px;color:var(--text-ligh
       <p>Sunrise from the balcony. The beach out front is where I sat and watched the whales.</p>
       <p class="lyric">Housing in Hawaiʻi costs about three times the national average. In 2020, for the first time, more Native Hawaiians lived on the mainland than in the islands.</p>
       <table class="facts"><caption>At the hotel</caption>
-        <tr><th>In the portfolio</th><td>The same grounds a few evenings later, <a href="/photos/hawaii-resort.html"><i>Twilight on the Kohala Coast</i></a>.</td></tr>
+        <tr><th>In the portfolio</th><td>The same grounds a few evenings later, <a href="/portfolio.html#hawaii-resort"><i>Twilight on the Kohala Coast</i></a>.</td></tr>
       </table>
     </div>
     <div class="post-foot"><span></span><a class="permalink" href="#fairmont">Link to this post</a></div>
@@ -513,7 +497,7 @@ footer{grid-column:1 / -1;text-align:center;font-size:10px;color:var(--text-ligh
       <p>Six years later, just as busy.</p>
       <p class="lyric">The market started in 1988 with five farmers selling out of their trucks. Some things grow the right way.</p>
       <table class="facts"><caption>From this visit</caption>
-        <tr><th>In the portfolio</th><td>My favorite frame from the market, <a href="/photos/hilo-farmers-market.html"><i>The Bounty of Hilo</i></a>.</td></tr>
+        <tr><th>In the portfolio</th><td>My favorite frame from the market, <a href="/portfolio.html#hilo-farmers-market"><i>The Bounty of Hilo</i></a>.</td></tr>
       </table>
     </div>
     <div class="post-foot"><span></span><a class="permalink" href="#hilo-market-2024">Link to this post</a></div>
@@ -547,7 +531,7 @@ footer{grid-column:1 / -1;text-align:center;font-size:10px;color:var(--text-ligh
     <div class="module-header"><span class="where"><span class="pin-badge">9</span>Halemaʻumaʻu</span><span class="tod">Then and now</span></div>
     <div class="callout"><span class="try-ico" aria-hidden="true">🔍</span><span><b>Then and now.</b> My photo from January 2018, then what happened to the same crater afterward. Tap the dates.</span></div>
     <div class="tn-stage" id="tnStage">
-      <figure class="on"><img src="img/lava-lake-wide.jpg" width="1125" height="750" loading="lazy" alt="Dusk at Halemaʻumaʻu in January 2018: a red-orange glow from the lava lake deep in the crater wall, with blue volcanic fume rising over the dark crater floor."></figure>
+      <figure class="on"><img src="img/lava-lake-wide.jpg" width="1500" height="1000" loading="lazy" alt="Dusk at Halemaʻumaʻu in January 2018: a red-orange glow from the lava lake deep in the crater wall, with blue volcanic fume rising over the dark crater floor."></figure>
       <figure><img src="img/usgs-collapse.jpg" width="649" height="446" loading="lazy" alt="Aerial view of Halemaʻumaʻu after the 2018 collapse: a huge, deep, steaming pit with stepped cliff walls where the crater floor used to be."><span class="credit">USGS photo</span></figure>
       <figure><img src="img/usgs-water-lake.jpg" width="690" height="477" loading="lazy" alt="Halemaʻumaʻu in July 2019: a deep cone-shaped pit of gray rubble with a small orange-brown lake of water at the very bottom."><span class="credit">USGS photo</span></figure>
       <figure><img src="img/usgs-lava-returns.jpg" width="691" height="477" loading="lazy" alt="Halemaʻumaʻu after new eruptions: a wide, dark, solidified lava lake filling the bottom of the deep crater, with a small glowing vent at the edge."><span class="credit">USGS photo</span></figure>
@@ -681,7 +665,7 @@ footer{grid-column:1 / -1;text-align:center;font-size:10px;color:var(--text-ligh
         <li><a href="https://www.ahapunanaleo.org/history-hl-1">ʻAha Pūnana Leo: History</a></li>
       </ol>
       <p class="checked">Details checked September 2026. Volcano conditions and road access change quickly, so check with the park and the county before you go. Map elevation: AWS Terrain Tiles (Mapzen / USGS).</p>
-      <p style="margin-top:10px"><a href="/journal/"><b>More trips &raquo;</b></a><br><a href="/portfolio.html"><b>See the portfolio &raquo;</b></a><br><a href="/journal/"><b>Back to all trips &raquo;</b></a></p>
+      <p style="margin-top:10px"><a href="/journal.html"><b>More trips &raquo;</b></a><br><a href="/portfolio.html"><b>See the portfolio &raquo;</b></a><br><a href="/journal.html"><b>Back to all trips &raquo;</b></a></p>
     </div>
   </section>
 

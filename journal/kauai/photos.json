@@ -2,8 +2,6 @@
  {
   "file": "lihue-morning.jpg",
   "slug": "lihue-morning",
-  "make": "samsung",
-  "model": "SM-S906U1",
   "taken": "2022:10:21 06:27:50",
   "focal_mm": 5.4,
   "aperture": 1.8,
@@ -24,8 +22,6 @@
  {
   "file": "peacock.jpg",
   "slug": "peacock",
-  "make": "samsung",
-  "model": "SM-S906U1",
   "taken": "2022:10:21 07:42:35",
   "focal_mm": 7.0,
   "aperture": 2.4,
@@ -47,8 +43,6 @@
  {
   "file": "snail.jpg",
   "slug": "snail",
-  "make": "samsung",
-  "model": "SM-S906U1",
   "taken": "2022:10:21 07:44:58",
   "focal_mm": 5.4,
   "aperture": 1.8,
@@ -70,8 +64,6 @@
  {
   "file": "starfruit.jpg",
   "slug": "starfruit",
-  "make": "samsung",
-  "model": "SM-S906U1",
   "taken": "2022:10:21 09:43:36",
   "focal_mm": 5.4,
   "aperture": 1.8,
@@ -93,8 +85,6 @@
  {
   "file": "north-shore.jpg",
   "slug": "north-shore",
-  "make": "samsung",
-  "model": "SM-S906U1",
   "taken": "2022:10:21 11:03:25",
   "focal_mm": 2.2,
   "aperture": 2.2,
@@ -116,8 +106,6 @@
  {
   "file": "hanalei-valley.jpg",
   "slug": "hanalei-valley",
-  "make": "samsung",
-  "model": "SM-S906U1",
   "taken": "2022:10:21 11:25:53",
   "focal_mm": 2.2,
   "aperture": 2.2,
@@ -139,8 +127,6 @@
  {
   "file": "kekaha-sunset.jpg",
   "slug": "kekaha-sunset",
-  "make": "samsung",
-  "model": "SM-S906U1",
   "taken": "2022:10:21 17:52:17",
   "focal_mm": 7.0,
   "aperture": 2.4,
@@ -162,8 +148,6 @@
  {
   "file": "spouting-horn-mushroom.jpg",
   "slug": "spouting-horn-mushroom",
-  "make": "samsung",
-  "model": "SM-S906U1",
   "taken": "2022:10:22 10:39:47",
   "focal_mm": 5.4,
   "aperture": 1.8,
@@ -185,8 +169,6 @@
  {
   "file": "spam-socks.jpg",
   "slug": "spam-socks",
-  "make": "samsung",
-  "model": "SM-S906U1",
   "taken": "2022:10:22 15:32:25",
   "focal_mm": 5.4,
   "aperture": 1.8,
@@ -208,8 +190,6 @@
  {
   "file": "glass-sand.jpg",
   "slug": "glass-sand",
-  "make": "samsung",
-  "model": "SM-S906U1",
   "taken": "2022:10:24 18:00:44",
   "focal_mm": 5.4,
   "aperture": 1.8,
@@ -231,8 +211,6 @@
  {
   "file": "glass-beach-sunset.jpg",
   "slug": "glass-beach-sunset",
-  "make": "samsung",
-  "model": "SM-S906U1",
   "taken": "2022:10:24 18:02:22",
   "focal_mm": 5.4,
   "aperture": 1.8,
@@ -254,8 +232,6 @@
  {
   "file": "cave-trail.jpg",
   "slug": "cave-trail",
-  "make": "samsung",
-  "model": "SM-S906U1",
   "taken": "2022:10:25 14:45:31",
   "focal_mm": 5.4,
   "aperture": 1.8,
@@ -277,8 +253,6 @@
  {
   "file": "haole-koa.jpg",
   "slug": "haole-koa",
-  "make": "samsung",
-  "model": "SM-S906U1",
   "taken": "2022:10:25 14:50:10",
   "focal_mm": 5.4,
   "aperture": 1.8,
@@ -300,8 +274,6 @@
  {
   "file": "boardwalk.jpg",
   "slug": "boardwalk",
-  "make": "samsung",
-  "model": "SM-S906U1",
   "taken": "2022:10:25 15:05:05",
   "focal_mm": 5.4,
   "aperture": 1.8,
@@ -323,8 +295,6 @@
  {
   "file": "cave-entrance.jpg",
   "slug": "cave-entrance",
-  "make": "samsung",
-  "model": "SM-S906U1",
   "taken": "2022:10:25 15:11:14",
   "focal_mm": 5.4,
   "aperture": 1.8,
@@ -346,8 +316,6 @@
  {
   "file": "cave-chamber.jpg",
   "slug": "cave-chamber",
-  "make": "samsung",
-  "model": "SM-S906U1",
   "taken": "2022:10:25 15:13:19",
   "focal_mm": 2.2,
   "aperture": 2.2,
@@ -369,8 +337,6 @@
  {
   "file": "sinkhole-wall.jpg",
   "slug": "sinkhole-wall",
-  "make": "samsung",
-  "model": "SM-S906U1",
   "taken": "2022:10:25 15:16:23",
   "focal_mm": 2.2,
   "aperture": 2.2,
@@ -392,8 +358,6 @@
  {
   "file": "plumeria.jpg",
   "slug": "plumeria",
-  "make": "samsung",
-  "model": "SM-S906U1",
   "taken": "2022:10:26 07:00:03",
   "focal_mm": 5.4,
   "aperture": 1.8,
@@ -415,8 +379,6 @@
  {
   "file": "waimea-canyon.jpg",
   "slug": "waimea-canyon",
-  "make": "samsung",
-  "model": "SM-S906U1",
   "taken": "2022:10:26 09:59:01",
   "focal_mm": 2.2,
   "aperture": 2.2,
@@ -438,8 +400,6 @@
  {
   "file": "shell-ginger.jpg",
   "slug": "shell-ginger",
-  "make": "samsung",
-  "model": "SM-S906U1",
   "taken": "2022:10:26 11:51:18",
   "focal_mm": 5.4,
   "aperture": 1.8,
@@ -461,8 +421,6 @@
  {
   "file": "nene.jpg",
   "slug": "nene",
-  "make": "samsung",
-  "model": "SM-S906U1",
   "taken": "2022:10:29 08:23:46",
   "focal_mm": 7.0,
   "aperture": 2.4,
@@ -484,8 +442,6 @@
  {
   "file": "noni.jpg",
   "slug": "noni",
-  "make": "samsung",
-  "model": "SM-S906U1",
   "taken": "2022:10:29 14:56:43",
   "focal_mm": 5.4,
   "aperture": 1.8,

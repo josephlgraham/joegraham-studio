@@ -1,0 +1,359 @@
+[
+ {
+  "file": "central-burying-ground.jpg",
+  "slug": "central-burying-ground",
+  "taken": "2018:04:18 16:46:06",
+  "focal_mm": 4.459,
+  "aperture": 1.8,
+  "shutter": 0.000385,
+  "iso": "54",
+  "focal_35mm": "27",
+  "has_gps": true,
+  "orig_size": [
+   3840,
+   2160
+  ],
+  "web": "img/central-burying-ground.jpg",
+  "size": [
+   1500,
+   844
+  ],
+  "portrait": false
+ },
+ {
+  "file": "mfa-rotunda.jpg",
+  "slug": "mfa-rotunda",
+  "taken": "2018:04:25 19:56:02",
+  "focal_mm": 4.459,
+  "aperture": 1.8,
+  "shutter": 0.033298,
+  "iso": "550",
+  "focal_35mm": "27",
+  "has_gps": true,
+  "orig_size": [
+   2160,
+   3840
+  ],
+  "web": "img/mfa-rotunda.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "harbor-from-above.jpg",
+  "slug": "harbor-from-above",
+  "taken": "2018:05:13 13:33:06",
+  "focal_mm": 4.459,
+  "aperture": 1.8,
+  "shutter": 0.000342,
+  "iso": "54",
+  "focal_35mm": "27",
+  "has_gps": true,
+  "orig_size": [
+   3840,
+   2160
+  ],
+  "web": "img/harbor-from-above.jpg",
+  "size": [
+   1500,
+   844
+  ],
+  "portrait": false
+ },
+ {
+  "file": "copley-night.jpg",
+  "slug": "copley-night",
+  "taken": "2023:03:29 19:46:16",
+  "focal_mm": 2.2,
+  "aperture": 2.2,
+  "shutter": 0.041666666666666664,
+  "iso": "1600",
+  "focal_35mm": "13",
+  "has_gps": true,
+  "orig_size": [
+   2252,
+   4000
+  ],
+  "web": "img/copley-night.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "gardner-courtyard.jpg",
+  "slug": "gardner-courtyard",
+  "taken": "2023:03:30 15:38:31",
+  "focal_mm": 2.2,
+  "aperture": 2.2,
+  "shutter": 0.008333333333333333,
+  "iso": "100",
+  "focal_35mm": "13",
+  "has_gps": true,
+  "orig_size": [
+   2252,
+   4000
+  ],
+  "web": "img/gardner-courtyard.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "gardner-from-above.jpg",
+  "slug": "gardner-from-above",
+  "taken": "2023:03:30 15:55:49",
+  "focal_mm": 2.2,
+  "aperture": 2.2,
+  "shutter": 0.016666666666666666,
+  "iso": "80",
+  "focal_35mm": "13",
+  "has_gps": true,
+  "orig_size": [
+   2252,
+   4000
+  ],
+  "web": "img/gardner-from-above.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "seaport-whales.jpg",
+  "slug": "seaport-whales",
+  "taken": "2023:07:23 10:24:48",
+  "focal_mm": 5.4,
+  "aperture": 1.8,
+  "shutter": 0.0007651109410864575,
+  "iso": "20",
+  "focal_35mm": "23",
+  "has_gps": true,
+  "orig_size": [
+   2252,
+   4000
+  ],
+  "web": "img/seaport-whales.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "cocorico-croissant.jpg",
+  "slug": "cocorico-croissant",
+  "taken": "2023:07:27 10:21:51",
+  "focal_mm": 5.4,
+  "aperture": 1.8,
+  "shutter": 0.005555555555555556,
+  "iso": "160",
+  "focal_35mm": "23",
+  "has_gps": true,
+  "orig_size": [
+   2252,
+   4000
+  ],
+  "web": "img/cocorico-croissant.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "moodern-art-cow.jpg",
+  "slug": "moodern-art-cow",
+  "taken": "2023:07:27 13:32:02",
+  "focal_mm": 2.2,
+  "aperture": 2.2,
+  "shutter": 0.0033333333333333335,
+  "iso": "50",
+  "focal_35mm": "13",
+  "has_gps": true,
+  "orig_size": [
+   4000,
+   2252
+  ],
+  "web": "img/moodern-art-cow.jpg",
+  "size": [
+   1500,
+   845
+  ],
+  "portrait": false
+ },
+ {
+  "file": "bates-hall.jpg",
+  "slug": "bates-hall",
+  "taken": "2023:07:27 13:42:54",
+  "focal_mm": 5.4,
+  "aperture": 1.8,
+  "shutter": 0.008333333333333333,
+  "iso": "200",
+  "focal_35mm": "23",
+  "has_gps": true,
+  "orig_size": [
+   2252,
+   4000
+  ],
+  "web": "img/bates-hall.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "bpl-staircase.jpg",
+  "slug": "bpl-staircase",
+  "taken": "2023:07:27 13:44:20",
+  "focal_mm": 2.2,
+  "aperture": 2.2,
+  "shutter": 0.016666666666666666,
+  "iso": "100",
+  "focal_35mm": "13",
+  "has_gps": true,
+  "orig_size": [
+   4000,
+   2252
+  ],
+  "web": "img/bpl-staircase.jpg",
+  "size": [
+   1500,
+   845
+  ],
+  "portrait": false
+ },
+ {
+  "file": "jersey-street.jpg",
+  "slug": "jersey-street",
+  "taken": "2023:07:30 16:22:50",
+  "focal_mm": 7.0,
+  "aperture": 2.4,
+  "shutter": 0.0012658227848101266,
+  "iso": "25",
+  "focal_35mm": "69",
+  "has_gps": true,
+  "orig_size": [
+   2252,
+   4000
+  ],
+  "web": "img/jersey-street.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "marshall-street.jpg",
+  "slug": "marshall-street",
+  "taken": "2023:07:30 19:27:09",
+  "focal_mm": 5.4,
+  "aperture": 1.8,
+  "shutter": 0.005555555555555556,
+  "iso": "80",
+  "focal_35mm": "23",
+  "has_gps": true,
+  "orig_size": [
+   2252,
+   4000
+  ],
+  "web": "img/marshall-street.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "white-chocolate-cup.jpg",
+  "slug": "white-chocolate-cup",
+  "taken": "2023:07:30 19:55:33",
+  "focal_mm": 5.4,
+  "aperture": 1.8,
+  "shutter": 0.008333333333333333,
+  "iso": "400",
+  "focal_35mm": "23",
+  "has_gps": true,
+  "orig_size": [
+   2252,
+   4000
+  ],
+  "web": "img/white-chocolate-cup.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "yankee-lobster-mac.jpg",
+  "slug": "yankee-lobster-mac",
+  "taken": "2025:07:29 18:26:43",
+  "focal_mm": 2.2,
+  "aperture": 1.9,
+  "shutter": 0.0083337,
+  "iso": "40",
+  "focal_35mm": "21",
+  "has_gps": true,
+  "orig_size": [
+   2252,
+   4000
+  ],
+  "web": "img/yankee-lobster-mac.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "citrus-salt-ceiling.jpg",
+  "slug": "citrus-salt-ceiling",
+  "taken": "2025:07:30 19:47:13",
+  "focal_mm": 3.3,
+  "aperture": 2.2,
+  "shutter": 0.016622331,
+  "iso": "640",
+  "focal_35mm": "25",
+  "has_gps": true,
+  "orig_size": [
+   3000,
+   4000
+  ],
+  "web": "img/citrus-salt-ceiling.jpg",
+  "size": [
+   1125,
+   1500
+  ],
+  "portrait": true
+ },
+ {
+  "file": "barking-crab.jpg",
+  "slug": "barking-crab",
+  "taken": "2025:08:01 20:29:19",
+  "focal_mm": 2.2,
+  "aperture": 1.9,
+  "shutter": 0.025018002,
+  "iso": "1000",
+  "focal_35mm": "13",
+  "has_gps": true,
+  "orig_size": [
+   2252,
+   4000
+  ],
+  "web": "img/barking-crab.jpg",
+  "size": [
+   844,
+   1500
+  ],
+  "portrait": true
+ }
+]

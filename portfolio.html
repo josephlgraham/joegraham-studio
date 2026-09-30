@@ -56,21 +56,9 @@
     --shadow: 0 1px 2px rgba(0,0,0,0.15);
   }
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { background:var(--bg-page); font-family:Verdana,Geneva,Tahoma,sans-serif; font-size:11px; color:var(--text-body); min-height:100vh; }
+  body { font-family:Verdana,Geneva,Tahoma,sans-serif; font-size:11px; color:var(--text-body); min-height:100vh; }
   a { color:var(--text-link); text-decoration:none; }
   a:hover { text-decoration:underline; }
-
-  .top-bar { background:var(--bg-nav); padding:4px 0; border-bottom:1px solid #001a33; position:sticky; top:0; z-index:100; }
-  .top-bar-inner { max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:0 10px; }
-  .top-bar-logo { font-family:'Trebuchet MS',Trebuchet,sans-serif; font-size:36px; font-weight:bold; color:#fff; letter-spacing:-0.5px; }
-  .top-bar-logo span { color:var(--accent-orange); }
-  .top-bar-logo a { color:inherit; }
-  .top-bar-nav { display:flex; gap:14px; flex-wrap:wrap; }
-  .top-bar-nav a { color:#fff; display:inline-block; padding:6px 9px; font-size:10px; text-transform:uppercase; letter-spacing:0.08em; border:1px solid transparent; }
-  .top-bar-nav a:hover,
-  .top-bar-nav a:focus-visible,
-  .top-bar-nav a.active { background:var(--bg-nav-hover); text-decoration:none; border-color:rgba(255,255,255,0.25); }
-
   .container { max-width:960px; margin:0 auto; padding:12px 8px; }
 
   .module { background:var(--bg-module); border:1px solid var(--border-module); border-radius:2px; margin-bottom:14px; box-shadow:var(--shadow); overflow:hidden; }
@@ -231,14 +219,12 @@
 
   @media (max-width:768px) {
     .masonry { column-count:2; }
-    .top-bar-inner { flex-direction:column; align-items:flex-start; }
-    .top-bar-nav { flex-wrap:wrap; justify-content:center; }
-    .top-bar-nav a { padding:3px 6px; font-size:9px; }
   }
   @media (max-width:480px) {
     .masonry { column-count:1; }
   }
 </style>
+<link rel="stylesheet" href="/assets/site.css">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-94JMP16XXY"></script>
 <script>
@@ -252,12 +238,13 @@
 
 <header class="top-bar" role="banner">
   <div class="top-bar-inner">
-    <div class="top-bar-logo"><a href="/">joe<span>graham</span></a></div>
+    <a href="/" class="top-bar-logo">joe<span>graham</span></a>
     <nav class="top-bar-nav" aria-label="Primary navigation">
-      <a href="/">Profile</a>
-      <a href="portfolio.html" class="active" aria-current="page">Portfolio</a>
-      <a href="journal.html">Journal</a>
-      <a href="contact.html">Contact</a>
+      <a href="/portfolio.html" class="active" aria-current="page">Portfolio</a>
+      <a href="/journal.html">Journal</a>
+      <a href="/gear/">Gear</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
     </nav>
   </div>
 </header>
@@ -276,7 +263,7 @@
       <div class="masonry" id="masonryGrid">
 
         <div class="masonry-item">
-          <a class="masonry-link" href="photos/blue-heron.html"
+          <a class="masonry-link" href="#blue-heron" data-slug="blue-heron"
              data-src="photos/blue_heron.png"
              data-title="The Silent Watcher"
              data-caption="A Great Blue Heron holds motionless vigil over Lake Purdy, framed by weathered pine needles and the lush secondary growth of the Alabama shoreline."
@@ -290,7 +277,7 @@
         </div>
 
         <div class="masonry-item">
-          <a class="masonry-link" href="photos/cahaba-river.html"
+          <a class="masonry-link" href="#cahaba-river" data-slug="cahaba-river"
              data-src="photos/cahaba_river.png"
              data-title="The Ancient Path"
              data-caption="One of the most biodiverse waterways in North America carves a serpentine path through sweetgum, sycamore, and oak at the Fall Line where the Appalachian foothills meet the Gulf Coastal Plain."
@@ -304,7 +291,7 @@
         </div>
 
         <div class="masonry-item">
-          <a class="masonry-link" href="photos/coachella-valley.html"
+          <a class="masonry-link" href="#coachella-valley" data-slug="coachella-valley"
              data-src="photos/coachella_valley.png"
              data-title="Desert Grid"
              data-caption="From 10,800 feet on Mount San Jacinto, the Coachella Valley appears as a sprawling circuit board of human ingenuity against the twilight desert sky."
@@ -318,7 +305,7 @@
         </div>
 
         <div class="masonry-item">
-          <a class="masonry-link" href="photos/drink-shot.html"
+          <a class="masonry-link" href="#drink-shot" data-slug="drink-shot"
              data-src="photos/drink_shot.png"
              data-title="The Craft of the Cocktail"
              data-caption="Precision and texture define high-end Southern hospitality — translucent liquid, hand-carved ice, and a shallow depth of field in a dim, sophisticated atmosphere."
@@ -332,7 +319,7 @@
         </div>
 
         <div class="masonry-item">
-          <a class="masonry-link" href="photos/droplets.html"
+          <a class="masonry-link" href="#droplets" data-slug="droplets"
              data-src="photos/droplets.png"
              data-title="Petrichor"
              data-caption="After a morning shower, the aggressive spines of a common thistle become a host for temporary jewels — held in place by Petrichor and the plant's fine hairs."
@@ -346,7 +333,7 @@
         </div>
 
         <div class="masonry-item">
-          <a class="masonry-link" href="photos/duncans-landing.html"
+          <a class="masonry-link" href="#duncans-landing" data-slug="duncans-landing" data-trip="/journal/north-coast/#goat-rock" data-trip-name="North Coast"
              data-src="photos/duncans_landing.png"
              data-title="Edge of the Sonoma Coast"
              data-caption="At Duncan's Landing, the cliffs drop sharply into churning Pacific swells. The Franciscan Complex geology creates a chaotic mixture of uplifted rock shaped by tectonic subduction."
@@ -360,7 +347,7 @@
         </div>
 
         <div class="masonry-item">
-          <a class="masonry-link" href="photos/eclipse-embarcadero.html"
+          <a class="masonry-link" href="#eclipse-embarcadero" data-slug="eclipse-embarcadero"
              data-src="photos/eclipse_embarcadero.png"
              data-title="Geometric Core"
              data-caption="Charles Perry's massive aluminum Eclipse sculpture spirals through the 17-story atrium of John Portman's Hyatt Regency — a brutalist masterpiece of geometry and topology."
@@ -374,7 +361,7 @@
         </div>
 
         <div class="masonry-item">
-          <a class="masonry-link" href="photos/eggshell.html"
+          <a class="masonry-link" href="#eggshell" data-slug="eggshell"
              data-src="photos/eggshell.png"
              data-title="After the Hatch"
              data-caption="A fractured eggshell sits atop fresh mulch — a deliberate offering of calcium carbonate to the soil, reflecting closed-loop permaculture where household waste fuels the next harvest."
@@ -388,7 +375,7 @@
         </div>
 
         <div class="masonry-item">
-          <a class="masonry-link" href="photos/goat-rock-beach.html"
+          <a class="masonry-link" href="#goat-rock-beach" data-slug="goat-rock-beach" data-trip="/journal/north-coast/#goat-rock" data-trip-name="North Coast"
              data-src="photos/goat_rock_beach.png"
              data-title="Where the River Meets the Sea"
              data-caption="Where the Russian River meets the sea, iconic sea stacks carved by eons of wave action stand as lonely outposts against the horizon at Goat Rock Beach."
@@ -402,7 +389,7 @@
         </div>
 
         <div class="masonry-item">
-          <a class="masonry-link" href="photos/hawaii-resort.html"
+          <a class="masonry-link" href="#hawaii-resort" data-slug="hawaii-resort" data-trip="/journal/big-island/#fairmont" data-trip-name="Big Island"
              data-src="photos/hawaii_resort.png"
              data-title="Twilight on the Kohala Coast"
              data-caption="As the sun dips below the Big Island horizon, the Fairmont Orchid transitions into a sanctuary of shadow and gold among volcanic rock pools and tropical greenery."
@@ -416,7 +403,7 @@
         </div>
 
         <div class="masonry-item">
-          <a class="masonry-link" href="photos/hilo-farmers-market.html"
+          <a class="masonry-link" href="#hilo-farmers-market" data-slug="hilo-farmers-market" data-trip="/journal/big-island/#hilo-market-2024" data-trip-name="Big Island"
              data-src="photos/hilo_farmers_market.png"
              data-title="The Bounty of Hilo"
              data-caption="At the sensory heart of the Big Island, sliced Sweet Guava reveals its characteristic salmon-pink flesh — a direct link between the windward coast's volcanic soil and the local community."
@@ -430,7 +417,7 @@
         </div>
 
         <div class="masonry-item">
-          <a class="masonry-link" href="photos/joshua-tree.html"
+          <a class="masonry-link" href="#joshua-tree" data-slug="joshua-tree"
              data-src="photos/joshua_tree.png"
              data-title="Mojave Anchor"
              data-caption="A lone Joshua tree stands in sharp relief against the Mojave sky, a desert raven keeping watch from its crown. Not true trees but giant monocots, they anchor the entire ecosystem."
@@ -444,7 +431,7 @@
         </div>
 
         <div class="masonry-item">
-          <a class="masonry-link" href="photos/joshua-tree-rock.html"
+          <a class="masonry-link" href="#joshua-tree-rock" data-slug="joshua-tree-rock"
              data-src="photos/joshua_tree_rock.png"
              data-title="Quartz Monzogranite Monolith"
              data-caption="Formed 135 million years ago as magma cooled deep underground, these monolithic boulders were shaped by spheroidal weathering over millennia as groundwater rounded their edges."
@@ -458,7 +445,7 @@
         </div>
 
         <div class="masonry-item">
-          <a class="masonry-link" href="photos/junkyard.html"
+          <a class="masonry-link" href="#junkyard" data-slug="junkyard"
              data-src="photos/junkyard.png"
              data-title="The Mosaic of Reclamation"
              data-caption="In a sprawling heap of industrial scrap, discarded metal forms an accidental mosaic — bicycle wheels, frying pans, and conduit waiting for a second life."
@@ -472,7 +459,7 @@
         </div>
 
         <div class="masonry-item">
-          <a class="masonry-link" href="photos/little-bambino.html"
+          <a class="masonry-link" href="#little-bambino" data-slug="little-bambino"
              data-src="photos/little_bambino.png"
              data-title="Little Bambino"
              data-caption="A compact Little Bambino watermelon nears peak ripeness, hidden within serrated leaves. The surrounding tall grasses provide natural insulation against the scorching Alabama midday sun."
@@ -486,7 +473,7 @@
         </div>
 
         <div class="masonry-item">
-          <a class="masonry-link" href="photos/milkweed.html"
+          <a class="masonry-link" href="#milkweed" data-slug="milkweed"
              data-src="photos/milkweed.png"
              data-title="Lifeline of the Cahaba"
              data-caption="White Milkweed glows against the shadowed greens of the riparian forest — the exclusive host plant for Monarch butterfly larvae and a cornerstone of this biodiverse ecosystem."
@@ -500,7 +487,7 @@
         </div>
 
         <div class="masonry-item">
-          <a class="masonry-link" href="photos/p51-mustang.html"
+          <a class="masonry-link" href="#p51-mustang" data-slug="p51-mustang"
              data-src="photos/p51_mustang.png"
              data-title="The Warbird's Shadow"
              data-caption="The legendary P-51D Mustang &quot;Man O' War&quot; rests in the desert light, its polished aluminum reflecting the San Jacinto Mountains — the Cadillac of the Skies in a rare moment of repose."
@@ -514,7 +501,7 @@
         </div>
 
         <div class="masonry-item">
-          <a class="masonry-link" href="photos/petrified-forest.html"
+          <a class="masonry-link" href="#petrified-forest" data-slug="petrified-forest" data-trip="/journal/north-coast/#the-queen" data-trip-name="North Coast"
              data-src="photos/petrified_forest.png"
              data-title="The Queen"
              data-caption="Once a soaring Coastal Redwood, &quot;The Queen&quot; was toppled by a volcanic eruption 3.4 million years ago and entombed in ash. Silica-rich groundwater replaced wood fiber with stone, preserving every detail."
@@ -528,7 +515,7 @@
         </div>
 
         <div class="masonry-item">
-          <a class="masonry-link" href="photos/plumeria.html"
+          <a class="masonry-link" href="#plumeria" data-slug="plumeria" data-trip="/journal/kauai/#plumeria" data-trip-name="Kauaʻi"
              data-src="photos/plumeria.png"
              data-title="Rain-Kissed Plumeria"
              data-caption="After a sudden Kauai downpour, plumeria blossoms glow with crystalline residue. These botanical tricksters produce intense fragrance to lure sphinx moths but yield absolutely no nectar."
@@ -542,7 +529,7 @@
         </div>
 
         <div class="masonry-item">
-          <a class="masonry-link" href="photos/pole-beans.html"
+          <a class="masonry-link" href="#pole-beans" data-slug="pole-beans"
              data-src="photos/pole_beans.png"
              data-title="The Heirloom Vine"
              data-caption="Heirloom Rattlesnake pole beans climb a bamboo stake, their young pods showing characteristic purple streaking. A testament to seed-saving and agricultural continuity from seed to table."
@@ -556,7 +543,7 @@
         </div>
 
         <div class="masonry-item">
-          <a class="masonry-link" href="photos/santa-monica-pier.html"
+          <a class="masonry-link" href="#santa-monica-pier" data-slug="santa-monica-pier"
              data-src="photos/santa_monica_pier.png"
              data-title="Americana at the Edge"
              data-caption="The Santa Monica Pier archway marks the spiritual and literal end of Route 66. A vintage convertible glides past, its chrome echoing a bygone era of the American Dream."
@@ -570,7 +557,7 @@
         </div>
 
         <div class="masonry-item">
-          <a class="masonry-link" href="photos/tracks-sunset.html"
+          <a class="masonry-link" href="#tracks-sunset" data-slug="tracks-sunset"
              data-src="photos/tracks_sunset.png"
              data-title="The Iron Vein"
              data-caption="Steel ribbons catch the last golden light as a freight train snakes through the dense forests of Central Alabama — the industrial lifeblood of the Southern interior."
@@ -584,7 +571,7 @@
         </div>
 
         <div class="masonry-item">
-          <a class="masonry-link" href="photos/tunnel-view.html"
+          <a class="masonry-link" href="#tunnel-view" data-slug="tunnel-view" data-trip="/journal/yosemite/#tunnel-view" data-trip-name="Yosemite"
              data-src="photos/tunnel_view.png"
              data-title="Cathedral of the High Sierra"
              data-caption="The glacial valley opens in a staggering display — flanked by the 3,000-foot face of El Capitan and the distant profile of Half Dome, shaped by millions of years of alpine glaciation."
@@ -598,7 +585,7 @@
         </div>
 
         <div class="masonry-item">
-          <a class="masonry-link" href="photos/yosemite.html"
+          <a class="masonry-link" href="#yosemite" data-slug="yosemite" data-trip="/journal/yosemite/#valley-view" data-trip-name="Yosemite"
              data-src="photos/yosemite.png"
              data-title="Mirror of the Merced"
              data-caption="On the valley floor, the Merced River slows to a perfect liquid mirror for the surrounding peaks. Autumn turns the riparian vegetation brilliant rust and gold."
@@ -627,7 +614,7 @@
   <div class="lightbox-caption" id="lightboxCaption"></div>
   <div class="lightbox-sub" id="lightboxSub"></div>
   <div class="lightbox-actions">
-    <a class="lightbox-entry-link" id="lightboxEntryLink" href="">View journal entry &rarr;</a>
+    <a class="lightbox-entry-link" id="lightboxEntryLink" href="" hidden>From the trip &rarr;</a>
     <div class="share-card" id="lightboxShareCard" data-url="" data-title="" data-text="" data-media="">
       <button class="share-trigger" type="button" aria-expanded="false" aria-controls="lightbox-share-menu">
         <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
@@ -674,11 +661,19 @@ function showPhoto() {
   document.getElementById('lightboxCaption').textContent = link.dataset.caption || link.dataset.title;
   const loc = link.dataset.location || '';
   document.getElementById('lightboxSub').textContent = loc;
-  document.getElementById('lightboxEntryLink').href = link.getAttribute('href');
+  const entry = document.getElementById('lightboxEntryLink');
+  if (link.dataset.trip) {
+    entry.href = link.dataset.trip;
+    entry.innerHTML = 'From the ' + link.dataset.tripName + ' trip &rarr;';
+    entry.hidden = false;
+  } else {
+    entry.hidden = true;
+  }
+  history.replaceState(null, '', '#' + link.dataset.slug);
   document.getElementById('galleryCounter').textContent = (currentIndex + 1) + ' of ' + links.length;
   const sc = document.getElementById('lightboxShareCard');
   if (sc) {
-    const entryUrl = 'https://joegraham.studio/' + link.getAttribute('href');
+    const entryUrl = 'https://joegraham.studio/portfolio.html#' + link.dataset.slug;
     sc.setAttribute('data-url', entryUrl);
     sc.setAttribute('data-title', link.dataset.title + ' - Joe Graham Photography');
     sc.setAttribute('data-text', link.dataset.caption || link.dataset.title);
@@ -700,6 +695,7 @@ function openLightbox(link) {
 function closeLightbox() {
   document.getElementById('lightbox').classList.remove('open');
   document.body.style.overflow = '';
+  history.replaceState(null, '', location.pathname);
 }
 
 function nextPhoto() { currentIndex = (currentIndex + 1) % getLinks().length; showPhoto(); }
@@ -723,6 +719,12 @@ document.querySelectorAll('.masonry-link').forEach(function(link) {
 });
 
 shufflePortfolio();
+// portfolio.html#slug opens that photo (links from the homepage and elsewhere)
+(function() {
+  const slug = decodeURIComponent(location.hash.slice(1));
+  const link = slug && document.querySelector('.masonry-link[data-slug="' + CSS.escape(slug) + '"]');
+  if (link) openLightbox(link);
+})();
 
 (function() {
   var sc = document.getElementById('lightboxShareCard');

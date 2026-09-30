@@ -37,8 +37,6 @@
 .rain div{border:1px solid var(--border-module);padding:8px 10px;background:var(--bg-soft);font-size:12px}
 .rain b{display:block;font-family:var(--trebuchet);font-size:22px;line-height:1.1}
 .rain .wet b{color:#1f7a42}.rain .dry b{color:#b0511f}
-:root[data-theme="dark"] .rain .wet b{color:#6fd39a}:root[data-theme="dark"] .rain .dry b{color:#f09a6a}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .rain .wet b{color:#6fd39a}:root:not([data-theme="light"]) .rain .dry b{color:#f09a6a}}
 
 @media (max-width:820px){
   .isle .m-lab{font-size:26px !important}
@@ -51,6 +49,7 @@
   .rain b{font-size:18px}
 }
 </style>
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 
@@ -58,9 +57,10 @@
   <div class="top-bar-inner">
     <a href="/" class="top-bar-logo">joe<span>graham</span></a>
     <nav class="top-bar-nav" aria-label="Primary navigation">
-      <a href="/">Profile</a>
       <a href="/portfolio.html">Portfolio</a>
-      <a href="/journal/" class="active" aria-current="page">Journal</a>
+      <a href="/journal.html" class="active" aria-current="page">Journal</a>
+      <a href="/gear/">Gear</a>
+      <a href="/about.html">About</a>
       <a href="/contact.html">Contact</a>
     </nav>
   </div>
@@ -103,7 +103,7 @@
 <main class="feed">
 
   <section class="module feed-head" aria-labelledby="h-top">
-    <div class="module-header">Joe's Journal <a href="/journal/">All trips &raquo;</a></div>
+    <div class="module-header">Joe's Journal <a href="/journal.html">All trips &raquo;</a></div>
     <div class="module-body">
       <div>
         <h1 id="h-top">Kauaʻi</h1>
@@ -381,7 +381,7 @@
         <tr><th>Not native</th><td>Plumeria comes from Mexico, Central America, and Venezuela.</td></tr>
         <tr><th>Here since</th><td>1860, when the German physician William Hillebrand brought in the first one, the Common Yellow.</td></tr>
         <tr><th>Still</th><td>It became one of the best-loved lei flowers in the islands.</td></tr>
-        <tr><th>In the portfolio</th><td>My favorite frame from this morning, <a href="/photos/plumeria.html"><i>Rain-Kissed Plumeria</i></a>.</td></tr>
+        <tr><th>In the portfolio</th><td>My favorite frame from this morning, <a href="/portfolio.html#plumeria"><i>Rain-Kissed Plumeria</i></a>.</td></tr>
       </table>
     </div>
     <div class="post-foot"><span></span><a class="permalink" href="#plumeria">Link to this post</a></div>
@@ -558,7 +558,7 @@
         <li><a href="https://dlnr.hawaii.gov/blog/2021/10/14/nr21-177/">Hawaiʻi DLNR: A new way to manage tourism at Hāʻena</a></li>
       </ol>
       <p class="checked">Details checked September 2026. Access to Makauwahi Cave and the Hanalei viewpoint changes, so check before you go. Map elevation: AWS Terrain Tiles (Mapzen / USGS).</p>
-      <p style="margin-top:10px"><a href="/journal/"><b>More trips &raquo;</b></a><br><a href="/portfolio.html"><b>See the portfolio &raquo;</b></a><br><a href="/journal/"><b>Back to all trips &raquo;</b></a></p>
+      <p style="margin-top:10px"><a href="/journal.html"><b>More trips &raquo;</b></a><br><a href="/portfolio.html"><b>See the portfolio &raquo;</b></a><br><a href="/journal.html"><b>Back to all trips &raquo;</b></a></p>
     </div>
   </section>
 

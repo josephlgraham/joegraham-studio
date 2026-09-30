@@ -10,6 +10,24 @@ See yosemite-map.json for a filled-in example.
 import json, math, sys
 import topo
 
+
+def shore_paths(geojson, bbox, P, tol=0.00004):
+    """Land polygons from a GeoJSON file, clipped to the bbox, as SVG path data.
+    Used for city maps where the shoreline itself is the story (Boston)."""
+    from shapely.geometry import shape, box
+    from shapely.validation import make_valid
+    lon0, lon1, lat0, lat1 = bbox
+    pad = (lon1 - lon0) * 0.02
+    g = make_valid(shape(json.load(open(geojson, encoding="utf-8"))["features"][0]["geometry"]))
+    g = g.intersection(box(lon0 - pad, lat0 - pad, lon1 + pad, lat1 + pad)).simplify(tol)
+    polys = [x for x in getattr(g, "geoms", [g]) if x.geom_type == "Polygon" and x.area > tol * tol * 20]
+    out = []
+    for poly in polys:
+        rings = [poly.exterior] + list(poly.interiors)
+        out.append("".join("M" + " L".join(f"{x:.1f},{y:.1f}" for x, y in (P(b, a) for a, b in r.coords)) + "Z"
+                           for r in rings))
+    return out
+
 def build(cfg, mini=False):
     lon0, lon1, lat0, lat1 = cfg["bbox_mini" if mini and "bbox_mini" in cfg else "bbox"]
     W = cfg.get("width", 830)
@@ -26,7 +44,14 @@ def build(cfg, mini=False):
     uid = "mini" if mini else "map"
     out = [f'<svg class="map" viewBox="0 0 {W} {H}" role="img" aria-labelledby="t-{uid}">'
            f'<title id="t-{uid}">{cfg["alt"]}</title>',
-           f'<rect width="{W}" height="{H}" class="{"m-sea" if cfg.get("terrain",{}).get("npz") else "m-land"}"/>']
+           f'<rect width="{W}" height="{H}" class="{"m-sea" if cfg.get("terrain",{}).get("npz") or cfg.get("shores") else "m-land"}"/>']
+
+    for sh in cfg.get("shores", []):            # historic or modern land outlines
+        if mini and not sh.get("mini", True):
+            continue
+        box_ = cfg["bbox_mini" if mini and "bbox_mini" in cfg else "bbox"]
+        out.append(f'<g class="{sh["class"]}">' + "".join(
+            f'<path d="{d}" fill-rule="evenodd"/>' for d in shore_paths(sh["geojson"], box_, P)) + "</g>")
 
     t = cfg.get("terrain")
     C = []
@@ -79,7 +104,8 @@ def build(cfg, mini=False):
         x, y = P(lm["lat"], lm["lon"])
         side = lm.get("side", "r")
         tx, ty, an = {"r": (x + 9, y + 4, "start"), "l": (x - 9, y + 4, "end"),
-                      "b": (x, y + 18, "middle"), "b2": (x + 8, y + 16, "start")}[side]
+                      "b": (x, y + 18, "middle"), "b2": (x + 8, y + 16, "start"),
+                      "t": (x, y - 11, "middle")}[side]
         slug = lm["name"].split()[0].lower()
         out.append(f'<g class="m-mark mk-{slug}"><path d="M{x:.1f},{y-6:.1f} l6,10 h-12z"/>'
                    f'<text x="{tx:.1f}" y="{ty:.1f}" text-anchor="{an}">{lm["name"]}</text></g>')

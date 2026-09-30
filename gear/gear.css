@@ -1,0 +1,64 @@
+/* Gear section: same shell as the journal pages, polaroid-style item cards */
+:root{
+  --bg-page:#C4D1DF;--bg-module:#fff;--bg-module-header:#336699;--bg-nav:#003471;--bg-nav-hover:#0050a0;
+  --text-body:#333;--text-link:#0033cc;--text-light:#666;--border-module:#b3c5d7;--border-light:#d5d5d5;
+  --accent-orange:#ff6600;--bg-soft:#f0f4f8;
+  --verdana:Verdana,Geneva,Tahoma,sans-serif;--trebuchet:"Trebuchet MS",Trebuchet,"Segoe UI",sans-serif;
+  box-sizing:border-box;
+}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;font-family:var(--verdana);font-size:13px;line-height:1.6;color:var(--text-body)}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--text-link);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible{outline:2px solid var(--accent-orange);outline-offset:2px}.container{max-width:960px;margin:0 auto;padding:12px 8px 40px}
+.module{background:var(--bg-module);border:1px solid var(--border-module);border-radius:2px;margin-bottom:10px;box-shadow:0 1px 2px rgba(0,0,0,.15);overflow:hidden}
+.module-header{background:var(--bg-module-header);color:#fff;font-size:11px;font-weight:bold;padding:4px 8px}
+.module-body{padding:12px}
+h1{font-family:var(--trebuchet);font-size:28px;margin:0 0 6px;line-height:1.15}
+p{margin:0 0 .9em;max-width:40rem}
+p:last-child{margin-bottom:0}
+.crumbs{font-size:11px;margin:2px 2px 8px}
+footer{text-align:center;font-size:10px;color:var(--text-light);padding:14px 0;border-top:1px solid var(--border-module)}
+
+/* placeholder notes for Joe: easy to spot, easy to find (search for "todo") */
+.todo{color:#b54700;background:rgba(255,102,0,.07);border-left:3px solid var(--accent-orange);padding:6px 10px;max-width:40rem}
+ul.todo{margin:0;padding-left:30px}
+
+/* photo slots: dashed frame with a line drawing, swap for an <img> when photos land */
+.slot{aspect-ratio:3/2;border:2px dashed var(--border-module);background:var(--bg-soft);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--text-light)}
+.slot svg{width:42%;max-width:160px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linejoin:round;stroke-linecap:round;opacity:.55}
+.slot span{font-family:"Caveat",var(--trebuchet);font-size:20px;line-height:1}
+.slot.hero{aspect-ratio:21/9}
+
+/* item cards on the index: prints on a table, like the journal */
+.items{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:26px 22px;padding:22px 20px 28px;background:var(--bg-soft)}
+.item{--tilt:0deg;display:flex;flex-direction:column;background:#fbfaf6;color:#2c2c2c;padding:11px 11px 0;transform:rotate(var(--tilt));
+  box-shadow:0 1px 2px rgba(0,0,0,.18),0 6px 14px -6px rgba(0,0,0,.28);transition:transform .25s ease,box-shadow .25s ease}
+.item:nth-child(5n+1){--tilt:-1.1deg}.item:nth-child(5n+2){--tilt:.8deg}.item:nth-child(5n+3){--tilt:-.4deg}.item:nth-child(5n+4){--tilt:1.2deg}.item:nth-child(5n+5){--tilt:-.8deg}
+.item:hover,.item:focus-visible{text-decoration:none;transform:rotate(0) translateY(-4px);box-shadow:0 2px 4px rgba(0,0,0,.18),0 16px 28px -10px rgba(0,0,0,.4)}
+.item .slot{border-color:#d9d4c7;background:#efece4;color:#7a7466}
+.i-body{padding:8px 3px 14px}
+.i-name{font-family:"Caveat",var(--trebuchet);font-size:29px;font-weight:600;color:#1f2f45;line-height:1}
+.i-model{font-size:11px;color:#444;margin-top:4px}
+.i-role{font-size:10px;color:#888;text-transform:uppercase;letter-spacing:.08em;margin-top:2px}
+
+/* item pages */
+.item-top{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:22px;align-items:start}
+.slot.print{background:#efece4;border:11px solid #fbfaf6;border-bottom-width:46px;outline:1px solid rgba(0,0,0,.08);box-shadow:0 6px 14px -6px rgba(0,0,0,.3);transform:rotate(-1deg);color:#7a7466}
+.model{font-size:12px;color:var(--text-light);margin-top:-2px}
+.specs{border-collapse:collapse;width:100%;font-size:12px;margin-top:6px}
+.specs caption{text-align:left;font-weight:bold;color:var(--bg-module-header);border-bottom:1px solid var(--border-light);padding-bottom:3px;margin-bottom:2px}
+.specs th{text-align:left;font-weight:bold;color:var(--text-light);padding:4px 10px 4px 0;vertical-align:top;white-space:nowrap;width:1%}
+.specs td{padding:4px 0}
+.specs tr+tr{border-top:1px solid var(--border-light)}
+.strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.other .module-body{display:flex;flex-wrap:wrap;gap:6px 16px}
+
+@media (max-width:768px){body{font-size:14px}}
+@media (max-width:640px){
+  .item-top{grid-template-columns:1fr}
+  .strip{grid-template-columns:1fr 1fr}
+  .items{padding:18px 14px 22px}
+}
+@media (prefers-reduced-motion:reduce){.item{transition:none}}

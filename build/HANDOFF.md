@@ -95,9 +95,8 @@ In order:
   that pins are approximate.
 - **History post**: a facts table of dates, oldest first.
 - **Photo posts**: header with pin badge, place, and time of day. Photo on black.
-  `<h2>`, one or two sentences, then a facts table. Footer shows the camera and
-  lens from EXIF ("Fujifilm X-T30 II, XF18-55mm at 18mm, f/20") plus a
-  "Link to this post" anchor.
+  `<h2>`, one or two sentences, then a facts table. Footer holds only the
+  "Link to this post" anchor (no camera or lens; see `VOICE.md`).
 - **Status post** (no photo) for anything odd: the bear count, a running joke.
 - **Helpful links**: 6 to 10 outside links worth clicking.
 - **Sources**: numbered list of everything the facts came from, with a

@@ -17,6 +17,51 @@ hum along to: warm, upbeat, a little funny. Under each one runs a quiet line of
 true history that changes what you just looked at. A reader should enjoy the
 postcard, then read the small print and think *wait*.
 
+## Sound like Joe, not like AI (every page on the site)
+
+Joe reads copy and can tell when it came from a machine. This section applies
+to everything: trip pages, About, the journal picker, captions, alt text blurbs.
+When in doubt, write less.
+
+**How Joe actually sounds.** These are his lines. Match them:
+
+- *A peacock was out on the lawn before the grounds crew. He did not care about me at all.*
+- *Some of the most famous wine in the world is made within a few miles of here. The ice bucket held a Mountain Dew.*
+- *Proof I was there. Obligatory.*
+- *Came for the blowhole, kept the mushroom.*
+- *Pinecones are everywhere where I live in Alabama. A loblolly cone fits in your palm. This one did not.*
+
+What those have in common: first person, short sentences, one concrete thing,
+and the joke (if there is one) lands in a second, flat sentence. He admits the
+ordinary stuff. He never tells you how to feel.
+
+**AI tells to cut on sight:**
+
+- **Lists of three.** "The Tea Party, the Liberty Tree, and the empty frames."
+  One thing is almost always better. Two is fine. Three in a row, never as a
+  default rhythm.
+- **Every item built the same way.** A list where each line is Name + the X,
+  the Y, and the Z reads like a template. Vary the shape, or pick one detail
+  per item and say it plainly.
+- **The tidy kicker.** Ending a paragraph on a neat, knowing line ("including
+  the parts the postcards leave out," "and that changes everything"). Stop
+  when the fact is done.
+- **Brochure words:** vibrant, nestled, tapestry, testament, breathtaking,
+  stunning, iconic, hidden gem, rich history, journey, delve, showcase,
+  boasts, "not just X but Y," "whether you're X or Y."
+- **Colon reveals and em dashes.** No em dashes at all. Go easy on the
+  "here's the thing:" colon.
+- **Abstract nouns doing the work.** "Visual storytelling," "authentic
+  imagery," "a sense of place." Name the actual thing instead.
+- **Invented feelings.** Don't add "worth the sore knees" or "I'll never
+  forget it" unless Joe said it.
+
+**Joe is shorter in chat than in real life.** A two-word instruction from him
+is not the voice. Build from his real captions and his About page, not from
+how terse the request was.
+
+---
+
 ## 2. What the lyrics are about: power and control
 
 Joe believes power and control are what "bad men" chase. Where the facts
@@ -108,9 +153,9 @@ This shapes **how** you write, not **what** you write:
 ## 8. Photos and credits
 
 - People and pets are fine.
-- **Never name a phone as the camera.** No "Samsung" or "Phone camera" in
-  footers, tags, or metadata. Leave the footer credit empty. Real camera credits
-  (Fujifilm) are fine.
+- **No camera models anywhere.** Not phones, not Fujifilm: nothing in footers,
+  tags, JSON-LD, or other metadata. Leave the footer credit empty. Gear belongs
+  in the gear section, when it exists (Joe's call, September 2026).
 - Strip GPS from published images (`prep_photos.py` does this).
 - **Light editing where it needs it.** Some frames come in dark, flat, or hazy.
   Run `light_edit.py` on the staged full-size frames before `prep_photos.py`:

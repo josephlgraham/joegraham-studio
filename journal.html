@@ -1,984 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Journal | Joe Graham Photography</title>
+<link rel="canonical" href="https://joegraham.studio/journal.html">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Journal | Joe Graham | Fine Art &amp; Commercial Photographer | Birmingham, Alabama</title>
-<meta name="description" content="Photo journal by Joe Graham — field narratives, natural history, and stories behind the photographs. Nature, landscape, and documentary photography from Alabama, California, Hawaii, and beyond.">
-<meta name="author" content="Joe Graham">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="canonical" href="https://joegraham.studio/journal.html">
-
-<meta property="og:title" content="Journal | Joe Graham Photography">
-<meta property="og:description" content="Field narratives and stories behind the photographs. Fine art photographer based in Birmingham, Alabama.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://joegraham.studio/journal.html">
-<meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="Joe Graham Photography">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Journal | Joe Graham Photography">
-<meta name="twitter:description" content="Field narratives and stories behind the photographs. Birmingham, Alabama.">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Blog",
-  "name": "Joe Graham Photo Journal",
-  "description": "Field narratives, natural history, and stories behind the photographs by Joe Graham, fine art photographer based in Birmingham, Alabama.",
-  "url": "https://joegraham.studio/journal.html",
-  "author": { "@type": "Photographer", "@id": "https://joegraham.studio/#photographer" }
-}
-</script>
-
+<meta name="description" content="Trip journals from Joe Graham: photos, maps, and background on the places behind the pictures.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg-page: #C4D1DF;
-    --bg-module: #ffffff;
-    --bg-module-header: #336699;
-    --bg-nav: #003471;
-    --bg-nav-hover: #0050a0;
-    --text-nav: #ffffff;
-    --text-body: #333333;
-    --text-link: #0033cc;
-    --text-light: #666666;
-    --border-module: #b3c5d7;
-    --border-light: #d5d5d5;
-    --accent-orange: #ff6600;
-    --shadow: 0 1px 2px rgba(0,0,0,0.15);
-  }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { background:var(--bg-page); font-family:Verdana,Geneva,Tahoma,sans-serif; font-size:11px; color:var(--text-body); min-height:100vh; }
-  a { color:var(--text-link); text-decoration:none; }
-  a:hover { text-decoration:underline; }
-
-  .top-bar { background:var(--bg-nav); padding:4px 0; border-bottom:1px solid #001a33; position:sticky; top:0; z-index:100; }
-  .top-bar-inner { max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:0 10px; }
-  .top-bar-logo { font-family:'Trebuchet MS',Trebuchet,sans-serif; font-size:36px; font-weight:bold; color:#fff; letter-spacing:-0.5px; }
-  .top-bar-logo span { color:var(--accent-orange); }
-  .top-bar-logo a { color:inherit; }
-  .top-bar-nav { display:flex; gap:14px; flex-wrap:wrap; }
-  .top-bar-nav a { color:#fff; display:inline-block; padding:6px 9px; font-size:10px; text-transform:uppercase; letter-spacing:0.08em; border:1px solid transparent; }
-  .top-bar-nav a:hover,
-  .top-bar-nav a:focus-visible,
-  .top-bar-nav a.active { background:var(--bg-nav-hover); text-decoration:none; border-color:rgba(255,255,255,0.25); }
-
-  .container { max-width:960px; margin:0 auto; padding:12px 8px; }
-
-  .module { background:var(--bg-module); border:1px solid var(--border-module); border-radius:2px; margin-bottom:14px; box-shadow:var(--shadow); }
-  .module-header { background:var(--bg-module-header); color:white; font-size:11px; font-weight:bold; padding:4px 8px; display:flex; align-items:center; justify-content:space-between; border-radius:2px 2px 0 0; }
-  .module-header a { color:#cde; font-size:10px; }
-  .module-body { padding:12px; }
-
-  .journal-entry {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px;
-    border-bottom: 1px solid var(--border-light);
-    transition: background 0.15s;
-    position: relative;
-  }
-  .journal-entry:last-child { border-bottom: none; }
-  .journal-entry:hover { background: #f0f4f8; }
-
-  .journal-entry-link {
-    flex: 1;
-    min-width: 0;
-    display: flex;
-    gap: 12px;
-    text-decoration: none;
-    color: inherit;
-  }
-  .journal-entry-link:hover { text-decoration: none; }
-  .journal-entry-link:hover .journal-entry-title { text-decoration: underline; }
-
-  .journal-entry-thumb {
-    width: 120px;
-    height: 90px;
-    flex-shrink: 0;
-    overflow: hidden;
-    border: 1px solid var(--border-module);
-    border-radius: 2px;
-    background: #e0e8f0;
-  }
-  .journal-entry-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .journal-entry-copy { flex: 1; min-width: 0; }
-  .journal-entry-title {
-    font-family: 'Trebuchet MS', Trebuchet, sans-serif;
-    font-size: 13px;
-    font-weight: bold;
-    color: var(--text-link);
-    margin-bottom: 2px;
-    line-height: 1.3;
-  }
-  .journal-entry-meta {
-    font-size: 9px;
-    color: var(--text-light);
-    margin-bottom: 4px;
-  }
-  .journal-entry-preview {
-    font-size: 10px;
-    line-height: 1.5;
-    color: var(--text-body);
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .journal-count {
-    font-size: 11px;
-    color: var(--text-light);
-    padding: 0 12px 8px;
-  }
-
-  .footer {
-    text-align:center; padding:16px; font-size:9px;
-    color:#777; border-top:1px solid #aab8c8; margin-top:20px;
-  }
-  .footer a { color:#557; }
-
-  /* Share */
-  .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
-  .share-card {
-    position: relative;
-    z-index: 10;
-    flex-shrink: 0;
-    margin-left: 4px;
-    align-self: center;
-    display: flex;
-    justify-content: flex-end;
-  }
-  .share-trigger,
-  .share-option,
-  button.share-option {
-    appearance: none;
-    border: 0;
-    background: transparent;
-    color: #263646;
-    cursor: pointer;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-decoration: none;
-  }
-  .share-trigger {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 7px;
-    min-height: 28px;
-    padding: 5px 7px;
-    border: 1px solid #bdcbd8;
-    border-radius: 999px;
-    background: rgba(248,251,253,0.95);
-    color: #20384f;
-    box-shadow: 0 1px 0 rgba(255,255,255,0.85), 0 2px 7px rgba(18,43,66,0.08);
-    font-size: 10px;
-    font-weight: bold;
-    line-height: 1;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-  }
-  .share-trigger svg {
-    width: 15px;
-    height: 15px;
-    display: block;
-    flex: 0 0 auto;
-  }
-  .share-trigger:hover,
-  .share-trigger:focus {
-    text-decoration: none;
-    background: #eef4fa;
-    border-color: #91a8bd;
-  }
-  .share-menu {
-    position: absolute;
-    right: 0;
-    bottom: calc(100% + 9px);
-    min-width: 232px;
-    padding: 7px;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 3px;
-    border: 1px solid #b9cadd;
-    border-radius: 10px;
-    background: rgba(255,255,255,0.98);
-    box-shadow: 0 8px 32px rgba(18,43,66,0.18), 0 1px 0 rgba(255,255,255,0.85);
-    z-index: 20;
-  }
-  .share-menu[hidden] { display: none; }
-  .share-menu::after {
-    content: "";
-    position: absolute;
-    right: 14px;
-    bottom: -7px;
-    width: 12px;
-    height: 12px;
-    transform: rotate(45deg);
-    background: #fff;
-    border-right: 1px solid #b9cadd;
-    border-bottom: 1px solid #b9cadd;
-  }
-  .share-option {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    width: 100%;
-    min-height: 31px;
-    padding: 6px 8px;
-    border-radius: 7px;
-    color: #27313b;
-    font-size: 10px;
-    line-height: 1.1;
-    text-align: left;
-  }
-  .share-option .share-mark {
-    display: grid;
-    place-items: center;
-    flex: 0 0 20px;
-    width: 20px;
-    height: 20px;
-    border-radius: 6px;
-    background: #20384f;
-    color: #fff;
-    font: bold 9px/1 Verdana, sans-serif;
-    letter-spacing: 0;
-  }
-  .share-option .share-option-text { color: inherit; }
-  .share-option:hover,
-  .share-option:focus { background: #eef4fa; text-decoration: none; }
-  .share-option[data-network="facebook"] .share-mark { background: #2d477a; }
-  .share-option[data-network="threads"] .share-mark { background: #1e1e1e; }
-  .share-option[data-network="bluesky"] .share-mark { background: #1e6fd9; }
-  .share-option[data-network="x"] .share-mark { background: #111; }
-  .share-option[data-network="pinterest"] .share-mark { background: #9c2424; }
-  .share-option[data-network="reddit"] .share-mark { background: #ca5b24; }
-  .share-option[data-network="email"] .share-mark { background: #4a6b85; }
-  .share-option[data-network="copy"] .share-mark { background: #7a5b30; }
-  .share-option[data-network="native"] .share-mark { background: #2f6f48; }
-
-  @media (max-width:768px) {
-    .journal-entry-thumb { width:80px; height:60px; }
-    .top-bar-inner { flex-direction:column; align-items:flex-start; }
-    .top-bar-nav { flex-wrap:wrap; justify-content:center; }
-    .top-bar-nav a { padding:3px 6px; font-size:9px; }
-  }
+:root{
+  --bg-page:#C4D1DF;--bg-module:#fff;--bg-module-header:#336699;--bg-nav:#003471;--bg-nav-hover:#0050a0;
+  --text-body:#333;--text-link:#0033cc;--text-light:#666;--border-module:#b3c5d7;--border-light:#d5d5d5;
+  --accent-orange:#ff6600;--accent-online:#0c0;--bg-soft:#f0f4f8;
+  --verdana:Verdana,Geneva,Tahoma,sans-serif;--trebuchet:"Trebuchet MS",Trebuchet,"Segoe UI",sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;font-family:var(--verdana);font-size:13px;line-height:1.6;color:var(--text-body)}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--text-link);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible{outline:2px solid var(--accent-orange);outline-offset:2px}.container{max-width:960px;margin:0 auto;padding:12px 8px 40px}
+.module{background:var(--bg-module);border:1px solid var(--border-module);border-radius:2px;margin-bottom:10px;box-shadow:0 1px 2px rgba(0,0,0,.15);overflow:hidden}
+.module-header{background:var(--bg-module-header);color:#fff;font-size:11px;font-weight:bold;padding:4px 8px;display:flex;justify-content:space-between;gap:8px}
+.module-body{padding:12px}
+h1{font-family:var(--trebuchet);font-size:28px;margin:0 0 6px}
+p{margin:0 0 .9em;max-width:38rem}
+p:last-child{margin:0}
+.trips{display:grid;grid-template-columns:repeat(auto-fill,minmax(var(--tile,300px),1fr));gap:10px;padding:10px}
+.sizer{display:flex;align-items:center;gap:4px;font-weight:normal}
+.sizer span{font-size:10px;color:#cde;margin-right:2px}
+.sizer button{font:bold 10px var(--verdana);color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);border-radius:2px;padding:2px 7px;cursor:pointer;line-height:1.5}
+.sizer button:hover{background:rgba(255,255,255,.25)}
+.sizer button[aria-pressed="true"]{background:#fff;color:var(--bg-module-header);border-color:#fff}
+/* trip tiles are instant-film prints: thin white border, deep bottom strip, a bit of tilt */
+.trips{gap:26px 22px;padding:22px 20px 28px;background:var(--bg-soft)}
+.trip{--tilt:0deg;display:flex;flex-direction:column;background:#fbfaf6;color:#2c2c2c;padding:11px 11px 0;
+  box-shadow:0 1px 2px rgba(0,0,0,.18),0 6px 14px -6px rgba(0,0,0,.28);transform:rotate(var(--tilt));
+  transition:transform .25s ease,box-shadow .25s ease}
+.trip:nth-child(6n+1){--tilt:-1.3deg}.trip:nth-child(6n+2){--tilt:.9deg}.trip:nth-child(6n+3){--tilt:-.5deg}
+.trip:nth-child(6n+4){--tilt:1.4deg}.trip:nth-child(6n+5){--tilt:-.9deg}.trip:nth-child(6n+6){--tilt:.5deg}
+a.trip:hover,a.trip:focus-visible{text-decoration:none;transform:rotate(0) translateY(-4px);
+  box-shadow:0 2px 4px rgba(0,0,0,.18),0 16px 28px -10px rgba(0,0,0,.4)}
+.t-photo{position:relative;background:#1d1d1d}
+.t-photo::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12),inset 0 0 18px rgba(0,0,0,.18);pointer-events:none}
+.t-shot{aspect-ratio:3/2;object-fit:cover;width:100%}
+.t-map{aspect-ratio:3/2;width:100%;object-fit:cover;filter:saturate(.85)}
+.soon .t-photo{background:#d9e7f1}
+.t-body{padding:8px 3px 14px;min-height:92px}
+.t-name{font-family:"Caveat",var(--trebuchet);font-size:clamp(25px,1.6vw + 14px,31px);font-weight:600;color:#1f2f45;line-height:1}
+a.trip:hover .t-name{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.t-where{font-size:11px;color:#6b6b6b;margin:3px 0 6px}
+.t-blurb{font-size:12px;color:#3a3a3a}
+.t-note{font-family:"Caveat",var(--trebuchet);font-size:22px;color:#c44f00;line-height:1;margin-top:4px;transform:rotate(-2deg);transform-origin:left}
+.t-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+.tag{font-size:10px;padding:2px 6px;border:1px solid #ddd8cc;background:#fff;color:#666}
+.tag.live{border-color:var(--accent-online);color:#080;font-weight:bold}
+.tag.zoom{border-color:var(--accent-orange);color:#c44f00;font-weight:bold}
+@media (prefers-reduced-motion:reduce){.trip{transition:none}}
+footer{text-align:center;font-size:10px;color:var(--text-light);padding:14px 0;border-top:1px solid var(--border-module)}
+/* small tiles: trim the text so they stay tidy */
+.trips.sz-220 .t-blurb{display:none}
+.trips.sz-220 .t-body{padding:6px 2px 10px;min-height:0}
+.trips.sz-220 .t-name{font-size:23px}
+.trips.sz-220 .t-where{margin-bottom:0}
+.trips.sz-220 .t-tags{margin-top:6px}
+@media (max-width:560px){
+  .trips{grid-template-columns:1fr !important}
+  .trips.sz-220{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+}
+@media (max-width:820px){body{font-size:14px}}
 </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-94JMP16XXY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-94JMP16XXY');
-</script>
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
-
-<header class="top-bar" role="banner">
+<header class="top-bar">
   <div class="top-bar-inner">
-    <div class="top-bar-logo"><a href="/">joe<span>graham</span></a></div>
+    <a href="/" class="top-bar-logo">joe<span>graham</span></a>
     <nav class="top-bar-nav" aria-label="Primary navigation">
-      <a href="/">Profile</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="journal.html" class="active" aria-current="page">Journal</a>
-      <a href="contact.html">Contact</a>
+      <a href="/portfolio.html">Portfolio</a>
+      <a href="/journal.html" class="active" aria-current="page">Journal</a>
+      <a href="/gear/">Gear</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
     </nav>
   </div>
 </header>
 
 <div class="container">
-  <div class="module">
-    <div class="module-header">Journal</div>
-    <div class="module-body" style="padding:0;">
-      <div class="journal-count" style="padding-top:10px;">24 entries</div>
+  <section class="module">
+    <div class="module-header">Joe's Journal</div>
+    <div class="module-body">
+      <h1>Trips</h1>
+      <p>Photos from the road, with a map of every stop and the history and background behind each place. Pick a trip and come along.</p>
+    </div>
+  </section>
 
-      <div class="journal-entry">
-        <a class="journal-entry-link" href="photos/eggshell.html">
-          <div class="journal-entry-thumb">
-            <img src="photos/thumbs/eggshell.jpg" alt="Fractured speckled eggshell resting on fresh garden mulch, Central Alabama" loading="lazy">
-          </div>
-          <div class="journal-entry-copy">
-            <div class="journal-entry-title">After the Hatch</div>
-            <div class="journal-entry-meta">My garden &middot; Alabama &middot; May 6, 2026</div>
-            <div class="journal-entry-preview">In the quiet ecosystem of a Central Alabama garden, a fractured, speckled eggshell rests atop fresh mulch — likely carried far from the nest by a nesting robin after a successful hatch.</div>
-          </div>
-        </a>
-        <div class="share-card" data-share-root
-             data-url="https://joegraham.studio/photos/eggshell.html"
-             data-title="After the Hatch - Joe Graham Photography"
-             data-text="In the quiet ecosystem of a Central Alabama garden, a fractured, speckled eggshell rests atop fresh mulch — likely carried far from the nest by a nesting robin after a successful hatch."
-             data-media="https://joegraham.studio/photos/eggshell.png">
-          <button class="share-trigger" type="button" aria-expanded="false" aria-controls="share-menu-eggshell">
-            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
-            <span class="sr-only">Share</span>
-          </button>
-          <div class="share-menu" id="share-menu-eggshell" hidden></div>
+  <section class="module" aria-labelledby="h-trips">
+    <div class="module-header"><span id="h-trips">Pick a Trip</span>
+      <div class="sizer" role="group" aria-label="Tile size"><span>Size</span>
+        <button type="button" data-size="220" aria-pressed="false">Small</button>
+        <button type="button" data-size="300" aria-pressed="true">Medium</button>
+        <button type="button" data-size="440" aria-pressed="false">Large</button>
+      </div></div>
+    <div class="trips">
+
+      <a class="trip" href="/journal/yosemite/">
+        <div class="t-photo"><img class="t-shot" src="/journal/img/yosemite.jpg" width="900" height="600" alt="Tunnel View in Yosemite: El Capitan, Half Dome, and the valley floor in fall color."></div>
+        <div class="t-body">
+          <div class="t-name">Yosemite</div>
+          <div class="t-where">Yosemite National Park, California</div>
+          <div class="t-blurb">Arch Rock to the valley campgrounds, with climbers on El Capitan, giant sugar pine cones, and Ansel Adams.</div>
+          <div class="t-tags"><span class="tag live">Live</span><span class="tag">7 stops</span><span class="tag zoom">🔍 Find the climbers</span></div>
+        </div>
+      </a>
+
+      <a class="trip" href="/journal/kauai/">
+        <div class="t-photo"><img class="t-shot" src="/journal/img/kauai.jpg" width="900" height="600" loading="lazy" alt="Hanalei Valley on Kauaʻi: flooded green taro fields along a winding river, with forested mountains behind."></div>
+        <div class="t-body">
+          <div class="t-name">Kauaʻi</div>
+          <div class="t-where">Kauaʻi, Hawaii</div>
+          <div class="t-blurb">Hanalei taro, Waimea Canyon, the sea-glass sand at Glass Beach, and a crawl into a cave holding 10,000 years of fossils.</div>
+          <div class="t-tags"><span class="tag live">Live</span><span class="tag">11 stops</span><span class="tag zoom">↔️ Wet side, dry side</span></div>
+        </div>
+      </a>
+
+      <a class="trip" href="/journal/big-island/">
+        <div class="t-photo"><img class="t-shot" src="/journal/img/big-island.jpg" width="900" height="600" loading="lazy" alt="Waipiʻo Valley on Hawaiʻi Island: steep green sea cliffs, a curving black-sand beach, and deep blue water."></div>
+        <div class="t-body">
+          <div class="t-name">The Big Island</div>
+          <div class="t-where">Hawaiʻi Island, Hawaii</div>
+          <div class="t-blurb">Three visits: the Kīlauea lava lake four months before it vanished, Waipiʻo Valley, waterfalls, the Hilo market, whales, and a first earthquake.</div>
+          <div class="t-tags"><span class="tag live">Live</span><span class="tag">9 stops</span><span class="tag zoom">🔍 Kīlauea then and now</span></div>
+        </div>
+      </a>
+
+      <a class="trip" href="/journal/north-coast/">
+        <div class="t-photo"><img class="t-shot" src="/journal/img/north-coast.jpg" width="900" height="600" loading="lazy" alt="Goat Rock Beach on the Sonoma Coast: a long curve of sand, green hills, and big white clouds."></div>
+        <div class="t-body">
+          <div class="t-name">The North Coast</div>
+          <div class="t-where">Marin to Mendocino, California</div>
+          <div class="t-blurb">Muir Woods, the Petrified Forest, Goat Rock, and Glass Beach at Fort Bragg, and who each place was saved from.</div>
+          <div class="t-tags"><span class="tag live">Live</span><span class="tag">7 stops</span><span class="tag zoom">↔️ Two glass beaches</span></div>
+        </div>
+      </a>
+
+      <a class="trip" href="/journal/boston/">
+        <div class="t-photo"><img class="t-shot" src="/journal/img/boston.jpg" width="900" height="600" loading="lazy" alt="The Isabella Stewart Gardner Museum courtyard: a pink Venetian-style facade with arched balconies, tree ferns, statues, and beds of orange flowers."></div>
+        <div class="t-body">
+          <div class="t-name">Boston</div>
+          <div class="t-where">Boston, Massachusetts</div>
+          <div class="t-blurb">The Tea Party and the smugglers behind it, the Liberty Tree, a city built on its own harbor, and the empty frames at the Gardner.</div>
+          <div class="t-tags"><span class="tag live">Live</span><span class="tag">9 stops</span><span class="tag zoom">🗺️ The 1795 shoreline</span></div>
+        </div>
+      </a>
+
+      <div class="trip soon" aria-label="Palm Springs, coming soon">
+        <div class="t-photo"><img class="t-map" src="/journal/img/soon-palm-springs.svg" width="600" height="400" loading="lazy" alt="Map: California with a pin on Palm Springs."></div>
+        <div class="t-body">
+          <div class="t-name">Palm Springs</div>
+          <div class="t-where">Coachella Valley and Joshua Tree, California</div>
+          <div class="t-note">coming soon</div>
         </div>
       </div>
 
-      <div class="journal-entry">
-        <a class="journal-entry-link" href="photos/cahaba-river.html">
-          <div class="journal-entry-thumb">
-            <img src="photos/thumbs/cahaba_river.jpg" alt="Cahaba River winding through dense forest canopy at Cahaba River National Wildlife Refuge, Alabama" loading="lazy">
-          </div>
-          <div class="journal-entry-copy">
-            <div class="journal-entry-title">The Ancient Path</div>
-            <div class="journal-entry-meta">Cahaba River NWR &middot; Alabama &middot; April 20, 2026</div>
-            <div class="journal-entry-preview">The Cahaba River, one of the most biodiverse waterways in North America, carves a serpentine path through the heart of the Wildlife Refuge.</div>
-          </div>
-        </a>
-        <div class="share-card" data-share-root
-             data-url="https://joegraham.studio/photos/cahaba-river.html"
-             data-title="The Ancient Path - Joe Graham Photography"
-             data-text="The Cahaba River, one of the most biodiverse waterways in North America, carves a serpentine path through the heart of the Wildlife Refuge."
-             data-media="https://joegraham.studio/photos/cahaba_river.png">
-          <button class="share-trigger" type="button" aria-expanded="false" aria-controls="share-menu-cahaba-river">
-            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
-            <span class="sr-only">Share</span>
-          </button>
-          <div class="share-menu" id="share-menu-cahaba-river" hidden></div>
+      <div class="trip soon" aria-label="San Francisco, coming soon">
+        <div class="t-photo"><img class="t-map" src="/journal/img/soon-san-francisco.svg" width="600" height="400" loading="lazy" alt="Map: California with a pin on San Francisco."></div>
+        <div class="t-body">
+          <div class="t-name">San Francisco</div>
+          <div class="t-where">San Francisco, California</div>
+          <div class="t-note">coming soon</div>
         </div>
       </div>
 
-      <div class="journal-entry">
-        <a class="journal-entry-link" href="photos/eclipse-embarcadero.html">
-          <div class="journal-entry-thumb">
-            <img src="photos/thumbs/eclipse_embarcadero.jpg" alt="Eclipse sculpture by Charles Perry inside the Hyatt Regency Embarcadero atrium, San Francisco, California" loading="lazy">
-          </div>
-          <div class="journal-entry-copy">
-            <div class="journal-entry-title">Geometric Core</div>
-            <div class="journal-entry-meta">San Francisco, California &middot; November 7, 2025</div>
-            <div class="journal-entry-preview">Inside one of the world's largest atriums, the Eclipse sculpture by Charles Perry serves as a massive, spiraling heart of aluminum and steel.</div>
-          </div>
-        </a>
-        <div class="share-card" data-share-root
-             data-url="https://joegraham.studio/photos/eclipse-embarcadero.html"
-             data-title="Geometric Core - Joe Graham Photography"
-             data-text="Inside one of the world's largest atriums, the Eclipse sculpture by Charles Perry serves as a massive, spiraling heart of aluminum and steel."
-             data-media="https://joegraham.studio/photos/eclipse_embarcadero.png">
-          <button class="share-trigger" type="button" aria-expanded="false" aria-controls="share-menu-eclipse">
-            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
-            <span class="sr-only">Share</span>
-          </button>
-          <div class="share-menu" id="share-menu-eclipse" hidden></div>
+      <div class="trip soon" aria-label="Los Angeles, coming soon">
+        <div class="t-photo"><img class="t-map" src="/journal/img/soon-los-angeles.svg" width="600" height="400" loading="lazy" alt="Map: California with a pin on Los Angeles."></div>
+        <div class="t-body">
+          <div class="t-name">Los Angeles</div>
+          <div class="t-where">Los Angeles, California</div>
+          <div class="t-note">coming soon</div>
         </div>
       </div>
 
-      <div class="journal-entry">
-        <a class="journal-entry-link" href="photos/tunnel-view.html">
-          <div class="journal-entry-thumb">
-            <img src="photos/thumbs/tunnel_view.jpg" alt="Tunnel View panorama of Yosemite Valley with El Capitan, Half Dome, and Bridalveil Fall, Yosemite National Park, California" loading="lazy">
-          </div>
-          <div class="journal-entry-copy">
-            <div class="journal-entry-title">Cathedral of the High Sierra</div>
-            <div class="journal-entry-meta">Yosemite National Park &middot; California &middot; November 4, 2025</div>
-            <div class="journal-entry-preview">Few vistas on Earth command as much reverence as Tunnel View. The glacial valley of Yosemite opens up in a staggering display of geological power.</div>
-          </div>
-        </a>
-        <div class="share-card" data-share-root
-             data-url="https://joegraham.studio/photos/tunnel-view.html"
-             data-title="Cathedral of the High Sierra - Joe Graham Photography"
-             data-text="Few vistas on Earth command as much reverence as Tunnel View. The glacial valley of Yosemite opens up in a staggering display of geological power."
-             data-media="https://joegraham.studio/photos/tunnel_view.png">
-          <button class="share-trigger" type="button" aria-expanded="false" aria-controls="share-menu-tunnel-view">
-            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
-            <span class="sr-only">Share</span>
-          </button>
-          <div class="share-menu" id="share-menu-tunnel-view" hidden></div>
+      <div class="trip soon" aria-label="Alabama, coming soon">
+        <div class="t-photo"><img class="t-map" src="/journal/img/soon-alabama.svg" width="600" height="400" loading="lazy" alt="Map: Alabama with a pin on Birmingham."></div>
+        <div class="t-body">
+          <div class="t-name">Alabama</div>
+          <div class="t-where">Statewide, Alabama</div>
+          <div class="t-note">coming soon</div>
         </div>
       </div>
 
-      <div class="journal-entry">
-        <a class="journal-entry-link" href="photos/yosemite.html">
-          <div class="journal-entry-thumb">
-            <img src="photos/thumbs/yosemite.jpg" alt="Perfect reflection of Yosemite Valley granite cliffs in still Merced River water with autumn foliage, California" loading="lazy">
-          </div>
-          <div class="journal-entry-copy">
-            <div class="journal-entry-title">Mirror of the Merced</div>
-            <div class="journal-entry-meta">Yosemite National Park &middot; California &middot; November 4, 2025</div>
-            <div class="journal-entry-preview">Down on the valley floor, the Merced River slows to a crawl, creating a perfect liquid mirror for the surrounding peaks.</div>
-          </div>
-        </a>
-        <div class="share-card" data-share-root
-             data-url="https://joegraham.studio/photos/yosemite.html"
-             data-title="Mirror of the Merced - Joe Graham Photography"
-             data-text="Down on the valley floor, the Merced River slows to a crawl, creating a perfect liquid mirror for the surrounding peaks."
-             data-media="https://joegraham.studio/photos/yosemite.png">
-          <button class="share-trigger" type="button" aria-expanded="false" aria-controls="share-menu-yosemite">
-            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
-            <span class="sr-only">Share</span>
-          </button>
-          <div class="share-menu" id="share-menu-yosemite" hidden></div>
+      <div class="trip soon" aria-label="Georgia, coming soon">
+        <div class="t-photo"><img class="t-map" src="/journal/img/soon-georgia.svg" width="600" height="400" loading="lazy" alt="Map: Georgia with a pin on the north Atlanta suburbs."></div>
+        <div class="t-body">
+          <div class="t-name">Georgia</div>
+          <div class="t-where">Georgia</div>
+          <div class="t-note">coming soon</div>
         </div>
       </div>
 
-      <div class="journal-entry">
-        <a class="journal-entry-link" href="photos/milkweed.html">
-          <div class="journal-entry-thumb">
-            <img src="photos/thumbs/milkweed.jpg" alt="White milkweed star-shaped florets in bloom at Cahaba River National Wildlife Refuge, Alabama" loading="lazy">
-          </div>
-          <div class="journal-entry-copy">
-            <div class="journal-entry-title">Lifeline of the Cahaba</div>
-            <div class="journal-entry-meta">Cahaba River NWR &middot; Alabama &middot; May 3, 2025</div>
-            <div class="journal-entry-preview">Amidst the dense undergrowth of the Cahaba River National Wildlife Refuge, a cluster of White Milkweed stands as a vital outpost for local pollinators.</div>
-          </div>
-        </a>
-        <div class="share-card" data-share-root
-             data-url="https://joegraham.studio/photos/milkweed.html"
-             data-title="Lifeline of the Cahaba - Joe Graham Photography"
-             data-text="Amidst the dense undergrowth of the Cahaba River National Wildlife Refuge, a cluster of White Milkweed stands as a vital outpost for local pollinators."
-             data-media="https://joegraham.studio/photos/milkweed.png">
-          <button class="share-trigger" type="button" aria-expanded="false" aria-controls="share-menu-milkweed">
-            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
-            <span class="sr-only">Share</span>
-          </button>
-          <div class="share-menu" id="share-menu-milkweed" hidden></div>
-        </div>
-      </div>
-
-      <div class="journal-entry">
-        <a class="journal-entry-link" href="photos/blue-heron.html">
-          <div class="journal-entry-thumb">
-            <img src="photos/thumbs/blue_heron.jpg" alt="Great blue heron perched on fallen pine over emerald waters of Lake Purdy, Central Alabama" loading="lazy">
-          </div>
-          <div class="journal-entry-copy">
-            <div class="journal-entry-title">The Silent Watcher</div>
-            <div class="journal-entry-meta">Lake Purdy &middot; Alabama &middot; April 26, 2025</div>
-            <div class="journal-entry-preview">Perched upon the skeletal remains of a fallen pine, a Great Blue Heron stands in motionless vigil over the emerald waters of Lake Purdy.</div>
-          </div>
-        </a>
-        <div class="share-card" data-share-root
-             data-url="https://joegraham.studio/photos/blue-heron.html"
-             data-title="The Silent Watcher - Joe Graham Photography"
-             data-text="Perched upon the skeletal remains of a fallen pine, a Great Blue Heron stands in motionless vigil over the emerald waters of Lake Purdy."
-             data-media="https://joegraham.studio/photos/blue_heron.png">
-          <button class="share-trigger" type="button" aria-expanded="false" aria-controls="share-menu-blue-heron">
-            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
-            <span class="sr-only">Share</span>
-          </button>
-          <div class="share-menu" id="share-menu-blue-heron" hidden></div>
-        </div>
-      </div>
-
-      <div class="journal-entry">
-        <a class="journal-entry-link" href="photos/drink-shot.html">
-          <div class="journal-entry-thumb">
-            <img src="photos/thumbs/drink_shot.jpg" alt="Artisanal cocktail in classic coupe glass with hand-carved ice at Stage restaurant, Georgia" loading="lazy">
-          </div>
-          <div class="journal-entry-copy">
-            <div class="journal-entry-title">The Craft of the Cocktail</div>
-            <div class="journal-entry-meta">Stage &middot; Georgia &middot; April 25, 2025</div>
-            <div class="journal-entry-preview">In the dim, sophisticated atmosphere of Stage, the culinary arts extend beyond the plate and into the glass.</div>
-          </div>
-        </a>
-        <div class="share-card" data-share-root
-             data-url="https://joegraham.studio/photos/drink-shot.html"
-             data-title="The Craft of the Cocktail - Joe Graham Photography"
-             data-text="In the dim, sophisticated atmosphere of Stage, the culinary arts extend beyond the plate and into the glass."
-             data-media="https://joegraham.studio/photos/drink_shot.png">
-          <button class="share-trigger" type="button" aria-expanded="false" aria-controls="share-menu-drink-shot">
-            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
-            <span class="sr-only">Share</span>
-          </button>
-          <div class="share-menu" id="share-menu-drink-shot" hidden></div>
-        </div>
-      </div>
-
-      <div class="journal-entry">
-        <a class="journal-entry-link" href="photos/coachella-valley.html">
-          <div class="journal-entry-thumb">
-            <img src="photos/thumbs/coachella_valley.jpg" alt="Coachella Valley city lights at twilight viewed from Mount San Jacinto summit, California" loading="lazy">
-          </div>
-          <div class="journal-entry-copy">
-            <div class="journal-entry-title">Desert Grid</div>
-            <div class="journal-entry-meta">Mt. San Jacinto &middot; California &middot; March 22, 2025</div>
-            <div class="journal-entry-preview">From the sub-alpine heights of Mount San Jacinto, the Coachella Valley appears not as a desert, but as a sprawling circuit board of human ingenuity.</div>
-          </div>
-        </a>
-        <div class="share-card" data-share-root
-             data-url="https://joegraham.studio/photos/coachella-valley.html"
-             data-title="Desert Grid - Joe Graham Photography"
-             data-text="From the sub-alpine heights of Mount San Jacinto, the Coachella Valley appears not as a desert, but as a sprawling circuit board of human ingenuity."
-             data-media="https://joegraham.studio/photos/coachella_valley.png">
-          <button class="share-trigger" type="button" aria-expanded="false" aria-controls="share-menu-coachella">
-            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
-            <span class="sr-only">Share</span>
-          </button>
-          <div class="share-menu" id="share-menu-coachella" hidden></div>
-        </div>
-      </div>
-
-      <div class="journal-entry">
-        <a class="journal-entry-link" href="photos/joshua-tree.html">
-          <div class="journal-entry-thumb">
-            <img src="photos/thumbs/joshua_tree.jpg" alt="Lone Joshua tree silhouetted against Mojave sky with desert raven perched on top, Joshua Tree National Park, California" loading="lazy">
-          </div>
-          <div class="journal-entry-copy">
-            <div class="journal-entry-title">Mojave Anchor</div>
-            <div class="journal-entry-meta">Joshua Tree National Park &middot; California &middot; March 21, 2025</div>
-            <div class="journal-entry-preview">A lone Joshua Tree stands in sharp relief against the Mojave sky, its twisted, bayonet-like leaves silhouetted by the harsh desert sun.</div>
-          </div>
-        </a>
-        <div class="share-card" data-share-root
-             data-url="https://joegraham.studio/photos/joshua-tree.html"
-             data-title="Mojave Anchor - Joe Graham Photography"
-             data-text="A lone Joshua Tree stands in sharp relief against the Mojave sky, its twisted, bayonet-like leaves silhouetted by the harsh desert sun."
-             data-media="https://joegraham.studio/photos/joshua_tree.png">
-          <button class="share-trigger" type="button" aria-expanded="false" aria-controls="share-menu-joshua-tree">
-            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
-            <span class="sr-only">Share</span>
-          </button>
-          <div class="share-menu" id="share-menu-joshua-tree" hidden></div>
-        </div>
-      </div>
-
-      <div class="journal-entry">
-        <a class="journal-entry-link" href="photos/joshua-tree-rock.html">
-          <div class="journal-entry-thumb">
-            <img src="photos/thumbs/joshua_tree_rock.jpg" alt="Massive quartz monzogranite boulder formation with desert varnish at Joshua Tree National Park, California" loading="lazy">
-          </div>
-          <div class="journal-entry-copy">
-            <div class="journal-entry-title">Quartz Monzogranite Monolith</div>
-            <div class="journal-entry-meta">Joshua Tree National Park &middot; California &middot; March 21, 2025</div>
-            <div class="journal-entry-preview">Massive formations of quartz monzogranite dominate the landscape, appearing as though they were stacked by giants.</div>
-          </div>
-        </a>
-        <div class="share-card" data-share-root
-             data-url="https://joegraham.studio/photos/joshua-tree-rock.html"
-             data-title="Quartz Monzogranite Monolith - Joe Graham Photography"
-             data-text="Massive formations of quartz monzogranite dominate the landscape, appearing as though they were stacked by giants."
-             data-media="https://joegraham.studio/photos/joshua_tree_rock.png">
-          <button class="share-trigger" type="button" aria-expanded="false" aria-controls="share-menu-joshua-rock">
-            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
-            <span class="sr-only">Share</span>
-          </button>
-          <div class="share-menu" id="share-menu-joshua-rock" hidden></div>
-        </div>
-      </div>
-
-      <div class="journal-entry">
-        <a class="journal-entry-link" href="photos/p51-mustang.html">
-          <div class="journal-entry-thumb">
-            <img src="photos/thumbs/p51_mustang.jpg" alt="P-51D Mustang Man O War on display at Palm Springs Air Museum with San Jacinto Mountains in background, California" loading="lazy">
-          </div>
-          <div class="journal-entry-copy">
-            <div class="journal-entry-title">The Warbird's Shadow</div>
-            <div class="journal-entry-meta">Palm Springs &middot; California &middot; March 20, 2025</div>
-            <div class="journal-entry-preview">Under the stark light of the Coachella Valley, the legendary P-51D Mustang "Man O' War" rests within the open hangar of the Palm Springs Air Museum.</div>
-          </div>
-        </a>
-        <div class="share-card" data-share-root
-             data-url="https://joegraham.studio/photos/p51-mustang.html"
-             data-title="The Warbird's Shadow - Joe Graham Photography"
-             data-text="Under the stark light of the Coachella Valley, the legendary P-51D Mustang Man O' War rests within the open hangar of the Palm Springs Air Museum."
-             data-media="https://joegraham.studio/photos/p51_mustang.png">
-          <button class="share-trigger" type="button" aria-expanded="false" aria-controls="share-menu-p51">
-            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
-            <span class="sr-only">Share</span>
-          </button>
-          <div class="share-menu" id="share-menu-p51" hidden></div>
-        </div>
-      </div>
-
-      <div class="journal-entry">
-        <a class="journal-entry-link" href="photos/little-bambino.html">
-          <div class="journal-entry-thumb">
-            <img src="photos/thumbs/little_bambino.jpg" alt="Little Bambino icebox watermelon ripening among tall grass and vines in a Southern garden, Alabama" loading="lazy">
-          </div>
-          <div class="journal-entry-copy">
-            <div class="journal-entry-title">Little Bambino</div>
-            <div class="journal-entry-meta">My garden &middot; Alabama &middot; August 21, 2024</div>
-            <div class="journal-entry-preview">Hidden within a tangled canopy of serrated leaves and sprawling vines, a Little Bambino watermelon nears its peak ripeness.</div>
-          </div>
-        </a>
-        <div class="share-card" data-share-root
-             data-url="https://joegraham.studio/photos/little-bambino.html"
-             data-title="Little Bambino - Joe Graham Photography"
-             data-text="Hidden within a tangled canopy of serrated leaves and sprawling vines, a Little Bambino watermelon nears its peak ripeness."
-             data-media="https://joegraham.studio/photos/little_bambino.png">
-          <button class="share-trigger" type="button" aria-expanded="false" aria-controls="share-menu-little-bambino">
-            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
-            <span class="sr-only">Share</span>
-          </button>
-          <div class="share-menu" id="share-menu-little-bambino" hidden></div>
-        </div>
-      </div>
-
-      <div class="journal-entry">
-        <a class="journal-entry-link" href="photos/pole-beans.html">
-          <div class="journal-entry-thumb">
-            <img src="photos/thumbs/pole_beans.jpg" alt="Rattlesnake pole bean pods with purple streaking on bamboo stake in Southern garden, Alabama" loading="lazy">
-          </div>
-          <div class="journal-entry-copy">
-            <div class="journal-entry-title">The Heirloom Vine</div>
-            <div class="journal-entry-meta">My garden &middot; Alabama &middot; June 20, 2024</div>
-            <div class="journal-entry-preview">The Rattlesnake pole bean is a testament to the enduring legacy of heirloom agriculture, its young pods exhibiting characteristic purple streaking.</div>
-          </div>
-        </a>
-        <div class="share-card" data-share-root
-             data-url="https://joegraham.studio/photos/pole-beans.html"
-             data-title="The Heirloom Vine - Joe Graham Photography"
-             data-text="The Rattlesnake pole bean is a testament to the enduring legacy of heirloom agriculture, its young pods exhibiting characteristic purple streaking."
-             data-media="https://joegraham.studio/photos/pole_beans.png">
-          <button class="share-trigger" type="button" aria-expanded="false" aria-controls="share-menu-pole-beans">
-            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
-            <span class="sr-only">Share</span>
-          </button>
-          <div class="share-menu" id="share-menu-pole-beans" hidden></div>
-        </div>
-      </div>
-
-      <div class="journal-entry">
-        <a class="journal-entry-link" href="photos/petrified-forest.html">
-          <div class="journal-entry-thumb">
-            <img src="photos/thumbs/petrified_forest.jpg" alt="Moss-covered petrified Coastal Redwood log 3.4 million years old at Petrified Forest, Calistoga, California" loading="lazy">
-          </div>
-          <div class="journal-entry-copy">
-            <div class="journal-entry-title">The Queen</div>
-            <div class="journal-entry-meta">Calistoga &middot; California &middot; April 11, 2024</div>
-            <div class="journal-entry-preview">"The Queen" is a silent witness to a cataclysm that occurred 3.4 million years ago — once a soaring Coastal Redwood, now turned to stone.</div>
-          </div>
-        </a>
-        <div class="share-card" data-share-root
-             data-url="https://joegraham.studio/photos/petrified-forest.html"
-             data-title="The Queen - Joe Graham Photography"
-             data-text="The Queen is a silent witness to a cataclysm that occurred 3.4 million years ago — once a soaring Coastal Redwood, now turned to stone."
-             data-media="https://joegraham.studio/photos/petrified_forest.png">
-          <button class="share-trigger" type="button" aria-expanded="false" aria-controls="share-menu-petrified">
-            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
-            <span class="sr-only">Share</span>
-          </button>
-          <div class="share-menu" id="share-menu-petrified" hidden></div>
-        </div>
-      </div>
-
-      <div class="journal-entry">
-        <a class="journal-entry-link" href="photos/duncans-landing.html">
-          <div class="journal-entry-thumb">
-            <img src="photos/thumbs/duncans_landing.jpg" alt="Rugged coastal cliffs and turquoise Pacific swells at Duncans Landing, Sonoma Coast State Park, California" loading="lazy">
-          </div>
-          <div class="journal-entry-copy">
-            <div class="journal-entry-title">Edge of the Sonoma Coast</div>
-            <div class="journal-entry-meta">Sonoma Coast &middot; California &middot; April 8, 2024</div>
-            <div class="journal-entry-preview">Along the treacherous reaches of the Sonoma Coast, Duncan's Landing stands as a rugged testament to the relentless power of the Pacific.</div>
-          </div>
-        </a>
-        <div class="share-card" data-share-root
-             data-url="https://joegraham.studio/photos/duncans-landing.html"
-             data-title="Edge of the Sonoma Coast - Joe Graham Photography"
-             data-text="Along the treacherous reaches of the Sonoma Coast, Duncan's Landing stands as a rugged testament to the relentless power of the Pacific."
-             data-media="https://joegraham.studio/photos/duncans_landing.png">
-          <button class="share-trigger" type="button" aria-expanded="false" aria-controls="share-menu-duncans">
-            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
-            <span class="sr-only">Share</span>
-          </button>
-          <div class="share-menu" id="share-menu-duncans" hidden></div>
-        </div>
-      </div>
-
-      <div class="journal-entry">
-        <a class="journal-entry-link" href="photos/goat-rock-beach.html">
-          <div class="journal-entry-thumb">
-            <img src="photos/thumbs/goat_rock_beach.jpg" alt="Sea stacks and crescent shoreline at Goat Rock Beach where the Russian River meets the Pacific, California" loading="lazy">
-          </div>
-          <div class="journal-entry-copy">
-            <div class="journal-entry-title">Where the River Meets the Sea</div>
-            <div class="journal-entry-meta">Sonoma Coast &middot; California &middot; April 7, 2024</div>
-            <div class="journal-entry-preview">Where the Russian River meets the sea, Goat Rock Beach offers a dramatic display of coastal erosion and tectonic history.</div>
-          </div>
-        </a>
-        <div class="share-card" data-share-root
-             data-url="https://joegraham.studio/photos/goat-rock-beach.html"
-             data-title="Where the River Meets the Sea - Joe Graham Photography"
-             data-text="Where the Russian River meets the sea, Goat Rock Beach offers a dramatic display of coastal erosion and tectonic history."
-             data-media="https://joegraham.studio/photos/goat_rock_beach.png">
-          <button class="share-trigger" type="button" aria-expanded="false" aria-controls="share-menu-goat-rock">
-            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
-            <span class="sr-only">Share</span>
-          </button>
-          <div class="share-menu" id="share-menu-goat-rock" hidden></div>
-        </div>
-      </div>
-
-      <div class="journal-entry">
-        <a class="journal-entry-link" href="photos/hawaii-resort.html">
-          <div class="journal-entry-thumb">
-            <img src="photos/thumbs/hawaii_resort.jpg" alt="Blue hour tropical landscape with volcanic rock pools and palm trees at Fairmont Orchid, Big Island, Hawaii" loading="lazy">
-          </div>
-          <div class="journal-entry-copy">
-            <div class="journal-entry-title">Twilight on the Kohala Coast</div>
-            <div class="journal-entry-meta">Kohala Coast &middot; Hawaii &middot; February 8, 2024</div>
-            <div class="journal-entry-preview">As the sun dips below the horizon of the Big Island, the Fairmont Orchid transitions into a sanctuary of shadow and gold.</div>
-          </div>
-        </a>
-        <div class="share-card" data-share-root
-             data-url="https://joegraham.studio/photos/hawaii-resort.html"
-             data-title="Twilight on the Kohala Coast - Joe Graham Photography"
-             data-text="As the sun dips below the horizon of the Big Island, the Fairmont Orchid transitions into a sanctuary of shadow and gold."
-             data-media="https://joegraham.studio/photos/hawaii_resort.png">
-          <button class="share-trigger" type="button" aria-expanded="false" aria-controls="share-menu-hawaii-resort">
-            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
-            <span class="sr-only">Share</span>
-          </button>
-          <div class="share-menu" id="share-menu-hawaii-resort" hidden></div>
-        </div>
-      </div>
-
-      <div class="journal-entry">
-        <a class="journal-entry-link" href="photos/hilo-farmers-market.html">
-          <div class="journal-entry-thumb">
-            <img src="photos/thumbs/hilo_farmers_market.jpg" alt="Fresh sweet guava with salmon-pink flesh for sale at Hilo Farmers Market, Big Island, Hawaii" loading="lazy">
-          </div>
-          <div class="journal-entry-copy">
-            <div class="journal-entry-title">The Bounty of Hilo</div>
-            <div class="journal-entry-meta">Hilo &middot; Hawaii &middot; February 7, 2024</div>
-            <div class="journal-entry-preview">The Hilo Farmers Market serves as the sensory heart of the Big Island, where volcanic soil and tropical rains produce an unrivaled agricultural abundance.</div>
-          </div>
-        </a>
-        <div class="share-card" data-share-root
-             data-url="https://joegraham.studio/photos/hilo-farmers-market.html"
-             data-title="The Bounty of Hilo - Joe Graham Photography"
-             data-text="The Hilo Farmers Market serves as the sensory heart of the Big Island, where volcanic soil and tropical rains produce an unrivaled agricultural abundance."
-             data-media="https://joegraham.studio/photos/hilo_farmers_market.png">
-          <button class="share-trigger" type="button" aria-expanded="false" aria-controls="share-menu-hilo">
-            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
-            <span class="sr-only">Share</span>
-          </button>
-          <div class="share-menu" id="share-menu-hilo" hidden></div>
-        </div>
-      </div>
-
-      <div class="journal-entry">
-        <a class="journal-entry-link" href="photos/tracks-sunset.html">
-          <div class="journal-entry-thumb">
-            <img src="photos/thumbs/tracks_sunset.jpg" alt="Freight train on railroad tracks at golden hour through dense Central Alabama forest" loading="lazy">
-          </div>
-          <div class="journal-entry-copy">
-            <div class="journal-entry-title">The Iron Vein</div>
-            <div class="journal-entry-meta">Central Alabama &middot; August 7, 2023</div>
-            <div class="journal-entry-preview">As the sun sets over the dense forests of Central Alabama, the steel ribbons of the railroad catch the last of the golden light.</div>
-          </div>
-        </a>
-        <div class="share-card" data-share-root
-             data-url="https://joegraham.studio/photos/tracks-sunset.html"
-             data-title="The Iron Vein - Joe Graham Photography"
-             data-text="As the sun sets over the dense forests of Central Alabama, the steel ribbons of the railroad catch the last of the golden light."
-             data-media="https://joegraham.studio/photos/tracks_sunset.png">
-          <button class="share-trigger" type="button" aria-expanded="false" aria-controls="share-menu-tracks">
-            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
-            <span class="sr-only">Share</span>
-          </button>
-          <div class="share-menu" id="share-menu-tracks" hidden></div>
-        </div>
-      </div>
-
-      <div class="journal-entry">
-        <a class="journal-entry-link" href="photos/droplets.html">
-          <div class="journal-entry-thumb">
-            <img src="photos/thumbs/droplets.jpg" alt="Macro photograph of spherical water droplets clinging to thistle spines after morning rain, in an Alabama garden" loading="lazy">
-          </div>
-          <div class="journal-entry-copy">
-            <div class="journal-entry-title">Petrichor</div>
-            <div class="journal-entry-meta">My garden &middot; Alabama &middot; May 20, 2023</div>
-            <div class="journal-entry-preview">Following a morning shower, the aggressive spines of a common thistle become a host for temporary jewels of rainwater.</div>
-          </div>
-        </a>
-        <div class="share-card" data-share-root
-             data-url="https://joegraham.studio/photos/droplets.html"
-             data-title="Petrichor - Joe Graham Photography"
-             data-text="Following a morning shower, the aggressive spines of a common thistle become a host for temporary jewels of rainwater."
-             data-media="https://joegraham.studio/photos/droplets.png">
-          <button class="share-trigger" type="button" aria-expanded="false" aria-controls="share-menu-droplets">
-            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
-            <span class="sr-only">Share</span>
-          </button>
-          <div class="share-menu" id="share-menu-droplets" hidden></div>
-        </div>
-      </div>
-
-      <div class="journal-entry">
-        <a class="journal-entry-link" href="photos/junkyard.html">
-          <div class="journal-entry-thumb">
-            <img src="photos/thumbs/junkyard.jpg" alt="Bicycle wheel, aluminum pan, and tangled scrap metal at a material recovery facility, Birmingham, Alabama" loading="lazy">
-          </div>
-          <div class="journal-entry-copy">
-            <div class="journal-entry-title">The Mosaic of Reclamation</div>
-            <div class="journal-entry-meta">Birmingham &middot; Alabama &middot; April 30, 2023</div>
-            <div class="journal-entry-preview">In a sprawling heap of industrial and domestic scrap, the discarded metal of the modern world waits for a second life.</div>
-          </div>
-        </a>
-        <div class="share-card" data-share-root
-             data-url="https://joegraham.studio/photos/junkyard.html"
-             data-title="The Mosaic of Reclamation - Joe Graham Photography"
-             data-text="In a sprawling heap of industrial and domestic scrap, the discarded metal of the modern world waits for a second life."
-             data-media="https://joegraham.studio/photos/junkyard.png">
-          <button class="share-trigger" type="button" aria-expanded="false" aria-controls="share-menu-junkyard">
-            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
-            <span class="sr-only">Share</span>
-          </button>
-          <div class="share-menu" id="share-menu-junkyard" hidden></div>
-        </div>
-      </div>
-
-      <div class="journal-entry">
-        <a class="journal-entry-link" href="photos/plumeria.html">
-          <div class="journal-entry-thumb">
-            <img src="photos/thumbs/plumeria.jpg" alt="Pink and yellow plumeria frangipani blossoms with water droplets after tropical rain, Kauai, Hawaii" loading="lazy">
-          </div>
-          <div class="journal-entry-copy">
-            <div class="journal-entry-title">Rain-Kissed Plumeria</div>
-            <div class="journal-entry-meta">Kauai &middot; Hawaii &middot; October 26, 2022</div>
-            <div class="journal-entry-preview">On the Garden Isle of Kauai, a sudden tropical downpour leaves behind a delicate crystalline residue on vibrant Plumeria blossoms.</div>
-          </div>
-        </a>
-        <div class="share-card" data-share-root
-             data-url="https://joegraham.studio/photos/plumeria.html"
-             data-title="Rain-Kissed Plumeria - Joe Graham Photography"
-             data-text="On the Garden Isle of Kauai, a sudden tropical downpour leaves behind a delicate crystalline residue on vibrant Plumeria blossoms."
-             data-media="https://joegraham.studio/photos/plumeria.png">
-          <button class="share-trigger" type="button" aria-expanded="false" aria-controls="share-menu-plumeria">
-            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
-            <span class="sr-only">Share</span>
-          </button>
-          <div class="share-menu" id="share-menu-plumeria" hidden></div>
-        </div>
-      </div>
-
-      <div class="journal-entry">
-        <a class="journal-entry-link" href="photos/santa-monica-pier.html">
-          <div class="journal-entry-thumb">
-            <img src="photos/thumbs/santa_monica_pier.jpg" alt="Santa Monica Pier archway sign with vintage convertible at the western terminus of Route 66, California" loading="lazy">
-          </div>
-          <div class="journal-entry-copy">
-            <div class="journal-entry-title">Americana at the Edge</div>
-            <div class="journal-entry-meta">Santa Monica &middot; California &middot; January 28, 2017</div>
-            <div class="journal-entry-preview">The Santa Monica Pier archway stands as a permanent gateway to the Pacific, marking the spiritual and literal end of Route 66.</div>
-          </div>
-        </a>
-        <div class="share-card" data-share-root
-             data-url="https://joegraham.studio/photos/santa-monica-pier.html"
-             data-title="Americana at the Edge - Joe Graham Photography"
-             data-text="The Santa Monica Pier archway stands as a permanent gateway to the Pacific, marking the spiritual and literal end of Route 66."
-             data-media="https://joegraham.studio/photos/santa_monica_pier.png">
-          <button class="share-trigger" type="button" aria-expanded="false" aria-controls="share-menu-santa-monica">
-            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
-            <span class="sr-only">Share</span>
-          </button>
-          <div class="share-menu" id="share-menu-santa-monica" hidden></div>
+      <div class="trip soon" aria-label="Yellowstone, coming soon">
+        <div class="t-photo"><img class="t-map" src="/journal/img/soon-yellowstone.svg" width="600" height="400" loading="lazy" alt="Map: Wyoming, Montana, and Idaho with Yellowstone shaded and a pin on Old Faithful."></div>
+        <div class="t-body">
+          <div class="t-name">Yellowstone</div>
+          <div class="t-where">Yellowstone National Park, Wyoming</div>
+          <div class="t-note">coming soon</div>
         </div>
       </div>
 
     </div>
-  </div>
+  </section>
 
-  <div class="footer">
-    &copy; 2026 Joe Graham &middot; <a href="/legal.html">Legal &amp; Privacy</a>
-  </div>
 </div>
-
 <script>
-(function() {
-  function buildShareMenu(shareMenu, url, title, text, media) {
-    var enc = encodeURIComponent;
-    shareMenu.innerHTML = '';
-    var items = [
-      { tag: 'button', network: 'copy', mark: '⧉', label: 'Copy link' },
-      { tag: 'a', network: 'facebook', mark: 'f', label: 'Facebook', href: 'https://www.facebook.com/sharer/sharer.php?u=' + enc(url) },
-      { tag: 'a', network: 'threads', mark: '@', label: 'Threads', href: 'https://www.threads.net/intent/post?text=' + enc(title + ' ' + url) },
-      { tag: 'a', network: 'bluesky', mark: 'b', label: 'Bluesky', href: 'https://bsky.app/intent/compose?text=' + enc(title + '\n' + url) },
-      { tag: 'a', network: 'x', mark: 'x', label: 'X', href: 'https://twitter.com/intent/tweet?url=' + enc(url) + '&text=' + enc(title) },
-      { tag: 'a', network: 'pinterest', mark: 'p', label: 'Pinterest', href: 'https://www.pinterest.com/pin/create/button/?url=' + enc(url) + '&media=' + enc(media) + '&description=' + enc(title) },
-      { tag: 'a', network: 'reddit', mark: 'r', label: 'Reddit', href: 'https://www.reddit.com/submit?url=' + enc(url) + '&title=' + enc(title) },
-      { tag: 'a', network: 'email', mark: '✉', label: 'Email', href: 'mailto:?subject=' + enc(title) + '&body=' + enc(url) }
-    ];
-    if (navigator.share) {
-      items.unshift({ tag: 'button', network: 'native', mark: '↥', label: 'Device share' });
-    }
-    items.forEach(function(item) {
-      var el;
-      if (item.tag === 'a') {
-        el = document.createElement('a');
-        el.href = item.href;
-        el.target = '_blank';
-        el.rel = 'noopener noreferrer';
-      } else {
-        el = document.createElement('button');
-        el.type = 'button';
-      }
-      el.className = 'share-option';
-      el.setAttribute('data-network', item.network);
-      el.innerHTML = '<span class="share-mark" aria-hidden="true">' + item.mark + '</span><span class="share-option-text">' + item.label + '</span>';
-      if (item.network === 'copy') {
-        el.addEventListener('click', function() {
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(url).then(function() {
-              var lbl = el.querySelector('.share-option-text');
-              var orig = lbl.textContent;
-              lbl.textContent = 'Copied';
-              setTimeout(function() { lbl.textContent = orig; }, 1400);
-            }).catch(function() {});
-          }
-        });
-      }
-      if (item.network === 'native') {
-        el.addEventListener('click', function() {
-          navigator.share({ title: title, text: text, url: url }).catch(function() {});
-        });
-      }
-      shareMenu.appendChild(el);
-    });
+(function(){
+  var grid=document.querySelector('.trips'), btns=[].slice.call(document.querySelectorAll('.sizer button'));
+  function set(size,save){
+    grid.style.setProperty('--tile',size+'px');
+    grid.className='trips sz-'+size;
+    btns.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.size===size))});
+    if(save){try{localStorage.setItem('journal-tile',size)}catch(e){}}
   }
-
-  function initShareCard(shareRoot) {
-    var trigger = shareRoot.querySelector('.share-trigger');
-    var menu = shareRoot.querySelector('.share-menu');
-    var url = shareRoot.getAttribute('data-url');
-    var title = shareRoot.getAttribute('data-title');
-    var text = shareRoot.getAttribute('data-text') || title;
-    var media = shareRoot.getAttribute('data-media') || '';
-    var built = false;
-
-    function setMenu(open) {
-      menu.hidden = !open;
-      trigger.setAttribute('aria-expanded', String(open));
-    }
-
-    trigger.addEventListener('click', function() {
-      if (navigator.share && window.matchMedia('(max-width: 760px)').matches) {
-        navigator.share({ title: title, text: text, url: url }).catch(function() {});
-        return;
-      }
-      if (menu.hidden) {
-        if (!built) { buildShareMenu(menu, url, title, text, media); built = true; }
-        setMenu(true);
-      } else {
-        setMenu(false);
-      }
-    });
-
-    document.addEventListener('click', function(e) {
-      if (!shareRoot.contains(e.target)) setMenu(false);
-    });
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') setMenu(false);
-    });
-  }
-
-  document.querySelectorAll('[data-share-root]').forEach(initShareCard);
+  var saved=null; try{saved=localStorage.getItem('journal-tile')}catch(e){}
+  set(btns.some(function(b){return b.dataset.size===saved})?saved:'300',false);
+  btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.size,true)})});
 })();
 </script>
-
+<footer>&copy; 2026 Joe Graham &middot; <a href="/legal.html">Legal &amp; Privacy</a></footer>
 </body>
 </html>

@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Boston | Journal | Joe Graham Photography</title>
+<meta name="description" content="Boston in photos: the Seaport, the Fort Point Channel by the Tea Party ships, the Freedom Trail, Copley Square and the Boston Public Library, Fenway Park, the MFA, and the hanging nasturtiums and empty frames of the Isabella Stewart Gardner Museum. Postcard views, with the history of who paid for liberty and who profited from it underneath. Photographs by Joe Graham.">
+<meta property="og:title" content="Boston | Joe Graham Photography">
+<meta property="og:description" content="The Tea Party, the Liberty Tree, a city built on its own harbor, and the empty frames at the Gardner: maps, history, and the story under every stop.">
+<meta property="og:image" content="https://joegraham.studio/journal/img/boston.jpg">
+<meta property="og:url" content="https://joegraham.studio/journal/boston/">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+{{BASE_CSS}}
+/* city map: shorelines instead of contours */
+.map-wrap.city{background:#d9e7f1;position:relative}
+.m-sea{fill:#d9e7f1}
+.m-now path{fill:#eef1ea;stroke:#8fb0c9;stroke-width:1;transition:fill .4s}
+.m-then path{fill:#dcc58f;stroke:#a88443;stroke-width:1;opacity:0;transition:opacity .4s}
+.map-wrap.then .m-then path{opacity:.95}
+.map-wrap.then .m-now path{fill:#f7f5ef}
+.m-water{paint-order:stroke;stroke:#d9e7f1;stroke-width:3px}
+.map-wrap.then .m-water{stroke:transparent}
+.shore-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:8px 10px;background:var(--bg-module);border-bottom:1px solid var(--border-module)}
+.shore-bar .seg{display:inline-flex;border:2px solid var(--accent-orange);border-radius:3px;overflow:hidden}
+.shore-bar button{font:bold 13px var(--verdana);padding:7px 14px;border:0;background:#fff;color:#a83f00;cursor:pointer}
+.shore-bar button[aria-pressed="true"]{background:var(--accent-orange);color:#fff}
+.shore-bar button.pulse{animation:blink 1.4s ease-in-out infinite}
+.shore-bar .sb-note{font-size:12px;color:var(--text-light)}
+.legend{position:absolute;left:10px;top:10px;background:rgba(255,255,255,.92);color:#2b2b2b;border:1px solid #b9c3cf;font:11px var(--verdana);padding:6px 8px;line-height:1.7;opacity:0;transition:opacity .4s;pointer-events:none}
+.map-wrap.then .legend{opacity:1}
+.legend i{display:inline-block;width:14px;height:10px;margin-right:6px;vertical-align:-1px;border:1px solid #8a8f98}
+.legend .l-then{background:#dcc58f}.legend .l-made{background:#f7f5ef}.legend .l-sea{background:#d9e7f1}
+@media (max-width:820px){
+  .city .m-lab{font-size:22px !important}
+  .city .m-water,.city .m-note{font-size:18px}
+  .city .m-mark text{font-size:17px}
+  .city .m-pin circle{r:15px}
+  .city .m-pin .m-num{font-size:16px !important;transform:translateY(2px)}
+  .city.mini .m-pin circle{r:22px}
+  .legend{font-size:10px;padding:3px 6px;line-height:1.5;left:6px;top:6px}
+}
+
+/* the lyric: a quiet line of history under each happy caption */
+.lyric{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:13.5px;line-height:1.55;color:var(--text-light);border-left:2px solid var(--border-module);padding:1px 0 1px 10px;margin:0 0 .9em;max-width:38rem}
+
+/* side-scroll gallery post */
+.gal{background:var(--plate)}
+.strip{display:flex;gap:6px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:8px;scrollbar-width:thin;scrollbar-color:#5a6678 transparent;overscroll-behavior-x:contain}
+.strip:focus-visible{outline:2px solid var(--accent-orange);outline-offset:-2px}
+.strip figure{flex:0 0 auto;scroll-snap-align:center;margin:0;display:flex;flex-direction:column;max-width:88%}
+.strip img{height:min(58vh,440px);width:auto;max-width:100%;object-fit:contain}
+.strip figcaption{color:#e6e6e6;font-size:11px;line-height:1.4;padding:6px 2px 0;width:0;min-width:100%}
+.gal-bar{display:flex;align-items:center;justify-content:center;gap:14px;padding:4px 8px 8px;color:#cfd6df;font-size:11px}
+.gal-bar button{font:bold 18px var(--verdana);line-height:1;color:#fff;background:var(--bg-module-header);border:1px solid #214d7a;border-radius:2px;width:34px;height:30px;cursor:pointer}
+.gal-bar button:hover{background:var(--bg-nav-hover)}
+.gal-bar button[disabled]{opacity:.35;cursor:default}
+
+/* the empty frame */
+.wall{background:#2c3b33;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.025) 0 6px,transparent 6px 12px);padding:34px 16px 18px;display:flex;flex-direction:column;align-items:center;gap:14px}
+.frame{position:relative;width:min(78%,360px);padding:22px;background:linear-gradient(135deg,#8a6a2c,#e9cf86 22%,#9c7730 45%,#f3dc98 62%,#7d5d22 85%,#caa655);box-shadow:0 10px 24px rgba(0,0,0,.55),inset 0 0 0 3px rgba(60,40,10,.55),inset 0 0 0 7px rgba(255,236,170,.35)}
+.canvas{position:relative;aspect-ratio:965/1200;background:#2c3b33;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.025) 0 6px,transparent 6px 12px);box-shadow:inset 0 0 18px rgba(0,0,0,.7);overflow:hidden}
+.canvas img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease}
+.canvas .empty-note{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;font:italic 13px Georgia,serif;color:#c9d3cc;padding:0 12px;transition:opacity .5s}
+.canvas .pd{position:absolute;left:0;right:0;bottom:0;background:rgba(0,0,0,.6);color:#eee;font:10px var(--verdana);padding:4px 6px;opacity:0;transition:opacity .9s}
+.wall.show .canvas img,.wall.show .canvas .pd{opacity:1}
+.wall.show .empty-note{opacity:0}
+.wall .tap-pill{position:static;transform:none;animation:none}
+.wall .tap-pill.pulse{animation:blink 1.4s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){.strip{scroll-behavior:auto}.canvas img,.canvas .pd{transition:none}.shore-bar button.pulse,.wall .tap-pill.pulse{animation:none}}
+@media (max-width:560px){.strip img{height:min(52vh,380px)}.frame{padding:16px}}
+</style>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+
+<header class="top-bar" role="banner">
+  <div class="top-bar-inner">
+    <a href="/" class="top-bar-logo">joe<span>graham</span></a>
+    <nav class="top-bar-nav" aria-label="Primary navigation">
+      <a href="/portfolio.html">Portfolio</a>
+      <a href="/journal.html" class="active" aria-current="page">Journal</a>
+      <a href="/gear/">Gear</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+<aside class="side">
+  <div class="module mini-mod">
+    <div class="module-header">You Are Here</div>
+    <div class="map-wrap city mini">{{MINI}}</div>
+  </div>
+  <div class="module">
+    <div class="module-header">Jump To</div>
+    <div class="module-body">
+      <nav aria-label="Jump to a post">
+        <ul class="jump" id="jump">
+          <li><a href="#map"><span>1795 shoreline</span><span class="e" aria-hidden="true">🗺️</span></a></li>
+          <li><a href="#history"><span>History</span><span class="e" aria-hidden="true">📜</span></a></li>
+          <li><a href="#from-the-air"><span>From the air</span><span class="e" aria-hidden="true">✈️</span></a></li>
+          <li><a href="#seaport"><span>Seaport</span><span class="e" aria-hidden="true">🐋</span></a></li>
+          <li><a href="#seaport-eats"><span>Seaport eats</span><span class="e" aria-hidden="true">🦞</span></a></li>
+          <li><a href="#barking-crab"><span>Fort Point Channel</span><span class="e" aria-hidden="true">🦀</span></a></li>
+          <li><a href="#tea"><span>Why the tea went in</span><span class="e" aria-hidden="true">🫖</span></a></li>
+          <li><a href="#burying-ground"><span>Burying Ground</span><span class="e" aria-hidden="true">🪦</span></a></li>
+          <li><a href="#liberty-tree"><span>Liberty Tree</span><span class="e" aria-hidden="true">🌳</span></a></li>
+          <li><a href="#marshall-street"><span>Union Oyster House</span><span class="e" aria-hidden="true">🦪</span></a></li>
+          <li><a href="#copley"><span>Copley Square</span><span class="e" aria-hidden="true">⛪</span></a></li>
+          <li><a href="#bates-hall"><span>Bates Hall</span><span class="e" aria-hidden="true">📚</span></a></li>
+          <li><a href="#staircase"><span>The lions</span><span class="e" aria-hidden="true">🦁</span></a></li>
+          <li><a href="#cow"><span>Moodern Art</span><span class="e" aria-hidden="true">🐄</span></a></li>
+          <li><a href="#fenway"><span>Fenway Park</span><span class="e" aria-hidden="true">⚾</span></a></li>
+          <li><a href="#mfa"><span>The MFA</span><span class="e" aria-hidden="true">🖼️</span></a></li>
+          <li><a href="#nasturtiums"><span>Nasturtiums</span><span class="e" aria-hidden="true">🌼</span></a></li>
+          <li><a href="#the-theft"><span>The theft</span><span class="e" aria-hidden="true">🕵️</span></a></li>
+          <li><a href="#empty-frame"><span>The empty frame</span><span class="e" aria-hidden="true">🖼️</span></a></li>
+          <li><a href="#links"><span>Helpful links</span><span class="e" aria-hidden="true">🔗</span></a></li>
+          <li><a href="#sources"><span>Sources</span><span class="e" aria-hidden="true">📚</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</aside>
+
+<main class="feed">
+
+  <section class="module feed-head" aria-labelledby="h-top">
+    <div class="module-header">Joe's Journal <a href="/journal.html">All trips &raquo;</a></div>
+    <div class="module-body">
+      <div>
+        <h1 id="h-top">Boston</h1>
+        <p class="sub">The Seaport, the Freedom Trail, Back Bay, and the Fenway &middot; 2018, 2023, and 2025</p>
+        <p>Boston started as the Shawmut Peninsula, in the homeland of the Massachusett people, where English Puritans settled in 1630. A century and a half later, it was the town where colonists argued, then fought, over being taxed by a Parliament they had no vote in.</p>
+        <p>Then Boston kept building. It filled in its own harbor, opened a library free to all, and made fortunes in the China trade. The Freedom Trail tells the story of liberty. The photos here are the postcard. The small print under each one asks who got the liberty, who paid for it, and who made money along the way.</p>
+        <p>Tap a numbered pin on the map to jump to that stop.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="module" id="map" aria-labelledby="h-map">
+    <div class="module-header"><span id="h-map">The Route</span><span class="tod" style="font-weight:normal;color:#cde;font-size:10px">Today and 1795</span></div>
+    <div class="callout"><span class="try-ico" aria-hidden="true">🗺️</span><span><b>Interactive map.</b> Tap <b>1795</b> to see where the shoreline was twenty-two years after the Tea Party. Watch what happens to the Seaport and Copley Square.</span></div>
+    <div class="shore-bar">
+      <span class="seg" role="group" aria-label="Choose a shoreline">
+        <button type="button" id="shoreNow" aria-pressed="true">Today</button>
+        <button type="button" id="shoreThen" aria-pressed="false" class="pulse">1795</button>
+      </span>
+      <span class="sb-note" id="shoreNote" aria-live="polite">Showing today&rsquo;s shoreline.</span>
+    </div>
+    <div class="map-wrap city" id="shoreMap">{{MAP}}
+      <div class="legend" aria-hidden="true"><i class="l-then"></i>Land in 1795<br><i class="l-made"></i>Filled in since<br><i class="l-sea"></i>Water today</div>
+    </div>
+    <div class="map-cap">Shorelines for 1795 and 1995 come from a public Boston historic-shoreline GIS layer, and they are approximate. That layer counts salt marsh as land, so the Fens look solid in 1795. They were marsh until they were filled in the late 1800s. Pins are approximate. Tap a pin to jump to that stop.</div>
+    <div class="post-body">
+      <p class="lyric">In 1795, Copley Square, the library, and almost all of the Seaport were open water or tidal flats. Boston more than doubled the size of the original peninsula by filling in its own bays.</p>
+    </div>
+  </section>
+
+  <section class="module post" id="history" aria-labelledby="h-hist">
+    <div class="module-header"><span class="where">Some background</span><span class="tod">Before the stops</span></div>
+    <div class="post-body">
+      <h2 id="h-hist">Liberty, and who paid for it</h2>
+      <p>The short version: who had a vote, who paid, and who pushed back.</p>
+      <table class="facts"><caption>A short history of Boston</caption>
+        <tr><th>Before 1630</th><td>The Shawmut Peninsula, a small, nearly island piece of land in the homeland of the Massachusett.</td></tr>
+        <tr><th>1630</th><td>English Puritans settle the peninsula and name it Boston.</td></tr>
+        <tr><th>1675 and 1676</th><td>During King Philip&rsquo;s War, the colony holds somewhere between 500 and 1,100 Christian Native people on Deer Island in the harbor through the winter. Many do not survive.</td></tr>
+        <tr><th>1761</th><td>A girl of about seven arrives in Boston on the slave ship <i>Phillis</i>. The Wheatley family buys her and names her after the ship.</td></tr>
+        <tr><th>1765</th><td>The Stamp Act. A crowd hangs the stamp collector in effigy from a big elm. It becomes the Liberty Tree.</td></tr>
+        <tr><th>1768</th><td>Customs officials seize John Hancock&rsquo;s sloop <i>Liberty</i> on smuggling charges, and a riot follows.</td></tr>
+        <tr><th>1773</th><td>The Tea Act makes legal tea cheaper, not dearer. On December 16, about 340 chests go into the harbor.</td></tr>
+        <tr><th>1774</th><td>Parliament closes the port of Boston and ends much of Massachusetts&rsquo; self-government.</td></tr>
+        <tr><th>1790s to 1850</th><td>Boston merchants grow rich in the China trade, paying for tea with opium that China had banned.</td></tr>
+        <tr><th>1848</th><td>The Boston Public Library is founded, the first large free municipal library in the country.</td></tr>
+        <tr><th>1857 to 1900</th><td>The Back Bay and the Fens are filled in with gravel brought by train.</td></tr>
+        <tr><th>1898</th><td>More than 21,000 Hawaiians have signed petitions against annexation. Congress annexes Hawaiʻi anyway.</td></tr>
+        <tr><th>1945 and 1959</th><td>The Red Sox try out Jackie Robinson and sign no one. Fourteen years later they become the last major league team to field a Black player.</td></tr>
+        <tr><th>1990</th><td>Thieves take 13 works from the Isabella Stewart Gardner Museum. None have been recovered.</td></tr>
+        <tr><th>2017 and 2018</th><td>The Boston Globe reports that the Seaport, built with more than $18 billion in public money, is 89 percent white. The next year, Yawkey Way goes back to being Jersey Street.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#history">Link to this post</a></div>
+  </section>
+
+  <article class="module post" id="from-the-air" aria-labelledby="h-air">
+    <div class="module-header"><span class="where">Over Boston Harbor</span><span class="tod">2018, early afternoon</span></div>
+    <figure class="post-photo"><img src="img/harbor-from-above.jpg" width="1500" height="844" alt="Looking down from a plane window at a gray bay, a peninsula of houses, salt marsh and a winding river in the foreground, a long curving beach on the right, and low islands on the hazy horizon."></figure>
+    <div class="post-body">
+      <h2 id="h-air">Coming in over the harbor</h2>
+      <p>A window seat, a low cloud ceiling, and the whole south side of the harbor laid out like a map, with the Harbor Islands lined up on the horizon.</p>
+      <p class="lyric">In the fall of 1675, the colony rounded up Native people who had converted to Christianity and shipped them out to Deer Island, in this harbor, with little food or shelter for the winter. Many did not live to see spring.</p>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#from-the-air">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="seaport" data-pin="1" aria-labelledby="h-sea">
+    <div class="module-header"><span class="where"><span class="pin-badge">1</span>Seaport</span><span class="tod">2023, morning</span></div>
+    <figure class="post-photo"><img src="img/seaport-whales.jpg" width="844" height="1500" loading="lazy" alt="A sidewalk utility box painted with a gray humpback whale and her calf swimming across a yellow sun, over a pattern of blue, orange, and dark gray shapes."></figure>
+    <div class="post-body">
+      <h2 id="h-sea">Whale on the sidewalk</h2>
+      <p>A humpback and her calf, painted on a utility box. The Seaport&rsquo;s street art knows where it is.</p>
+      <p class="lyric">This neighborhood started as clam flats and tidal marsh. In 1869, the state put up $5 million in bonds to help railroad companies fill it in.</p>
+      <table class="facts"><caption>Seaport quick facts</caption>
+        <tr><th>Where</th><td>South Boston&rsquo;s waterfront, across the Fort Point Channel from downtown.</td></tr>
+        <tr><th>Made land</th><td>Almost all of it. Toggle the map above to 1795 and it is under water.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#seaport">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="seaport-eats" data-pin="1" aria-labelledby="h-eats">
+    <div class="module-header"><span class="where"><span class="pin-badge">1</span>Seaport and Fort Point</span><span class="tod">2023 and 2025</span></div>
+    <div class="gal" role="region" aria-label="Photo gallery: eating around the Seaport, 4 photos">
+      <div class="strip" tabindex="0">
+        <figure><img src="img/cocorico-croissant.jpg" width="844" height="1500" loading="lazy" alt="A bright red almond croissant striped with red icing and dusted with powdered sugar, on a bakery wrapper printed Cocorico, with a coffee cup behind it."><figcaption>Breakfast: a red almond croissant, dusted and drizzled.</figcaption></figure>
+        <figure><img src="img/yankee-lobster-mac.jpg" width="844" height="1500" loading="lazy" alt="Lobster mac and cheese in a foil tin with a browned, crumb-topped crust, big pieces of lobster, and a black plastic spoon digging in."><figcaption>Lobster mac and cheese at Yankee Lobster, straight out of the tin.</figcaption></figure>
+        <figure><img src="img/citrus-salt-ceiling.jpg" width="1125" height="1500" loading="lazy" alt="Looking up at a restaurant ceiling covered in pink and magenta flowers, with round crystal chandeliers hanging from it."><figcaption>Look up at Citrus &amp; Salt: a whole ceiling of pink flowers and crystal.</figcaption></figure>
+        <figure><img src="img/white-chocolate-cup.jpg" width="844" height="1500" loading="lazy" alt="A hand holding a white chocolate candy cup topped with a small chocolate bow, in front of a blurry window view of city buildings."><figcaption>Dessert, with a view out the window.</figcaption></figure>
+      </div>
+      <div class="gal-bar"><button type="button" class="gal-prev" aria-label="Previous photo">&lsaquo;</button><span class="gal-n" aria-live="polite">1 of 4</span><button type="button" class="gal-next" aria-label="Next photo">&rsaquo;</button></div>
+    </div>
+    <div class="post-body">
+      <h2 id="h-eats">Seaport eats</h2>
+      <p>Pastry, lobster, and a ceiling you can&rsquo;t stop looking at. The Seaport eats well.</p>
+      <p class="lyric">By 2017, more than $18 billion in public money had gone into the Seaport, from the harbor cleanup to the airport tunnel. The Boston Globe found a neighborhood that was 89 percent white and 3 percent Black.</p>
+      <table class="facts"><caption>From these stops</caption>
+        <tr><th>Yankee Lobster</th><td>The Zanti family started a lobster business in the North End in 1950. They opened Yankee Lobster on Northern Avenue in 2000.</td></tr>
+        <tr><th>Citrus &amp; Salt</th><td>Chef Jason Santos&rsquo;s beachy Mexican restaurant. It moved from Back Bay to Fort Point in 2024.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#seaport-eats">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="barking-crab" data-pin="2" aria-labelledby="h-crab">
+    <div class="module-header"><span class="where"><span class="pin-badge">2</span>Fort Point Channel</span><span class="tod">2025, dusk</span></div>
+    <figure class="post-photo"><img src="img/barking-crab.jpg" width="844" height="1500" loading="lazy" alt="The red wooden Barking Crab restaurant at dusk, lit by a blue light, with a tall mast hung with buoys and a string of lights against a deep blue sky."></figure>
+    <div class="post-body">
+      <h2 id="h-crab">Blue hour at the Barking Crab</h2>
+      <p>A red shack on the water, a mast full of buoys, and the sky going dark blue behind it.</p>
+      <p class="lyric">A two-minute walk away, the Tea Party ships float in the same channel. The real Griffin&rsquo;s Wharf, where the tea went over the side, is now under dry land a few blocks inland.</p>
+      <table class="facts"><caption>Fort Point Channel quick facts</caption>
+        <tr><th>The Barking Crab</th><td>Opened in 1994 as an outdoor summer spot on the channel, then grew into a year-round restaurant.</td></tr>
+        <tr><th>Next door</th><td>The Boston Tea Party Ships &amp; Museum, with replica tea ships, on the Congress Street Bridge.</td></tr>
+        <tr><th>Griffin&rsquo;s Wharf</th><td>Stood near the foot of what is now Pearl Street, by today&rsquo;s Atlantic Avenue.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#barking-crab">Link to this post</a></div>
+  </article>
+
+  <section class="module post status" id="tea" data-pin="2" aria-labelledby="h-tea">
+    <div class="module-header"><span class="where"><span class="pin-badge">2</span>Status update</span><span class="tod">December 16, 1773</span></div>
+    <div class="post-body">
+      <h2 id="h-tea">Why the tea went in the water 🫖</h2>
+      <p>Here is the part the gift shop skips: the Tea Act did not make tea more expensive. It made legal tea <b>cheaper</b>.</p>
+      <p>By 1773, most of the tea Americans drank was smuggled Dutch tea, about 86 percent of it. The Tea Act let the East India Company ship straight to the colonies and cut out the middlemen, so taxed, legal tea would sell for about 2 shillings a pound, a penny under the smuggled kind. The black market was about to lose its price advantage.</p>
+      <p>The people with the most to lose were the smugglers and the merchants who hadn&rsquo;t been picked to sell the Company&rsquo;s tea. Wealthy smugglers such as John Hancock were among them. One of the three tea ships, the <i>Eleanor</i>, belonged to a Boston merchant who was himself a smuggler.</p>
+      <p>The principle was real too. Parliament kept a tax of three pence a pound, and the colonists had no vote in Parliament. Historians still argue about the mix of principle and profit. Both were on the wharf that night.</p>
+      <p class="lyric">Boston&rsquo;s merchants didn&rsquo;t give up on tea. Within a generation, firms like Perkins &amp; Company were paying for it by smuggling opium into China, which had banned it. Those fortunes helped build the Perkins School for the Blind, Massachusetts General Hospital, and the Boston Athenaeum.</p>
+      <table class="facts"><caption>The Tea Party by the numbers</caption>
+        <tr><th>The meeting</th><td>5,000 to 7,000 people crowded into Old South Meeting House, about a third of the town. The usual property rules for town meetings were dropped, so laborers, sailors, and apprentices were in the room.</td></tr>
+        <tr><th>The ships</th><td><i>Dartmouth</i>, <i>Eleanor</i>, and <i>Beaver</i>.</td></tr>
+        <tr><th>The tea</th><td>340 chests (342 in the old newspaper count), 92,616 pounds, valued by the East India Company at &pound;9,659.</td></tr>
+        <tr><th>How long</th><td>About three hours. A padlock broken along the way was replaced.</td></tr>
+        <tr><th>The disguises</th><td>A few men dressed as Mohawks. Most didn&rsquo;t bother.</td></tr>
+        <tr><th>The bill</th><td>Parliament closed the port of Boston in 1774.</td></tr>
+      </table>
+      <a class="linkcard" href="/journal/big-island/#history"><span class="lc-ico" aria-hidden="true">🌺</span><span><b>Taxation without a vote, again.</b> In 1898, the same country annexed Hawaiʻi over the petitions of more than 21,000 Hawaiians. See the history on the Big Island trip.</span></a>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#tea">Link to this post</a></div>
+  </section>
+
+  <article class="module post" id="burying-ground" data-pin="3" aria-labelledby="h-bury">
+    <div class="module-header"><span class="where"><span class="pin-badge">3</span>Central Burying Ground, Boston Common</span><span class="tod">2018, afternoon</span></div>
+    <figure class="post-photo"><img src="img/central-burying-ground.jpg" width="1500" height="844" loading="lazy" alt="Rows of old slate headstones in green grass under tall bare trees, with a dirt path running through the middle and brick buildings beyond."></figure>
+    <div class="post-body">
+      <h2 id="h-bury">Slate and bare trees</h2>
+      <p>Early spring on the Common, before the leaves, when you can see every headstone.</p>
+      <p class="lyric">Samuel Sprague, one of the men who dumped the tea, is buried here. So are British soldiers who died during the occupation of Boston that followed.</p>
+      <table class="facts"><caption>Central Burying Ground quick facts</caption>
+        <tr><th>Opened</th><td>1756, on the Boylston Street side of Boston Common.</td></tr>
+        <tr><th>Also here</th><td>Gilbert Stuart, who painted the portrait of George Washington on the one-dollar bill, and William Billings, who wrote the Revolutionary hymn &ldquo;Chester.&rdquo;</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#burying-ground">Link to this post</a></div>
+  </article>
+
+  <section class="module post status" id="liberty-tree" data-pin="4" aria-labelledby="h-tree">
+    <div class="module-header"><span class="where"><span class="pin-badge">4</span>The Liberty Tree site</span><span class="tod">Washington and Essex Streets</span></div>
+    <div class="post-body">
+      <h2 id="h-tree">The tree that isn&rsquo;t there 🌳</h2>
+      <p>No photo for this one. There hasn&rsquo;t been a tree to photograph since 1775.</p>
+      <p>It was a big elm on Orange Street, now Washington Street, planted around 1646. On August 14, 1765, Bostonians woke up to find an effigy of Andrew Oliver, the man picked to collect the new stamp tax, hanging from it. By December, Oliver had resigned, reportedly under the same tree. When the Stamp Act was repealed, people hung a copper sign on it that said Liberty Tree, and 150 lanterns.</p>
+      <p>It stayed the place to protest. In November 1773, crowds gathered here to demand that the tea consignees resign in public. Two of them were the governor&rsquo;s sons. In 1775, during the occupation, British soldiers cut the tree down for firewood. It made 14 cords.</p>
+      <p class="lyric">Town meeting had property rules for who could vote. The tree didn&rsquo;t. Anyone could stand under it.</p>
+      <table class="facts"><caption>The Liberty Tree today</caption>
+        <tr><th>The marker</th><td>A carved plaque from 1850, on the building at the corner of Washington and Essex Streets.</td></tr>
+        <tr><th>The plaza</th><td>Liberty Tree Plaza opened on the spot in 2018. Pipes and wires underground mean a new tree can&rsquo;t be planted there.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#liberty-tree">Link to this post</a></div>
+  </section>
+
+  <article class="module post" id="marshall-street" data-pin="5" aria-labelledby="h-oyster">
+    <div class="module-header"><span class="where"><span class="pin-badge">5</span>Marshall Street and the Union Oyster House</span><span class="tod">2023, evening</span></div>
+    <figure class="post-photo"><img src="img/marshall-street.jpg" width="844" height="1500" loading="lazy" alt="A narrow cobblestone lane between old brick buildings with gas-style lamps and American flags, leading to a red Union Oyster House sign, with modern towers rising behind it in evening light."></figure>
+    <div class="post-body">
+      <h2 id="h-oyster">Cobblestones and a red sign</h2>
+      <p>Old brick, cobblestones, and a neon oyster house sign, with the glass towers of downtown stacked up behind.</p>
+      <p class="lyric">During the Revolution, Ebenezer Hancock paid the Continental Army out of this building. His brother John is the one with the famous signature, and the one whose sloop was seized for smuggling in 1768.</p>
+      <table class="facts"><caption>Union Oyster House quick facts</caption>
+        <tr><th>The building</th><td>Finished around 1716.</td></tr>
+        <tr><th>The restaurant</th><td>Serving since October 7, 1826, the oldest continuously operating restaurant known in the country. It turns 200 on October 7, 2026.</td></tr>
+        <tr><th>Upstairs</th><td>Isaiah Thomas printed his newspaper, the <i>Massachusetts Spy</i>, here in 1771. In 1796 the future King Louis Philippe of France lived upstairs in exile and taught French.</td></tr>
+        <tr><th>Regulars</th><td>Daniel Webster, known for putting away at least six plates of oysters.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#marshall-street">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="copley" data-pin="6" aria-labelledby="h-copley">
+    <div class="module-header"><span class="where"><span class="pin-badge">6</span>Copley Square</span><span class="tod">2023, night</span></div>
+    <figure class="post-photo"><img src="img/copley-night.jpg" width="844" height="1500" loading="lazy" alt="Copley Square at night: a row of blue rental bikes in a docking station in the foreground, and the tall stone bell tower of Old South Church lit against a deep blue sky."></figure>
+    <div class="post-body">
+      <h2 id="h-copley">Blue hour, blue bikes</h2>
+      <p>Old South Church&rsquo;s bell tower lit up over Boylston Street, and a row of Bluebikes waiting for morning.</p>
+      <p class="lyric">Phillis Wheatley belonged to this congregation. In September 1773, her book of poems came out in London while she was still enslaved in Boston. She was freed that fall, a few weeks before the tea went in the harbor.</p>
+      <table class="facts"><caption>Old South Church quick facts</caption>
+        <tr><th>The congregation</th><td>Founded in 1669. It met at Old South Meeting House, where the Tea Party meeting was held, and moved here in 1875.</td></tr>
+        <tr><th>The ground</th><td>Freshly filled land. In 1773 this spot was part of the Back Bay.</td></tr>
+        <tr><th>The tower</th><td>246 feet tall.</td></tr>
+        <tr><th>Its treasure</th><td>One of eleven surviving first editions of the Bay Psalm Book, printed in 1640, the first book printed in what became the United States.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#copley">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="bates-hall" data-pin="6" aria-labelledby="h-bates">
+    <div class="module-header"><span class="where"><span class="pin-badge">6</span>Boston Public Library</span><span class="tod">2023, midday</span></div>
+    <figure class="post-photo"><img src="img/bates-hall.jpg" width="844" height="1500" loading="lazy" alt="Bates Hall, a long reading room with a coffered barrel-vaulted ceiling, arched windows, and rows of wooden tables with green reading lamps, with people reading."></figure>
+    <div class="post-body">
+      <h2 id="h-bates">Green lamps, all the way down</h2>
+      <p>Bates Hall: a barrel-vaulted reading room with a whole runway of green lamps. You can walk in and sit down.</p>
+      <p class="lyric">Carved over the front door: FREE TO ALL. The money that started the library came from Joshua Bates, a Massachusetts-born banker in London, who asked for exactly that.</p>
+      <table class="facts"><caption>Boston Public Library quick facts</caption>
+        <tr><th>Founded</th><td>1848, the first large free municipal library in the United States. It opened in 1854 in a former schoolhouse.</td></tr>
+        <tr><th>This building</th><td>Designed by Charles Follen McKim and opened in 1895. McKim called it a &ldquo;palace for the people.&rdquo;</td></tr>
+        <tr><th>The name</th><td>Bates Hall honors Joshua Bates, who gave $50,000 in 1852 and $50,000 more for books.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#bates-hall">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="staircase" data-pin="6" aria-labelledby="h-stairs">
+    <div class="module-header"><span class="where"><span class="pin-badge">6</span>Boston Public Library</span><span class="tod">A few minutes later</span></div>
+    <figure class="post-photo"><img src="img/bpl-staircase.jpg" width="1500" height="845" loading="lazy" alt="The library's grand staircase of golden marble, with two marble lions on pedestals, a crystal chandelier, arched windows, and large pale blue murals on the walls."></figure>
+    <div class="post-body">
+      <h2 id="h-stairs">Two lions on the stairs</h2>
+      <p>Golden marble, a chandelier, murals, and a pair of lions keeping watch on the landing.</p>
+      <p class="lyric">The lions are a war memorial. They honor the 2nd and 20th Massachusetts, two Union regiments from the Civil War.</p>
+      <table class="facts"><caption>The grand staircase</caption>
+        <tr><th>The lions</th><td>By Louis Saint-Gaudens, left unpolished. Veterans of the two regiments liked them that way.</td></tr>
+        <tr><th>The murals</th><td>Pierre Puvis de Chavannes, <i>The Muses of Inspiration Hail the Spirit, the Harbinger of Light</i>. His only murals on display outside France.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#staircase">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="cow" data-pin="6" aria-labelledby="h-cow">
+    <div class="module-header"><span class="where"><span class="pin-badge">6</span>Outside the library</span><span class="tod">2023, midday</span></div>
+    <figure class="post-photo"><img src="img/moodern-art-cow.jpg" width="1500" height="845" loading="lazy" alt="A life-size fiberglass cow painted blue and covered in portraits of artists, including Pablo Picasso, Frida Kahlo with a monkey, and Yayoi Kusama in polka dots, standing on a gray base on a brick sidewalk."></figure>
+    <div class="post-body">
+      <h2 id="h-cow">Moo-dern art</h2>
+      <p>Picasso, Frida Kahlo, and Yayoi Kusama, all riding on one cow outside the library.</p>
+      <table class="facts"><caption>About this cow</caption>
+        <tr><th>The title</th><td><i>Moodern Art</i>, by Barbara Johansen Newman, a cow full of her favorite artists of the last hundred years.</td></tr>
+        <tr><th>The herd</th><td>CowParade New England, 2023: 75 painted cows around Boston for the 75th anniversary of the Jimmy Fund, which raises money for cancer care at Dana-Farber.</td></tr>
+        <tr><th>Where they went</th><td>The cows were sold or auctioned off at the end of the summer.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#cow">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="fenway" data-pin="7" aria-labelledby="h-fenway">
+    <div class="module-header"><span class="where"><span class="pin-badge">7</span>Fenway Park</span><span class="tod">2023, afternoon</span></div>
+    <figure class="post-photo"><img src="img/jersey-street.jpg" width="844" height="1500" loading="lazy" alt="Jersey Street beside Fenway Park's green steel facade, with a Welcome to Fenway Park banner over the street, orange traffic cones, and the Prudential Tower rising in the distance under a blue sky."></figure>
+    <div class="post-body">
+      <h2 id="h-fenway">Welcome to Fenway Park</h2>
+      <p>Green steel, a welcome banner, and the Pru standing over the ballpark on a clear summer afternoon.</p>
+      <p class="lyric">Until 2018, this was Yawkey Way, named for the owner whose Red Sox tried out Jackie Robinson here in 1945 and signed no one. In 1959 they became the last major league team to put a Black player on the field.</p>
+      <table class="facts"><caption>Fenway Park quick facts</caption>
+        <tr><th>Opened</th><td>April 20, 1912. It is the oldest ballpark in the majors still in use.</td></tr>
+        <tr><th>The ground</th><td>The Fenway neighborhood was made in the late 1800s by filling in marsh, the Fens.</td></tr>
+        <tr><th>The Green Monster</th><td>The left field wall, about 37 feet tall, painted green in 1947.</td></tr>
+        <tr><th>The first</th><td>Pumpsie Green, the first Black player for the Red Sox, debuted on July 21, 1959.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#fenway">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="mfa" data-pin="8" aria-labelledby="h-mfa">
+    <div class="module-header"><span class="where"><span class="pin-badge">8</span>Museum of Fine Arts</span><span class="tod">2018, evening</span></div>
+    <figure class="post-photo"><img src="img/mfa-rotunda.jpg" width="844" height="1500" loading="lazy" alt="Joe, bearded, taking a selfie in a mirrored surface while holding up his phone, under the MFA rotunda's painted ceiling of round and arched murals framed in cream and gold."></figure>
+    <div class="post-body">
+      <h2 id="h-mfa">Me and Sargent</h2>
+      <p>A mirror selfie under John Singer Sargent&rsquo;s painted ceiling in the MFA rotunda.</p>
+      <p class="lyric">Sargent painted Isabella Stewart Gardner in 1888. The portrait set Boston gossiping, and her husband asked her not to show it in public again while he was alive. It hung in a gallery she kept private.</p>
+      <table class="facts"><caption>The rotunda quick facts</caption>
+        <tr><th>The murals</th><td>Painted by Sargent from 1916 to 1925. The rotunda was unveiled in 1921, and the last pieces went up after his death.</td></tr>
+        <tr><th>The building</th><td>The MFA moved here, to Huntington Avenue, in 1909.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#mfa">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="nasturtiums" data-pin="9" aria-labelledby="h-nast">
+    <div class="module-header"><span class="where"><span class="pin-badge">9</span>Isabella Stewart Gardner Museum</span><span class="tod">2023, afternoon</span></div>
+    <figure class="post-photo"><img src="img/gardner-courtyard.jpg" width="844" height="1500" loading="lazy" alt="The Gardner Museum's glass-roofed courtyard, built like a Venetian palace, with pink walls, arched windows and balconies, tree ferns, statues, and beds of orange and purple flowers. Long orange nasturtium vines hang from balconies on both sides."></figure>
+    <div class="post-body">
+      <h2 id="h-nast">The nasturtiums are in</h2>
+      <p>A Venetian palace courtyard under a glass roof, in full spring bloom. Look at the balconies on both sides: those long orange ribbons are the hanging nasturtiums.</p>
+      <table class="facts"><caption>The hanging nasturtiums</caption>
+        <tr><th>The tradition</th><td>Isabella Stewart Gardner started it, to celebrate her birthday on April 14.</td></tr>
+        <tr><th>How long it takes</th><td>About nine months. The vines start from seed in June and are trained in the museum&rsquo;s greenhouses all winter.</td></tr>
+        <tr><th>How long they get</th><td>Up to about 20 feet. The longest has hung around 25.</td></tr>
+        <tr><th>When to go</th><td>They hang for about three weeks, from late March into April.</td></tr>
+        <tr><th>The museum</th><td>Opened in 1903, with the collection arranged by Gardner herself.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#nasturtiums">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="the-theft" data-pin="9" aria-labelledby="h-theft">
+    <div class="module-header"><span class="where"><span class="pin-badge">9</span>Isabella Stewart Gardner Museum</span><span class="tod">A few minutes later, upstairs</span></div>
+    <figure class="post-photo"><img src="img/gardner-from-above.jpg" width="844" height="1500" loading="lazy" alt="Looking down into the Gardner courtyard from an upper floor through tall, leafy plants, with sunlight pouring through the glass roof onto pink arched walls."></figure>
+    <div class="post-body">
+      <h2 id="h-theft">A jungle under glass</h2>
+      <p>From the upper galleries, the courtyard disappears behind leaves and sunlight.</p>
+      <p class="lyric">At 1:24 in the morning on March 18, 1990, two men dressed as police officers were let in by the night guards. They stayed 81 minutes and left with 13 works. Nobody has been charged, and none of the art has come back.</p>
+      <table class="facts"><caption>The Gardner theft</caption>
+        <tr><th>What was taken</th><td>Vermeer&rsquo;s <i>The Concert</i>, three works by Rembrandt, including his only seascape, Manet&rsquo;s <i>Chez Tortoni</i>, five drawings by Degas, a work by Govert Flinck, a Chinese bronze beaker, and a bronze eagle that once topped a Napoleonic flagpole.</td></tr>
+        <tr><th>Worth</th><td>The FBI has estimated $200 million to $600 million. <i>The Concert</i> alone has been valued at about $250 million.</td></tr>
+        <tr><th>The reward</th><td>$10 million, from the museum, for information that leads to the art.</td></tr>
+        <tr><th>Why the frames are empty</th><td>Gardner&rsquo;s will says the collection can&rsquo;t be significantly changed. The frames stay on the walls, waiting.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#the-theft">Link to this post</a></div>
+  </article>
+
+  <article class="module post" id="empty-frame" data-pin="9" aria-labelledby="h-frame">
+    <div class="module-header"><span class="where"><span class="pin-badge">9</span>The Dutch Room</span><span class="tod">Empty since 1990</span></div>
+    <div class="callout"><span class="try-ico" aria-hidden="true">🖼️</span><span><b>Interactive.</b> Tap the button to see what used to hang in this frame. Tap again to put the frame back the way it hangs today.</span></div>
+    <div class="wall" id="frameWall">
+      <div class="frame">
+        <div class="canvas">
+          <span class="empty-note">Empty since March 18, 1990</span>
+          <img src="img/rembrandt-storm.jpg" width="965" height="1200" loading="lazy" alt="Rembrandt's Christ in the Storm on the Sea of Galilee: a small fishing boat heeling over on a huge dark wave, its sail torn, disciples struggling with ropes while Christ sits calmly in the stern, with light breaking through storm clouds above.">
+          <span class="pd">Rembrandt, 1633. Public domain image via Wikimedia Commons.</span>
+        </div>
+      </div>
+      <button type="button" class="tap-pill pulse" id="frameBtn" aria-pressed="false">🖼️ Show what hung here</button>
+    </div>
+    <div class="post-body">
+      <h2 id="h-frame">Christ in the Storm on the Sea of Galilee</h2>
+      <p>This is one of my favorite paintings in all of art history. A tiny boat, a wall of water, and light breaking through right where it needs to. It would be lovely to see it in person one day. For now, you can see the frame.</p>
+      <p class="lyric">It is Rembrandt&rsquo;s only known seascape. He painted himself into the boat: the one man looking straight out at you. The thieves cut the canvas out of its frame.</p>
+      <table class="facts"><caption>The painting</caption>
+        <tr><th>Painted</th><td>1633, oil on canvas, about 5 feet tall.</td></tr>
+        <tr><th>Bought</th><td>For Isabella Stewart Gardner in 1898, through the art historian Bernard Berenson, for $6,000.</td></tr>
+        <tr><th>Where it hung</th><td>The Dutch Room, on the museum&rsquo;s second floor.</td></tr>
+        <tr><th>Seen it?</th><td>Call the museum&rsquo;s tip line, listed on its theft page. The reward still stands.</td></tr>
+      </table>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#empty-frame">Link to this post</a></div>
+  </article>
+
+  <section class="module post" id="links" aria-labelledby="h-links">
+    <div class="module-header"><span class="where">Helpful links</span><span class="tod">Go deeper</span></div>
+    <div class="post-body">
+      <h2 id="h-links">Keep exploring</h2>
+      <ul class="hl">
+        <li><a href="https://www.masshist.org/revolution/teaparty.php"><b>Massachusetts Historical Society: the Tea Party</b></a><span>Letters, newspapers, and documents from 1773.</span></li>
+        <li><a href="https://revolutionaryspaces.org/legacy-liberty-tree/"><b>Revolutionary Spaces: the Liberty Tree</b></a><span>The tree, the protests, and the plaza on the site today.</span></li>
+        <li><a href="https://www.historysource.org/history-source-sets/opium-and-us-trade-china"><b>Opium Smugglers: Boston&rsquo;s Merchants and the China Trade</b></a><span>Primary sources from the Massachusetts Historical Society.</span></li>
+        <li><a href="https://www.leventhalmap.org/articles/where-the-water-was/"><b>Leventhal Map &amp; Education Center: Where the Water Was</b></a><span>How Boston filled in its harbor, with the maps.</span></li>
+        <li><a href="https://www.bpl.org/bpl-history/"><b>Boston Public Library history</b></a><span>How the first big free city library started.</span></li>
+        <li><a href="https://apps.bostonglobe.com/spotlight/boston-racism-image-reality/series/seaport/"><b>Boston Globe Spotlight: the Seaport</b></a><span>Who the newest neighborhood was built for.</span></li>
+        <li><a href="https://www.gardnermuseum.org/experience/courtyard/nasturtiums"><b>Gardner Museum: Hanging Nasturtiums</b></a><span>When the vines are up this year.</span></li>
+        <li><a href="https://www.gardnermuseum.org/about/theft-story"><b>Gardner Museum: the theft</b></a><span>The stolen works, the reward, and how to send a tip.</span></li>
+        <li><a href="https://www.nps.gov/places/deer-island.htm"><b>Deer Island (NPS)</b></a><span>The internment of 1675 and 1676.</span></li>
+      </ul>
+    </div>
+    <div class="post-foot"><span></span><a class="permalink" href="#links">Link to this post</a></div>
+  </section>
+
+  <section class="module post" id="sources" aria-labelledby="h-src">
+    <div class="module-header"><span class="where">Sources</span></div>
+    <div class="post-body">
+      <h2 id="h-src">Where the facts came from</h2>
+      <ol class="sources">
+        <li><a href="https://en.wikipedia.org/wiki/Tea_Act">Wikipedia: Tea Act</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Boston_Tea_Party">Wikipedia: Boston Tea Party</a></li>
+        <li><a href="https://www.masshist.org/revolution/teaparty.php">Massachusetts Historical Society: Coming of the American Revolution, the Boston Tea Party</a></li>
+        <li><a href="https://www.encyclopedia.com/history/united-states-and-canada/us-history/boston-tea-party">Encyclopedia.com: Boston Tea Party (1773)</a></li>
+        <li><a href="https://www.sec.state.ma.us/divisions/commonwealth-museum/exhibits/online/the_boston_tea_party/the_boston_tea_party_10.htm">Commonwealth Museum: Road to Revolution, the Body of the People</a></li>
+        <li><a href="https://www.bostonteapartyship.com/the-body-of-the-people">Boston Tea Party Ships &amp; Museum: The Body of the People</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Liberty_Affair">Wikipedia: Liberty Affair</a></li>
+        <li><a href="https://guides.bpl.org/c.php?g=800717&amp;p=10389851">Boston Public Library research guide: 1768, the Liberty Affair</a></li>
+        <li><a href="https://revolutionaryspaces.org/legacy-liberty-tree/">Revolutionary Spaces: The Liberty Tree</a></li>
+        <li><a href="https://www.masshist.org/beehiveblog/2024/08/the-259th-anniversary-of-bostons-liberty-tree/">Massachusetts Historical Society: The 259th anniversary of Boston&rsquo;s Liberty Tree</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Liberty_Tree">Wikipedia: Liberty Tree</a></li>
+        <li><a href="https://www.historysource.org/history-source-sets/opium-and-us-trade-china">MHS History Source: Opium Smugglers, Boston&rsquo;s Merchants and the China Trade, 1790 to 1850</a></li>
+        <li><a href="https://www.nps.gov/places/deer-island.htm">NPS: Deer Island</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Praying_town">Wikipedia: Praying town</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Shawmut_Peninsula">Wikipedia: Shawmut Peninsula</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Phillis_Wheatley">Wikipedia: Phillis Wheatley</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Old_South_Church">Wikipedia: Old South Church</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Central_Burying_Ground,_Boston">Wikipedia: Central Burying Ground</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Union_Oyster_House">Wikipedia: Union Oyster House</a></li>
+        <li><a href="https://www.boston.com/food/restaurants/2026/07/03/union-oyster-house-americas-oldest-restaurant/">Boston.com: Union Oyster House turns 200</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Back_Bay,_Boston">Wikipedia: Back Bay</a></li>
+        <li><a href="https://www.leventhalmap.org/articles/where-the-water-was/">Leventhal Map &amp; Education Center: Where the Water Was</a></li>
+        <li><a href="https://services1.arcgis.com/KUeKSLlMUcWvuPRM/arcgis/rest/services/Boston_Historic_Shoreline/FeatureServer">Boston Historic Shoreline GIS layer (ArcGIS Online), 1795 and 1995 shorelines used for the map</a></li>
+        <li><a href="https://apps.bostonglobe.com/spotlight/boston-racism-image-reality/series/seaport/">Boston Globe Spotlight: A brand new Boston, even whiter than the old (2017)</a></li>
+        <li><a href="https://yankeelobstercompany.com/about/">Yankee Lobster Company: About</a></li>
+        <li><a href="https://www.bostonmagazine.com/restaurants/2024/05/03/citrus-salt-seaport-boston/">Boston Magazine: Citrus &amp; Salt relocates to the Seaport</a></li>
+        <li><a href="https://barkingcrab.com/boston_about_us/">The Barking Crab: History</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Congress_Street_Bridge_(Boston)">Wikipedia: Congress Street Bridge</a></li>
+        <li><a href="https://www.bpl.org/bpl-history/">Boston Public Library: BPL History</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Boston_Public_Library,_McKim_Building">Wikipedia: Boston Public Library, McKim Building</a></li>
+        <li><a href="https://www.wbur.org/news/2016/09/02/bpl-lions-history">WBUR: The history behind the lion sculptures at the Boston Public Library</a></li>
+        <li><a href="https://www.bpl.org/central-library-points-of-interest/">Boston Public Library: Central Library points of interest</a></li>
+        <li><a href="https://danafarberimpact.org/2023/11/cowparade-new-england-mooves-the-needle/">Dana-Farber Impact: CowParade New England mooves the needle</a></li>
+        <li><a href="https://bostoday.6amcity.com/culture/cowparade-new-england-2023">BOStoday: Why 75 colorful cows are moving around Boston</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Fenway_Park">Wikipedia: Fenway Park</a></li>
+        <li><a href="https://sabr.org/journal/article/jackie-robinson-in-1945-from-boston-tryout-to-a-negro-leagues-star/">SABR: Jackie Robinson in 1945, from Boston tryout to Negro Leagues star</a></li>
+        <li><a href="https://sabr.org/gamesproj/game/july-21-1959-pumpsie-green-makes-his-debut-with-boston-red-sox/">SABR: July 21, 1959, Pumpsie Green makes his debut</a></li>
+        <li><a href="https://www.npr.org/2018/04/26/605851052/boston-red-sox-want-to-strike-former-owners-name-off-street-sign">NPR: Yawkey Way renamed (2018)</a></li>
+        <li><a href="https://www.mfa.org/news/sargent-boston-ties">Museum of Fine Arts: Ties that bind, Boston and John Singer Sargent</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Museum_of_Fine_Arts,_Boston">Wikipedia: Museum of Fine Arts, Boston</a></li>
+        <li><a href="https://www.gardnermuseum.org/blog/story-behind-john-singer-sargents-portrait-isabella-stewart-gardner">Gardner Museum: The story behind Sargent&rsquo;s portrait of Isabella Stewart Gardner</a></li>
+        <li><a href="https://newenglandhistoricalsociety.com/john-singer-sargent-isabella-stewart-gardner/">New England Historical Society: John Singer Sargent and Isabella Stewart Gardner</a></li>
+        <li><a href="https://www.gardnermuseum.org/experience/courtyard/nasturtiums">Gardner Museum: Hanging Nasturtiums</a></li>
+        <li><a href="https://www.wbur.org/news/2024/03/30/isabella-stewart-gardner-museum-nasturtiums-2024-behind-the-scenes-growth-newsletter">WBUR: What it takes to grow the Gardner Museum&rsquo;s nasturtiums</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Isabella_Stewart_Gardner">Wikipedia: Isabella Stewart Gardner</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Isabella_Stewart_Gardner_Museum_theft">Wikipedia: Isabella Stewart Gardner Museum theft</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/The_Storm_on_the_Sea_of_Galilee">Wikipedia: The Storm on the Sea of Galilee</a></li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg">Wikimedia Commons: Rembrandt, Christ in the Storm on the Lake of Galilee (public domain image)</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/K%C5%AB%CA%BB%C4%93_Petitions">Wikipedia: Kūʻē Petitions</a></li>
+      </ol>
+      <p class="checked">Details checked September 2026. Hours, exhibits, and the nasturtium dates change every year, so check with each place before you go.</p>
+      <p style="margin-top:10px"><a href="/journal.html"><b>More trips &raquo;</b></a><br><a href="/portfolio.html"><b>See the portfolio &raquo;</b></a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer>&copy; 2026 Joe Graham &middot; <a href="/legal.html">Legal &amp; Privacy</a></footer>
+</div>
+
+<script>
+(function(){
+  var bar=document.querySelector('.top-bar');
+  function setBar(){document.documentElement.style.setProperty('--bar',bar.offsetHeight+'px')}
+  setBar(); window.addEventListener('resize',setBar);
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+  /* jump list + map pins: follow the post you're looking at */
+  var links=[].slice.call(document.querySelectorAll('#jump a'));
+  var map={}; links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});
+  var pins=[].slice.call(document.querySelectorAll('.m-pin'));
+  var posts=[].slice.call(document.querySelectorAll('.post,#map'));
+  var lastPin=null;
+  function mark(el){
+    var a=map[el.id];
+    if(a){
+      links.forEach(function(x){x.classList.remove('on')}); a.classList.add('on');
+      if(window.matchMedia('(max-width: 820px)').matches){
+        var strip=a.closest('.jump'); strip.scrollTo({left:a.offsetLeft-strip.clientWidth/2+a.clientWidth/2,behavior:'auto'});
+      }
+    }
+    var p=el.getAttribute('data-pin');
+    if(p!==lastPin){lastPin=p;pins.forEach(function(g){g.classList.toggle('on',!!p&&g.getAttribute('data-pin')===p)})}
+  }
+  var firstFor={}; posts.forEach(function(p){var n=p.getAttribute('data-pin'); if(n&&!firstFor[n])firstFor[n]=p});
+  pins.forEach(function(g){
+    function go(){var p=firstFor[g.getAttribute('data-pin')]; if(p)p.scrollIntoView({behavior:reduce.matches?'auto':'smooth',block:'start'})}
+    g.addEventListener('click',go);
+    g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}});
+  });
+  var cur=null, tick=false;
+  function scan(){
+    tick=false; var line=window.innerHeight*0.45, hit=null;
+    for(var i=0;i<posts.length;i++){var r=posts[i].getBoundingClientRect(); if(r.top<=line&&r.bottom>line){hit=posts[i];break}}
+    if(hit&&hit!==cur){cur=hit;mark(hit)}
+  }
+  window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(scan)}},{passive:true});
+  scan();
+
+  /* side-scroll galleries */
+  [].slice.call(document.querySelectorAll('.gal')).forEach(function(g){
+    var strip=g.querySelector('.strip'), figs=[].slice.call(strip.children);
+    var prev=g.querySelector('.gal-prev'), next=g.querySelector('.gal-next'), n=g.querySelector('.gal-n');
+    function current(){
+      var mid=strip.scrollLeft+strip.clientWidth/2, best=0, d=1e9;
+      figs.forEach(function(f,i){var c=f.offsetLeft-strip.offsetLeft+f.offsetWidth/2, x=Math.abs(c-mid); if(x<d){d=x;best=i}});
+      return best;
+    }
+    function show(i){var f=figs[i]; strip.scrollTo({left:f.offsetLeft-strip.offsetLeft-(strip.clientWidth-f.offsetWidth)/2})}
+    function upd(){var i=current(); n.textContent=(i+1)+' of '+figs.length; prev.disabled=i===0; next.disabled=i===figs.length-1}
+    prev.addEventListener('click',function(){show(Math.max(0,current()-1))});
+    next.addEventListener('click',function(){show(Math.min(figs.length-1,current()+1))});
+    var t=null; strip.addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(upd,80)},{passive:true});
+    window.addEventListener('resize',upd); upd();
+  });
+
+  /* today / 1795 shoreline */
+  (function(){
+    var wrap=document.getElementById('shoreMap'), now=document.getElementById('shoreNow'), then=document.getElementById('shoreThen'), note=document.getElementById('shoreNote');
+    function set(old){
+      wrap.classList.toggle('then',old);
+      now.setAttribute('aria-pressed',String(!old)); then.setAttribute('aria-pressed',String(old));
+      then.classList.remove('pulse');
+      note.textContent=old?'Showing the 1795 shoreline. Tan is land in 1795; pale is land filled in since.':'Showing today’s shoreline.';
+    }
+    now.addEventListener('click',function(){set(false)});
+    then.addEventListener('click',function(){set(true)});
+  })();
+
+  /* the empty frame */
+  (function(){
+    var wall=document.getElementById('frameWall'), btn=document.getElementById('frameBtn');
+    btn.addEventListener('click',function(){
+      var on=!wall.classList.contains('show');
+      wall.classList.toggle('show',on); btn.classList.remove('pulse');
+      btn.setAttribute('aria-pressed',String(on));
+      btn.textContent=on?'🖼️ Put the frame back':'🖼️ Show what hung here';
+    });
+  })();
+})();
+</script>
+</body>
+</html>

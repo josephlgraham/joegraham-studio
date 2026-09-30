@@ -6,14 +6,15 @@ Joe Graham (legal name Joseph Lee Graham; also known as Joseph Graham, Joseph L.
 
 ## Pages
 
-- [Home](https://joegraham.studio/): Profile page with bio, portfolio highlights (Top 8), interests, and contact links.
+- [Home](https://joegraham.studio/): Photo-first homepage with a grid of portfolio highlights.
+- [About](https://joegraham.studio/about.html): Profile page with bio, a rotating Top 8 from the portfolio, and contact links.
 - [Portfolio](https://joegraham.studio/portfolio.html): Full photography portfolio — nature, landscape, portraits, commercial, documentary.
-- [Journal](https://joegraham.studio/journal.html): Photo journal — 24 entries with field notes, location maps, and narratives from Alabama, California, Hawaii, Georgia, and beyond.
+- [Journal](https://joegraham.studio/journal.html): Trip journals with maps, photos, and the history behind each place: Yosemite, Kauaʻi, the Big Island, the North Coast of California, and Boston, with more trips on the way.
 - [Contact](https://joegraham.studio/contact.html): Contact form, service inquiries, astrology compatibility checker, and David Bowie era quiz.
 
 ## Contact
 
-- Email: joe@joegraham.studio
+- Email: josephlgraham@gmail.com
 - Instagram: https://www.instagram.com/josephlgraham
 - Website: https://joegraham.studio
 

@@ -16,7 +16,7 @@
 
 <!-- OpenGraph -->
 <meta property="og:title" content="Joe Graham | Fine Art & Commercial Photographer">
-<meta property="og:description" content="Fine art and commercial photographer based in Birmingham, Alabama. Portraits, brand work, events, and creative projects. I give my creative energy to a select few.">
+<meta property="og:description" content="Fine art and commercial photographer based in Birmingham, Alabama. Portraits, brand work, events, and creative projects.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://joegraham.studio/">
 <meta property="og:locale" content="en_US">
@@ -54,7 +54,7 @@
       "url": "https://joegraham.studio/",
       "jobTitle": "Photographer",
       "description": "Fine art and commercial photographer based in the Birmingham, Alabama metropolitan area. Available for portraits, brand work, events, album art, and creative projects throughout central Alabama.",
-      "email": "joe@joegraham.studio",
+      "email": "josephlgraham@gmail.com",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Birmingham",
@@ -107,7 +107,7 @@
 <script type="application/json" id="ai-readable-summary">
 {
   "preferred_summary": "Joe Graham (legal name Joseph Lee Graham) is a fine art and commercial photographer based in the Birmingham, Alabama metropolitan area, available for portraits, brand work, events, and creative projects throughout central Alabama.",
-  "page_type": "photographer profile",
+  "page_type": "photographer homepage and portfolio grid",
   "creator": "Joe Graham",
   "creator_legal_name": "Joseph Lee Graham",
   "creator_also_known_as": ["Joe Graham", "Joseph Graham", "Joseph L. Graham", "Joseph L Graham"],
@@ -119,484 +119,153 @@
 }
 </script>
 <style>
+  /* same palette and type as the masthead on every other page */
   :root {
     --bg-page: #C4D1DF;
-    --bg-module: #ffffff;
-    --bg-module-header: #336699;
     --bg-nav: #003471;
     --bg-nav-hover: #0050a0;
-    --text-nav: #ffffff;
-    --text-header-link: #99ccff;
+    --bg-module-header: #336699;
     --text-body: #333333;
-    --text-link: #0033cc;
     --text-light: #666666;
-    --border-module: #b3c5d7;
-    --border-light: #d5d5d5;
+    --text-header-link: #99ccff;
     --accent-orange: #ff6600;
-    --accent-online: #00cc00;
-    --bg-comment: #f5f5f5;
-    --shadow: 0 1px 2px rgba(0,0,0,0.15);
+    --tile-bg: #b3c5d7;
+    --gap: 10px;
+    --side: 250px;
+    --verdana: Verdana, Geneva, Tahoma, sans-serif;
+    --trebuchet: "Trebuchet MS", Trebuchet, "Segoe UI", sans-serif;
   }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
   body {
-    background:
-      radial-gradient(circle at 12% 10%, rgba(255,255,255,0.35), transparent 25rem),
-      linear-gradient(180deg, #d4e0eb 0%, var(--bg-page) 42%, #b8c8d9 100%);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 11px;
-    color: var(--text-body);
-    min-height: 100vh;
+    margin: 0; color: var(--text-body); font-family: var(--verdana); font-size: 13px; line-height: 1.5;
   }
+  a { color: inherit; text-decoration: none; }
+  a:focus-visible { outline: 2px solid var(--accent-orange); outline-offset: 3px; }
+  .skip { position: absolute; left: -999px; top: 8px; background: var(--bg-nav); color: #fff; padding: 6px 10px; z-index: 50; }
+  .skip:focus { left: 8px; }
 
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0.045;
-    background-image:
-      linear-gradient(rgba(0,52,113,0.22) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,52,113,0.22) 1px, transparent 1px);
-    background-size: 32px 32px;
-    z-index: -1;
-  }
-
-  a { color: var(--text-link); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-
-  /* ============ TOP NAV ============ */
-  .top-bar {
-    background: var(--bg-nav);
-    padding: 4px 0;
-    border-bottom: 1px solid #001a33;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  .top-bar-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 0 10px;
-  }
-  .top-bar-logo {
-    font-family: 'Trebuchet MS', Trebuchet, sans-serif;
-    font-size: 36px;
-    font-weight: bold;
-    color: #ffffff;
-    letter-spacing: -0.5px;
-  }
-  .top-bar-logo span { color: var(--accent-orange); }
-  .top-bar-nav { display: flex; gap: 14px; flex-wrap: wrap; }
-  .top-bar-nav a {
-    color: #fff;
-    display: inline-block;
-    padding: 6px 9px;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    border: 1px solid transparent;
-  }
-  .top-bar-nav a:hover,
-  .top-bar-nav a:focus-visible,
-  .top-bar-nav a.active {
-    background: var(--bg-nav-hover);
-    text-decoration: none;
-    border-color: rgba(255,255,255,0.25);
-  }
-
-  /* ============ MAIN CONTAINER ============ */
-  .container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 12px 8px;
-  }
-
-  /* ============ TWO COLUMN LAYOUT ============ */
-  .profile-layout {
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-  }
-  .col-left { width: 340px; flex-shrink: 0; }
-  .col-right { flex: 1; min-width: 0; }
-
-  /* ============ MODULE BOXES ============ */
-  .module {
-    background: var(--bg-module);
-    border: 1px solid var(--border-module);
-    border-radius: 2px;
-    margin-bottom: 10px;
-    box-shadow: var(--shadow);
-    overflow: hidden;
-  }
-  .module-header {
-    background: var(--bg-module-header);
-    color: white;
-    font-size: 11px;
-    font-weight: bold;
-    padding: 4px 8px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .module-header a { color: #cde; font-size: 10px; }
-  .module-body { padding: 8px; }
-
-  /* ============ PROFILE CARD ============ */
-  .profile-name {
-    font-size: 16px;
-    font-weight: bold;
-    color: var(--text-body);
-    margin-bottom: 8px;
-    font-family: 'Trebuchet MS', Trebuchet, sans-serif;
-  }
-  .profile-pic-wrap {
-    position: relative;
-    cursor: pointer;
-  }
-  .profile-pic-wrap img {
-    width: 100%;
-    display: block;
-    border: 2px solid var(--border-module);
-  }
-  .profile-pic-overlay {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    background: rgba(0,0,0,0.7);
-    color: white;
-    text-align: center;
-    padding: 6px;
-    font-size: 10px;
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
-  .profile-pic-wrap:hover .profile-pic-overlay { opacity: 1; }
-
-  .profile-details {
-    margin-top: 8px;
-    font-size: 10px;
-    color: var(--text-light);
-    line-height: 1.6;
-    padding: 8px;
-  }
-  .profile-details strong { color: var(--text-body); }
-  .online-status {
-    color: var(--accent-online);
-    font-weight: bold;
-    font-size: 10px;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    margin-top: 4px;
-  }
-  .online-dot {
-    width: 8px; height: 8px;
-    background: var(--accent-online);
-    border-radius: 50%;
-    display: inline-block;
-    animation: pulse 2s infinite;
-  }
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
-  .last-login { font-size: 9px; color: var(--text-light); margin-top: 4px; }
-
-  /* Status */
-  .mood-line {
-    font-size: 10px; padding: 6px 8px;
-    background: #f0f4f8; border-top: 1px solid var(--border-light);
-    display: flex; align-items: center; gap: 6px;
-  }
-  .mood-line .mood-label { font-weight: bold; color: var(--text-link); }
-  .status-editor {
-    display: none; padding: 8px;
-    background: #f0f4f8; border-top: 1px solid var(--border-light);
-  }
-  .status-editor.open { display: block; }
-  .status-editor textarea {
-    width: 100%; font-family: inherit; font-size: 10px;
-    padding: 4px; border: 1px solid var(--border-light);
-    border-radius: 2px; resize: vertical; min-height: 40px;
-  }
-  .status-editor button {
-    margin-top: 4px; font-size: 10px; padding: 3px 10px;
-    background: var(--bg-module-header); color: white;
-    border: none; border-radius: 2px; cursor: pointer;
-  }
-
-  /* ============ CONTACT TABLE ============ */
-  .contact-table { width: 100%; font-size: 10px; }
-  .contact-table td {
-    padding: 3px 6px; border-bottom: 1px solid var(--border-light); vertical-align: middle;
-  }
-  .contact-table td:first-child { width: 20px; text-align: center; }
-  .contact-icon { width: 16px; height: 16px; display: inline-block; font-size: 12px; }
-
-  /* ============ SOCIAL LINKS ============ */
-  .social-links {
-    display: flex; gap: 6px; padding: 6px 8px;
-    background: #f0f4f8; border-top: 1px solid var(--border-light); flex-wrap: wrap;
-    justify-content: center;
-  }
-  .social-link {
-    display: inline-flex; align-items: center; gap: 3px;
-    font-size: 10px; color: var(--text-link); padding: 2px 6px;
-    background: #dde8f0; border-radius: 2px; border: 1px solid var(--border-module);
-    transition: background 0.15s;
-  }
-  .social-link:hover {
-    background: var(--bg-module-header); color: white; text-decoration: none;
-  }
-
-  /* ============ ABOUT ============ */
-  .about-text { font-size: 11px; line-height: 1.6; color: var(--text-body); }
-  .about-text p { margin-bottom: 8px; }
-  .section-label {
-    font-weight: bold; color: var(--bg-module-header);
-    font-size: 11px; margin-bottom: 4px;
-    border-bottom: 1px solid var(--border-light); padding-bottom: 2px;
-  }
-
-  /* ============ TOP 8 GRID ============ */
-  .top8-header-text { font-size: 11px; color: var(--text-body); margin-bottom: 8px; }
-  .top8-grid {
-    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px;
-    align-items: start;
-  }
-  .top8-item {
-    text-align: center; cursor: pointer; transition: transform 0.15s; min-width: 0;
-  }
-  .top8-item:hover { transform: scale(1.03); }
-  .top8-img-wrap {
-    width: 100%; overflow: hidden; aspect-ratio: 1 / 1;
-    border: 2px solid var(--border-module); background: #111;
-  }
-  .top8-thumb {
-    width: 100%; height: 100%; object-fit: cover; display: block;
-  }
-  .top8-placeholder {
-    position: absolute; top: 0; left: 0;
-    width: 100%; height: 100%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 9px; color: var(--text-light);
-    background: linear-gradient(135deg, #c8d8e4 0%, #a0b8c8 50%, #8aa0b0 100%);
-    text-align: center; padding: 4px; line-height: 1.3;
-  }
-  .top8-label {
-    display: block; font-size: 9px; margin-top: 4px; color: var(--text-link);
-    font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-    text-decoration: none;
-    display: block;
-  }
-
-  /* ============ INTERESTS ============ */
-  .interests-table { width: 100%; font-size: 10px; }
-  .interests-table tr { border-bottom: 1px solid var(--border-light); }
-  .interests-table td { padding: 4px 6px; vertical-align: top; }
-  .interests-table td:first-child {
-    font-weight: bold; color: var(--bg-module-header); width: 80px; white-space: nowrap;
-  }
-
-  /* ============ COMMENTS ============ */
-  .comments-count { font-size: 11px; margin-bottom: 8px; }
-  .comment {
-    display: flex; gap: 8px; padding: 8px; background: var(--bg-comment);
-    border: 1px solid var(--border-light); margin-bottom: 6px; border-radius: 2px;
-  }
-  .comment-avatar {
-    width: 50px; height: 50px; background: #c0c0c0;
-    border: 1px solid var(--border-module); flex-shrink: 0;
-    display: flex; align-items: center; justify-content: center; font-size: 18px;
-  }
-  .comment-body { flex: 1; }
-  .comment-meta { display: flex; justify-content: space-between; margin-bottom: 4px; }
-  .comment-author { font-weight: bold; color: var(--text-link); font-size: 10px; }
-  .comment-date { font-size: 9px; color: var(--text-light); }
-  .comment-text { font-size: 10px; line-height: 1.5; }
-  .add-comment { margin-top: 8px; }
-  .add-comment textarea {
-    width: 100%; font-family: inherit; font-size: 10px; padding: 4px;
-    border: 1px solid var(--border-light); border-radius: 2px;
-    resize: vertical; min-height: 50px; margin-bottom: 4px;
-  }
-  .add-comment button {
-    font-size: 10px; padding: 3px 12px; background: var(--bg-module-header);
-    color: white; border: none; border-radius: 2px; cursor: pointer;
-  }
-
-  /* ============ FAKE AD ============ */
-  .ad-banner {
-    background: linear-gradient(90deg, #1a1a2e, #16213e);
-    border: 1px solid #333; border-radius: 2px;
-    padding: 10px 14px; margin-bottom: 10px;
-    text-align: center; color: #aaa; font-size: 9px; font-style: italic;
-  }
-  .ad-banner strong { color: var(--accent-orange); font-style: normal; font-size: 11px; }
-
-  /* ============ PROFILE PIC PICKER ============ */
-  .pic-picker-overlay {
-    display: none; position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.75); z-index: 500;
-    justify-content: center; align-items: center;
-  }
-  .pic-picker-overlay.open { display: flex; }
-  .pic-picker {
-    background: var(--bg-module);
-    border: 2px solid var(--border-module);
-    border-radius: 4px;
-    max-width: 520px; width: 90%; max-height: 80vh;
-    overflow-y: auto;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-  }
-  .pic-picker-header {
-    background: var(--bg-module-header);
-    color: white; font-size: 12px; font-weight: bold;
-    padding: 8px 12px;
-    display: flex; justify-content: space-between; align-items: center;
-  }
-  .pic-picker-header button {
-    background: none; border: none; color: white;
-    font-size: 18px; cursor: pointer; padding: 0 4px;
-  }
-  .pic-picker-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 8px; padding: 12px;
-  }
-  .pic-picker-item {
-    cursor: pointer; border: 3px solid transparent; border-radius: 2px;
-    transition: border-color 0.15s, transform 0.15s; position: relative;
-  }
-  .pic-picker-item:hover { border-color: var(--accent-orange); transform: scale(1.04); }
-  .pic-picker-item.current-pic { border-color: var(--accent-online); }
-  .pic-picker-item.current-pic::after {
-    content: '✓ Current'; position: absolute; bottom: 4px; left: 50%;
-    transform: translateX(-50%);
-    background: var(--accent-online); color: white;
-    font-size: 8px; padding: 1px 6px; border-radius: 2px; font-weight: bold;
-  }
-  .pic-picker-placeholder {
-    width: 100%; aspect-ratio: 3/4;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 10px; color: var(--text-light);
-    background: linear-gradient(135deg, #c8d8e4, #8aa0b0);
-    text-align: center; padding: 8px; line-height: 1.3;
-  }
-
-  /* ============ LIGHTBOX ============ */
-  .lightbox {
-    display: none; position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.92); z-index: 1000;
-    justify-content: center; align-items: center;
-    flex-direction: column; gap: 12px;
-  }
-  .lightbox.open { display: flex; }
-  .lightbox-close {
-    position: absolute; top: 16px; right: 24px;
-    color: white; font-size: 28px; cursor: pointer;
-    z-index: 1001; background: none; border: none; font-family: inherit;
-  }
-  .lightbox-img {
-    max-width: 85vw; max-height: 80vh;
-    border: 3px solid white; box-shadow: 0 0 40px rgba(0,0,0,0.5);
-  }
-  .lightbox-caption { color: white; font-size: 12px; text-align: center; max-width: 600px; }
-  .gallery-counter { color: rgba(255,255,255,0.7); font-size: 11px; }
-  .lightbox-nav { display: flex; gap: 20px; margin-top: 8px; }
-  .lightbox-nav button {
-    background: rgba(255,255,255,0.15); color: white;
-    border: 1px solid rgba(255,255,255,0.3); padding: 6px 16px;
-    font-size: 11px; cursor: pointer; border-radius: 2px;
-    font-family: inherit; transition: background 0.15s;
-  }
-  .lightbox-nav button:hover { background: rgba(255,255,255,0.3); }
-
-  /* ============ FOOTER ============ */
-  .footer {
-    text-align: center; padding: 16px; font-size: 9px;
-    color: #777; border-top: 1px solid #aab8c8; margin-top: 20px;
-  }
-  .footer a { color: #557; }
-
-  /* ============ KITSCH EFFECTS ============ */
-  .lol-item {
-    position: fixed; z-index: 9998; pointer-events: none;
-    font-family: 'Comic Sans MS', 'Chalkboard SE', cursive;
-    font-weight: bold; animation: lol-rise 2.5s ease-out forwards;
-    text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
-  }
-  @keyframes lol-rise {
-    0% { opacity:1; transform: translateY(0) rotate(0deg) scale(1); }
-    50% { opacity:1; }
-    100% { opacity:0; transform: translateY(-400px) rotate(var(--lol-rot)) scale(0.5); }
-  }
-  .block-overlay {
-    position: fixed; top:0; left:0; right:0; bottom:0;
-    background: rgba(0,0,0,0.85); z-index: 10000;
+  /* ============ SIDEBAR (the masthead, turned on its side) ============ */
+  .side {
+    position: fixed; inset: 0 auto 0 0; width: var(--side);
+    padding: 20px 28px 28px 30px;
     display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    animation: block-in 0.3s ease-out; cursor: pointer;
+    background: var(--bg-nav); color: #fff;
+    border-right: 1px solid #001a33;
+    box-shadow: 2px 0 10px rgba(0, 26, 51, .18);
   }
-  @keyframes block-in { 0%{opacity:0} 100%{opacity:1} }
-  .block-text {
-    font-family: 'Comic Sans MS', cursive; font-size: 48px; color: #ff3366;
-    text-shadow: 0 0 20px #ff3366, 0 0 40px #ff6699;
-    animation: block-pulse 0.5s ease-in-out infinite alternate;
+  .logo { margin: 0; font-size: inherit; font-weight: normal; line-height: 1; }
+  .logo a {
+    font-family: var(--trebuchet); font-size: 38px; font-weight: bold; letter-spacing: -.5px; color: #fff;
   }
-  @keyframes block-pulse { 0%{transform:scale(1)rotate(-2deg)} 100%{transform:scale(1.1)rotate(2deg)} }
-  .block-subtext { font-family: 'Comic Sans MS', cursive; font-size: 14px; color: #aaa; margin-top: 16px; }
-  .glitter {
-    position: fixed; pointer-events: none; z-index: 9999;
-    font-size: 16px; animation: glitter-pop 1s ease-out forwards;
+  .logo span { color: var(--accent-orange); }
+  .tagline { margin: 14px 0 0; font-size: 11px; color: var(--text-header-link); line-height: 1.6; letter-spacing: .02em; }
+  .nav { margin: 36px 0 0; padding: 0; list-style: none; display: grid; gap: 4px; }
+  .nav a {
+    display: inline-block; padding: 5px 0 4px;
+    font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #fff;
   }
-  @keyframes glitter-pop {
-    0% { opacity:1; transform: translate(0,0) scale(1); }
-    100% { opacity:0; transform: translate(var(--gx), var(--gy)) scale(0.2); }
+  /* the orange underline that sweeps in under a link on hover */
+  .nav a, .more a, .side-foot > a, .page-foot > a {
+    background: linear-gradient(var(--accent-orange), var(--accent-orange)) no-repeat 0 100% / 0 2px;
+    transition: background-size .25s ease, color .15s;
   }
-  .confetti-piece {
-    position: fixed; pointer-events: none; z-index: 9999;
-    animation: confetti-fall linear forwards;
+  .nav a:hover, .nav a:focus-visible, .more a:hover, .more a:focus-visible,
+  .side-foot > a:hover, .side-foot > a:focus-visible, .page-foot > a:hover, .page-foot > a:focus-visible { background-size: 100% 2px; }
+  .side-foot { margin-top: auto; font-size: 10px; color: var(--text-header-link); }
+  .social { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 14px; }
+  .social a { display: block; color: #fff; opacity: .75; transition: color .15s, opacity .15s, transform .15s; }
+  .social a:hover, .social a:focus-visible { color: var(--accent-orange); opacity: 1; transform: translateY(-2px); }
+  .social svg { display: block; width: 17px; height: 17px; fill: currentColor; }
+  .side-foot > a { color: #fff; }
+
+  /* ============ BENTO GRID ============ */
+  main { margin-left: var(--side); padding: 24px 24px 24px 24px; container-type: inline-size; }
+  .bento {
+    display: grid; gap: var(--gap);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: calc((100cqi - 3 * var(--gap)) / 4);
+    grid-auto-flow: row;
   }
-  @keyframes confetti-fall {
-    0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
-    100% { transform: translateY(110vh) rotate(720deg); opacity: 0.3; }
+  .tile { position: relative; overflow: hidden; background: var(--tile-bg); display: block; box-shadow: 0 1px 2px rgba(0,0,0,.15); }
+  .tile.l { grid-column: span 2; grid-row: span 2; }
+  .tile.w { grid-column: span 2; }
+  .tile.t { grid-row: span 2; }
+  .tile img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform 1.2s cubic-bezier(.2,.7,.2,1), filter .5s ease;
+  }
+  /* soft light around the edges, then a thin frame draws itself, once the pointer rests ~1s */
+  .glow {
+    position: absolute; inset: 0; pointer-events: none; opacity: 0;
+    box-shadow: inset 0 0 70px 8px rgba(255, 190, 130, .5), inset 0 0 0 1px rgba(255, 255, 255, .35);
+    transition: opacity .35s ease 0s;
+  }
+  .frame { position: absolute; inset: 14px; width: calc(100% - 28px); height: calc(100% - 28px); overflow: visible; pointer-events: none; }
+  .frame rect {
+    fill: none; stroke: #fff; stroke-width: 1.5; vector-effect: non-scaling-stroke;
+    stroke-dasharray: 100 100; stroke-dashoffset: 100;
+    filter: drop-shadow(0 0 3px rgba(0,0,0,.35));
+    transition: stroke-dashoffset .3s ease 0s;
+  }
+  .cap {
+    position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 24px 20px;
+    color: #fff; font-family: var(--trebuchet); font-size: 14px; font-weight: bold; letter-spacing: .01em;
+    background: linear-gradient(transparent, rgba(0, 26, 51, .7));
+    opacity: 0; transform: translateY(6px); transition: opacity .3s ease, transform .3s ease;
+    pointer-events: none;
+  }
+  .cap small { display: block; font-family: var(--verdana); font-size: 10px; font-weight: normal; letter-spacing: .04em; color: #ffd2b0; margin-top: 2px; }
+
+  @media (hover: hover) and (pointer: fine) {
+    .tile:hover img { transform: scale(1.035); filter: brightness(1.04); }
+    .tile:hover .cap { opacity: 1; transform: none; }
+    .tile:hover .glow { opacity: 1; transition: opacity .9s ease 1s; }
+    .tile:hover .frame rect { stroke-dashoffset: 0; transition: stroke-dashoffset 1s cubic-bezier(.6,0,.3,1) 1s; }
+  }
+  .tile:focus-visible { outline-offset: -3px; }
+  .tile:focus-visible .cap, .tile:focus-visible .glow { opacity: 1; transform: none; }
+  .tile:focus-visible .frame rect { stroke-dashoffset: 0; }
+  @media (prefers-reduced-motion: reduce) {
+    .tile img, .cap, .glow, .frame rect { transition: none !important; }
+    .tile:hover img { transform: none; }
   }
 
-  .word-sparkle {
-    animation: blessed-glow 2.5s ease-in-out infinite;
-    font-style: italic; white-space: nowrap;
-  }
-  @keyframes blessed-glow {
-    0%, 100% { text-shadow: 0 0 4px #ffcc00, 0 0 8px #ff9900; color: #b8780a; }
-    50% { text-shadow: 0 0 8px #ffcc00, 0 0 16px #ff9900, 0 0 24px #ffaa00; color: #e09820; }
-  }
-  .clap-link {
-    font-weight: bold; color: var(--accent-orange);
-    display: inline-block;
-    animation: clap-bounce 1s ease-in-out infinite;
-  }
-  .clap-link:hover { text-decoration: none; }
-  @keyframes clap-bounce {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.06); }
-  }
+  .more { display: flex; justify-content: flex-end; gap: 22px; margin: 16px 0 0; font-size: 11px; font-weight: bold; }
+  .more a { color: var(--bg-module-header); }
+  .more a { padding-bottom: 2px; }
 
-  /* ============ RESPONSIVE ============ */
-  @media (max-width: 768px) {
-    .profile-layout { flex-direction: column; }
-    .col-left { width: 100%; }
-    .top8-grid { grid-template-columns: repeat(2, 1fr); }
-    .top-bar-inner { flex-direction: column; align-items: flex-start; }
-    .top-bar-nav { flex-wrap: wrap; justify-content: center; }
-    .top-bar-nav a { padding: 3px 6px; font-size: 9px; }
-    .pic-picker-grid { grid-template-columns: repeat(2, 1fr); }
+  /* ============ SMALLER SCREENS: back to a top masthead ============ */
+  @media (max-width: 999px) {
+    .side {
+      position: sticky; top: 0; z-index: 10; width: auto; padding: 8px 14px;
+      display: flex; flex-direction: row; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 4px 12px;
+      border-right: 0; border-bottom: 1px solid #001a33; box-shadow: 0 2px 8px rgba(0, 26, 51, .2);
+    }
+    .logo a { font-size: 30px; }
+    .tagline, .side-foot { display: none; }
+    .nav { margin: 0; display: flex; flex-wrap: wrap; gap: 2px; }
+    .nav { gap: 2px 14px; }
+    .nav a { font-size: 10px; line-height: normal; }
+    main { margin: 0; padding: 12px 12px 20px; }
   }
+  @media (max-width: 699px) {
+    :root { --gap: 6px; }
+    .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: calc((100cqi - var(--gap)) / 2); grid-auto-flow: row dense; }
+    .frame { inset: 10px; width: calc(100% - 20px); height: calc(100% - 20px); }
+    .more { justify-content: flex-start; }
+    .logo a { font-size: 24px; }
+    .nav { gap: 2px 10px; }
+    .nav a { font-size: 9px; letter-spacing: .08em; }
+  }
+  .page-foot { display: none; text-align: center; padding: 14px 16px 24px; font-size: 10px; color: var(--text-light); border-top: 1px solid rgba(0,52,113,.2); margin: 0 12px; }
+  .page-foot .social { justify-content: center; margin-bottom: 10px; gap: 18px; }
+  .page-foot .social a { color: var(--bg-module-header); opacity: .85; }
+  .page-foot .social svg { width: 19px; height: 19px; }
+  @media (max-width: 999px) { .page-foot { display: block; } }
 </style>
+<link rel="stylesheet" href="/assets/site.css">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-94JMP16XXY"></script>
 <script>
@@ -607,587 +276,74 @@
 </script>
 </head>
 <body>
+<a class="skip" href="#work">Skip to photographs</a>
 
-<!-- ============ TOP NAV ============ -->
-<header class="top-bar" role="banner">
-  <div class="top-bar-inner">
-    <a href="index.html" class="top-bar-logo">joe<span>graham</span></a>
-    <nav class="top-bar-nav" aria-label="Primary navigation">
-      <a href="/" class="active" aria-current="page" data-tab="profile">Profile</a>
-      <a href="portfolio.html" data-tab="portfolio">Portfolio</a>
-      <a href="journal.html" data-tab="journal">Journal</a>
-      <a href="contact.html" data-tab="contact">Contact</a>
-    </nav>
+<header class="side">
+  <h1 class="logo"><a href="/" aria-label="Joe Graham, home">joe<span>graham</span></a></h1>
+  <p class="tagline">Fine art &amp; commercial photographer<br>Birmingham, Alabama</p>
+  <nav aria-label="Primary navigation">
+    <ul class="nav">
+      <li><a href="/portfolio.html">Portfolio</a></li>
+      <li><a href="/journal.html">Journal</a></li>
+      <li><a href="/gear/">Gear</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="side-foot">
+    <div class="social">
+      <a href="https://www.instagram.com/josephlgraham/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></a>
+      <a href="https://www.facebook.com/josephlgraham" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+      <a href="https://www.threads.com/@josephlgraham" target="_blank" rel="noopener" aria-label="Threads" title="Threads"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"/></svg></a>
+      <a href="https://www.tiktok.com/@dwerked" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+    </div>
+    &copy; 2026 Joe Graham &middot; <a href="/legal.html">Legal</a>
   </div>
 </header>
 
-<!-- ============ MAIN CONTENT ============ -->
-<div class="container">
-  <div class="profile-layout">
-
-    <!-- ============ LEFT COLUMN ============ -->
-    <div class="col-left">
-
-      <!-- Profile Picture -->
-      <div class="module">
-        <div class="module-body" style="padding:0;">
-          <div class="profile-pic-wrap" onclick="openPicPicker()">
-            <div id="profilePicDisplay" class="top8-placeholder" style="aspect-ratio:3/4; font-size:12px; border:none;">
-              📷<br>Your Profile Photo<br><span style="font-size:9px;">(click to change)</span>
-            </div>
-            <div class="profile-pic-overlay">Change Profile Photo &raquo;</div>
-          </div>
-          <div class="profile-details">
-            Fine Art &amp; Commercial Photographer<br>
-            Alabama<br>
-            <div class="online-status">
-              <span class="online-dot"></span> Online Now!
-            </div>
-            <div class="last-login" id="lastLogin"></div>
-          </div>
-          <div class="mood-line">
-            <span class="mood-label">Status:</span>
-            <span id="statusText">Out chasing light ☀️📷</span>
-            <a href="#" onclick="toggleStatusEditor(); return false;" style="margin-left:auto; font-size:9px;">[edit]</a>
-          </div>
-          <div class="status-editor" id="statusEditor">
-            <textarea id="statusInput" placeholder="What's on your mind?"></textarea>
-            <button onclick="updateStatus()">Update Status</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Fake Ad -->
-      <div class="ad-banner">
-        <strong>📷 <a href="https://fujifilm-x.com" target="_blank" style="color:var(--accent-orange);">FUJIFILM</a> — Make Every Frame Count</strong><br>
-        (Joe wishes this was a real sponsorship)
-      </div>
-
-      <!-- Currently -->
-      <div class="module">
-        <div class="module-header">Current Music</div>
-        <div class="module-body" style="font-size:10px; line-height:1.8;">
-          <strong>Listening to:</strong> <span id="currentTrack"></span>
-        </div>
-      </div>
-
-      <!-- Socials -->
-      <div class="module">
-        <div class="module-header">Elsewhere</div>
-        <div class="module-body" style="padding:0;">
-          <div class="social-links">
-            <a href="https://www.instagram.com/josephlgraham/" class="social-link" target="_blank">📷 Instagram</a>
-            <a href="https://www.facebook.com/josephlgraham" class="social-link" target="_blank">📘 Facebook</a>
-            <a href="https://www.threads.com/@josephlgraham" class="social-link" target="_blank">🧵 Threads</a>
-            <a href="https://www.tiktok.com/@dwerked" class="social-link" target="_blank">🎵 TikTok</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Contact -->
-      <div class="module">
-        <div class="module-header">Get In Touch</div>
-        <div class="module-body">
-          <table class="contact-table">
-            <tr><td><span class="contact-icon">✉️</span></td><td><a href="mailto:josephlgraham@gmail.com">Send Message</a></td></tr>
-            <tr><td><span class="contact-icon">📸</span></td><td><a href="contact.html">Inquire About a Project</a></td></tr>
-            <tr><td><span class="contact-icon">⭐</span></td><td><a href="#" onclick="glitterBurst(event); return false;">Add to Favorites</a></td></tr>
-            <tr><td><span class="contact-icon">🚫</span></td><td><a href="#" onclick="lolFlood(); return false;">Block User</a> (lol)</td></tr>
-          </table>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- ============ RIGHT COLUMN ============ -->
-    <div class="col-right">
-
-      <!-- Top 8 -->
-      <div class="module">
-        <div class="module-header">
-          Top 8
-          <span style="display:flex; gap:8px; align-items:center;">
-            <a href="#" onclick="shuffleTop8(); return false;" title="Shuffle" style="font-size:12px; color:#cde; text-decoration:none;">🔀</a>
-            <a href="portfolio.html">View Portfolio &raquo;</a>
-          </span>
-        </div>
-        <div class="module-body">
-          <div class="top8-grid" id="top8Grid"></div>
-        </div>
-      </div>
-
-      <!-- About -->
-      <div class="module">
-        <div class="module-header">About Me</div>
-        <div class="module-body">
-          <div class="section-label">Who I Am</div>
-          <div class="about-text">
-            <p>Hi, I'm Joe — Joseph Lee Graham on paper, but Joe Graham to just about everyone. Welcome to my space.</p>
-            <p>I think I was a photographer even before I knew it. I grew up and still live in the woods of Alabama. Some trees enjoy growing in the shade. For me, that shade was a profound family legacy of history, service, and community. Growing up in those shadows gave me a deep reverence for the past and a quiet, observant way of looking at the world.</p>
-            <p>I've always had a curious eye. When I finally bought my first camera in college, it felt like we <span class="word-sparkle">belonged together</span>. I quickly changed my major from history to photography, with a brief detour into film, and never looked back.</p>
-            <p>I graduated from UAB with a degree in photography. Being classically trained means I know my way around mixing chemicals and using a changing bag in the dark. After school, I interned with a local commercial photographer, assisted a few high-end wedding photographers, and eventually cut my chops shooting portraits at a high-volume storefront studio.</p>
-            <p>Life eventually shifted, and I took some time away from the professional camera to focus on the ultimate job: raising my family. But over the last few years, I've reconnected with photography in a deeper way than ever before. Returning to my roots in the Alabama woods, I've found a renewed passion for capturing the quiet beauty of nature, wildlife, and the stories embedded in our local landscapes. I am having a blast constantly pushing my craft and growing my knowledge.</p>
-          </div>
-          <div style="margin-top:10px;">
-            <div class="section-label">Who I Want to Work With</div>
-            <div class="about-text">
-              <p>Now that I'm back behind the lens with a fresh perspective, I'm looking to collaborate with people who appreciate intentional, authentic imagery.</p>
-              <p><em>Nature &amp; Conservation Projects:</em> Organizations, publications, or local groups that need dedicated, patient visual storytelling to highlight regional wildlife and natural habitats.</p>
-              <p><em>Local Businesses &amp; Artisans:</em> Creators who need honest, high-quality imagery of their processes, products, or spaces, without the sterile feel of commercial stock photos.</p>
-              <p><em>Editorial &amp; Historical Collaborators:</em> Writers, publishers, or preservationists looking for a keen, curious eye to capture the mood, legacy, and authentic details of a specific place or story.</p>
-              <p>If you have a project that requires a thoughtful approach, a lot of patience, and a deep respect for the subject, <a href="contact.html">let's connect</a>.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
+<main id="work">
+  <!-- Portfolio photos only (journal photos stay in the journal). Tile sizes: l = 2x2, w = 2 wide,
+       t = 2 tall, s = single. This order packs the 4-column grid into 11 full rows; swap tiles of the
+       same size freely, but changing a size leaves holes. object-position sets the crop on w/t tiles.
+       Tiles link to the photo's trip stop when there is one, otherwise to it in the portfolio viewer. -->
+  <div class="bento">
+    <a class="tile l" href="/journal/yosemite/#tunnel-view" aria-label="Cathedral of the High Sierra, Yosemite, California"><img src="photos/web/tunnel_view.jpg" width="840" height="840" alt="Tunnel View panorama of Yosemite Valley with El Capitan, Half Dome, Bridalveil Fall, deep blue sky, and aircraft contrails." decoding="async"><span class="glow"></span><svg class="frame" aria-hidden="true"><rect x="0" y="0" width="100%" height="100%" pathLength="100"/></svg><span class="cap" aria-hidden="true">Cathedral of the High Sierra<small>Yosemite, California</small></span></a>
+    <a class="tile s" href="/journal/yosemite/#valley-view" aria-label="Mirror of the Merced, Yosemite, California"><img src="photos/web/yosemite.jpg" width="840" height="840" alt="Reflection of Yosemite Valley granite cliffs in still Merced River water with autumn foliage." decoding="async"><span class="glow"></span><svg class="frame" aria-hidden="true"><rect x="0" y="0" width="100%" height="100%" pathLength="100"/></svg><span class="cap" aria-hidden="true">Mirror of the Merced<small>Yosemite, California</small></span></a>
+    <a class="tile t" href="/portfolio.html#tracks-sunset" aria-label="The Iron Vein, Alabama"><img src="photos/web/tracks_sunset.jpg" width="840" height="840" alt="Railroad tracks curving through green Alabama woods at sunset." style="object-position:62% 50%" decoding="async"><span class="glow"></span><svg class="frame" aria-hidden="true"><rect x="0" y="0" width="100%" height="100%" pathLength="100"/></svg><span class="cap" aria-hidden="true">The Iron Vein<small>Alabama</small></span></a>
+    <a class="tile s" href="/journal/kauai/#plumeria" aria-label="Rain-Kissed Plumeria, Poʻipū, Kauaʻi"><img src="photos/web/plumeria.jpg" width="840" height="840" alt="Plumeria blossom with a yellow center and pink-edged petals covered in rain droplets." decoding="async"><span class="glow"></span><svg class="frame" aria-hidden="true"><rect x="0" y="0" width="100%" height="100%" pathLength="100"/></svg><span class="cap" aria-hidden="true">Rain-Kissed Plumeria<small>Poʻipū, Kauaʻi</small></span></a>
+    <a class="tile w" href="/journal/north-coast/#goat-rock" aria-label="Edge of the Sonoma Coast, Duncan&#x27;s Landing, California"><img src="photos/web/duncans_landing.jpg" width="840" height="840" alt="Coastal bluff, rocky shoreline, and Pacific surf at Duncan&#x27;s Landing in Sonoma Coast State Park, California." style="object-position:50% 55%" decoding="async"><span class="glow"></span><svg class="frame" aria-hidden="true"><rect x="0" y="0" width="100%" height="100%" pathLength="100"/></svg><span class="cap" aria-hidden="true">Edge of the Sonoma Coast<small>Duncan&#x27;s Landing, California</small></span></a>
+    <a class="tile s" href="/portfolio.html#drink-shot" aria-label="The Craft of the Cocktail, Peachtree Corners, Georgia"><img src="photos/web/drink_shot.jpg" width="840" height="840" alt="Cocktail in a coupe glass photographed with shallow focus and warm interior light." decoding="async"><span class="glow"></span><svg class="frame" aria-hidden="true"><rect x="0" y="0" width="100%" height="100%" pathLength="100"/></svg><span class="cap" aria-hidden="true">The Craft of the Cocktail<small>Peachtree Corners, Georgia</small></span></a>
+    <a class="tile s" href="/portfolio.html#blue-heron" aria-label="The Silent Watcher, Lake Purdy, Alabama"><img src="photos/web/blue_heron.jpg" width="840" height="840" alt="Great Blue Heron standing on a fallen pine over emerald water at Lake Purdy, Alabama." loading="lazy" decoding="async"><span class="glow"></span><svg class="frame" aria-hidden="true"><rect x="0" y="0" width="100%" height="100%" pathLength="100"/></svg><span class="cap" aria-hidden="true">The Silent Watcher<small>Lake Purdy, Alabama</small></span></a>
+    <a class="tile t" href="/portfolio.html#pole-beans" aria-label="The Heirloom Vine, Alabama"><img src="photos/web/pole_beans.jpg" width="840" height="840" alt="Rattlesnake pole bean pods with purple streaking climbing a bamboo stake in an Alabama garden." style="object-position:38% 50%" loading="lazy" decoding="async"><span class="glow"></span><svg class="frame" aria-hidden="true"><rect x="0" y="0" width="100%" height="100%" pathLength="100"/></svg><span class="cap" aria-hidden="true">The Heirloom Vine<small>Alabama</small></span></a>
+    <a class="tile l" href="/journal/big-island/#hilo-market-2024" aria-label="The Bounty of Hilo, Hilo, Hawaiʻi Island"><img src="photos/web/hilo_farmers_market.jpg" width="840" height="840" alt="Fresh tropical fruit, including a sliced pink guava, displayed at Hilo Farmers Market on Hawaii Island." loading="lazy" decoding="async"><span class="glow"></span><svg class="frame" aria-hidden="true"><rect x="0" y="0" width="100%" height="100%" pathLength="100"/></svg><span class="cap" aria-hidden="true">The Bounty of Hilo<small>Hilo, Hawaiʻi Island</small></span></a>
+    <a class="tile s" href="/portfolio.html#joshua-tree" aria-label="Mojave Anchor, Joshua Tree, California"><img src="photos/web/joshua_tree.jpg" width="840" height="840" alt="A lone Joshua tree with a desert raven perched near the top, set against a clear Mojave sky." loading="lazy" decoding="async"><span class="glow"></span><svg class="frame" aria-hidden="true"><rect x="0" y="0" width="100%" height="100%" pathLength="100"/></svg><span class="cap" aria-hidden="true">Mojave Anchor<small>Joshua Tree, California</small></span></a>
+    <a class="tile s" href="/portfolio.html#droplets" aria-label="Petrichor, Alabama"><img src="photos/web/droplets.jpg" width="840" height="840" alt="Macro photograph of rain droplets clinging to the spines of a thistle leaf after morning rain." loading="lazy" decoding="async"><span class="glow"></span><svg class="frame" aria-hidden="true"><rect x="0" y="0" width="100%" height="100%" pathLength="100"/></svg><span class="cap" aria-hidden="true">Petrichor<small>Alabama</small></span></a>
+    <a class="tile w" href="/portfolio.html#coachella-valley" aria-label="Desert Grid, Coachella Valley, California"><img src="photos/web/coachella_valley.jpg" width="840" height="840" alt="Twilight view of the Coachella Valley from Mount San Jacinto, with city lights forming a grid below the dark desert basin." style="object-position:50% 72%" loading="lazy" decoding="async"><span class="glow"></span><svg class="frame" aria-hidden="true"><rect x="0" y="0" width="100%" height="100%" pathLength="100"/></svg><span class="cap" aria-hidden="true">Desert Grid<small>Coachella Valley, California</small></span></a>
+    <a class="tile w" href="/portfolio.html#p51-mustang" aria-label="The Warbird&#x27;s Shadow, Palm Springs, California"><img src="photos/web/p51_mustang.jpg" width="840" height="840" alt="P-51D Mustang resting in an open hangar at the Palm Springs Air Museum with desert mountains beyond." style="object-position:50% 62%" loading="lazy" decoding="async"><span class="glow"></span><svg class="frame" aria-hidden="true"><rect x="0" y="0" width="100%" height="100%" pathLength="100"/></svg><span class="cap" aria-hidden="true">The Warbird&#x27;s Shadow<small>Palm Springs, California</small></span></a>
+    <a class="tile s" href="/portfolio.html#eggshell" aria-label="After the Hatch, Alabama"><img src="photos/web/eggshell.jpg" width="840" height="840" alt="Broken speckled eggshell resting on fresh garden mulch in an Alabama garden." loading="lazy" decoding="async"><span class="glow"></span><svg class="frame" aria-hidden="true"><rect x="0" y="0" width="100%" height="100%" pathLength="100"/></svg><span class="cap" aria-hidden="true">After the Hatch<small>Alabama</small></span></a>
+    <a class="tile l" href="/journal/north-coast/#goat-rock" aria-label="Where the River Meets the Sea, Sonoma Coast, California"><img src="photos/web/goat_rock_beach.jpg" width="840" height="840" alt="Goat Rock Beach on the Sonoma Coast, with Pacific surf, a broad sandy shoreline, and rocky headlands." loading="lazy" decoding="async"><span class="glow"></span><svg class="frame" aria-hidden="true"><rect x="0" y="0" width="100%" height="100%" pathLength="100"/></svg><span class="cap" aria-hidden="true">Where the River Meets the Sea<small>Sonoma Coast, California</small></span></a>
+    <a class="tile t" href="/journal/north-coast/#the-queen" aria-label="The Queen, Calistoga, California"><img src="photos/web/petrified_forest.jpg" width="840" height="840" alt="Moss-covered petrified redwood trunk called The Queen at The Petrified Forest in Calistoga, California." style="object-position:32% 50%" loading="lazy" decoding="async"><span class="glow"></span><svg class="frame" aria-hidden="true"><rect x="0" y="0" width="100%" height="100%" pathLength="100"/></svg><span class="cap" aria-hidden="true">The Queen<small>Calistoga, California</small></span></a>
+    <a class="tile s" href="/portfolio.html#milkweed" aria-label="Lifeline of the Cahaba, Cahaba River NWR, Alabama"><img src="photos/web/milkweed.jpg" width="840" height="840" alt="White milkweed flowers blooming in the green understory at Cahaba River National Wildlife Refuge, Alabama." loading="lazy" decoding="async"><span class="glow"></span><svg class="frame" aria-hidden="true"><rect x="0" y="0" width="100%" height="100%" pathLength="100"/></svg><span class="cap" aria-hidden="true">Lifeline of the Cahaba<small>Cahaba River NWR, Alabama</small></span></a>
+    <a class="tile w" href="/portfolio.html#junkyard" aria-label="The Mosaic of Reclamation, North Birmingham, Alabama"><img src="photos/web/junkyard.jpg" width="840" height="840" alt="A dense pile of scrap metal, including a bicycle wheel, a frying pan, conduit, and wire, at a recycling yard in North Birmingham." style="object-position:50% 45%" loading="lazy" decoding="async"><span class="glow"></span><svg class="frame" aria-hidden="true"><rect x="0" y="0" width="100%" height="100%" pathLength="100"/></svg><span class="cap" aria-hidden="true">The Mosaic of Reclamation<small>North Birmingham, Alabama</small></span></a>
+    <a class="tile s" href="/portfolio.html#joshua-tree-rock" aria-label="Quartz Monzogranite Monolith, Joshua Tree, California"><img src="photos/web/joshua_tree_rock.jpg" width="840" height="840" alt="A massive quartz monzogranite boulder in Joshua Tree National Park, with desert scrub at its base." loading="lazy" decoding="async"><span class="glow"></span><svg class="frame" aria-hidden="true"><rect x="0" y="0" width="100%" height="100%" pathLength="100"/></svg><span class="cap" aria-hidden="true">Quartz Monzogranite Monolith<small>Joshua Tree, California</small></span></a>
+    <a class="tile s" href="/journal/big-island/#fairmont" aria-label="Twilight on the Kohala Coast, Hawaiʻi Island"><img src="photos/web/hawaii_resort.jpg" width="840" height="840" alt="Tropical resort landscape on the Kohala Coast during blue hour, with palms, volcanic rock, water, and warm sunset color." loading="lazy" decoding="async"><span class="glow"></span><svg class="frame" aria-hidden="true"><rect x="0" y="0" width="100%" height="100%" pathLength="100"/></svg><span class="cap" aria-hidden="true">Twilight on the Kohala Coast<small>Hawaiʻi Island</small></span></a>
+    <a class="tile t" href="/portfolio.html#cahaba-river" aria-label="The Ancient Path, Cahaba River, Alabama"><img src="photos/web/cahaba_river.jpg" width="840" height="840" alt="Cahaba River winding through dense green forest at Cahaba River National Wildlife Refuge in Alabama." style="object-position:50% 50%" loading="lazy" decoding="async"><span class="glow"></span><svg class="frame" aria-hidden="true"><rect x="0" y="0" width="100%" height="100%" pathLength="100"/></svg><span class="cap" aria-hidden="true">The Ancient Path<small>Cahaba River, Alabama</small></span></a>
+    <a class="tile s" href="/portfolio.html#little-bambino" aria-label="Little Bambino, Alabama"><img src="photos/web/little_bambino.jpg" width="840" height="840" alt="Small Little Bambino watermelon growing among vines and grass in an Alabama garden." loading="lazy" decoding="async"><span class="glow"></span><svg class="frame" aria-hidden="true"><rect x="0" y="0" width="100%" height="100%" pathLength="100"/></svg><span class="cap" aria-hidden="true">Little Bambino<small>Alabama</small></span></a>
+    <a class="tile l" href="/portfolio.html#santa-monica-pier" aria-label="Americana at the Edge, Santa Monica, California"><img src="photos/web/santa_monica_pier.jpg" width="840" height="840" alt="A vintage Cadillac convertible passing beneath the blue Santa Monica Pier archway under a clear coastal sky." loading="lazy" decoding="async"><span class="glow"></span><svg class="frame" aria-hidden="true"><rect x="0" y="0" width="100%" height="100%" pathLength="100"/></svg><span class="cap" aria-hidden="true">Americana at the Edge<small>Santa Monica, California</small></span></a>
+    <a class="tile s" href="/portfolio.html#eclipse-embarcadero" aria-label="Geometric Core, San Francisco, California"><img src="photos/web/eclipse_embarcadero.jpg" width="840" height="840" alt="Looking down into the Hyatt Regency San Francisco atrium at Charles O. Perry&#x27;s Eclipse sculpture." loading="lazy" decoding="async"><span class="glow"></span><svg class="frame" aria-hidden="true"><rect x="0" y="0" width="100%" height="100%" pathLength="100"/></svg><span class="cap" aria-hidden="true">Geometric Core<small>San Francisco, California</small></span></a>
   </div>
+  <p class="more"><a href="portfolio.html">Full portfolio &rarr;</a><a href="/journal.html">Trip journals &rarr;</a></p>
+</main>
 
-  <div class="footer">
-    &copy; 2026 Joe Graham &middot; <a href="/legal.html">Legal &amp; Privacy</a>
+<footer class="page-foot">
+  <div class="social">
+    <a href="https://www.instagram.com/josephlgraham/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></a>
+    <a href="https://www.facebook.com/josephlgraham" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+    <a href="https://www.threads.com/@josephlgraham" target="_blank" rel="noopener" aria-label="Threads" title="Threads"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"/></svg></a>
+    <a href="https://www.tiktok.com/@dwerked" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
   </div>
-</div>
-
-<!-- ============ PROFILE PIC PICKER MODAL ============ -->
-<div class="pic-picker-overlay" id="picPicker">
-  <div class="pic-picker">
-    <div class="pic-picker-header">
-      Choose Profile Photo
-      <button onclick="closePicPicker()">&times;</button>
-    </div>
-    <div class="pic-picker-grid" id="picPickerGrid"></div>
-  </div>
-</div>
-
-<!-- ============ LIGHTBOX ============ -->
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-  <img class="lightbox-img" id="lightboxImg" src="" alt="">
-  <div class="lightbox-caption" id="lightboxCaption"></div>
-  <a id="lightboxEntryLink" href="#" style="display:none; color:var(--accent-orange); font-size:11px; text-decoration:none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Read the entry &rarr;</a>
-  <div class="gallery-counter" id="galleryCounter"></div>
-  <div class="lightbox-nav" id="lightboxNav">
-    <button onclick="prevPhoto()">◀ Prev</button>
-    <button onclick="nextPhoto()">▶ Next</button>
-  </div>
-</div>
-
-<script>
-// ============================================================
-// PORTFOLIO DATA — Replace src values with your image paths
-// ============================================================
-const portfolio = [
-  { src: 'photos/blue_heron.png', title: 'The Silent Watcher' },
-  { src: 'photos/cahaba_river.png', title: 'The Ancient Path' },
-  { src: 'photos/coachella_valley.png', title: 'Desert Grid' },
-  { src: 'photos/drink_shot.png', title: 'The Craft of the Cocktail' },
-  { src: 'photos/droplets.png', title: 'Petrichor' },
-  { src: 'photos/duncans_landing.png', title: "Edge of the Sonoma Coast" },
-  { src: 'photos/eclipse_embarcadero.png', title: 'Geometric Core' },
-  { src: 'photos/eggshell.png', title: "After the Hatch" },
-  { src: 'photos/goat_rock_beach.png', title: 'Where the River Meets the Sea' },
-  { src: 'photos/hawaii_resort.png', title: 'Twilight on the Kohala Coast' },
-  { src: 'photos/hilo_farmers_market.png', title: 'The Bounty of Hilo' },
-  { src: 'photos/joshua_tree.png', title: 'Mojave Anchor' },
-  { src: 'photos/joshua_tree_rock.png', title: 'Quartz Monzogranite Monolith' },
-  { src: 'photos/junkyard.png', title: 'The Mosaic of Reclamation' },
-  { src: 'photos/little_bambino.png', title: 'Little Bambino' },
-  { src: 'photos/milkweed.png', title: 'Lifeline of the Cahaba' },
-  { src: 'photos/p51_mustang.png', title: "The Warbird's Shadow" },
-  { src: 'photos/petrified_forest.png', title: 'The Queen' },
-  { src: 'photos/plumeria.png', title: 'Rain-Kissed Plumeria' },
-  { src: 'photos/pole_beans.png', title: 'The Heirloom Vine' },
-  { src: 'photos/santa_monica_pier.png', title: 'Americana at the Edge' },
-  { src: 'photos/tracks_sunset.png', title: 'The Iron Vein' },
-  { src: 'photos/tunnel_view.png', title: 'Cathedral of the High Sierra' },
-  { src: 'photos/yosemite.png', title: 'Mirror of the Merced' },
-];
-
-// ============================================================
-// PROFILE PHOTOS — Replace src values with your portraits
-// ============================================================
-const profilePhotos = [
-  { src: 'profile_pic/joe1.png', label: 'Portrait 1' },
-  { src: 'profile_pic/joe2.png', label: 'Portrait 2' },
-  { src: 'profile_pic/joe3.png', label: 'Portrait 3' },
-  { src: 'profile_pic/joe4.png', label: 'Portrait 4' },
-  { src: 'profile_pic/joe5.png', label: 'Portrait 5' },
-  { src: 'profile_pic/joe6.png', label: 'Portrait 6' },
-  { src: 'profile_pic/joe7.png', label: 'Portrait 7' },
-  { src: 'profile_pic/joe8.png', label: 'Portrait 8' },
-  { src: 'profile_pic/joe9.png', label: 'Portrait 9' },
-];
-
-let currentProfileIndex = 0;
-
-// Show first profile photo on load
-(function() {
-  const photo = profilePhotos[0];
-  if (photo.src) {
-    const display = document.getElementById('profilePicDisplay');
-    const wrap = display.parentElement;
-    display.style.display = 'none';
-    const img = document.createElement('img');
-    img.src = photo.src;
-    img.alt = 'Joe Graham';
-    img.style.cssText = 'width:100%;display:block;border:2px solid var(--border-module);';
-    img.id = 'profileImg';
-    wrap.insertBefore(img, display);
-  }
-})();
-
-// ============================================================
-// TOP 8 — Shuffle from portfolio on each visit
-// ============================================================
-function shuffleArray(arr) {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
-let currentTop8 = [];
-
-function shuffleTop8() {
-  currentTop8 = shuffleArray(portfolio).slice(0, 8);
-  renderTop8();
-}
-
-function renderTop8() {
-  const grid = document.getElementById('top8Grid');
-  grid.innerHTML = '';
-  currentTop8.forEach((photo, i) => {
-    const item = document.createElement('div');
-    item.className = 'top8-item';
-    const slug = photo.src ? photo.src.replace('photos/', '').replace(/\.[^.]+$/, '').replace(/_/g, '-') : null;
-    if (photo.src) {
-      const thumbSrc = photo.src.replace('photos/', 'photos/thumbs/').replace('.png', '.jpg');
-      const labelHtml = slug
-        ? `<a class="top8-label" href="photos/${slug}.html">${photo.title}</a>`
-        : `<div class="top8-label">${photo.title}</div>`;
-      item.innerHTML = `<div class="top8-img-wrap" style="cursor:pointer;" onclick="openLightboxAt(${i})"><img class="top8-thumb" src="${thumbSrc}" alt="${photo.title}"></div>${labelHtml}`;
-    } else {
-      item.innerHTML = `<div class="top8-img-wrap" style="cursor:pointer;" onclick="openLightboxAt(${i})"><div class="top8-placeholder">${photo.title}<br><span style="font-size:8px;">your image here</span></div></div><div class="top8-label">${photo.title}</div>`;
-    }
-    grid.appendChild(item);
-  });
-}
-
-shuffleTop8();
-
-// Set last login to today's date
-(function() {
-  const d = new Date();
-  document.getElementById('lastLogin').textContent = 'Last Login: ' + (d.getMonth()+1) + '/' + d.getDate() + '/' + d.getFullYear();
-})();
-
-// ============================================================
-// CURRENTLY LISTENING — Random song on each page load
-// Add songs anytime: { artist: 'Name', track: 'Title' }
-// ============================================================
-const songBank = [
-  { artist: 'David Bowie', track: 'Heroes' },
-  { artist: 'David Bowie', track: 'Space Oddity' },
-  { artist: 'David Bowie', track: 'Starman' },
-  { artist: 'David Bowie', track: 'Life on Mars?' },
-  { artist: 'David Bowie', track: 'Ziggy Stardust' },
-  { artist: 'David Bowie', track: 'Under Pressure' },
-  { artist: 'David Bowie', track: 'Changes' },
-  { artist: 'David Bowie', track: 'Lazarus' },
-  { artist: 'David Bowie', track: 'Ashes to Ashes' },
-  { artist: 'David Bowie', track: "Let's Dance" },
-  { artist: 'David Bowie', track: 'Helden' },
-  { artist: 'David Bowie', track: 'Suffragette City' },
-  { artist: 'David Bowie', track: 'TVC15' },
-  { artist: 'David Bowie', track: "Rock 'n' Roll Suicide" },
-  { artist: 'David Bowie', track: 'Loving The Alien' },
-  { artist: 'Kesha', track: 'TiK ToK' },
-  { artist: 'Kesha', track: 'Praying' },
-  { artist: 'Kesha', track: 'Blow' },
-  { artist: 'Kesha', track: 'Die Young' },
-  { artist: 'Kesha', track: 'Woman' },
-  { artist: 'Kesha', track: 'Raising Hell' },
-  { artist: 'Kesha', track: 'YIPPEE-KI-YAY.' },
-  { artist: 'Kesha', track: 'We R Who We R' },
-  { artist: 'Kesha, Slayyyter & Rose Gray', track: 'ATTENTION!' },
-  { artist: 'Madison Beer', track: 'yes baby' },
-  { artist: 'Madison Beer', track: 'make you mine' },
-  { artist: 'Kylie Minogue', track: 'Lights Camera Action' },
-  { artist: 'Kylie Minogue', track: 'Magic' },
-  { artist: 'Rebecca Black', track: 'Sugar Water Cyanide' },
-  { artist: 'Chase Icon', track: 'Like Me' },
-  { artist: 'The Blessed Madonna & Kylie Minogue', track: 'Edge of Saturday Night' },
-  { artist: 'Cobrah', track: 'Record Deal' },
-  { artist: 'KATO & Jon', track: 'Turn The Lights Off' },
-  { artist: 'Majestic & Boney M.', track: 'Rasputin' },
-  { artist: 'Scissor Sisters', track: "I Don't Feel Like Dancin'" },
-  { artist: 'Slayyyter', track: 'Purrr' },
-  { artist: 'Elton John', track: "Saturday Night's Alright (For Fighting)" },
-  { artist: 'Sabrina Carpenter', track: "Nobody's Son" },
-  { artist: 'The Clash', track: 'Lost in the Supermarket' },
-  { artist: 'Enur', track: 'Calabria 2008 (feat. Natasja)' },
-  { artist: 'Freemasons & Sophie Ellis-Bextor', track: 'Heartbreak (Make Me A Dancer)' },
-  { artist: 'Chappell Roan', track: 'The Giver' },
-  { artist: 'K.Flay', track: 'Blood In The Cut' },
-  { artist: 'Buffalo Wabs and the Price Hill Hustle', track: "Vagabond's Lament" },
-  { artist: 'Le Tigre', track: 'Deceptacon' },
-  { artist: 'Yeah Yeah Yeahs', track: 'Heads Will Roll (A-Trak Remix)' },
-  { artist: 'Dua Lipa', track: 'Training Season' },
-  { artist: 'Dua Lipa', track: 'Blow Your Mind (Mwah)' },
-  { artist: 'Pixies', track: 'Where Is My Mind?' },
-  { artist: 'Courtney Barnett', track: "Nobody Really Cares If You Don't Go to the Party" },
-  { artist: 'Courtney Barnett', track: 'Avant Gardener' },
-  { artist: 'Vampire Weekend', track: 'Unbelievers' },
-  { artist: '4 Non Blondes', track: "What's Up?" },
-  { artist: 'Sammy Kershaw', track: 'Queen Of My Double Wide Trailer' },
-  { artist: 'Roxy Music', track: 'Virginia Plain' },
-  { artist: 'Roxy Music', track: 'Mother Of Pearl' },
-  { artist: 'Roxy Music', track: 'More Than This' },
-  { artist: 'Roxy Music', track: 'Love Is The Drug' },
-  { artist: 'Talking Heads', track: 'The Good Thing' },
-  { artist: 'Talking Heads', track: 'Stay up Late' },
-  { artist: 'Passion Pit', track: 'Sleepyhead' },
-  { artist: 'ILoveJtest', track: "Yazoo - Don't Go" },
-  { artist: 'Spacehog', track: 'In the Meantime' },
-  { artist: 'Modest Mouse', track: 'Float On' },
-  { artist: 'Sugar Ray', track: "When It's Over" },
-  { artist: 'Two Door Cinema Club', track: 'What You Know' },
-  { artist: 'Daya', track: 'Sit Still, Look Pretty' },
-  { artist: 'WILLOW', track: 'Wait a Minute!' },
-  { artist: 'Echosmith', track: 'Bright' },
-  { artist: 'INXS', track: 'Devil Inside' },
-  { artist: 'Devo', track: "(I Can't Get No) Satisfaction" },
-  { artist: 'Paul Simon', track: 'You Can Call Me Al' },
-  { artist: 'The Vapors', track: 'Turning Japanese' },
-  { artist: 'The Escape Club', track: 'Wild, Wild West' },
-  { artist: 'The Traveling Wilburys', track: 'End Of The Line' },
-  { artist: 'Elvis Costello & The Attractions', track: 'Pump It Up' },
-  { artist: 'Phoenix', track: 'Fences' },
-];
-
-(function() {
-  const song = songBank[Math.floor(Math.random() * songBank.length)];
-  document.getElementById('currentTrack').innerHTML = song.artist + ' — <em>' + song.track + '</em>';
-})();
-
-// ============================================================
-// STATUS — Random status from status_update.txt on each page load
-// ============================================================
-fetch('status_update.txt')
-  .then(r => r.text())
-  .then(text => {
-    const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
-    if (lines.length) {
-      document.getElementById('statusText').textContent = lines[Math.floor(Math.random() * lines.length)];
-    }
-  })
-  .catch(() => {}); // keep the hardcoded default on error
-
-// ============================================================
-// LIGHTBOX
-// ============================================================
-let currentGallery = [];
-let currentIndex = 0;
-
-function openLightboxAt(index) {
-  currentGallery = currentTop8;
-  currentIndex = index;
-  showCurrentPhoto();
-  document.getElementById('lightbox').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-function showCurrentPhoto() {
-  const photo = currentGallery[currentIndex];
-  const img = document.getElementById('lightboxImg');
-  if (photo.src) {
-    img.src = photo.src;
-  } else {
-    img.src = 'data:image/svg+xml,' + encodeURIComponent(
-      '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450">' +
-      '<rect width="600" height="450" fill="%23223"/>' +
-      '<text x="300" y="210" text-anchor="middle" fill="%23778" font-size="22" font-family="sans-serif">' +
-      (photo.title || photo.label || 'Photo') + '</text>' +
-      '<text x="300" y="245" text-anchor="middle" fill="%23556" font-size="13" font-family="sans-serif">Your photo goes here</text></svg>'
-    );
-  }
-  img.style.display = 'block';
-  document.getElementById('lightboxCaption').textContent = photo.title || photo.label || '';
-  const slug = photo.src ? photo.src.replace('photos/', '').replace(/\.[^.]+$/, '').replace(/_/g, '-') : null;
-  const entryLink = document.getElementById('lightboxEntryLink');
-  if (slug) {
-    entryLink.href = 'photos/' + slug + '.html';
-    entryLink.style.display = 'inline';
-  } else {
-    entryLink.style.display = 'none';
-  }
-  document.getElementById('galleryCounter').textContent = (currentIndex + 1) + ' of ' + currentGallery.length;
-}
-
-function nextPhoto() { currentIndex = (currentIndex + 1) % currentGallery.length; showCurrentPhoto(); }
-function prevPhoto() { currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length; showCurrentPhoto(); }
-
-document.addEventListener('keydown', function(e) {
-  if (document.getElementById('picPicker').classList.contains('open')) return;
-  if (e.key === 'Escape') closeLightbox();
-  if (e.key === 'ArrowRight') nextPhoto();
-  if (e.key === 'ArrowLeft') prevPhoto();
-});
-document.getElementById('lightbox').addEventListener('click', function(e) { if (e.target === this) closeLightbox(); });
-
-// ============================================================
-// PROFILE PIC PICKER
-// ============================================================
-function openPicPicker() {
-  const grid = document.getElementById('picPickerGrid');
-  grid.innerHTML = '';
-  profilePhotos.forEach((photo, i) => {
-    const item = document.createElement('div');
-    item.className = 'pic-picker-item' + (i === currentProfileIndex ? ' current-pic' : '');
-    item.onclick = () => setProfilePic(i);
-    if (photo.src) {
-      item.innerHTML = `<img class="pic-picker-thumb" src="${photo.src}" alt="${photo.label}" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;">`;
-    } else {
-      item.innerHTML = `<div class="pic-picker-placeholder">📷<br>${photo.label}</div>`;
-    }
-    grid.appendChild(item);
-  });
-  document.getElementById('picPicker').classList.add('open');
-}
-
-function closePicPicker() { document.getElementById('picPicker').classList.remove('open'); }
-
-function setProfilePic(index) {
-  currentProfileIndex = index;
-  const photo = profilePhotos[index];
-  const display = document.getElementById('profilePicDisplay');
-  const wrap = display.parentElement;
-
-  if (photo.src) {
-    const existingImg = wrap.querySelector('#profileImg');
-    if (existingImg) {
-      existingImg.src = photo.src;
-    } else {
-      display.style.display = 'none';
-      const img = document.createElement('img');
-      img.src = photo.src;
-      img.style.cssText = 'width:100%;display:block;border:2px solid var(--border-module);';
-      img.id = 'profileImg';
-      wrap.insertBefore(img, display);
-    }
-  } else {
-    const existingImg = wrap.querySelector('#profileImg');
-    if (existingImg) existingImg.remove();
-    display.style.display = 'flex';
-    display.innerHTML = '📷<br>' + photo.label + '<br><span style="font-size:9px;">(click to change)</span>';
-  }
-
-  closePicPicker();
-}
-
-document.getElementById('picPicker').addEventListener('click', function(e) { if (e.target === this) closePicPicker(); });
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape' && document.getElementById('picPicker').classList.contains('open')) closePicPicker();
-});
-
-// ============================================================
-// STATUS
-// ============================================================
-function toggleStatusEditor() {
-  const ed = document.getElementById('statusEditor');
-  ed.classList.toggle('open');
-  if (ed.classList.contains('open')) {
-    document.getElementById('statusInput').value = document.getElementById('statusText').textContent;
-    document.getElementById('statusInput').focus();
-  }
-}
-function updateStatus() {
-  const s = document.getElementById('statusInput').value.trim();
-  if (s) document.getElementById('statusText').textContent = s;
-  document.getElementById('statusEditor').classList.remove('open');
-}
-
-function glitterBurst(e) {
-  const g = ['✨','⭐','💛','🌟','💫','✦'];
-  for (let i = 0; i < 20; i++) {
-    const el = document.createElement('div');
-    el.className = 'glitter';
-    el.textContent = g[Math.floor(Math.random()*g.length)];
-    el.style.left = e.clientX+'px'; el.style.top = e.clientY+'px';
-    const a = (Math.PI*2*i)/20+(Math.random()-0.5)*0.5, d = 60+Math.random()*80;
-    el.style.setProperty('--gx',Math.cos(a)*d+'px');
-    el.style.setProperty('--gy',Math.sin(a)*d+'px');
-    el.style.fontSize = (10+Math.random()*14)+'px';
-    el.style.animationDuration = (0.6+Math.random()*0.6)+'s';
-    document.body.appendChild(el);
-    setTimeout(() => el.remove(), 1200);
-  }
-  const link = e.target; const orig = link.textContent;
-  link.textContent = '⭐ Favorited! ⭐'; link.style.color = '#ffaa00';
-  setTimeout(() => { link.textContent = orig; link.style.color = ''; }, 1500);
-}
-
-function lolFlood() {
-  const audio = new Audio('assets/boo-this-man.mp3');
-  audio.play().catch(() => {});
-  const lols = ['LOL','LMAO','😂','ROFL','lolol','🤣','hahaha', 'U MAD BRO?','LOL!','BLOCKED','💀','no u','bruh'];
-  const colors = ['#ff3366','#ff6600','#ffcc00','#33cc33','#3399ff','#cc33ff','#ff69b4','#00cccc'];
-  for (let i = 0; i < 40; i++) {
-    setTimeout(() => {
-      const el = document.createElement('div');
-      el.className = 'lol-item';
-      el.textContent = lols[Math.floor(Math.random()*lols.length)];
-      el.style.left = (Math.random()*window.innerWidth)+'px';
-      el.style.top = (window.innerHeight*0.5+Math.random()*window.innerHeight*0.5)+'px';
-      el.style.color = colors[Math.floor(Math.random()*colors.length)];
-      el.style.fontSize = (14+Math.random()*28)+'px';
-      el.style.setProperty('--lol-rot',(Math.random()-0.5)*60+'deg');
-      document.body.appendChild(el);
-      setTimeout(() => el.remove(), 2500);
-    }, i*50);
-  }
-  setTimeout(() => {
-    const ov = document.createElement('div');
-    ov.className = 'block-overlay';
-    ov.innerHTML = '<div class="block-text">🚫 BLOCKED 🚫</div><div class="block-subtext">just kidding. click anywhere.</div>';
-    ov.addEventListener('click', function() {
-      this.style.transition='opacity 0.3s'; this.style.opacity='0';
-      setTimeout(() => this.remove(), 300);
-    });
-    document.body.appendChild(ov);
-  }, 800);
-}
-
-function clapConfetti() {
-  const audio = new Audio('assets/claps-with-cheers-audience.mp3');
-  audio.play().catch(() => {});
-  const colors = ['#ff3366','#ff6600','#ffcc00','#33cc33','#3399ff','#cc33ff','#ff69b4','#ffffff','#00cccc','#ffaa00','#ff0000','#0066ff'];
-  const wrap = document.createElement('div');
-  wrap.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:9999;overflow:hidden;';
-  document.body.appendChild(wrap);
-  for (let i = 0; i < 150; i++) {
-    const p = document.createElement('div');
-    const color = colors[Math.floor(Math.random() * colors.length)];
-    const size = 6 + Math.random() * 10;
-    const left = Math.random() * 100;
-    const delay = Math.random() * 3;
-    const duration = 2.5 + Math.random() * 2;
-    p.className = 'confetti-piece';
-    p.style.cssText = `width:${size}px;height:${size}px;background:${color};left:${left}%;top:-20px;border-radius:${Math.random() > 0.5 ? '50%' : '2px'};animation-duration:${duration}s;animation-delay:${delay}s;`;
-    wrap.appendChild(p);
-  }
-  setTimeout(() => wrap.remove(), 6000);
-}
-
-</script>
+  &copy; 2026 Joe Graham &middot; <a href="/legal.html">Legal</a>
+</footer>
 
 </body>
 </html>

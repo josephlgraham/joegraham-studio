@@ -37,21 +37,9 @@
     --shadow: 0 1px 2px rgba(0,0,0,0.15);
   }
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { background:var(--bg-page); font-family:Verdana,Geneva,Tahoma,sans-serif; font-size:11px; color:var(--text-body); min-height:100vh; }
+  body { font-family:Verdana,Geneva,Tahoma,sans-serif; font-size:11px; color:var(--text-body); min-height:100vh; }
   a { color:var(--text-link); text-decoration:none; }
   a:hover { text-decoration:underline; }
-
-  .top-bar { background:var(--bg-nav); padding:4px 0; border-bottom:1px solid #001a33; position:sticky; top:0; z-index:100; }
-  .top-bar-inner { max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:0 10px; }
-  .top-bar-logo { font-family:'Trebuchet MS',Trebuchet,sans-serif; font-size:36px; font-weight:bold; color:#fff; letter-spacing:-0.5px; }
-  .top-bar-logo span { color:var(--accent-orange); }
-  .top-bar-logo a { color:inherit; }
-  .top-bar-nav { display:flex; gap:14px; flex-wrap:wrap; }
-  .top-bar-nav a { color:#fff; display:inline-block; padding:6px 9px; font-size:10px; text-transform:uppercase; letter-spacing:0.08em; border:1px solid transparent; }
-  .top-bar-nav a:hover,
-  .top-bar-nav a:focus-visible,
-  .top-bar-nav a.active { background:var(--bg-nav-hover); text-decoration:none; border-color:rgba(255,255,255,0.25); }
-
   .page-wrap { max-width:960px; margin:0 auto; padding:16px 8px; }
 
   .module { background:var(--bg-module); border:1px solid var(--border-module); box-shadow:var(--shadow); margin-bottom:16px; }
@@ -64,22 +52,19 @@
   .footer { text-align:center; padding:16px; font-size:9px; color:#777; border-top:1px solid #aab8c8; margin-top:20px; }
   .footer a { color:#557; }
 
-  @media (max-width:768px) {
-    .top-bar-inner { flex-direction:column; align-items:flex-start; }
-    .top-bar-nav { flex-wrap:wrap; }
-    .top-bar-nav a { padding:3px 6px; font-size:9px; }
-  }
 </style>
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 
 <header class="top-bar" role="banner">
   <div class="top-bar-inner">
-    <div class="top-bar-logo"><a href="/">joe<span>graham</span></a></div>
+    <a href="/" class="top-bar-logo">joe<span>graham</span></a>
     <nav class="top-bar-nav" aria-label="Primary navigation">
-      <a href="/">Profile</a>
       <a href="/portfolio.html">Portfolio</a>
       <a href="/journal.html">Journal</a>
+      <a href="/gear/">Gear</a>
+      <a href="/about.html">About</a>
       <a href="/contact.html">Contact</a>
     </nav>
   </div>
