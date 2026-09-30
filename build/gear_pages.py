@@ -110,7 +110,7 @@ page('x-t30-ii', 'The camera',
           ('Video', '4K up to 30p'),
           ('Weather sealing', 'None. More on that under <a href="../bags/">the bags</a>.'),
         ]),
-  [('How mine is dressed', '''      <p>It never goes out plain. There&rsquo;s a wood hand grip on the bottom, a square metal hood on the lens, a soft silicone eyecup on the viewfinder, and a patterned strap. I do like to accessorize. The full list is on the <a href="../accessories/">accessories</a> page.</p>
+  [('How mine is dressed', '''      <p>It never goes out plain. There&rsquo;s a wood hand grip on the bottom, with 1/4 in screw holes on the side for mounting things, a square metal hood on the lens, a soft silicone eyecup on the viewfinder, and a patterned strap. I do like to accessorize. The full list is on the <a href="../accessories/">accessories</a> page.</p>
       <p>A circular polarizer lives on the front of whatever lens is mounted. It&rsquo;s how I like to shoot, and it protects the lens glass in case anything happens. <a href="../filters/">Why that works</a>.</p>''')])
 
 # ---------------------------------------------------------------- lenses
@@ -157,7 +157,7 @@ page('filters', 'The filters',
   [('The ND: sunglasses for the camera', '''      <p>ND stands for neutral density. It cuts the light coming into the lens without changing its color. That&rsquo;s the &ldquo;neutral&rdquo; part.</p>
       <p>Photographers count light in <b>stops</b>. One stop is half the light. This one is variable: turn the front ring and it goes from ND2 (one stop, half the light) to ND32 (five stops, one thirty-second of the light).</p>
       <h2>Superpower 1: slow things down in daylight</h2>
-      <p>On a bright day at f/8, the camera might want 1/250 of a second. Five stops of ND turns that into 1/8 of a second: 1/125, 1/60, 1/30, 1/15, 1/8. That&rsquo;s slow enough for a waterfall to go silky and for moving water to smooth out, in the middle of the afternoon. A cable release helps here, so the camera doesn&rsquo;t shake when you press the button.</p>
+      <p>On a bright day at f/8, the camera might want 1/250 of a second. Five stops of ND turns that into 1/8 of a second: 1/125, 1/60, 1/30, 1/15, 1/8. That&rsquo;s slow enough for a waterfall to go silky and for moving water to smooth out, in the middle of the afternoon. A cable release helps here, so the camera doesn&rsquo;t shake when you press the button. I prefer mine over the phone app 10 to 1.</p>
       <h2>Superpower 2: shoot wide open in the sun</h2>
       <p>There&rsquo;s an old rule of thumb called Sunny 16: in full sun, f/16 at a shutter speed of about 1/ISO gets you a good exposure. Open up to f/2.8 for a blurry background and you&rsquo;ve let in five more stops. At the camera&rsquo;s base ISO that would take roughly 1/5000 of a second, faster than the mechanical shutter&rsquo;s 1/4000. The electronic shutter can go faster, but it reads the sensor line by line and can bend anything that moves. The ND takes away those five stops, and the mechanical shutter is back in range.</p>
       <h2>Superpower 3: video that moves like film</h2>
@@ -203,18 +203,21 @@ page('accessories', 'Accessories',
           ('Legs', 'Carbon fiber, one detaches as a monopod'),
           ('Head', '360&deg; ball head with quick release plate'),
           ('Rated load', '8 kg'),
-          ('Spare plate', 'K&amp;F Concept K-28 quick release plate, so the camera and the spare can both be ready'),
+          ('Spare plate', 'K&amp;F Concept K-28 quick release plate. For long exposures I sometimes roll with two tripod mounts on.'),
         ])),
    ('On the camera', specs('Always attached', [
           ('Hood', 'Haoge LH-X13 square metal hood, on the 18-55'),
           ('Eyecup', 'Soft silicone eyecup for the X-T30 II'),
           ('Strap', 'Vintage-pattern vegan leather strap'),
-          ('Grip', 'Wood hand grip'),
+          ('Grip', 'Wood hand grip with 1/4 in screw holes on the side, so I can mount things to the side of the camera. The brand isn&rsquo;t sold anymore.'),
+        ])),
+   ('On the bag', specs('Clipped on', [
+          ('Camera clip', 'Peak Design Capture clip, on my backpack strap'),
         ])),
    ('In the bag', '''      <p>A little bag of tools, a small towel, an extra tripod mount, an extra lens cap, extra batteries and cables, extra memory cards, and a little blower for dust.</p>
       ''' + specs('The named pieces', [
           ('Blower', 'VSGO V-B012E camera cleaning blower'),
-          ('Cable release', 'Fotasy 100 cm mechanical cable release with bulb lock, for long exposures'),
+          ('Cable release', 'Fotasy 100 cm mechanical cable release with bulb lock, for long exposures. I prefer it over the phone app 10 to 1.'),
           ('Light', 'K&amp;F Concept RGB video light, full color, 2500 to 9900K'),
           ('Desiccant', 'A pack or two, always. See <a href="../bags/">the bags</a>.'),
         ]))])
