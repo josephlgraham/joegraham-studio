@@ -190,4 +190,28 @@
     <priority>0.3</priority>
   </url>
 
+  <url>
+    <loc>https://joegraham.studio/gear/</loc>
+    <lastmod>2026-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://joegraham.studio/gear/x-t30-ii/</loc>
+    <lastmod>2026-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://joegraham.studio/gear/lenses/</loc>
+    <lastmod>2026-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://joegraham.studio/gear/filters/</loc>
+    <lastmod>2026-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://joegraham.studio/gear/bags/</loc>
+    <lastmod>2026-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://joegraham.studio/gear/accessories/</loc>
+    <lastmod>2026-09-30</lastmod>
+  </url>
 </urlset>
