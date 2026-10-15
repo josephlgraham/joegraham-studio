@@ -70,142 +70,215 @@
 }
 </script>
 <style>
+  /* Same card system as the About page: roomier modules, 13px type */
   :root {
-    --bg-page: #C4D1DF;
-    --bg-module: #ffffff;
     --bg-module-header: #336699;
     --bg-nav: #003471;
-    --bg-nav-hover: #0050a0;
-    --text-nav: #ffffff;
     --text-body: #333333;
     --text-link: #0033cc;
-    --text-light: #666666;
+    --text-light: #5f6b78;
     --border-module: #b3c5d7;
-    --border-light: #d5d5d5;
+    --border-light: #dde3ea;
     --accent-orange: #ff6600;
-    --accent-online: #00cc00;
-    --shadow: 0 1px 2px rgba(0,0,0,0.15);
+    --verdana: Verdana, Geneva, Tahoma, sans-serif;
+    --trebuchet: "Trebuchet MS", Trebuchet, "Segoe UI", sans-serif;
   }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:Verdana,Geneva,Tahoma,sans-serif; font-size:11px; color:var(--text-body); min-height:100vh; }
-  a { color:var(--text-link); text-decoration:none; }
-  a:hover { text-decoration:underline; }
-  .container { max-width:960px; margin:0 auto; padding:12px 8px; }
-  .two-col { display:flex; gap:14px; align-items:flex-start; }
-  .col-main { flex:1; min-width:0; }
-  .col-side { width:300px; flex-shrink:0; }
 
-  .module { background:var(--bg-module); border:1px solid var(--border-module); border-radius:2px; margin-bottom:14px; box-shadow:var(--shadow); overflow:hidden; }
-  .module-header { background:var(--bg-module-header); color:white; font-size:11px; font-weight:bold; padding:4px 8px; display:flex; align-items:center; justify-content:space-between; }
-  .module-header a { color:#cde; font-size:10px; }
-  .module-body { padding:12px; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--verdana); font-size: 13px; line-height: 1.6; color: var(--text-body); }
+  a { color: var(--text-link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 2px solid var(--accent-orange); outline-offset: 2px;
+  }
 
-  .page-intro { font-size:12px; line-height:1.6; margin-bottom:14px; padding:12px; background:#f0f4f8; border:1px solid var(--border-module); border-radius:2px; }
-  .page-intro strong { color:var(--bg-module-header); }
+  .container { max-width: 1000px; margin: 0 auto; padding: 20px 16px 8px; }
+  .layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 16px; align-items: start; }
+
+  .module {
+    background: var(--bg-module);
+    border: 1px solid var(--border-module);
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.12);
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .module-header {
+    background: var(--bg-module-header); color: #fff;
+    font-size: 12px; font-weight: bold; letter-spacing: .02em;
+    padding: 6px 12px;
+    display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  }
+  .module-header small { color: #dbe7f3; font-size: 11px; font-weight: normal; }
+  .module-body { padding: 14px 16px; }
+  .lede { margin-bottom: 12px; }
+
+  /* ============ HELLO ============ */
+  .hello { display: flex; gap: 16px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+  .hello h1 { font-family: var(--trebuchet); font-size: 24px; line-height: 1.2; color: var(--bg-nav); }
+  .hello p { color: var(--text-light); margin-top: 4px; max-width: 46ch; }
+  .btn {
+    display: inline-block; text-align: center; padding: 8px 18px;
+    font: bold 12px var(--verdana); border-radius: 2px; cursor: pointer;
+    border: 1px solid var(--bg-module-header); color: var(--bg-module-header); background: transparent;
+  }
+  .btn:hover { text-decoration: none; background: #eef3f8; }
+  .btn.primary { background: var(--accent-orange); border-color: var(--accent-orange); color: #fff; }
+  .btn.primary:hover { background: #e65c00; }
+
+  /* ============ PHOTO TILE (same hover as the homepage bento) ============ */
+  .tile { position: relative; display: block; overflow: hidden; aspect-ratio: 1 / 1; background: var(--border-module); }
+  .tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.2s cubic-bezier(.2,.7,.2,1), filter .5s ease; }
+  .glow {
+    position: absolute; inset: 0; pointer-events: none; opacity: 0;
+    box-shadow: inset 0 0 70px 8px rgba(255, 190, 130, .5), inset 0 0 0 1px rgba(255, 255, 255, .35);
+    transition: opacity .35s ease 0s;
+  }
+  .frame { position: absolute; inset: 14px; width: calc(100% - 28px); height: calc(100% - 28px); overflow: visible; pointer-events: none; }
+  .frame rect {
+    fill: none; stroke: #fff; stroke-width: 1.5; vector-effect: non-scaling-stroke;
+    stroke-dasharray: 100 100; stroke-dashoffset: 100;
+    filter: drop-shadow(0 0 3px rgba(0,0,0,.35));
+    transition: stroke-dashoffset .3s ease 0s;
+  }
+  .cap {
+    position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 20px 16px;
+    color: #fff; font-family: var(--trebuchet); font-size: 14px; font-weight: bold;
+    background: linear-gradient(transparent, rgba(0, 26, 51, .7));
+  }
+  .cap small { display: block; font-family: var(--verdana); font-size: 10px; font-weight: normal; letter-spacing: .04em; color: #ffd2b0; margin-top: 2px; }
+  @media (hover: hover) and (pointer: fine) {
+    .tile:hover img { transform: scale(1.035); filter: brightness(1.04); }
+    .tile:hover .glow { opacity: 1; transition: opacity .9s ease 1s; }
+    .tile:hover .frame rect { stroke-dashoffset: 0; transition: stroke-dashoffset 1s cubic-bezier(.6,0,.3,1) 1s; }
+  }
+  .tile:hover { text-decoration: none; }
+  .tile:focus-visible { outline-offset: -3px; }
+  .tile:focus-visible .glow { opacity: 1; }
+  .tile:focus-visible .frame rect { stroke-dashoffset: 0; }
+
+  .social { display: flex; gap: 14px; justify-content: center; padding: 12px 16px; border-top: 1px solid var(--border-light); }
+  .social a { display: inline-flex; color: var(--bg-module-header); }
+  .social a:hover { color: var(--accent-orange); }
+  .social svg { width: 18px; height: 18px; fill: currentColor; }
 
   /* ============ ASTROLOGY ============ */
-  .sign-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:6px; }
-  .sign-btn { padding:8px 4px; border:2px solid var(--border-light); border-radius:4px; background:#fafafa; cursor:pointer; text-align:center; transition:all 0.15s; font-size:10px; }
-  .sign-btn:hover { border-color:var(--bg-module-header); background:#e8f0f8; }
-  .sign-btn.selected { border-color:var(--accent-orange); background:#fff3e0; font-weight:bold; }
-  .sign-emoji { font-size:20px; display:block; margin-bottom:2px; }
-  .sign-name { font-size:9px; }
-  .compat-result { display:none; margin-top:12px; padding:12px; border-radius:4px; border:2px solid; animation:resultPop 0.4s ease-out; }
-  .compat-result.show { display:block; }
-  .compat-meter { height:12px; background:#e0e0e0; border-radius:6px; overflow:hidden; margin:8px 0; }
-  .compat-meter-fill { height:100%; border-radius:6px; transition:width 0.8s ease-out; background:linear-gradient(90deg,#ff6600,#ffcc00,#00cc00); }
-  .compat-rating { font-size:14px; font-weight:bold; margin-bottom:4px; }
-  .compat-text { font-size:10px; line-height:1.6; }
-  .compat-verdict { font-size:11px; font-weight:bold; margin-top:6px; padding:4px 8px; border-radius:2px; display:inline-block; }
-
-  @keyframes resultPop { 0%{transform:scale(0.8);opacity:0} 50%{transform:scale(1.03)} 100%{transform:scale(1);opacity:1} }
-
-  /* ============ BOWIE QUIZ STEPPER ============ */
-  .quiz-stepper { position:relative; min-height:220px; }
-  .quiz-card {
-    display:none; animation:cardIn 0.35s ease-out;
+  .sign-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; }
+  .sign-btn {
+    padding: 10px 4px 8px; border: 1px solid var(--border-light); border-radius: 3px;
+    background: #fff; cursor: pointer; text-align: center; font: 11px var(--verdana); color: var(--text-body);
+    transition: border-color .15s, background .15s, transform .15s;
   }
-  .quiz-card.active { display:block; }
-  @keyframes cardIn { 0%{opacity:0;transform:translateX(30px)} 100%{opacity:1;transform:translateX(0)} }
+  .sign-btn:hover { border-color: var(--bg-module-header); background: #eef3f8; transform: translateY(-1px); }
+  .sign-btn.selected { border-color: var(--accent-orange); background: #fff3e8; font-weight: bold; }
+  .sign-emoji { font-size: 20px; line-height: 1.2; display: block; margin-bottom: 2px; color: var(--bg-module-header); }
+  .compat-result { display: none; margin-top: 14px; padding: 14px 16px; border-radius: 3px; border: 1px solid; border-left-width: 4px; animation: resultPop .35s ease-out; }
+  .compat-result.show { display: block; }
+  .compat-meter { height: 10px; background: var(--border-light); border-radius: 5px; overflow: hidden; margin: 8px 0 10px; }
+  .compat-meter-fill { height: 100%; border-radius: 5px; transition: width .8s ease-out; background: linear-gradient(90deg, #ff6600, #ffcc00, #2d9a4f); }
+  .compat-rating { font-family: var(--trebuchet); font-size: 17px; font-weight: bold; color: var(--bg-nav); }
+  .compat-text { font-size: 12px; }
+  .compat-verdict { font-size: 12px; font-weight: bold; margin-top: 10px; padding: 4px 10px; border-radius: 2px; display: inline-block; }
 
-  .quiz-progress { display:flex; gap:4px; margin-bottom:12px; }
-  .quiz-pip {
-    flex:1; height:4px; border-radius:2px; background:#e0e0e0;
-    transition:background 0.3s;
-  }
-  .quiz-pip.done { background:var(--bg-module-header); }
-  .quiz-pip.current { background:var(--accent-orange); }
-
-  .quiz-q-num { font-size:9px; color:var(--text-light); margin-bottom:4px; }
-  .quiz-q-text { font-size:12px; font-weight:bold; color:var(--bg-module-header); margin-bottom:10px; line-height:1.4; }
-  .quiz-options { display:flex; flex-direction:column; gap:5px; }
-  .quiz-option {
-    display:flex; align-items:center; gap:6px;
-    padding:8px 10px; border:1px solid var(--border-light);
-    border-radius:3px; cursor:pointer; font-size:10px;
-    transition:all 0.15s; background:#fafafa; line-height:1.4;
-  }
-  .quiz-option:hover { background:#e8f0f8; border-color:var(--border-module); }
-  .quiz-option.selected { background:#dde8f0; border-color:var(--bg-module-header); font-weight:bold; }
-  .quiz-option input { display:none; }
-  .quiz-radio {
-    width:12px; height:12px; border-radius:50%;
-    border:2px solid var(--border-module); flex-shrink:0;
-    display:flex; align-items:center; justify-content:center;
-  }
-  .quiz-option.selected .quiz-radio { border-color:var(--bg-module-header); }
-  .quiz-option.selected .quiz-radio::after { content:''; width:6px; height:6px; border-radius:50%; background:var(--bg-module-header); }
-
-  .quiz-nav { display:flex; justify-content:space-between; margin-top:14px; }
-  .quiz-nav-btn {
-    font-size:10px; padding:5px 16px; border:1px solid var(--border-module);
-    border-radius:3px; cursor:pointer; font-family:inherit;
-    transition:all 0.15s; background:#fafafa; color:var(--text-body);
-  }
-  .quiz-nav-btn:hover { background:#e8f0f8; }
-  .quiz-nav-btn.primary { background:var(--bg-module-header); color:white; border-color:var(--bg-module-header); }
-  .quiz-nav-btn.primary:hover { background:var(--bg-nav); }
-  .quiz-nav-btn:disabled { opacity:0.4; cursor:default; }
-
-  /* Result card */
-  .result-card { display:none; border:3px solid; border-radius:4px; overflow:hidden; animation:resultPop 0.4s ease-out; }
-  .result-card.show { display:block; }
-  .result-card-header { padding:10px 12px; color:white; font-size:9px; text-transform:uppercase; letter-spacing:1px; }
-  .result-card-body { padding:12px; }
-  .result-era { font-family:'Trebuchet MS',Trebuchet,sans-serif; font-size:36px; font-weight:bold; margin-bottom:6px; }
-  .result-desc { font-size:10px; line-height:1.6; margin-bottom:8px; }
-  .result-photo-style { font-size:10px; padding:6px 8px; background:#f0f4f8; border-radius:2px; border-left:3px solid; margin-bottom:8px; }
-  .result-embed-box { margin-top:8px; }
-  .result-embed-label { font-size:9px; color:var(--text-light); margin-bottom:3px; }
-  .result-embed-code { font-family:'Courier New',monospace; font-size:9px; background:#f5f5f5; border:1px solid var(--border-light); padding:6px; border-radius:2px; word-break:break-all; color:var(--text-light); cursor:pointer; }
-  .result-embed-code:hover { background:#eee; }
-  .result-retake { font-size:10px; margin-top:8px; display:inline-block; }
+  @keyframes resultPop { 0% { transform: translateY(6px); opacity: 0 } 100% { transform: none; opacity: 1 } }
 
   /* ============ CONTACT FORM ============ */
-  .form-row { margin-bottom:10px; }
-  .form-label { font-size:10px; font-weight:bold; color:var(--bg-module-header); margin-bottom:3px; display:block; }
-  .form-input,.form-textarea,.form-select { width:100%; font-family:inherit; font-size:10px; padding:6px 8px; border:1px solid var(--border-light); border-radius:3px; background:#fafafa; }
-  .form-textarea { resize:vertical; min-height:80px; }
-  .form-select { appearance:auto; }
-  .form-submit { font-size:12px; padding:8px 24px; background:var(--bg-module-header); color:white; border:none; border-radius:3px; cursor:pointer; font-family:inherit; font-weight:bold; transition:background 0.15s; }
-  .form-submit:hover { background:var(--bg-nav); }
-  .form-note { font-size:9px; color:var(--text-light); margin-top:6px; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 14px; }
+  .form-row.full { grid-column: 1 / -1; }
+  .form-label { font-size: 12px; font-weight: bold; color: var(--bg-module-header); margin-bottom: 4px; display: block; }
+  .form-label small { font-weight: normal; color: var(--text-light); }
+  .form-input, .form-textarea, .form-select {
+    width: 100%; font: 13px var(--verdana); color: var(--text-body);
+    padding: 8px 10px; border: 1px solid var(--border-module); border-radius: 2px; background: #fff;
+  }
+  .form-input:focus, .form-textarea:focus, .form-select:focus { border-color: var(--bg-module-header); }
+  .form-textarea { resize: vertical; min-height: 120px; line-height: 1.5; }
+  .form-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 14px; }
+  .form-note { font-size: 11px; color: var(--text-light); }
+
+  /* ============ BOWIE QUIZ ============ */
+  .quiz-stepper { position: relative; min-height: 230px; }
+  .quiz-card { display: none; animation: cardIn .3s ease-out; }
+  .quiz-card.active { display: block; }
+  @keyframes cardIn { 0% { opacity: 0; transform: translateX(20px) } 100% { opacity: 1; transform: none } }
+
+  .quiz-progress { display: flex; gap: 4px; margin-bottom: 14px; }
+  .quiz-pip { flex: 1; height: 4px; border-radius: 2px; background: var(--border-light); transition: background .3s; }
+  .quiz-pip.done { background: var(--bg-module-header); }
+  .quiz-pip.current { background: var(--accent-orange); }
+
+  .quiz-q-num { font-size: 11px; color: var(--text-light); margin-bottom: 2px; }
+  .quiz-q-text { font-family: var(--trebuchet); font-size: 16px; font-weight: bold; color: var(--bg-nav); margin-bottom: 10px; line-height: 1.35; }
+  .quiz-options { display: flex; flex-direction: column; gap: 6px; }
+  .quiz-option {
+    display: flex; align-items: center; gap: 10px;
+    padding: 9px 12px; border: 1px solid var(--border-light); border-radius: 2px;
+    cursor: pointer; font-size: 12px; line-height: 1.45; background: #fff;
+    transition: background .15s, border-color .15s;
+  }
+  .quiz-option:hover { background: #eef3f8; border-color: var(--border-module); }
+  .quiz-option.selected { background: #e3ecf5; border-color: var(--bg-module-header); font-weight: bold; }
+  .quiz-radio {
+    width: 14px; height: 14px; border-radius: 50%;
+    border: 2px solid var(--border-module); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .quiz-option.selected .quiz-radio { border-color: var(--bg-module-header); }
+  .quiz-option.selected .quiz-radio::after { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--bg-module-header); }
+
+  .quiz-nav { display: flex; justify-content: space-between; margin-top: 14px; }
+  .quiz-nav-btn {
+    font: 12px var(--verdana); padding: 6px 16px; border: 1px solid var(--border-module);
+    border-radius: 2px; cursor: pointer; background: #fff; color: var(--text-body);
+    transition: background .15s;
+  }
+  .quiz-nav-btn:hover { background: #eef3f8; }
+  .quiz-nav-btn.primary { background: var(--bg-module-header); color: #fff; border-color: var(--bg-module-header); font-weight: bold; }
+  .quiz-nav-btn.primary:hover { background: var(--bg-nav); }
+  .quiz-nav-btn:disabled { opacity: .4; cursor: default; }
+
+  .result-card { display: none; border: 2px solid; border-radius: 3px; overflow: hidden; animation: resultPop .35s ease-out; }
+  .result-card.show { display: block; }
+  .result-card-header { padding: 6px 14px; color: #fff; font-size: 10px; text-transform: uppercase; letter-spacing: .12em; }
+  .result-card-body { padding: 14px 16px; }
+  .result-era { font-family: var(--trebuchet); font-size: 30px; line-height: 1.15; font-weight: bold; margin-bottom: 8px; }
+  .result-desc { font-size: 12px; margin-bottom: 10px; }
+  .result-photo-style { font-size: 12px; padding: 8px 12px; background: #eef3f8; border-left: 3px solid; margin-bottom: 10px; }
+  .result-embed-label { font-size: 11px; color: var(--text-light); margin-bottom: 3px; }
+  .result-embed-code { font: 11px "Courier New", monospace; background: #fff; border: 1px dashed var(--border-module); padding: 8px; border-radius: 2px; word-break: break-all; color: var(--text-light); cursor: pointer; }
+  .result-embed-code:hover { background: #eef3f8; }
+  .result-retake { font-size: 12px; margin-top: 10px; display: inline-block; }
 
   /* ============ SIDEBAR ============ */
-  .chart-table { width:100%; font-size:10px; }
-  .chart-table td { padding:3px 6px; border-bottom:1px solid var(--border-light); vertical-align:middle; }
-  .chart-table td:first-child { font-weight:bold; color:var(--bg-module-header); width:60px; }
+  .chart-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .chart-table th, .chart-table td { text-align: left; padding: 5px 0; border-top: 1px solid var(--border-light); }
+  .chart-table tr:first-child th, .chart-table tr:first-child td { border-top: 0; }
+  .chart-table th { color: var(--bg-module-header); width: 96px; padding-right: 10px; }
+  .side-note { font-size: 12px; color: var(--text-light); margin-top: 10px; }
+  .facts { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .facts th, .facts td { text-align: left; vertical-align: top; padding: 6px 0; border-top: 1px solid var(--border-light); }
+  .facts tr:first-child th, .facts tr:first-child td { border-top: 0; }
+  .facts th { color: var(--bg-module-header); width: 96px; padding-right: 10px; }
 
-  .section-label { font-weight:bold; color:var(--bg-module-header); font-size:11px; margin-bottom:6px; border-bottom:1px solid var(--border-light); padding-bottom:2px; }
+  .footer { text-align: center; padding: 8px 16px 24px; font-size: 11px; color: #556; }
+  .footer a { color: #445; }
 
-  .footer { text-align:center; padding:16px; font-size:9px; color:#777; border-top:1px solid #aab8c8; margin-top:20px; }
-  .footer a { color:#557; }
+  @media (prefers-reduced-motion: reduce) {
+    .tile img, .glow, .frame rect, .sign-btn, .compat-meter-fill { transition: none !important; }
+    .tile:hover img, .sign-btn:hover { transform: none; }
+    .quiz-card, .compat-result, .result-card { animation: none; }
+  }
 
-
-  @media (max-width:768px) {
-    .two-col { flex-direction:column; }
-    .col-side { width:100%; }
-    .sign-grid { grid-template-columns:repeat(4,1fr); }
+  /* Phone and small tablet: one column; the photo tucks away, the form stays near the top */
+  @media (max-width: 800px) {
+    .layout { grid-template-columns: 1fr; }
+    .side-photo { display: none; }
+    .sign-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+  @media (max-width: 520px) {
+    .form-grid { grid-template-columns: 1fr; }
+    .sign-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .hello .btn { width: 100%; }
   }
 </style>
 <link rel="stylesheet" href="/assets/site.css">
@@ -233,83 +306,88 @@
   </div>
 </header>
 
-<div class="container">
+<main class="container">
+  <div class="layout">
 
-  <div class="page-intro">
-    <strong>Want to work together?</strong>  Check our compatibility and fill out the form below.
-  </div>
-
-  <div class="two-col">
-    <div class="col-main">
-
-      <!-- ============ ASTROLOGY COMPATIBILITY (now top) ============ -->
-      <div class="module">
-        <div class="module-header">♒ Are We Compatible?</div>
-        <div class="module-body">
-          <div style="font-size:11px; margin-bottom:10px; line-height:1.5;">
-            I'm an <strong>Aquarius</strong>.
-            Pick your sign and let's see if we should work together.
+    <!-- ============ LEFT: THE CONVERSATION ============ -->
+    <div>
+      <section class="module">
+        <div class="module-body hello">
+          <div>
+            <h1>Want to work together?</h1>
+            <p>Check our compatibility, then send me a note below. Or skip the stars and just email me.</p>
           </div>
+          <a class="btn primary" href="mailto:josephlgraham@gmail.com">Email Joe</a>
+        </div>
+      </section>
+
+      <!-- ============ ASTROLOGY COMPATIBILITY ============ -->
+      <section class="module" aria-labelledby="compat-h">
+        <div class="module-header"><span id="compat-h">Are We Compatible?</span><small>&#9810;&#xFE0E; Aquarius here</small></div>
+        <div class="module-body">
+          <p class="lede">I'm an <strong>Aquarius</strong>. Pick your sign and let's see if we should work together.</p>
           <div class="sign-grid" id="signGrid"></div>
-          <div class="compat-result" id="compatResult">
+          <div class="compat-result" id="compatResult" aria-live="polite">
             <div class="compat-rating" id="compatRating"></div>
             <div class="compat-meter"><div class="compat-meter-fill" id="compatMeter" style="width:0%"></div></div>
             <div class="compat-text" id="compatText"></div>
             <div class="compat-verdict" id="compatVerdict"></div>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- ============ CONTACT FORM ============ -->
-      <div class="module">
-        <div class="module-header">📬 Send a Message</div>
+      <section class="module" aria-labelledby="form-h">
+        <div class="module-header"><span id="form-h">Send a Message</span></div>
         <div class="module-body">
-          <div class="form-row">
-            <label class="form-label">Your Name</label>
-            <input type="text" id="contactName" class="form-input" placeholder="What should I call you?">
+          <div class="form-grid">
+            <div class="form-row">
+              <label class="form-label" for="contactName">Your name</label>
+              <input type="text" id="contactName" class="form-input" autocomplete="name" placeholder="What should I call you?">
+            </div>
+            <div class="form-row">
+              <label class="form-label" for="contactEmail">Email</label>
+              <input type="email" id="contactEmail" class="form-input" autocomplete="email" placeholder="Where can I reach you?">
+            </div>
+            <div class="form-row">
+              <label class="form-label" for="contactSubject">What's this about?</label>
+              <select id="contactSubject" class="form-select">
+                <option value="">Pick one...</option>
+                <option value="commercial">Commercial / Brand Work</option>
+                <option value="portrait">Portraits</option>
+                <option value="event">Event Coverage</option>
+                <option value="art">Fine Art Inquiry</option>
+                <option value="collab">Collaboration / Creative Project</option>
+                <option value="print">Print Purchase</option>
+                <option value="other">Something Else Entirely</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label class="form-label" for="contactBudget">Budget <small>(optional, but helpful)</small></label>
+              <select id="contactBudget" class="form-select">
+                <option value="">Prefer not to say</option>
+                <option value="under1k">Under $1,000</option>
+                <option value="1k-3k">$1,000 – $3,000</option>
+                <option value="3k-5k">$3,000 – $5,000</option>
+                <option value="5kplus">$5,000+</option>
+                <option value="trade">Let's talk trade / barter</option>
+              </select>
+            </div>
+            <div class="form-row full">
+              <label class="form-label" for="contactMessage">Tell me more</label>
+              <textarea id="contactMessage" class="form-textarea" placeholder="What are you working on? What's the timeline? What's the vibe?"></textarea>
+            </div>
           </div>
-          <div class="form-row">
-            <label class="form-label">Email</label>
-            <input type="email" id="contactEmail" class="form-input" placeholder="Where can I reach you?">
+          <div class="form-actions">
+            <button type="button" class="btn primary" onclick="submitForm(this)">Send message</button>
+            <span class="form-note">Opens your email app with everything filled in.</span>
           </div>
-          <div class="form-row">
-            <label class="form-label">What's This About?</label>
-            <select id="contactSubject" class="form-select">
-              <option value="">Pick one...</option>
-              <option value="commercial">Commercial / Brand Work</option>
-              <option value="portrait">Portraits</option>
-              <option value="event">Event Coverage</option>
-              <option value="art">Fine Art Inquiry</option>
-              <option value="collab">Collaboration / Creative Project</option>
-              <option value="print">Print Purchase</option>
-              <option value="other">Something Else Entirely</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <label class="form-label">Tell Me More</label>
-            <textarea id="contactMessage" class="form-textarea" placeholder="What are you working on? What's the timeline? What's the vibe?"></textarea>
-          </div>
-          <div class="form-row">
-            <label class="form-label">Budget Range (optional — but helpful)</label>
-            <select id="contactBudget" class="form-select">
-              <option value="">Prefer not to say</option>
-              <option value="under1k">Under $1,000</option>
-              <option value="1k-3k">$1,000 – $3,000</option>
-              <option value="3k-5k">$3,000 – $5,000</option>
-              <option value="5kplus">$5,000+</option>
-              <option value="trade">Let's talk trade / barter</option>
-            </select>
-          </div>
-          <button class="form-submit" onclick="submitForm(this)">Send Message ✉️</button>
         </div>
-      </div>
+      </section>
 
-      <!-- ============ BOWIE QUIZ (now bottom, card stepper) ============ -->
-      <div class="module">
-        <div class="module-header">
-          🌟 Which David Bowie Era Are You?
-          <span style="font-size:9px; font-weight:normal; opacity:0.8;">A quiz by Joe</span>
-        </div>
+      <!-- ============ BOWIE QUIZ ============ -->
+      <section class="module" aria-labelledby="quiz-h">
+        <div class="module-header"><span id="quiz-h">Which David Bowie Era Are You?</span><small>A quiz by Joe</small></div>
         <div class="module-body">
           <div id="bowieQuiz">
             <div class="quiz-progress" id="quizProgress">
@@ -395,56 +473,60 @@
                 <div class="result-embed-label">Copy this to your page:</div>
                 <div class="result-embed-code" id="resultEmbed" onclick="copyEmbed()" title="Click to copy"></div>
               </div>
-              <a href="#" class="result-retake" onclick="retakeBowie(); return false;">🔄 Retake Quiz</a>
+              <a href="#" class="result-retake" onclick="retakeBowie(); return false;">Retake the quiz</a>
             </div>
           </div>
         </div>
-      </div>
-
+      </section>
     </div>
 
-    <!-- ============ SIDEBAR ============ -->
-    <div class="col-side">
+    <!-- ============ RIGHT: THE SIDEBAR ============ -->
+    <aside>
+      <div class="module side-photo">
+        <a class="tile" href="/portfolio.html#tracks-sunset" aria-label="The Iron Vein, Alabama"><img src="photos/web/tracks_sunset.jpg" width="840" height="840" alt="Railroad tracks curving through green Alabama woods at sunset." style="object-position:62% 50%" decoding="async"><span class="glow"></span><svg class="frame" aria-hidden="true"><rect x="0" y="0" width="100%" height="100%" pathLength="100"/></svg><span class="cap" aria-hidden="true">The Iron Vein<small>Alabama</small></span></a>
+        <div class="social">
+          <a href="https://www.instagram.com/josephlgraham/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></a>
+          <a href="https://www.facebook.com/josephlgraham" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+          <a href="https://www.threads.com/@josephlgraham" target="_blank" rel="noopener" aria-label="Threads" title="Threads"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"/></svg></a>
+          <a href="https://www.tiktok.com/@dwerked" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+        </div>
+      </div>
 
-      <div class="module">
-        <div class="module-header">Joe's Chart</div>
+      <section class="module" aria-labelledby="chart-h">
+        <div class="module-header"><span id="chart-h">Joe's Chart</span></div>
         <div class="module-body">
-          <div style="font-size:9px; color:var(--text-light); margin-bottom:8px;">
-          </div>
           <table class="chart-table">
-            <tr><td>☉ Sun</td><td>Aquarius 2°24'</td></tr>
-            <tr><td>☽ Moon</td><td>Taurus 11°51'</td></tr>
-            <tr><td>↑ Rising</td><td>Cancer</td></tr>
-            <tr><td>☿ Mercury</td><td>Capricorn 17°58'</td></tr>
-            <tr><td>♀ Venus</td><td>Aquarius 21°36'</td></tr>
-            <tr><td>♂ Mars</td><td>Pisces 4°17'</td></tr>
-            <tr><td>♃ Jupiter</td><td>Sagittarius 5°09'</td></tr>
-            <tr><td>♄ Saturn</td><td>Scorpio 4°04'</td></tr>
+            <tr><th scope="row">&#9737; Sun</th><td>Aquarius 2°24'</td></tr>
+            <tr><th scope="row">&#9789; Moon</th><td>Taurus 11°51'</td></tr>
+            <tr><th scope="row">&uarr; Rising</th><td>Cancer</td></tr>
+            <tr><th scope="row">&#9791; Mercury</th><td>Capricorn 17°58'</td></tr>
+            <tr><th scope="row">&#9792; Venus</th><td>Aquarius 21°36'</td></tr>
+            <tr><th scope="row">&#9794; Mars</th><td>Pisces 4°17'</td></tr>
+            <tr><th scope="row">&#9795; Jupiter</th><td>Sagittarius 5°09'</td></tr>
+            <tr><th scope="row">&#9796; Saturn</th><td>Scorpio 4°04'</td></tr>
           </table>
-          <div style="font-size:9px; color:var(--text-light); margin-top:8px; line-height:1.5;">
-            Translation: Stubborn visionary with big feelings he'll express through photographs instead of words. Cancer rising means he'll probably feed you if you visit.
-          </div>
+          <p class="side-note">Translation: Stubborn visionary with big feelings he'll express through photographs instead of words. Cancer rising means he'll probably feed you if you visit.</p>
         </div>
-      </div>
+      </section>
 
-      <div class="module">
-        <div class="module-header">⚡ Quick Facts</div>
-        <div class="module-body" style="font-size:10px; line-height:1.7;">
-          <strong>Bowie era:</strong> Berlin Trilogy (obviously)<br>
-          <strong>Camera:</strong> Fujifilm<br>
-          <strong>Mercury Rx policy:</strong> Emails may be late<br>
-          <strong>Will trade photos for:</strong> Interesting stories<br>
-          <strong>Won't shoot:</strong> Boring things on purpose
+      <section class="module" aria-labelledby="facts-h">
+        <div class="module-header"><span id="facts-h">Quick Facts</span></div>
+        <div class="module-body">
+          <table class="facts">
+            <tr><th scope="row">Bowie era</th><td>Berlin Trilogy (obviously)</td></tr>
+            <tr><th scope="row">Camera</th><td>Fujifilm</td></tr>
+            <tr><th scope="row">Mercury Rx policy</th><td>Emails may be late</td></tr>
+            <tr><th scope="row">Will trade photos for</th><td>Interesting stories</td></tr>
+            <tr><th scope="row">Won't shoot</th><td>Boring things on purpose</td></tr>
+          </table>
         </div>
-      </div>
+      </section>
+    </aside>
 
-    </div>
   </div>
+</main>
 
-  <div class="footer">
-    &copy; 2026 Joe Graham &middot; <a href="/legal.html">Legal &amp; Privacy</a>
-  </div>
-</div>
+<footer class="footer">&copy; 2026 Joe Graham &middot; <a href="/legal.html">Legal &amp; Privacy</a></footer>
 
 <script>
 // ============================================================
@@ -609,9 +691,10 @@ const compatData = {
 
 const signGrid = document.getElementById('signGrid');
 signs.forEach(sign => {
-  const btn = document.createElement('div');
+  const btn = document.createElement('button');
+  btn.type = 'button';
   btn.className = 'sign-btn';
-  btn.innerHTML = `<span class="sign-emoji">${sign.emoji}</span><span class="sign-name">${sign.name}</span>`;
+  btn.innerHTML = `<span class="sign-emoji">${sign.emoji}&#xFE0E;</span><span class="sign-name">${sign.name}</span>`;
   btn.onclick = () => showCompat(sign.name, btn);
   signGrid.appendChild(btn);
 });
