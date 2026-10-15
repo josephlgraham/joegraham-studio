@@ -264,3 +264,12 @@ details.stopcard.hit{outline:3px solid var(--orange);outline-offset:2px}
 table.legs .srcline{display:block;margin-top:2px}
 table.legs tfoot td.num::before{content:none}
 @media (max-width:700px){table.legs tfoot td:empty{display:none}table.legs tfoot td.num::before{content:attr(data-h) ": "}}
+
+/* ---------- telemetry strip ---------- */
+.telemetry ul.tiles{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.telemetry li.tile{background:var(--soft);border-left:5px solid var(--orange);border-radius:4px;padding:14px 16px 12px;margin:0}
+.telemetry .tile-head{font-family:var(--head);font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0}
+.telemetry .tile-big{font-family:var(--head);font-size:34px;font-weight:700;line-height:1.15;color:var(--navy);margin:4px 0 6px}
+.telemetry .tile-text{font-size:16px;line-height:1.5;margin:0 0 8px}
+.telemetry .srcline{display:block;font-size:14px}
+@media print{.telemetry li.tile{break-inside:avoid}}
