@@ -14,7 +14,12 @@
   });
 
   /* hover tips on the life bar (the list under the figure carries the same facts) */
-  $$("svg title").forEach(function (t) { t.parentNode.setAttribute("data-tip", t.textContent); t.remove(); });
+  $$("svg title").forEach(function (t) {
+    var p = t.parentNode, a = p.closest ? p.closest("a") : null;
+    p.setAttribute("data-tip", t.textContent);
+    if (a && !a.getAttribute("aria-label")) a.setAttribute("aria-label", t.textContent); /* the title was the link's name */
+    t.remove();
+  });
   var tip = document.getElementById("tip");
   if (tip) {
     document.addEventListener("mousemove", function (ev) {
@@ -102,4 +107,25 @@
     var a=ev.target.closest && ev.target.closest('a.pin');
     if(a){ev.preventDefault();openStop(a.getAttribute('data-stop'))}
   });
+})();
+
+/* travel map: on a narrow screen the map scrolls sideways; start it centred on the route, not on the empty left edge.
+   Runs when the map first gets a size, so it also works when the page is opened by the gate after load. */
+(function(){
+  function centre(f){
+    if(f.scrollWidth<=f.clientWidth) return true;
+    var pins=f.querySelectorAll('a.pin circle'); if(!pins.length) return true;
+    var r=f.getBoundingClientRect(), lo=Infinity, hi=-Infinity;
+    for(var i=0;i<pins.length;i++){var b=pins[i].getBoundingClientRect(); lo=Math.min(lo,b.left); hi=Math.max(hi,b.right);}
+    f.scrollLeft=Math.max(0,(lo+hi)/2-r.left+f.scrollLeft-f.clientWidth/2);
+    return true;
+  }
+  function wire(){
+    document.querySelectorAll('.travelmap').forEach(function(f){
+      if(f.clientWidth){centre(f);return;}
+      if(!window.ResizeObserver) return;
+      var ro=new ResizeObserver(function(){ if(f.clientWidth){ro.disconnect();centre(f);} }); ro.observe(f);
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',wire); else wire();
 })();

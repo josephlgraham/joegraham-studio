@@ -23,7 +23,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 h1,h2,h3,h4{font-family:var(--head);color:var(--navy);line-height:1.25;margin:0}
 h1{font-size:40px;letter-spacing:-.3px}
 h2{font-size:27px;margin:0 0 14px}
-h3{font-size:21px;margin:26px 0 8px}
+h3,h2.sub{font-size:21px;margin:26px 0 8px}
 h4{font-size:17px;margin:18px 0 6px;color:var(--muted)}
 p{margin:0 0 14px;max-width:var(--measure)}
 ul,ol{margin:0;padding:0}
@@ -251,7 +251,8 @@ ul.plainlist .tnote{margin-left:10px}
 
 /* travel maps */
 .travelmap svg{display:block;min-width:620px;width:100%;height:auto;border:1px solid var(--grey);border-radius:6px}
-.travelmap a.pin{cursor:pointer}
+.travelmap a.pin{cursor:pointer;text-decoration:none}
+.travelmap a.pin text{text-decoration:none}
 .travelmap a.pin:focus circle,.travelmap a.pin:hover circle{stroke:var(--navy);stroke-width:4}
 .table-wrap{overflow-x:auto}
 table.legs{width:100%;border-collapse:collapse;margin:14px 0}
