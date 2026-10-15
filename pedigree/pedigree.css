@@ -238,3 +238,12 @@ html.pg-locked .pg-nojs{display:none}
   a{color:#000;text-decoration:none}
   .doc .thumb{width:56px;height:56px}
 }
+
+/* the wife's family joins the trunk */
+.tree .incoming{border-left:3px solid var(--orange);padding-left:10px}
+.tree a.joins{white-space:nowrap;font-weight:bold}
+ul.plainlist{list-style:none;margin:0;padding:0}
+ul.plainlist li{padding:8px 0;border-top:1px solid var(--grey)}
+ul.plainlist li:first-child{border-top:0}
+ul.plainlist .yr{margin-left:10px}
+ul.plainlist .tnote{margin-left:10px}
