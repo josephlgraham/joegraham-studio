@@ -12,7 +12,7 @@
   --pat:#1f5a63; --mat:#8a4520; --cty:#566320;
   --body:Verdana,Geneva,Tahoma,sans-serif;
   --head:"Trebuchet MS",Trebuchet,"Segoe UI",sans-serif;
-  --measure:68ch;
+  --measure:100%;   /* one right edge for every text block: the box itself. The page column (980px) keeps lines readable. A ch value scaled with each font size and left ragged edges. */
 }
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-padding-top:90px}
