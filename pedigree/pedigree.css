@@ -247,3 +247,19 @@ ul.plainlist li{padding:8px 0;border-top:1px solid var(--grey)}
 ul.plainlist li:first-child{border-top:0}
 ul.plainlist .yr{margin-left:10px}
 ul.plainlist .tnote{margin-left:10px}
+.pg-main p.why{font-size:19px;line-height:1.7;color:var(--navy);border-left:3px solid var(--orange);padding-left:14px;margin:12px 0 18px}
+
+/* travel maps */
+.travelmap svg{display:block;min-width:620px;width:100%;height:auto;border:1px solid var(--grey);border-radius:6px}
+.travelmap a.pin{cursor:pointer}
+.travelmap a.pin:focus circle,.travelmap a.pin:hover circle{stroke:var(--navy);stroke-width:4}
+.table-wrap{overflow-x:auto}
+table.legs{width:100%;border-collapse:collapse;margin:14px 0}
+table.legs th{text-align:left;font-size:14px;color:var(--muted);font-weight:normal;padding:6px 10px 6px 0;vertical-align:bottom;border-bottom:2px solid var(--grey)}
+table.legs td{padding:10px 10px 10px 0;border-top:1px solid var(--grey);vertical-align:top}
+table.legs tfoot td{font-weight:bold;border-top:2px solid var(--grey)}
+details.stopcard.hit{outline:3px solid var(--orange);outline-offset:2px}
+@media (max-width:700px){table.legs thead{display:none}table.legs tr{display:block;padding:8px 0;border-top:1px solid var(--grey)}table.legs td{display:block;border:0;padding:2px 0}table.legs td.num::before{content:attr(data-h) ": ";color:var(--muted)}}
+table.legs .srcline{display:block;margin-top:2px}
+table.legs tfoot td.num::before{content:none}
+@media (max-width:700px){table.legs tfoot td:empty{display:none}table.legs tfoot td.num::before{content:attr(data-h) ": "}}

@@ -89,3 +89,17 @@
   window.addEventListener("beforeprint", function () { was = $$("details").map(function (d) { return d.open; }); $$("details").forEach(function (d) { d.open = true; }); });
   window.addEventListener("afterprint", function () { $$("details").forEach(function (d, i) { d.open = !!was[i]; }); });
 })();
+
+/* travel map: a pin opens its card */
+(function(){
+  function openStop(id){
+    var d=document.getElementById('stop-'+id); if(!d) return;
+    document.querySelectorAll('details.stopcard.hit').forEach(function(x){x.classList.remove('hit')});
+    d.open=true; d.classList.add('hit');
+    d.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+  document.addEventListener('click',function(ev){
+    var a=ev.target.closest && ev.target.closest('a.pin');
+    if(a){ev.preventDefault();openStop(a.getAttribute('data-stop'))}
+  });
+})();
