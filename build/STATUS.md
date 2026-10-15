@@ -147,3 +147,24 @@ Python needs Pillow, numpy, scipy, and matplotlib (`pip install --user`).
 - Trip zips Joe exported: `Fotos\hawaii_kuai.zip`, `Fotos\hawaii_bigisland.zip`,
   `Fotos\cali_coast.zip`, `Downloads\lava.zip`, `Downloads\journal-kit.zip`.
 - Phone shots carry GPS; Fuji shots almost never do.
+
+## The /pedigree/ section (unlisted)
+
+`pedigree/` is Joe's family archive: life sheets, record pages, the family
+web and documents, grandparents' generation and earlier, nobody living. It
+is unlisted on purpose. Nothing on the site links to it, every page carries
+`noindex, nofollow`, and it stays out of `sitemap.xml`, `llms.txt` and
+`robots.txt` (listing it in robots.txt would publish the path).
+
+- **The PIN** is one constant at the top of `pedigree/gate.js`. The gate is
+  a curtain, not a lock: client side only, and Joe knows that.
+- **Never edit `pedigree/` by hand.** It is generated from the family
+  pages in `C:\Users\josep\CLAUDE_PROJECTS\GRAHAM\0000 Whole family\Life sheets and timeline\_build kit\`.
+- **To re-publish** (after launch the site lives in one clone only, this
+  OneDrive folder):
+  1. Set `PEDIGREE_SITE` to `C:\Users\josep\OneDrive\Documents\GitHub\joegraham-studio`
+     (A7 of the launch prompt sets it once for the user account).
+  2. Run `py publish_pedigree.py --all` from the build kit folder.
+  3. `git status` must show changes only under `pedigree/`. Unchanged
+     images are skipped, so a rebuild with no data changes leaves git clean.
+  4. Commit and push from this folder.
