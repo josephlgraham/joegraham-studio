@@ -305,3 +305,41 @@ table.farmtable th[aria-sort=descending] button::after{content:" \2193"}
 table.farmtable td .lab{margin-left:0}
 @media (max-width:700px){.farmfilters label,.farmfilters input,.farmfilters select{width:100%}table.farmcard,table.farmtable{font-size:14px}}
 @media print{.farmfilters,#ff-count{display:none}}
+
+/* ---------- Opening essay and era pages (index.html, eras.html, era-*.html), added 12 Nov 2026 ---------- */
+.essay .byline{color:var(--muted);font-size:16px;margin:0 0 18px}
+.essay-photo{margin:0 0 22px}
+.essay-photo img{display:block;width:100%;max-width:640px;height:auto;border:1px solid var(--rule)}
+.essay-photo figcaption{margin-top:6px}
+.essay-text p{margin:0 0 1em;line-height:1.7}
+.pgmark{float:right;font-size:13px;color:var(--muted);margin:0 0 4px 12px}
+.pgmark-in{font-size:13px;color:var(--muted);white-space:nowrap}
+ol.eralist{list-style:none;padding:0;margin:16px 0 0}
+ol.eralist>li{padding:14px 0;border-bottom:1px solid var(--rule)}
+ol.eralist>li:last-child{border-bottom:0}
+ol.eralist p{margin:4px 0 0}
+a.eracard{display:flex;flex-wrap:wrap;gap:2px 14px;align-items:baseline;font-family:var(--head);font-size:20px;font-weight:700}
+a.eracard .ey{font-size:15px;font-weight:normal;color:var(--muted)}
+h2 .count{font-size:15px;font-weight:normal;color:var(--muted)}
+ol.eraevents{list-style:none;padding:0;margin:8px 0 0}
+ol.eraevents>li{display:grid;grid-template-columns:8.5em 1fr;gap:2px 14px;padding:10px 0;border-bottom:1px solid var(--rule)}
+ol.eraevents>li:last-child{border-bottom:0}
+ol.eraevents .edate{font-size:15px;color:var(--muted)}
+ol.eraevents .srcline{display:block;margin-top:2px}
+.farmrec{border-top:2px solid var(--rule);padding:18px 0 4px;margin-top:18px}
+.farmrec h3{margin:0 0 4px;font-size:20px}
+.farmrec h4{font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:16px 0 6px}
+.farmrec>p{margin:4px 0}
+dl.figs{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,8.5em),1fr));gap:8px 10px;margin:0;font-size:16px}
+dl.figs .fi{background:#fff;border:1px solid var(--rule);border-radius:4px;padding:8px 10px}
+dl.figs .fi.rd{grid-column:1/-1}
+dl.figs dt{font-size:13px;color:var(--muted)}
+dl.figs dd{margin:2px 0 0;font-size:17px;font-weight:700}
+dl.figs .fi.rd dd{font-size:15px;font-weight:normal}
+dl.figs dd .ac,dl.figs dd .srcline{display:block;font-size:13px;font-weight:normal;color:var(--muted)}
+ul.takelist{margin:8px 0 12px 1.2em}
+.erastrip{margin:0 0 28px}
+.erastrip a[aria-current]{border-color:var(--navy);background:var(--soft);font-weight:700}
+nav.eranav{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
+@media (max-width:700px){ol.eraevents>li{grid-template-columns:1fr}.pgmark{float:none;display:block;margin:0 0 4px}}
+@media print{.erastrip,nav.eranav{display:none}}
