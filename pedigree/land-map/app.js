@@ -225,7 +225,7 @@ function init() {
     if (e.from <= 1906 && e.to >= 1904) onMap.push('The USGS sheet (about 1904 to 1906)');
     if (D.bookmap && e.from <= 1945 && e.to >= 1930) onMap.push('The family book\'s 1930s and 40s map (key only)');
     if (e.to >= 2024) onMap.push('The 2024 lidar terrain');
-    var groups = { plants: 'Plants and the land', animals: 'Animals', sky: 'Sky and time' }, its = itemsFor(e), html = '';
+    var groups = { plants: 'Plants and the land', animals: 'Animals', sky: 'Sky and time', people: 'People, law, and health', country: 'The Country line' }, its = itemsFor(e), html = '';
     Object.keys(groups).forEach(function (g) { var list = its.filter(function (i) { return i.group === g; }); if (!list.length) return;
       html += '<h3>' + groups[g] + '</h3><ul>' + list.map(function (i) { return '<li><strong>' + esc(i.name) + '</strong> (' + esc(i.status) + '). ' + esc(i.text) + (i.joe ? ' <em>' + esc(i.joe) + '</em>' : '') + ' ' + tag(i.label) + '<br><span class="src">' + (i.url ? '<a href="' + esc(i.url) + '" target="_blank" rel="noopener">' + esc(i.source) + '</a>' : esc(i.source)) + '</span></li>'; }).join('') + '</ul>'; });
     if (!html) html = '<p>No plants or animals written up for these years yet. Add them in data/eras.json.</p>';
