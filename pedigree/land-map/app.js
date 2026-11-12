@@ -325,8 +325,11 @@ function init() {
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !card.hidden && card.contains(document.activeElement)) closeCard(); });
 
   /* deep link: #sec-28 or #parcel-w28a */
-  var hm = location.hash.match(/^#(sec|parcel)-([\w]+)$/);
-  if (hm) { if (hm[1] === 'sec' && SEC[hm[2]]) secCard(+hm[2]); else if (byId[hm[2]]) showParcel(hm[2], true); }
+  /* also #place-cemetery and #unplaced-ebenezer, used by the archive's search page */
+  var hm = location.hash.match(/^#(sec|parcel|place|unplaced)-([\w-]+)$/);
+  if (hm) { if (hm[1] === 'sec' && SEC[hm[2]]) secCard(+hm[2]); else if (hm[1] === 'parcel' && byId[hm[2]]) showParcel(hm[2], true);
+    else if (hm[1] === 'place') { D.places.placed.forEach(function (pl) { if (pl.id === hm[2]) { map.setView([pl.lonlat[1], pl.lonlat[0]], 16); placeCard(pl); } }); }
+    else if (hm[1] === 'unplaced') { D.places.unplaced.forEach(function (pl) { if (pl.id === hm[2]) unplacedCard(pl); }); } }
   setYear(1891); legend(); yrLabels();
   window.__map = map;
 }

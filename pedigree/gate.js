@@ -68,6 +68,12 @@ var PEDIGREE_PIN = "1836"; /* the one place the code lives. A curtain, not a loc
       });
       if (root.classList.contains("pg-locked") && boxes[0]) boxes[0].focus();
     }
+    /* the side menu folds away on a phone behind one button */
+    var tg = document.querySelector(".pg-side-toggle"), side = document.getElementById("pg-side");
+    if (tg && side) tg.addEventListener("click", function () {
+      var o = tg.getAttribute("aria-expanded") !== "true";
+      tg.setAttribute("aria-expanded", String(o)); side.classList.toggle("is-open", o);
+    });
     var f = document.getElementById("pg-forget");
     if (f) f.addEventListener("click", function (ev) { ev.preventDefault(); forget(); window.location.reload(); });
   }

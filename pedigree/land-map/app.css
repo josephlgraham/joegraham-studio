@@ -41,11 +41,12 @@
 #results button:hover,#results button:focus-visible,#results button.on{background:var(--soft)}
 #results .k{display:block;font-size:14px;color:var(--muted)}
 
-/* main layout: layer panel left, map right; card floats over the map on wide screens */
-.lm-main{display:grid;grid-template-columns:330px minmax(0,1fr);gap:12px;align-items:start}
-.lm-side{background:var(--box);border:1px solid var(--rule);border-radius:6px;padding:12px 14px;max-height:calc(100vh - 40px);overflow:auto;position:sticky;top:12px}
-.lm-mapcol{position:relative;min-width:0}
-#map{height:min(78vh,860px);min-height:420px;border:1px solid var(--rule);border-radius:6px;background:#eef1f4}
+/* main layout (12 Nov 2026): the map full width, the layer toggles in a strip under it; card floats over the map on wide screens */
+.lm-main{display:block}
+.lm-mapcol{position:relative;min-width:0;z-index:0;isolation:isolate}
+#map{height:min(72vh,820px);min-height:420px;border:1px solid var(--rule);border-bottom:0;border-radius:10px 10px 0 0;background:#eef1f4}
+.lm-side{background:var(--box);border:1px solid var(--rule);border-radius:0 0 10px 10px;padding:12px 16px 10px;box-shadow:0 1px 3px rgba(0,26,51,.08)}
+.lm-side .hint{margin:0 0 10px;font-size:14px;color:var(--muted)}
 #card{position:absolute;top:10px;right:10px;width:min(380px,calc(100% - 70px));max-height:calc(100% - 20px);overflow:auto;z-index:1000;background:var(--box);border:1px solid var(--rule);border-radius:6px;box-shadow:0 4px 16px rgba(0,26,51,.2);padding:14px 16px 16px}
 #card[hidden]{display:none}
 #card h2{font-size:21px;margin:0 30px 6px 0}
@@ -72,22 +73,35 @@
 .tbl th,.tbl td{text-align:left;padding:5px 7px;border-bottom:1px solid var(--rule);vertical-align:top}
 .tbl th{font-size:14px;color:var(--muted)}
 
-/* layer panel */
-.lm-side h2{font-size:18px;margin:2px 0 8px}
-.grp{border-top:1px solid var(--rule);padding:8px 0}
-.grp>summary{cursor:pointer;font-family:var(--head);font-weight:bold;color:var(--navy);font-size:17px;padding:4px 0;list-style-position:inside}
-.lyr{margin:8px 0 10px 2px}
-.lyr label{display:flex;gap:8px;align-items:flex-start;cursor:pointer;font-weight:bold}
-.lyr input[type=checkbox],.lyr input[type=radio]{width:20px;height:20px;margin:2px 0 0;flex:none;accent-color:var(--navy)}
-.what{margin:2px 0 0 28px;font-size:15px;color:var(--muted)}
-.sub-ctl{margin:6px 0 0 28px;display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:15px}
-.sub-ctl label{font-weight:normal;display:inline-flex;gap:6px;align-items:center}
-.sub-ctl input[type=range]{width:150px;accent-color:var(--navy)}
-.yrrow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:6px 0 0 28px;font-size:15px}
-.yrrow input{flex:1 1 140px;min-width:0;accent-color:var(--navy)}
-.yrrow output{font-weight:bold;min-width:3em}
-.note{font-size:15px;color:var(--muted);border-left:4px solid var(--orange);padding:4px 0 4px 10px;margin:10px 0}
-#legend{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:6px;font-size:15px}
+/* layer toggles (under the map) */
+.lm-toggles{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:flex-start}
+.tg-grp{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.tg-h{flex-basis:100%;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:bold;margin:0 0 -2px 2px}
+label.tg{position:relative;display:inline-flex;align-items:center;gap:6px;padding:5px 12px 5px 10px;border:1px solid #8796a8;border-radius:999px;background:#fff;color:var(--navy);font-size:14px;font-weight:bold;cursor:pointer;user-select:none;line-height:1.3}
+label.tg input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+label.tg::before{content:"";width:14px;height:14px;flex:none;border:2px solid currentColor;border-radius:4px;box-sizing:border-box}
+label.tg:has(input:checked){background:var(--navy);border-color:var(--navy);color:#fff}
+label.tg:has(input:checked)::before{background:var(--orange);border-color:var(--orange);box-shadow:inset 0 0 0 2px var(--navy)}
+label.tg:has(input:focus-visible){outline:3px solid var(--orange);outline-offset:2px}
+label.tg:hover{border-color:var(--navy)}
+.lm-subs{display:flex;flex-wrap:wrap;gap:6px 24px;align-items:center;margin:10px 0 0;padding-top:10px;border-top:1px solid var(--rule)}
+.lm-subs:empty{display:none}
+.sub-h{font-size:13px;font-weight:bold;color:var(--muted);margin-right:2px;padding:0}
+.sub-ctl{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:14px;border:0;margin:0;padding:0}
+.sub-ctl[hidden]{display:none}
+.sub-ctl label{font-weight:normal;display:inline-flex;gap:5px;align-items:center;cursor:pointer}
+.sub-ctl input[type=radio]{width:16px;height:16px;margin:0;accent-color:var(--navy)}
+.sub-ctl input[type=range]{width:120px;accent-color:var(--navy)}
+.yrrow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:14px;font-weight:bold;color:var(--muted)}
+.yrrow input{width:200px;max-width:100%;accent-color:var(--navy)}
+.yrrow output{font-weight:bold;min-width:3em;color:var(--navy)}
+.lm-what{margin:8px 0 0;font-size:14px}
+.lm-what>summary{cursor:pointer;color:var(--navy);font-weight:bold;display:inline-block;padding:2px 0}
+.lm-what dl{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:4px 14px;margin:8px 0}
+.lm-what dt{font-weight:bold}
+.lm-what dd{margin:0;color:var(--muted)}
+.note{font-size:14px;color:var(--muted);border-left:4px solid var(--orange);padding:4px 0 4px 10px;margin:10px 0}
+#legend{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:4px 18px;font-size:13px;color:var(--muted)}
 #legend li{display:flex;gap:8px;align-items:center}
 .sw{width:22px;height:14px;flex:none;border:2px solid currentColor;border-radius:2px}
 .sw.f{background:currentColor;opacity:.75}
@@ -136,9 +150,8 @@
 /* phone and narrow screens: map first, then the card, then layers */
 @media (max-width:900px){
   .lm-wrap{padding:10px}
-  .lm-main{grid-template-columns:minmax(0,1fr)}
-  .lm-mapcol{order:1}
-  .lm-side{order:2;position:static;max-height:none}
+  .lm-side{padding:10px 12px}
+  .tg-grp{gap:5px}
   #map{height:62vh;min-height:340px}
   #card{position:static;width:auto;max-height:none;margin-top:10px;box-shadow:none}
   .lm-head{padding:10px 12px}
@@ -156,11 +169,11 @@
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 @media print{
-  .lm-top,.lm-bar,.lm-side .grp,.lm-side h2,.leaflet-control-zoom,#card .x,.lm-sec .noprint{display:none!important}
+  .lm-top,.lm-bar,.lm-toggles,.lm-subs,.lm-what,.lm-side .hint,.leaflet-control-zoom,#card .x,.lm-sec .noprint{display:none!important}
   .lm-main{display:block}
   #map{height:640px;border:1px solid #000;break-inside:avoid}
   #card{position:static;width:auto;box-shadow:none;border:1px solid #000;margin-top:8px}
-  .lm-side{position:static;max-height:none;border:0;padding:0}
+  .lm-side{border:0;padding:0}
   .lm a{color:#000}
   .lm-sec{border:0;padding:0;break-inside:auto}
   .lm-sec tbody tr{break-inside:avoid}
@@ -172,3 +185,9 @@
 .era-page li{margin:0 0 8px;max-width:85ch}
 .era-page nav ul{display:flex;flex-wrap:wrap;gap:6px 14px;list-style:none;padding:0}
 main.lm:focus{outline:none}
+
+@media (min-width:901px){.lm-bar select{flex:0 1 300px;min-width:0}}
+/* inside the family archive's page shell (website copy) */
+.lm-shell .lm-wrap{max-width:none;padding:24px 0 48px}
+.lm-shell .lm-head{border-radius:10px}
+@media (max-width:900px){.lm-shell .lm-wrap{padding:10px}}
