@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Graham land at Mount Olive | Family archive</title>
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../pedigree.css">
+<script src="../gate.js"></script>
+<link rel="stylesheet" href="lib/leaflet/leaflet.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top-bar" role="banner"><div class="top-bar-inner"><a href="../../index.html" class="top-bar-logo">joe<span>graham</span></a><span class="pg-label">Family archive</span></div></header>
+<section class="pg-gate" role="main" aria-labelledby="pg-welcome"><div class="box">
+<p class="welcome" id="pg-welcome" role="heading" aria-level="1">This is my family, as far back as the records go.</p>
+<p class="ask" id="pg-ask">Four digits.</p>
+<div class="pg-digits" id="pg-digits" role="group" aria-labelledby="pg-ask">
+<input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" aria-label="Digit 1 of 4">
+<input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" aria-label="Digit 2 of 4">
+<input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" aria-label="Digit 3 of 4">
+<input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" aria-label="Digit 4 of 4">
+</div>
+<p class="pg-hint" id="pg-hint" role="status" aria-live="polite"></p>
+</div></section>
+<noscript><div class="pg-nojs"><p>This page needs JavaScript to open. Turn it on for this site and reload.</p></div></noscript>
+<nav class="pg-bar pg-content" aria-label="Family archive"><div class="pg-bar-inner"><a href="../index.html">Family web</a><a href="../life-sheets.html">Life sheets</a><a href="../documents.html">Documents</a><a href="index.html" aria-current="page">Land map</a><a href="eras.html">Plants and animals by era</a></div></nav>
+<main id="main" class="lm pg-content">
+<div class="lm-wrap">
+<header class="lm-head">
+<h1>Graham land at Mount Olive</h1>
+<p class="sub">Township 15 South, Range 3 West, Huntsville Meridian, Jefferson County, Alabama</p>
+<p class="hint">Tap any forty, dot or place for its record. Tap anywhere else to see which forty it is and how high the ground is.</p>
+<p class="links"><a href="eras.html">Plants and animals by era</a> · <a href="#forties">Every Graham forty</a> · <a href="#notplaced">Not placed</a> · <a href="#about">How this map was made</a></p>
+</header>
+<div class="lm-bar">
+<div class="search"><label for="q" class="vh">Search the map</label><input id="q" type="search" placeholder="Search a surname or a section number" autocomplete="off" role="combobox" aria-controls="results" aria-expanded="false" aria-autocomplete="list"><ul id="results" role="listbox" aria-label="Search results" hidden></ul></div>
+<label for="era" class="vh">Era</label><select id="era"><option value="">Era: all years</option><option value="native">Native ground, before 1814</option><option value="territorial">Territorial period, 1814 to 1819</option><option value="early">Early statehood, 1820 to 1835</option><option value="antebellum">Antebellum years, 1836 to 1860</option><option value="civilwar">Civil War, 1861 to 1865</option><option value="reconstruction">Reconstruction, 1865 to 1877</option><option value="newsouth">New South, 1877 to 1900</option><option value="progressive">Progressive Era, 1900 to 1920</option><option value="interwar">Between the wars and the Great Depression, 1920 to 1941</option><option value="ww2">World War II, 1941 to 1945</option><option value="postwar">Postwar and civil rights years, 1945 to 1975</option><option value="late20">Late twentieth century, 1975 to 2000</option><option value="today">Today, 2000 to now</option></select>
+<button class="btn" id="bHome" type="button">Graham Cemetery</button>
+<button class="btn" id="bAll" type="button">Show the whole township</button>
+</div>
+<div class="lm-main">
+<aside class="lm-side" aria-labelledby="layersH">
+<h2 id="layersH">Layers</h2>
+<details class="grp" open><summary>Land and ownership</summary><div class="lyr"><label><input type="checkbox" data-layer="parcels" checked aria-describedby="d-parcels"> Graham-name forties</label><p class="what" id="d-parcels">Every forty the family entered or patented, colored by family group. Use the year slider to see what was held by a given year.</p><div class="yrrow"><label for="yr">Entered by</label><input id="yr" type="range" min="1825" max="1891" step="1" value="1891"><output id="yrOut" for="yr">1891</output></div></div><div class="lyr"><label><input type="checkbox" data-layer="grid" checked aria-describedby="d-grid"> Sections and forties (today&#x27;s grid)</label><p class="what" id="d-grid">Section lines from today&#x27;s BLM grid, not the 1821 survey lines. Forties are drawn by even division. Sections 17 and 18 are approximate.</p></div></details>
+<details class="grp" open><summary>Places</summary><div class="lyr"><label><input type="checkbox" data-layer="places" checked aria-describedby="d-places"> Cemetery, chapel, mill and the two oaks</label><p class="what" id="d-places">Points named in records or family memory. Tap one for its source and how sure the spot is.</p></div><div class="lyr"><label><input type="checkbox" data-layer="roads" checked aria-describedby="d-roads"> Today&#x27;s roads and creeks</label><p class="what" id="d-roads">Roads from OpenStreetMap and creeks from the USGS, as of 2026. Roads were pulled only as far east as the middle of Section 27.</p></div></details>
+<details class="grp" open><summary>Families by census year</summary><div class="lyr"><label><input type="checkbox" data-layer="households" aria-describedby="d-households"> Census households</label><p class="what" id="d-households">A dot only where a census head held land in the same name in this township by that year (a name match). Everyone else is listed, not placed.</p><fieldset class="sub-ctl" id="hhYears" hidden style="border:0;padding:0"><legend class="vh">Census year</legend><label><input type="radio" name="hhy" value="1830"> 1830</label><label><input type="radio" name="hhy" value="1850"> 1850</label><label><input type="radio" name="hhy" value="1860" checked> 1860</label><label><input type="radio" name="hhy" value="1870"> 1870</label><label><input type="radio" name="hhy" value="1880"> 1880</label></fieldset></div></details>
+<details class="grp" open><summary>Old maps</summary><div class="lyr"><label><input type="checkbox" data-layer="usgs1906" aria-describedby="d-usgs1906"> USGS map, about 1906</label><p class="what" id="d-usgs1906">Birmingham Coal District sheet, surveyed about 1904 to 1906, fitted to this map. It can sit up to about 50 yards off.</p><div class="sub-ctl" id="oldCtl" hidden><label for="oldOp">Strength</label><input id="oldOp" type="range" min="10" max="100" value="85"><output id="oldOpOut" for="oldOp">85%</output></div></div></details>
+<details class="grp" open><summary>Terrain (2024 lidar)</summary><div class="lyr"><label><input type="checkbox" data-layer="terrain" checked aria-describedby="d-terrain"> Ground shape</label><p class="what" id="d-terrain">Shaded relief, or local relief to bring out small banks, ditches and old roadbeds. Today&#x27;s ground, flown in 2024.</p><div class="sub-ctl" id="terrCtl"><label><input type="radio" name="tstyle" value="shade" checked> Shaded relief</label><label><input type="radio" name="tstyle" value="relief"> Local relief</label><label for="terrOp">Strength</label><input id="terrOp" type="range" min="10" max="100" value="100"><output id="terrOpOut" for="terrOp">100%</output></div></div><div class="lyr"><label><input type="checkbox" data-layer="contours" aria-describedby="d-contours"> Contour lines</label><p class="what" id="d-contours">Every 10 feet when zoomed in close, every 20 or 50 feet further out. Point at the map to read the elevation.</p></div></details>
+<p class="note">Section lines are today's grid, not the 1821 lines. Anything we placed by chain count, by even division or from an old sheet is marked Approximate.</p>
+<h2>Key</h2>
+<ul id="legend" aria-live="polite"></ul>
+</aside>
+<div class="lm-mapcol">
+<div id="map" role="region" aria-label="Map of Graham land at Mount Olive. Use the arrow keys to move and plus or minus to zoom. Every forty is also listed in the table below the map."></div>
+<section id="card" aria-label="Details" hidden><button id="cardClose" class="x" type="button" aria-label="Close the details">&#215;</button><div id="cardBody" aria-live="polite"></div></section>
+</div>
+</div>
+<section class="lm-sec" id="forties">
+<h2>Every Graham forty, in order</h2>
+<p class="noprint">Choose a row to show it on the map.</p>
+<div class="tbl"><table class="resp-table"><thead><tr><th>Entered</th><th>Who</th><th>Land</th><th>Acres</th><th>How</th><th>Patent</th></tr></thead><tbody id="rows"></tbody></table></div>
+</section>
+<section class="lm-sec" id="notplaced">
+<h2>Not placed on the map</h2>
+<p>These are in the records or the family book, but nobody knows where they sit, so they are listed and not drawn.</p>
+<ul style="list-style:none;padding:0;display:grid;gap:8px"><li><button type="button" class="btn small" data-unplaced="ebenezer">Ebenezer Methodist Church</button> Unresolved position</li><li><button type="button" class="btn small" data-unplaced="nin-homeplace">The I. N. Graham old homeplace</button> Unresolved position</li></ul><p>The family book's 1930s and 40s map key is in the laptop copy; it is not on the website copy until Joe decides.</p>
+</section>
+<section class="lm-sec" id="about">
+<h2>How this map was made</h2>
+<h3>Where each layer comes from</h3>
+<p><strong>Section lines</strong> come from the Bureau of Land Management's national survey layer (CadNSDI), pulled 2 October 2026. They are today's lines, not the 1821 lines. Each forty is drawn by splitting its section into even quarters and sixteenths, the way the original survey laid them out; on the ground a line can sit a few tens of yards off. Sections 17 and 18 are not in that pull: they are extended north from Sections 19 and 20 and are approximate (dashed). Sections 1 to 16 are not worked out and are not drawn.</p>
+<p><strong>Terrain</strong> is the 2024 USGS Lidar DEM: 11 County, AL (quality level 1, flown 5 February to 27 March 2024, half-metre cells, heights in metres above NAVD88; downloaded from NOAA's Data Access Viewer). It was moved from Alabama West state plane (EPSG:6356) to web map tiles, shaded as if lit from four directions and tinted by height. Local relief is the ground minus a smoothed copy of itself (about 20 metres across), which brings out small banks, ditches, old roadbeds and house pads. Contours are every 10 feet close in, 20 and then 50 feet further out. Elevations are today's ground. Alignment checked 11 Nov 2026: at close zoom, today&#x27;s Mount Olive Road (OpenStreetMap) lies on its roadbed in the lidar, and the creeks and contour shapes on the fitted 1906 sheet broadly follow the lidar&#x27;s valleys and ridges, within the sheet&#x27;s stated error of about 50 yards. The section lines have no ground feature to check against directly; they come from the same BLM grid used for every forty.</p>
+<p><strong>The 1906 map</strong> is the USGS Birmingham Coal District sheet (1:62,500, surveyed about 1904 to 1906), fitted to this map from its own projection. It names the home place <em>Grimestown</em>, with <em>Grahams Mill</em> just southeast and <em>Grahams Chapel</em> to the south. The small black squares are houses. Old datum and survey error mean it can sit up to about 50 yards off. Public domain.</p>
+<p><strong>Roads</strong> are from OpenStreetMap and <strong>creeks</strong> from the USGS National Hydrography Dataset. Roads were pulled only as far east as the middle of Section 27.</p>
+<p><strong>Legal descriptions</strong> come from the patent index (all 159 patents) and the tract book, Vol. 427. Where the two disagree, the map follows the patent and the record card says so.</p>
+<p><strong>Census households</strong> (1830, 1850, 1860, 1870, 1880) are placed only where the head held land in the same name in this township by that year. That is a name match unless a record ties them. Everyone else is listed in census order, which is not a location. Full table: <em>Grimestown households 1830 to 1880</em> in the project.</p>
+<h3>What is solid and what is not</h3>
+<p><strong>Names.</strong> Everyone is called by one standard surname (Graham, Gowins, Bolling, Reed, Spradling); the record's own spelling is shown in quotation marks on each card. The place name <em>Grimestown</em> stays as the 1906 map prints it.</p>
+<ul>
+<li><strong>Documented</strong>: a record or the family book says it, and the card names it.</li>
+<li><strong>Approximate</strong>: placed by us, by even division of today's sections, by chain count, or from an old sheet.</li>
+<li><strong>Unresolved</strong>: not known yet.</li>
+<li><strong>Name match</strong>: the same name in two records, not proof of the same person.</li>
+<li><strong>Family oral history</strong>: told in the family, not in a record.</li>
+<li>The cemetery dot is the GPS point on Rebecca Staggs Graham's Find a Grave memorial (Strongly supported). The dashed ring across the road marks a house site with two big oaks in front, from family oral history (Family oral history). Today's Mount Olive Road may not follow the 1800s road (Unresolved).</li>
+</ul>
+<h3>Record disagreements to clean up</h3>
+<ul>
+<li>Thomas's 1854 eighty: the tract-book transcription puts one forty in Section 33; the patent puts both in Section 28.</li>
+<li>John Graham's 1886 entry: the transcription says W½ NW¼, NE¼ SW¼, SE¼ NW¼; the 1891 patent says W½ SW¼ and NE¼ SW¼. Thomas Parry patented the W½ NW¼ in 1892, so the patent is followed.</li>
+<li>William's 1871 homestead (W½ NE¼ Sec. 28) takes in the SW¼ NE¼ that Thomas entered in 1854.</li>
+<li>Ezekiel Staggs: certificate 20995 in the tract book, 20795 in the patent index.</li>
+<li>The Section 29 patent image is filed as certificate 23825; the patent index says 23835.</li>
+<li>Three family patents are missing from the tract-book transcription: William 1834 (Sec. 21), William 1858 (Sec. 27 NW¼ NW¼), and Nelley C. Graham (written "Grayham") 1889 (Sec. 20).</li>
+<li>Thompson's purchase of the Sec. 33 forty from James Gowins: 13 May 1839 (deed vol. 7 p251). The earlier map said 1838.</li>
+</ul>
+<h3>The 1821 survey</h3><p>The layer drawn from the original 1821 field notes is in Joe's laptop copy only. It stays off this page until the question of written permission from the Alabama Secretary of State is settled.</p>
+<h3>Rebuilding this map</h3>
+<p>The map is built from data files (parcels, sections, households, places, the 1821 survey, the family book key, eras, layer settings). To add a fact, edit the data file and run the build again. The steps are in the README in <em>Land - general\Graham Land Map - source</em>.</p>
+
+</section>
+<p class="lm-foot">Survey grid: BLM CadNSDI. Terrain: 2024 USGS Lidar DEM, 11 County, AL. Roads: OpenStreetMap contributors. Creeks: USGS NHD. 1906 map: USGS Historical Topographic Map Collection. Grahams Chapel: USGS GNIS 144238. Cemetery point: Find a Grave. Map library: Leaflet (BSD license). Built from the GRAHAM project&#x27;s data files.</p>
+</div>
+</main>
+<script src="lib/leaflet/leaflet.js"></script>
+<script src="data.js"></script>
+<script src="elev.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
