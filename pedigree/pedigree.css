@@ -450,3 +450,8 @@ body.hub-has-q .hub-start{display:none}
   li.hr{padding:14px 16px}
 }
 @media (prefers-reduced-motion:reduce){a.hubcard,.hub-eras a{transition:none}a.hubcard:hover{transform:none}}
+/* Sources page (sources.html, 12 Nov 2026) */
+.srclist .sid{font-size:13px;color:var(--muted);margin-left:6px;overflow-wrap:anywhere}
+.srclist .src-id .lab{margin-left:0}
+.srclist li.hit{outline:2px solid var(--navy);outline-offset:4px;border-radius:3px}
+.srclist li[hidden]{display:none}

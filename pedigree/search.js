@@ -20,8 +20,8 @@
     slave: ["slave", "enslaved", "schedule"], slaves: ["slave", "enslaved", "schedule"], enslaved: ["enslaved", "slave"]
   };
   var KIND = { person: "Life sheet", record: "Record page", era: "Era", essay: "The Old Homeplace", document: "Documents", farm: "Farm records",
-    land: "Land map", place: "Place", pdf: "PDF", people: "Life sheets", page: "Page" };
-  var GROUPS = [["all", "Everything"], ["people", "People", ["person", "record", "people"]], ["docs", "Documents", ["document", "pdf"]],
+    land: "Land map", place: "Place", pdf: "PDF", people: "Life sheets", page: "Page", source: "Source" };
+  var GROUPS = [["all", "Everything"], ["people", "People", ["person", "record", "people"]], ["sources", "Sources", ["source"]], ["docs", "Documents", ["document", "pdf"]],
     ["land", "Land and places", ["land", "place"]], ["eras", "Eras", ["era", "essay"]], ["farms", "Farms", ["farm"]]];
 
   var D = null, loading = null, filter = "all", last = null, shown = 20;
