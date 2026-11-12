@@ -273,3 +273,35 @@ table.legs tfoot td.num::before{content:none}
 .telemetry .tile-text{font-size:16px;line-height:1.5;margin:0 0 8px}
 .telemetry .srcline{display:block;font-size:14px}
 @media print{.telemetry li.tile{break-inside:avoid}}
+
+/* ---------- Farms page (farms.html), added 12 Nov 2026 ---------- */
+.farm h3{font-size:18px;margin:22px 0 6px}
+.farm .table-wrap,#all-records .table-wrap{position:relative} /* keeps the hidden screen-reader labels inside the scroll area */
+.table-wrap:focus{outline:2px solid var(--navy);outline-offset:2px}
+table.farmcard,table.farmtable{border-collapse:collapse;font-size:15px;min-width:100%}
+table.farmcard th,table.farmcard td,table.farmtable th,table.farmtable td{padding:7px 10px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+table.farmcard thead th,table.farmtable thead th{font-size:14px;color:var(--muted);vertical-align:bottom;border-bottom:2px solid var(--rule)}
+table.farmcard thead th a{color:var(--link)}
+table.farmcard td.n,table.farmtable td.n{white-space:nowrap;text-align:right}
+table.farmcard td.cl,table.farmcard th.cl{background:var(--warn-soft);min-width:9em}
+table.farmcard td.none,table.farmcard td.na{color:var(--muted);text-align:right}
+table.farmcard td.rd{font-size:14px;min-width:12em;white-space:normal;text-align:left}
+table.farmtable td.rd{font-size:14px;white-space:normal;min-width:7em}
+table.farmtable td:nth-child(4){min-width:11em;font-size:14px}
+table.farmcard .ac{color:var(--muted);font-size:13px}
+table.farmcard tr.grp th{background:var(--soft);font-family:var(--head);font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+table.farmcard tbody th[scope=row]{font-weight:normal;min-width:10em}
+table.farmcard th:first-child,table.farmtable th:first-child{position:sticky;left:0;background:var(--box);z-index:1}
+table.farmcard .srcline{display:block;font-size:13px;white-space:normal}
+.claimbox{border-left:4px solid var(--orange);padding:2px 0 2px 14px;margin:18px 0}
+.claimbox ul.facts>li{padding:4px 0;border:0}
+.farmfilters{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:flex-end;margin:12px 0}
+.farmfilters label{display:flex;flex-direction:column;font-size:14px;color:var(--muted);gap:4px}
+.farmfilters input,.farmfilters select{font:inherit;font-size:16px;color:var(--ink);padding:8px 10px;border:1px solid var(--rule);border-radius:4px;background:#fff;min-width:11em}
+table.farmtable thead th button{all:unset;cursor:pointer;color:var(--link);text-decoration:underline;text-underline-offset:2px}
+table.farmtable thead th button:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+table.farmtable th[aria-sort=ascending] button::after{content:" \2191"}
+table.farmtable th[aria-sort=descending] button::after{content:" \2193"}
+table.farmtable td .lab{margin-left:0}
+@media (max-width:700px){.farmfilters label,.farmfilters input,.farmfilters select{width:100%}table.farmcard,table.farmtable{font-size:14px}}
+@media print{.farmfilters,#ff-count{display:none}}
