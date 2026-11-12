@@ -382,11 +382,14 @@ html.pg-open .pg-side{display:block}
 /* ---------- the search page (index.html) ---------- */
 .hub{padding:24px 0 8px}
 .hub h1{font-size:38px;margin:0 0 18px}
-.hub-eras{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 16px}
-.hub-eras a{display:flex;flex-direction:column;padding:6px 12px;background:rgba(246,248,250,.85);border:1px solid var(--rule);border-radius:8px;text-decoration:none;line-height:1.25;transition:border-color .12s,background .12s}
-.hub-eras a:hover{border-color:var(--navy);background:var(--box)}
-.hub-eras .en{font-size:14px;font-weight:700;color:var(--navy)}
-.hub-eras .ey{font-size:13px;color:var(--muted)}
+/* the eras as a timeline: a dot for each era on one line, two rows of seven (12 Nov 2026) */
+.hub-eras{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));row-gap:16px;margin:4px 0 24px}
+.hub-eras a{position:relative;display:block;padding:14px 12px 2px 0;border-top:2px solid #8fa3b8;text-decoration:none;line-height:1.25}
+.hub-eras a::before{content:"";position:absolute;top:-7px;left:0;width:12px;height:12px;border-radius:50%;background:var(--box);border:2px solid var(--navy);transition:background .12s,border-color .12s}
+.hub-eras a:hover::before,.hub-eras a:focus-visible::before{background:var(--orange);border-color:var(--orange)}
+.hub-eras a:hover .en{text-decoration:underline;text-decoration-color:var(--orange)}
+.hub-eras .en{display:block;font-size:14px;font-weight:700;color:var(--navy)}
+.hub-eras .ey{display:block;font-size:13px;color:var(--muted);margin-top:2px}
 .hub-search{display:flex;background:#fff;border:2px solid var(--navy);border-radius:12px;box-shadow:0 6px 24px rgba(0,26,51,.14);overflow:hidden}
 .hub-search:focus-within{border-color:var(--orange)}
 .hub-search input{flex:1;min-width:0;border:0;padding:16px 18px 16px 52px;font:inherit;font-size:19px;color:var(--ink);outline:none;
@@ -441,8 +444,7 @@ a.hubcard img{width:calc(100% + 36px);max-width:none;margin:-16px -18px 12px;hei
 body.hub-has-q .hub-start{display:none}
 @media (max-width:700px){
   .hub h1{font-size:28px}
-  .hub-eras{flex-wrap:nowrap;overflow-x:auto;margin:0 -12px 14px;padding:0 12px 4px;scrollbar-width:none}
-  .hub-eras a{flex:none}
+  .hub-eras{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:128px;overflow-x:auto;margin:4px -12px 18px;padding:8px 12px 4px;scrollbar-width:none}
   .hub-search input{font-size:17px;padding:14px 12px 14px 44px;background-position:12px 50%}
   .hub-search button{padding:0 16px}
   li.hr{padding:14px 16px}

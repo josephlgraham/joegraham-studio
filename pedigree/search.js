@@ -66,6 +66,8 @@
     var seen = {};
     return t.filter(function (w) { if (seen[w]) return false; seen[w] = 1; return true; }).map(function (w) {
       var s = stem(w), alts = [s].concat((SYN[w] || SYN[s] || []).map(stem));
+      /* spellings and nicknames of the same name (VARIANTS in pedigree_search.py) */
+      (D.variants || []).forEach(function (g) { if (g.indexOf(w) >= 0 || g.indexOf(s) >= 0) alts = alts.concat(g.map(stem)); });
       return { w: w, s: s, alts: alts.filter(function (a, i) { return alts.indexOf(a) === i; }) };
     });
   }
@@ -87,7 +89,7 @@
       var m = 0, sc = 0;
       live.forEach(function (t) {
         var exact = has(c.b, t.s) || has(c.h, t.s), inB = exact || t.alts.some(function (a) { return has(c.b, a); }), inH = t.alts.some(function (a) { return has(c.h, a); });
-        if (inB || inH) { m++; sc += t.idf * ((inB ? 1 : 0) + (inH ? 1.2 : 0)) * (exact ? 1 : 0.6); }
+        if (inB || inH) { m++; sc += t.idf * ((inB ? 1 : 0) + (inH ? 1.2 : 0)) * (exact ? 1 : 0.3); }   /* the spelling typed beats its variants */
       });
       if (!m || m < need) return;
       sc *= (m / live.length) * (m / live.length);
