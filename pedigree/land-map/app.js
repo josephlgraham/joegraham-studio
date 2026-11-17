@@ -54,7 +54,7 @@ function init() {
   map = L.map('map', { minZoom: 12, maxZoom: 19, zoomSnap: .5, keyboard: true, maxBounds: TB.pad(.25), attributionControl: true, zoomControl: true });
   map.attributionControl.setPrefix(false);
   map.setView(D.layers.home.center, D.layers.home.zoom);
-  [['terrain', 200], ['contours', 250], ['old', 300], ['grid', 380], ['roads', 400], ['parcels', 420], ['labels', 430], ['hh', 440], ['survey', 450], ['places', 460]].forEach(function (p) { map.createPane(p[0]).style.zIndex = p[1]; });
+  [['terrain', 200], ['contours', 250], ['photo', 290], ['old', 300], ['grid', 380], ['roads', 400], ['parcels', 420], ['labels', 430], ['hh', 440], ['survey', 450], ['places', 460]].forEach(function (p) { map.createPane(p[0]).style.zIndex = p[1]; });
   map.getPane('labels').style.pointerEvents = 'none';
   map.getPane('grid').style.pointerEvents = 'none';
 
@@ -133,6 +133,9 @@ function init() {
   /* 1906 USGS sheet */
   var old1906 = L.imageOverlay(D.old1906.file, D.old1906.bounds, { pane: 'old', opacity: .85, alt: 'USGS Birmingham Coal District sheet, about 1906, fitted to the map' });
 
+  /* 1941 aerial photo */
+  var aerial41 = L.imageOverlay(D.aerial1941.file, D.aerial1941.bounds, { pane: 'photo', opacity: 1, alt: 'Aerial photo frame CPM-4A-66, 17 February 1941, fitted to the map' });
+
   /* 1821 survey */
   var gSV = L.layerGroup(), SV = D.survey;
   var LANDCOL = { hilly: '#8a5a2b', rolling: '#b8892e', level: '#3f8f5a', wavy: '#b8892e' };
@@ -174,7 +177,7 @@ function init() {
   var on = {};
   var LAYER = {
     parcels: [gParcels, gYr], grid: [gGrid, gGridLbl], places: [gPlaces], roads: [gRoads, gRoadLbl],
-    households: [gHH], survey: [gSV], usgs1906: [old1906], contours: [contours]
+    households: [gHH], survey: [gSV], usgs1906: [old1906], aerial1941: [aerial41], contours: [contours]
   };
   function setLayer(id, val) { on[id] = val;
     if (id === 'terrain') { T.shade.remove(); T.relief.remove(); if (val) T[val].addTo(map); }
@@ -194,12 +197,14 @@ function init() {
       else if (id === 'survey') { setLayer(id, inp.checked); if (inp.checked) { map.flyToBounds(L.latLngBounds(D.layers.township.bounds), { duration: .6 }); svIntro(); } }
       else if (id === 'bookmap') { setLayer(id, inp.checked); }
       else if (id === 'usgs1906') { setLayer(id, inp.checked); $('#oldCtl').hidden = !inp.checked; }
+      else if (id === 'aerial1941') { setLayer(id, inp.checked); $('#photoCtl').hidden = !inp.checked; }
       else setLayer(id, inp.checked); });
     if (inp.checked) inp.dispatchEvent(new Event('change')); });
   $$('input[name=hhy]').forEach(function (r) { r.addEventListener('change', function () { if ($('[data-layer=households]').checked) { setLayer('households', r.value); hhList(); } }); });
   $$('input[name=tstyle]').forEach(function (r) { r.addEventListener('change', function () { if ($('[data-layer=terrain]').checked) setLayer('terrain', r.value); }); });
   $('#terrOp').addEventListener('input', function () { var v = this.value / 100; T.shade.setOpacity(v); T.relief.setOpacity(v); $('#terrOpOut').textContent = this.value + '%'; });
   $('#oldOp').addEventListener('input', function () { old1906.setOpacity(this.value / 100); $('#oldOpOut').textContent = this.value + '%'; });
+  $('#photoOp').addEventListener('input', function () { aerial41.setOpacity(this.value / 100); $('#photoOpOut').textContent = this.value + '%'; });
 
   /* year slider */
   var yr = 1891;
@@ -277,6 +282,7 @@ function init() {
     if (on.households) out.push('<li><span class="dt" style="color:#6a3d7c"></span>Census household on land in the same name (' + hhYear + ')</li><li><span class="dt" style="color:#6a3d7c;background:#fff;border:2px dashed #6a3d7c"></span>Land in a late husband\'s name</li>');
     if (on.survey) out.push('<li><span class="dm" style="color:#0d5f69"></span>1821 post with witness trees (approximate)</li><li><span class="dt" style="color:#1f5f8b"></span>1821 creek crossing (approximate)</li><li><span class="ln" style="color:#8a5a2b;border-top-width:5px"></span>Land written hilly</li><li><span class="ln" style="color:#b8892e;border-top-width:5px"></span>rolling</li><li><span class="ln" style="color:#3f8f5a;border-top-width:5px"></span>level</li>');
     if (on.usgs1906) out.push('<li><span class="sw" style="color:#9c7b4b;background:#efe4cf"></span>USGS sheet, about 1906 (fitted)</li>');
+    if (on.aerial1941) out.push('<li><span class="sw f" style="color:#6b6b6b"></span>Aerial photo, 17 Feb 1941 (fitted; lines and numbers inked on the print in 1941)</li>');
     if (on.terrain) out.push('<li><span class="sw f" style="color:#c8b99a"></span>' + (on.terrain === 'relief' ? 'Local relief: light is higher than its surroundings, dark is lower' : 'Shaded relief, tinted by height (green low, tan high)') + '</li>');
     if (on.contours) out.push('<li><span class="ln" style="color:#80603c;border-top-width:2px"></span>Contours (10 ft close in; heavier every 50 ft)</li>');
     $('#legend').innerHTML = out.join('') || '<li>Nothing switched on.</li>'; }
