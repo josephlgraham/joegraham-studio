@@ -455,3 +455,37 @@ body.hub-has-q .hub-start{display:none}
 .srclist .src-id .lab{margin-left:0}
 .srclist li.hit{outline:2px solid var(--navy);outline-offset:4px;border-radius:3px}
 .srclist li[hidden]{display:none}
+
+/* ---------- the vertical lifeline (phones; 22 Nov 2026) ---------- */
+.vline{display:none}
+@media (max-width:700px){
+  .figure.has-v,.figure-note.has-v{display:none}
+  .vline{display:block;margin:10px 0 16px}
+  .vline-key{display:flex;flex-wrap:wrap;gap:6px 14px;margin:0;font-size:14px;color:var(--muted)}
+  .vline-key span::before{content:"";display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+  .k-life::before{background:var(--lc)}.k-fam::before{background:var(--ink)}.k-hist::before{background:var(--hist-n)}.k-sky::before{background:var(--mark)}
+  .vline>.src{margin:2px 0 10px;font-size:14px}
+  .vline ol{list-style:none;margin:0;padding:0 0 0 0;position:relative}
+  .vline ol::before{content:"";position:absolute;left:15px;top:6px;bottom:6px;width:4px;border-radius:2px;background:var(--lc);opacity:.85}
+  .vline li{position:relative;padding-left:40px}
+  .vline li.vdec{padding:14px 0 4px 40px;font-family:var(--head);font-weight:700;font-size:15px;color:var(--muted);letter-spacing:.3px}
+  .vline li.v::before{content:"";position:absolute;left:10px;top:17px;width:14px;height:14px;border-radius:50%;background:var(--box);border:3px solid var(--lc)}
+  .vline li.v.key::before{background:var(--lc)}
+  .vline li.fam::before{border-color:var(--ink);border-radius:2px}
+  .vline li.hist::before{border-color:var(--hist-n);width:10px;height:10px;left:12px;top:19px}
+  .vline li.hist.alabama::before{border-color:var(--hist-a)}.vline li.hist.local::before{border-color:var(--hist-l)}
+  .vline li.sky::before{border-color:var(--mark);border-style:dashed}
+  .vline summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:auto 1fr;gap:0 10px;align-items:baseline;padding:10px 6px;min-height:44px;border-radius:6px}
+  .vline summary::-webkit-details-marker{display:none}
+  .vline summary:active,.vline details[open]>summary{background:var(--soft)}
+  .vy{font-weight:700;font-variant-numeric:tabular-nums;color:var(--ink);font-size:15px;min-width:3.2em}
+  .vt{line-height:1.45}
+  .vline li.life .vt{font-weight:700;color:var(--ink)}
+  .vline li.hist .vt{color:var(--hist-n);font-size:15px}
+  .vline li.hist.alabama .vt{color:var(--hist-a)}.vline li.hist.local .vt{color:var(--hist-l)}
+  .vline li.sky .vt{color:var(--astro);font-size:15px}
+  .vage{display:block;font-weight:400;font-size:14px;color:var(--muted)}
+  .vb{padding:2px 6px 12px;font-size:15px}
+  .vb p{margin:4px 0}
+  .v-sky-note{color:var(--astro);font-size:14px}
+}
