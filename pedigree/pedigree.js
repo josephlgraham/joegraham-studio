@@ -129,3 +129,23 @@
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',wire); else wire();
 })();
+
+/* the lifeline switch: down the page or across. Remembered on this device only (22 Nov 2026). */
+(function () {
+  function all(r, s) { return Array.prototype.slice.call(r.querySelectorAll(s)); }
+  all(document, ".lifeview").forEach(function (lv) {
+    var KEY = "pedigree-lifeview", btns = all(lv, ".lv-switch button");
+    var mq = window.matchMedia ? window.matchMedia("(max-width:700px)") : null;
+    function shown() { return lv.dataset.view || (mq && mq.matches ? "v" : "h"); }
+    function mark() { btns.forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.view === shown() ? "true" : "false"); }); }
+    try { var saved = window.localStorage.getItem(KEY); if (saved === "v" || saved === "h") lv.dataset.view = saved; } catch (e) {}
+    mark();
+    if (mq && mq.addEventListener) mq.addEventListener("change", mark);
+    btns.forEach(function (b) {
+      b.addEventListener("click", function () {
+        lv.dataset.view = b.dataset.view; mark();
+        try { window.localStorage.setItem(KEY, b.dataset.view); } catch (e) {}
+      });
+    });
+  });
+})();
