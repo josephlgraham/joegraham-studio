@@ -150,7 +150,7 @@ Python needs Pillow, numpy, scipy, and matplotlib (`pip install --user`).
 
 ## The /pedigree/ section (unlisted)
 
-`pedigree/` is Joe's family archive: life sheets, record pages, the family
+`pedigree/` is Joe's family archive: lifelines, record pages, the family
 web and documents, grandparents' generation and earlier, nobody living. It
 is unlisted on purpose. Nothing on the site links to it, every page carries
 `noindex, nofollow`, and it stays out of `sitemap.xml`, `llms.txt` and
