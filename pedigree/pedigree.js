@@ -149,3 +149,46 @@
     });
   });
 })();
+
+/* tap to read on the life bar (23 Nov 2026). A finger cannot hover, so a tap shows the same text in a box under the chart.
+   The nearest item within reach counts, because the marks are small. On a link, the first tap reads it and the box carries
+   the link; a mouse click still opens the link at once. */
+(function () {
+  var lastTouch = false;
+  document.addEventListener("pointerdown", function (ev) { lastTouch = ev.pointerType === "touch" || ev.pointerType === "pen"; }, true);
+  function nearest(svg, x, y) {
+    var best = null, bd = 30;
+    Array.prototype.forEach.call(svg.querySelectorAll("[data-tip]"), function (el) {
+      var r = el.getBoundingClientRect();
+      var dx = Math.max(r.left - x, 0, x - r.right), dy = Math.max(r.top - y, 0, y - r.bottom), d = Math.sqrt(dx * dx + dy * dy);
+      if (d < bd) { bd = d; best = el; }
+    });
+    return best;
+  }
+  document.addEventListener("click", function (ev) {
+    var fig = ev.target.closest ? ev.target.closest(".figure") : null;
+    if (!fig) return;
+    var svg = fig.querySelector("svg"); if (!svg) return;
+    var hit = ev.target.closest("[data-tip]") || (lastTouch ? nearest(svg, ev.clientX, ev.clientY) : null);
+    if (!hit) return;
+    var link = hit.closest("a");
+    if (link && !lastTouch) return;            /* mouse: let the link open as before */
+    ev.preventDefault();
+    var box = fig.nextElementSibling;
+    if (!box || !box.classList.contains("tapread")) {
+      box = document.createElement("div"); box.className = "tapread"; box.setAttribute("aria-live", "polite");
+      fig.parentNode.insertBefore(box, fig.nextSibling);
+    }
+    Array.prototype.forEach.call(svg.querySelectorAll(".tapped"), function (x) { x.classList.remove("tapped"); });
+    hit.classList.add("tapped");
+    box.innerHTML = "";
+    var p = document.createElement("p"); p.textContent = hit.getAttribute("data-tip").replace(/ · Click to open the source page$/, ""); box.appendChild(p);
+    if (link) {
+      var a = document.createElement("a"); a.href = link.getAttribute("href"); a.target = "_blank"; a.rel = "noopener";
+      a.textContent = "Open the source page"; box.appendChild(a);
+    }
+    var x = document.createElement("button"); x.type = "button"; x.className = "tapread-x"; x.textContent = "Close";
+    x.addEventListener("click", function () { box.remove(); hit.classList.remove("tapped"); });
+    box.appendChild(x);
+  });
+})();

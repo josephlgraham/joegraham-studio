@@ -496,3 +496,11 @@ body.hub-has-q .hub-start{display:none}
 .vb p{margin:4px 0}
 .v-sky-note{color:var(--astro);font-size:14px}
 @media print{.lv-switch{display:none}.lifeview .lv-h{display:block!important}.lifeview .lv-v{display:none!important}}
+
+/* ---------- tap to read on the life bar (23 Nov 2026) ---------- */
+.tapread{position:relative;margin:-4px 0 12px;padding:12px 84px 12px 14px;background:var(--ink);color:#fff;border-radius:6px;font-size:15px;line-height:1.5}
+.tapread p{margin:0 0 4px}
+.tapread a{color:#fff;font-weight:700}
+.tapread-x{position:absolute;top:8px;right:8px;font:inherit;font-size:14px;background:none;color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:999px;padding:6px 12px;min-height:36px;cursor:pointer}
+svg .tapped{filter:drop-shadow(0 0 3px var(--orange)) drop-shadow(0 0 1px var(--orange))}
+@media print{.tapread{display:none}}
